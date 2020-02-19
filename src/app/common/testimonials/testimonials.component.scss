@@ -1,0 +1,128 @@
+
+@import "~../../app.component.scss";
+
+.singleTestimonial {
+        border: $border;
+        padding: 40px 25px 40px;
+        z-index: 2;
+        position: relative;
+        background: $lightColor;
+        height: 100%;
+
+        .authorImg {
+            height: 90px;
+            left: -45px;
+            margin-top: -45px;
+            position: absolute;
+            top: 50%;
+            width: 90px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .authorComment{
+            color: lighten($lightGrey, 10%);
+            font-size: 15px;
+            
+            &::before {
+                color: $lightGrey;
+                content: "\f38d";
+                font-family: Ionicons;
+                top: -26px;
+                font-size: 33px;
+                right: 14px;
+                position: absolute;
+                top: 10px;
+             }
+        }
+
+        h5 {
+            color: $btnFirstColor;
+            font-size: 14px;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .line {
+            background: $primary-color;
+            display: inline-block;
+            height: 1px;
+            margin-left: 15px;
+            position: relative;
+            top: -4px;
+            width: 26px;
+        }
+    }
+    
+.testimonialsWrap {
+    display: flex;
+}
+
+owl-carousel ::ng-deep  {
+    .owl-theme {
+        .owl-prev {
+            font-size: 24px;
+            left: 50%;
+            margin-top: -18px;
+            padding: 5px 10px;
+            position: absolute;
+            top: 50%;
+            color: $lightgreyBg;
+            outline: none;
+            margin-left: -18px;
+        }
+        .owl-next {
+            @extend .owl-prev;
+            margin-left: 10px;
+
+            &::before {
+                background: $lightgreyBg;
+                content: "";
+                height: 70px;
+                left: -10px;
+                position: absolute;
+                top: -16px;
+                width: 1px;
+            }
+        }
+    } 
+
+    .owl-stage {
+        align-items: stretch;
+        display: flex;
+
+        .owl-item {
+            .item {
+                height: 100%;
+            }
+        }
+    } 
+
+    .leftArrow,
+    .rightArrow {
+        &::before {
+            position: relative;
+            font-size: 16px;
+            font-family: Ionicons;
+        }
+    }
+    .leftArrow {
+        &::before {
+            content: "\f124";
+        }
+    }
+    .rightArrow {
+        &::before {
+            content: "\f125";
+        }
+    }
+
+    .owl-nav [class*='owl-']:hover {
+        background: none; 
+        color: $lightgreyBg; 
+        outline: none;
+   }
+}

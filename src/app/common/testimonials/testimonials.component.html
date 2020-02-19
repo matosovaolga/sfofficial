@@ -1,0 +1,26 @@
+
+  <!---<owl-carousel [options]="customOptions" [carouselClasses]="'owl-carusel">
+ 
+    <ng-container *ngFor="let slide of slidesStore">
+      <ng-template carouselSlide [id]="slide.id">
+          <div class="singleTestimonial">
+          <div class="authorImg">
+        <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+        </div>
+        <p class="authorComment">{{slide.comment}}</p>
+        <h5 class="authorName">{{slide.author}}<span class="line"></span></h5>
+      </div>
+      </ng-template>
+    </ng-container>
+   
+  </owl-carousel>-->
+
+  <owl-carousel [options]="customOptions" [items]="slidesStore" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+     <div class="item" *ngFor="let slide of slidesStore;let i = index">
+        <div class="singleTestimonial">
+        <div class="authorImg"> <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title"></div>
+      <p class="authorComment">{{slide.comment}}</p>
+      <h5 class="authorName">{{slide.author}}<span class="line"></span></h5>
+      </div>
+     </div>
+ </owl-carousel>

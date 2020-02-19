@@ -1,0 +1,31 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #666;
+$lightGrey: #888;
+$darkGrey: #333;
+$lightColor: #fff;
+
+$borderColor: #eee;
+$lightgreyBg: #ededed;
+$btnFirstColor: #1edfc4;
+$btnSecondColor: #2785e6;
+$btnThirdColor: #00c6ff;
+$hoverColor: $btnFirstColor;
+
+$border: 1px solid $borderColor;
+
+
+$base-text-color: $primary-color !default;
+$base-font-size: 16px !default;
+
+$animation-speed: 0.3s;
+
+$breakpoints: (
+    'medium-landscape':  (orientation : landscape ),
+    'small':  ( max-width:  767px ),
+    'medium': ( max-width:  992px ),
+    'medium-large': ( max-width:  1024px ),
+    'min-large':  ( max-width: 1200px ),
+    'extra-large': ( max-width:  1450px ),
+    'large':  ( min-width: 1200px ),
+
+) !default;

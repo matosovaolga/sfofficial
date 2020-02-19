@@ -1,0 +1,84 @@
+<div class="contact_content">
+    <div class="section_title text-center">
+        <h5 class="title_20 color_88">Contact Us</h5>
+        <h2>Don’t hesitate to contact with us anytime</h2>
+        <span class="line"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-8 col-lg-7">
+            <div class="wrapper">
+                <h3 class="contact_title  pos_relative">Drop us a Line</h3>
+                <div class="abform_area pos_relative">
+
+                    <form class="text-center" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field class="abinput_group name ">
+                            <input type="text" formControlName="contactFormName" id="materialContactFormName" class="form-control"
+                                matInput matValidate />
+                            <mat-label for="materialContactFormName">Name</mat-label>
+                            <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">Input invalid</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="md-form abinput_group email">
+                            <input type="email" formControlName="contactFormEmail" id="materialContactFormEmail" class="form-control"
+                                matInput matValidate />
+                            <mat-label for="materialContactFormEmail">E-mail</mat-label>
+                            <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">Input invalid</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="md-form abinput_group subject">
+                            <input type="text" formControlName="contactFormSubject" id="materialContactFormSubject"
+                                class="form-control" matInput matValidate />
+                            <mat-label for="materialContactFormSubject">Subject</mat-label>
+                            <mat-error *ngIf="subject.invalid && (subject.dirty || subject.touched)">Input invalid</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="md-form abinput_group phone">
+                            <input type="text" formControlName="contactFormPhone" id="materialContactFormPhone" class="form-control"
+                                matInput matValidate />
+                            <mat-label for="materialContactFormPhone">Phone</mat-label>
+                            <mat-error *ngIf="phone.invalid && (phone.dirty || phone.touched)">Input invalid</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="md-form abinput_group msg">
+                            <textarea type="text" formControlName="contactFormMessage" id="materialContactFormMessage"
+                                class="form-control md-textarea" matInput matValidate></textarea>
+                            <mat-label for="materialContactFormMessage">Message</mat-label>
+                            <mat-error *ngIf="message.invalid && (message.dirty || message.touched)">Input invalid</mat-error>
+                        </mat-form-field>
+
+                        <button matBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect text-uppercase"
+                            matWavesEffect type="submit" [disabled]="disabledSubmitButton"><i class="ion-ios-navigate"></i>
+                        </button>
+                    </form>
+
+                    <!--/form-->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="contact_address">
+                <h4 class="pos_relative">Contact Information</h4>
+                <p class="address pos_relative"><i class="flaticon-placeholder"></i><span class="text-uppercase">ADDRESS:</span> 28
+                    Green Tower, <br>Street Name New York City, USA</p>
+                <p class="phone pos_relative"><i class="flaticon-phone-call"></i><span class="text-uppercase">Phone:</span> +84 846
+                    250 592</p>
+                <p class="email pos_relative"><i class="flaticon-mail"></i><span class="text-uppercase">Email:</span>
+                    contact@staker.com</p>
+                <p class="web pos_relative"><i class="flaticon-internet"></i><span class="text-uppercase">WEbsite:</span> <a href="#">demostaker.com</a></p>
+
+                <ul class="social_contact d_inline">
+                    <li><a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" title="Vimeo" target="_blank"><i class="fa fa-vimeo"></i></a></li>
+                    <li><a href="#" title="Google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" title="Tumblr" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+                    <li><a href="#" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/contact content-->

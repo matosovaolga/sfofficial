@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700|Open+Sans:300,300i,400,400i,600,700,700i|Raleway:400,500,600,700&display=swap');
+@import 'common/variables';
+@import 'common/mixin';
+@import 'common/fonts';
+
+body {
+    padding: 0;
+    font-size: 15px;
+    line-height: 26px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+sf-header,
+sf-footer {
+    display:block;
+}
+
+.app_landing_body {
+    overflow: hidden;
+}
+
+.app_header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    padding:  0;
+}
+
+/************************************************
+Css Table Of Content
+-----------------------
+01. Resset Css
+02. Typogrpahy
+    2.1 Font Typography
+    2.2 Color Typography
+    2.3 Hedding Tag Typography
+03. Scroll Top CSS
+04. Global Style
+05. Pading and Margin Style
+*************************************************/
+
+
+
+
+/*--------------01. Start Resset Css------------------*/
+
+*:focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figur,
+a {
+    margin: 0;
+    font-weight: normal;
+    -webkit-font-smoothing:antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-smoothing:antialiased;
+}
+
+P,
+.p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    color: #666;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+a:hover,
+a:focus,
+input:focus,
+button:focus,
+a:active {
+    text-decoration: none;
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+   list-style: none;
+}
+button{
+    cursor: pointer;
+}
+/*------------0.1 End Resset Css----------------------*/
+
+
+/*-----------2.3 heading tag Typogrpahy------------*/
+
+h1,
+.h1 {
+    font-size: 50px;
+    line-height: 65px;
+}h2,
+.h2 {
+    font-size: 40px;
+    line-height: 54px;
+}h3,
+.h3 {
+    font-size: 30px;
+    line-height: 42px;
+}h4,
+.h4 {
+    font-size: 24px;
+    line-height: 34px;
+}h5,
+.h5 {
+    font-size: 18px;
+    line-height: 28px;
+}h6,
+.h6 {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+
+
+.container {
+    margin: 0 auto;
+}
+/*-------------03. scroll top css-----------*/
+.scroll_top {
+    background: #027AEC none repeat scroll 0 0;
+    border-radius: 3px;
+    bottom: 50px;
+    cursor: pointer;
+    height: 40px;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    width: 40px;
+    z-index: 99;
+}
+.scroll_top:hover i {
+    color: #000;
+}
+.not_visible {
+    visibility: hidden;
+    display: none;
+}
+.scroll_top i {
+    color: #fff;
+    font-size: 24px;
+    line-height: 38px;
+}
+.section_padding {
+    padding: 120px 0 130px;
+}
+.section_padding2 {
+    padding: 130px 0;
+}
+
+.section_title {
+    padding-bottom: 80px;
+     h5 {
+        text-transform: uppercase;
+        color: $lightGrey;
+    }
+    h2 {
+        margin: 0 auto;
+        max-width: 730px;
+        width: 100%;
+        padding-bottom: 25px;
+        font-size: 33px;
+        font-weight: 600;
+        padding-top: 15px;
+    }
+    .line {
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: $btnFirstColor;
+        margin: 0 auto;
+    }
+}
+.pos_relative {
+    position: relative;
+}

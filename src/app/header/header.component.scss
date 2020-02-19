@@ -1,0 +1,313 @@
+@import "~../app.component.scss";
+
+%boxsizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.logo {
+    float: left;
+    font-size: 28px;
+    position: relative;
+    z-index: 1;
+
+    @include transition(all $animation-speed linear);
+
+    img {
+        height: 74px;
+        width: auto;
+    }
+}
+
+.menuzord {
+    width: 100%;
+    padding: 0 30px;
+    float: left;
+    position: relative;
+
+    @extend %boxsizing;
+
+    * {
+        @extend %boxsizing;
+    }
+
+    a {
+        @include transition(color $animation-speed linear);
+        @include transition(background $animation-speed linear);
+    }
+
+    &-menu {
+        margin: 0;
+        padding: 0;
+        float: right;
+        list-style: none;
+    }
+
+    /* 3 - MENU */
+    &-brand {
+        margin: 0 30px 0 0;
+        float: left;
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.3;
+        cursor: pointer;
+    }
+
+    &-menu {
+        & > li {
+            display: inline-block;
+
+            &.active > a,
+            &:hover > a {
+                color: $darkGrey;
+            }
+
+            &.dropdown {
+                a {
+                    text-transform: uppercase;
+
+                    &.active,
+                    &:hover {
+                        color: $hoverColor;
+                    }
+                }
+            }
+
+            a {
+                padding: 26px 16px;
+               font-family:  "Raleway", "Helvetica", "Arial", sans-serif;
+                display: inline-block;
+                text-decoration: none;
+                font-size: 12px;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $darkGrey;
+                outline: 0;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+
+                &:hover {
+                    color: $lightColor;
+                    background: $hoverColor;
+                }
+            }
+
+            &:hover {
+                .dropdown {
+                    opacity: 1;
+                    display: block;
+                    visibility: visible;
+                    @include transition(opacity $animation-speed linear);
+                    border: $border;
+                    border-radius: 4px;
+                    -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
+                    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
+
+                    li {
+                        display: block;
+                        line-height: 30px;
+                        a{
+                            font-size: 13px;
+                            line-height: 14px;
+                            padding: 12px 18px;
+                            text-transform: none;
+                            font-weight: 400;
+                            color: $primary-color;
+                            font-family:  "Montserrat", "Helvetica", "Arial", sans-serif;
+                        }
+                      
+                    }
+                }
+            }
+        }
+    }
+
+    ul.dropdown {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: 99;
+        min-width: 180px;
+        white-space: nowrap;
+        background: $lightColor;
+
+        li {
+            ul.dropdown {
+                @extend .dropdown;
+            }
+        }
+    }
+}
+
+.showhide {
+    width: 60px;
+    height: 46px;
+    padding: 13px 0 0;
+    display: none;
+    float: right;
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    em {
+        width: 20px;
+        height: 3px;
+        margin: 3.5px 20px 0;
+        float: right;
+        background: $primary-color;
+    }
+}
+
+.header-extras {
+    float: right;
+    z-index: 201;
+    padding-left: 4px;
+    margin-left: 14px;
+    line-height: 74px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            float: left;
+            margin-left: 20px;
+            border: 0;
+        }
+    }
+}
+
+.topbar-dropdown {
+    color: $primary-color;
+    float: left;
+    font-size: 13px;
+    font-weight: 400;
+
+    a:not(.btn),
+    .title {
+        font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+        font-size: 12px;
+        position: relative;
+        display: block;
+        font-style: normal;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        i {
+            font-size: 14px;
+            position: relative;
+
+            &::nth-of-type(2) {
+                visibility: hidden;
+                position: absolute;
+            }
+        }
+
+        &.toggle-active {
+            i {
+                &::nth-of-type(2) {
+                    visibility: visible;
+                    position: relative;
+                }
+
+                &::nth-of-type(1) {
+                    visibility: hidden;
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    .btn {
+        font-size: 13px;
+        line-height: 1.3;
+        margin-bottom: 0;
+    }
+
+    .title {
+        line-height: inherit !important;
+        letter-spacing: 1px;
+        padding: 0;
+        color: $darkGrey;
+    }
+
+    &:hover {
+        .dropdown-list {
+            opacity: 1;
+            transform: scale(1);
+            -moz-transform: scale(1);
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            visibility: visible;
+        }
+    }
+
+    .dropdown-list {
+        right: -10px;
+        margin-top: 0;
+        position: absolute;
+        width: auto;
+        left: auto;
+        top: auto;
+        border-radius: 3px;
+        background-color: #ffffff;
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: solid 1px #eee;
+        padding: 0 16px;
+        text-align: left;
+        opacity: 0;
+        -webkit-transition: all 300ms ease-out;
+        transition: all 300ms ease-out;
+        -ms-transition: all 300ms ease-out;
+        transform-origin: 50% 0% 0;
+        -moz-transform-origin: 50% 0% 0;
+        -webkit-transform-origin: 50% 0% 0;
+        -ms-transform-origin: 50% 0% 0;
+        z-index: 1;
+        visibility: hidden;
+
+        .list-entry {
+            text-transform: none;
+            font-weight: 400;
+            line-height: 30px;
+    white-space: nowrap;
+    display: block;
+    color: $primary-color;
+    padding: 2px 0;
+    border-top: 1px #f0f0f0 solid;
+
+    &::hover {
+        color: $darkGrey;
+    }
+        }
+
+        &::before {
+            content: " ";
+            width: 0;
+            height: 0;
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-bottom: 9px solid $lightColor;
+            top: -9px;
+            right: 34px;
+            position: absolute;
+        }
+    }
+}
+.sticky {
+    background: #fff;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+    position: fixed;
+    top: 0;
+    height: 120px;
+    width: 100%;
+}

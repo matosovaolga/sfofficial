@@ -1,0 +1,57 @@
+@import './../variables';
+@import './../mixin';
+:host {
+    border-radius: 5px;
+    color: $lightColor;
+    display: block;
+    font-size: 18px;
+    height: 54px;
+    line-height: 53px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-weight: 300;
+
+    @include transition(all $animation-speed linear);
+
+    &:hover{
+        color: $darkGrey;
+
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(0deg, $btnFirstColor 0%, $btnSecondColor 100%);
+        background-image: -moz-linear-gradient(0deg, $btnFirstColor 0%, $btnSecondColor 100%);
+        background-image: -webkit-linear-gradient(0deg, $btnFirstColor 0%, $btnSecondColor 100%);
+        border-radius: 5px;
+    }
+    &:after {
+        opacity: 0;
+        visibility: hidden;
+        background: $lightColor;
+        border-radius: 5px;
+        content: "";
+        height: 50px;
+        left: 50%;
+        margin-top: 0;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: calc(100% - 4px);
+    }
+    a{
+        z-index: 1;
+        position: relative;
+    }
+}
