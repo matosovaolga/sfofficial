@@ -21,6 +21,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {SFScrollToTopComponent} from "./common/scrollToTop/scrollToTop.component";
+import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     SFHomeComponent,
     SFBtnComponent,
     CarouselHolderComponent,
-    SFContactComponent
+    SFContactComponent,
+    SFScrollToTopComponent
   ],
   imports: [
     BrowserModule,

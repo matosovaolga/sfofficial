@@ -62,7 +62,7 @@
 
             &.active > a,
             &:hover > a {
-                color: $darkGrey;
+                color: $hoverColor;
             }
 
             &.dropdown {
@@ -90,8 +90,8 @@
                 -webkit-tap-highlight-color: transparent;
 
                 &:hover {
-                    color: $lightColor;
-                    background: $hoverColor;
+                    
+                    color: $hoverColor;
                 }
             }
 
@@ -117,6 +117,10 @@
                             font-weight: 400;
                             color: $primary-color;
                             font-family:  "Montserrat", "Helvetica", "Arial", sans-serif;
+                            &:hover {
+                    
+                                color: $hoverColor;
+                            }
                         }
                       
                     }
@@ -252,7 +256,7 @@
 
     .dropdown-list {
         right: -10px;
-        margin-top: 0;
+        margin-top: -12px;
         position: absolute;
         width: auto;
         left: auto;
@@ -285,9 +289,9 @@
     padding: 2px 0;
     border-top: 1px #f0f0f0 solid;
 
-    &::hover {
-        color: $darkGrey;
-    }
+            &:hover {
+                color: lighten($darkGrey, 10%);
+            }
         }
 
         &::before {

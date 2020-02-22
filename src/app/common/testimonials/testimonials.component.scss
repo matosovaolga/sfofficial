@@ -3,7 +3,7 @@
 
 .singleTestimonial {
         border: $border;
-        padding: 40px 25px 40px;
+        padding: 40px 25px 30px;
         z-index: 2;
         position: relative;
         background: $lightColor;
@@ -25,6 +25,7 @@
         .authorComment{
             color: lighten($lightGrey, 10%);
             font-size: 15px;
+            margin-bottom: 10px;
             
             &::before {
                 color: $lightGrey;

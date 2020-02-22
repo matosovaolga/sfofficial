@@ -58,8 +58,8 @@ export class CarouselHolderComponent {
     }, {
       id: 3,
       comment: 'Oleksandr and his team are EXCELLENT! We continue to rely on them weekly for all of our needs. Always prompt and any issues are resolved quickly and professionally. Excited to continue with him and his team.',
-      author: '',
-      company:'',
+      author: 'Some Good Customer',
+      company:'Lttd',
       src: '',
       alt: '',
       title: ''
@@ -67,8 +67,8 @@ export class CarouselHolderComponent {
     }, {
       id: 4,
       comment: 'I required some independent feedback and these guys were exceptional - very quick to respond and invaluable feedback abou Yii / Laravel! Big thanks!',
-      author: '',
-      company:'',
+      author: 'One more sutisfited',
+      company: 'Apple Tv',
       src: '',
       alt: '',
       title: ''

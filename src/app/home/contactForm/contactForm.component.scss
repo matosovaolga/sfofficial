@@ -1,14 +1,18 @@
 @import "./../../app.component.scss";
+
 .contact_content {
-    background: #fff;
-    h3.contact_title{
-        color: #1c1c1c;
+    background: $lightColor;
+
+    h3.contact_title {
+        color: $darkGrey;
         font-weight: 400;
-        font-family: Montserrat, sans-serif;
+        font-family: $second-font-family;
         margin-bottom: 40px;
-        -webkit-font-smoothing:antialiased;
-       &::before {
-            background: #cfcfcf;
+        -webkit-font-smoothing: antialiased;
+        font-size: 25px;
+
+        &::before {
+            background: $borderColor;
             top: -11px;
             content: "";
             height: 1px;
@@ -17,20 +21,24 @@
             width: 50px;
         }
     }
+
     .wrapper {
         padding-bottom: 50px;
         padding-right: 40px;
         padding-top: 40px;
     }
+
     .abform_area {
         .abinput_group {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             width: 49.1%;
             height: 50px;
+
             &:nth-child(even) {
                 margin-left: 1.8%;
             }
-            &.msg{
+
+            &.msg {
                 width: 100%;
                 clear: both;
                 height: 150px;
@@ -41,65 +49,62 @@
                 padding: 10px 22px;
                 width: 100%;
                 background: none;
-                color: #333333;
-                border: none!important;
+                color: $darkGrey;
+                border: none !important;
                 padding-left: 0;
-                font-family: roboto;
+                font-family: $primary-font-family;
             }
-            textarea{
-                border: none;
+
+            textarea {
+                @extend  input;
                 resize: none;
-                width: 100%;
-                padding: 10px 22px;
                 margin-bottom: 0;
-                background: none;
-                color: #333333;
-                padding-left: 0;
                 height: 150px;
                 padding-right: 90px;
             }
 
-            
-
-            ::ng-deep .mat-form-field-label  {
-               font-size: 14px;
-               color: #878787;
-               font-family: 'Open Sans';
+            ::ng-deep .mat-form-field-label {
+                font-size: 14px;
+                color: $lightGrey;
+                font-family: $primary-font-family;
+                top: 1.84375em;
             }
         }
-        button{
+
+        button {
+            @include transition(color $animation-speed linear);
             border: none;
-            
-                background: transparent;
-                bottom: 30px;
-                color: #31e2cf;
-                font-size: 80px;
-                height: auto;
-                position: absolute;
-                right: 50px;
-                &:hover {
-                    color: #088ce5;
-                }
-            
+            background: transparent;
+            bottom: 30px;
+            color: $btnFirstColor;
+            font-size: 80px;
+            height: auto;
+            position: absolute;
+            right: 50px;
+
+            &:hover {
+                color: $btnSecondColor;
+            }
         }
-    } 
+    }
 }
-
-
 
 .contact_address {
     align-items: flex-start;
-    box-shadow: 0px 16px 42px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     flex-flow: column nowrap;
     height: 100%;
     justify-content: center;
     padding: 45px 35px;
-    h4{
-        color: #1c1c1c;
+
+    h4 {
+        color: $darkGrey;
         margin-bottom: 50px;
+        font-size: 25px;
+
         &::before {
-            background: #cfcfcf;
+            background: $borderColor;
             top: -11px;
             content: "";
             height: 1px;
@@ -108,13 +113,15 @@
             width: 50px;
         }
     }
+
     p {
         font-size: 15px;
         line-height: 25px;
         margin-bottom: 25px;
         padding-left: 35px;
-        color: #666666;
-        font-family: roboto;
+        color: $primary-color;
+        font-family: $primary-font-family;
+
         i {
             font-size: 20px;
             left: 0;
@@ -124,20 +131,10 @@
     }
 
     .web > a {
-        color: #666666;
+        color: $primary-color;
+
         &:hover {
-            text-decoration: underline;
-        }
-    }
-    .social_contact {
-        margin-top: 50px;
-        a {
-            color: #666666;
-            font-size: 18px;
-            margin-right: 12px;
-            &:hover {
-                color: #131418;
-            }
+            color: $btnFirstColor;
         }
     }
 }
@@ -146,7 +143,6 @@
     border: none;
 }
 
-.contact_content ::ng-deep .mat-form-field-appearance-legacy  .mat-form-field-underline{
-
-background: #d2d2d2;
+.contact_content ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: $lightgreyBg;
 }
