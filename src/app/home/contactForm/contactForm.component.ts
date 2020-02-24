@@ -9,59 +9,29 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./contactForm.component.scss']
 })
 export class SFContactComponent {
+  user = {};
+  sendSuccess: boolean = false;
+  constructor(private connectionService: ConnectionService) {}
 
-contactForm: FormGroup;
-disabledSubmitButton: boolean = true;
+  onSubmit(form) {
 
-  @HostListener('input') oninput() {
+    this.connectionService.sendMessage(!this.user).subscribe(() => {
+      this.sendSuccess = true;
+      setTimeout(() => {
+        this.sendSuccess = false;
+        }, 5000);
+        form.resetForm();
 
-    if (this.contactForm.valid) {
-      this.disabledSubmitButton = false;
-    }
-  }
-
-  constructor(fb: FormBuilder, private connectionService: ConnectionService) {
-
-
-  this.contactForm = fb.group({
-    'contactFormName': ['', Validators.required],
-    'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
-    'contactFormSubject': ['', Validators.required],
-    'contactFormPhone': [''],
-    'contactFormMessage': ['', Validators.required]
-    });
-  }
-
-  ngOnInit() {
-
-  }
-
-  get name() {
-    return this.contactForm.get('contactFormName');
-  }
-  get email() {
-    return this.contactForm.get('contactFormEmail');
-  }
-  get subject() {
-    return this.contactForm.get('contactFormSubject');
-  }
-  get phone() {
-    return this.contactForm.get('contactFormPhone');
-  }
-  get message() {
-    return this.contactForm.get('contactFormMessage');
-  }
-
-
-  onSubmit() {
-    this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
-      alert('Your message has been sent.');
-      this.contactForm.reset();
-      this.disabledSubmitButton = true;
     }, (error: any) => {
+      this.sendSuccess = true;
+      setTimeout(() => {
+        this.sendSuccess = false;
+        form.resetForm();
+        }, 5000);
+       
       console.log('Error', error);
     });
-  
+
   }
-    
+
 }

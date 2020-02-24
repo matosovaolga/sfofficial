@@ -6,6 +6,14 @@
     transition: $property;
 }
 
+@mixin backgroundGradient($property, $firstColor, $secondColor) {
+    background-image: linear-gradient($property, $firstColor, $secondColor);
+    background-image: -moz-linear-gradient($property, $firstColor, $secondColor);
+    background-image: -webkit-linear-gradient($property, $firstColor, $secondColor);
+    background-image: -ms-linear-gradient($property, $firstColor, $secondColor);
+   
+}
+
 @mixin respond-to($breakpoint) {
     // If the key exists in the map
       @if map-has-key($breakpoints, $breakpoint) {

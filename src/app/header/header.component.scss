@@ -1,5 +1,32 @@
 @import "~../app.component.scss";
 
+:host {
+    display: block;
+    position: relative;
+
+    // Only apply sticky override if supported by the browser.
+}
+
+.stuck_menu {
+    top: -145px;
+}
+
+.header-sticky {
+    @include transition(top 0.8s ease-in-out);
+
+    width: 100%;
+    top: 0;
+    background-color: $lightColor !important;
+    position: fixed;
+    -webkit-box-shadow: 0 12px 6px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 6px rgba(0, 0, 0, 0.06);
+    padding-bottom: 10px;
+
+    #logo {
+        font-size: 20px;
+    }
+}
+
 %boxsizing {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -7,12 +34,12 @@
 }
 
 .logo {
+    @include transition(all $animation-speed linear);
+
     float: left;
     font-size: 28px;
     position: relative;
     z-index: 1;
-
-    @include transition(all $animation-speed linear);
 
     img {
         height: 74px;
@@ -21,12 +48,11 @@
 }
 
 .menuzord {
+    @extend %boxsizing;
+
     width: 100%;
-    padding: 0 30px;
     float: left;
     position: relative;
-
-    @extend %boxsizing;
 
     * {
         @extend %boxsizing;
@@ -78,7 +104,7 @@
 
             a {
                 padding: 26px 16px;
-               font-family:  "Raleway", "Helvetica", "Arial", sans-serif;
+                font-family: $third-font-family;
                 display: inline-block;
                 text-decoration: none;
                 font-size: 12px;
@@ -90,7 +116,6 @@
                 -webkit-tap-highlight-color: transparent;
 
                 &:hover {
-                    
                     color: $hoverColor;
                 }
             }
@@ -100,7 +125,9 @@
                     opacity: 1;
                     display: block;
                     visibility: visible;
+
                     @include transition(opacity $animation-speed linear);
+
                     border: $border;
                     border-radius: 4px;
                     -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
@@ -109,20 +136,20 @@
                     li {
                         display: block;
                         line-height: 30px;
-                        a{
+
+                        a {
                             font-size: 13px;
                             line-height: 14px;
                             padding: 12px 18px;
                             text-transform: none;
                             font-weight: 400;
                             color: $primary-color;
-                            font-family:  "Montserrat", "Helvetica", "Arial", sans-serif;
+                            font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+
                             &:hover {
-                    
                                 color: $hoverColor;
                             }
                         }
-                      
                     }
                 }
             }
@@ -175,6 +202,7 @@
     padding-left: 4px;
     margin-left: 14px;
     line-height: 74px;
+    display: none;
 
     ul {
         list-style: none;
@@ -283,11 +311,11 @@
             text-transform: none;
             font-weight: 400;
             line-height: 30px;
-    white-space: nowrap;
-    display: block;
-    color: $primary-color;
-    padding: 2px 0;
-    border-top: 1px #f0f0f0 solid;
+            white-space: nowrap;
+            display: block;
+            color: $primary-color;
+            padding: 2px 0;
+            border-top: 1px #f0f0f0 solid;
 
             &:hover {
                 color: lighten($darkGrey, 10%);
@@ -307,9 +335,10 @@
         }
     }
 }
+
 .sticky {
     background: #fff;
-    box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08);
     position: fixed;
     top: 0;
     height: 120px;

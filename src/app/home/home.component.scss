@@ -1,7 +1,7 @@
 @import "~../app.component.scss";
 
 .app_banner {
-    padding-top: 280px;
+    padding-top: 160px;
     padding-bottom: 250px;
     position: relative;
 
@@ -21,30 +21,32 @@
         z-index: 4;
         position: relative;
     }
+
     .app_img {
         position: relative;
         z-index: 4;
     }
+
     .app_img1 {
         position: absolute;
         right: -44px;
         top: -30px;
         z-index: 1;
     }
+
     .app_img2 {
         position: absolute;
         top: 110px;
         left: 0;
     }
 }
- .shape1 {
-    background-image: linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -moz-linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -webkit-linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -ms-linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
+.shape1 {
+    @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
     position: absolute;
-    left: -340px;
-    top: -50px;
+    left: -390px;
+    top: 30px;
     width: 540px;
     height: 510px;
     border-radius: 100px;
@@ -53,13 +55,12 @@
     -o-transform: rotate(-47deg);
     transform: rotate(-47deg);
 }
+
 .app_banner .shape2 {
-    background-image: linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -moz-linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -webkit-linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -ms-linear-gradient( 45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+    @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
     position: absolute;
-    right: -220px;
+    right: -415px;
     top: -240px;
     width: 810px;
     height: 1100px;
@@ -70,13 +71,12 @@
     transform: rotate(-58deg);
     z-index: 1;
 }
+
 .app_banner .shape3 {
-    background-image: linear-gradient( 20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -moz-linear-gradient( 20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -webkit-linear-gradient( 20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-    background-image: -ms-linear-gradient( 20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+    @include backgroundGradient(20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
     position: absolute;
-    right: -220px;
+    right: -415px;
     top: -253px;
     width: 804px;
     height: 1190px;
@@ -88,25 +88,20 @@
     z-index: 0;
 }
 
-
 .app_about {
     padding-top: 30px;
+
     .intro_common {
         border: $border;
         padding: 30px;
         position: relative;
         margin-bottom: 15px;
 
-       
-
         &::after {
-
+            @include backgroundGradient(0deg, $btnFirstColor 0%, $btnThirdColor 100%);
             @include transition(all $animation-speed linear);
+
             content: "";
-            background-image:linear-gradient( 0deg, $btnFirstColor 0%, $btnThirdColor 100%);
-            background-image: -moz-linear-gradient( 0deg,$btnFirstColor 0%, $btnThirdColor 100%);
-            background-image: -webkit-linear-gradient( 0deg, $btnFirstColor 0%, $btnThirdColor 100%);
-            background-image: -ms-linear-gradient( 0deg, $btnFirstColor 0%, $btnThirdColor 100%);
             position: absolute;
             left: 0;
             top: 0;
@@ -115,13 +110,15 @@
             visibility: hidden;
             opacity: 0;
         }
-        &:hover{
+
+        &:hover {
             &::after {
                 visibility: visible;
                 opacity: 1;
             }
+
             .intro_text p,
-            .intro_text h5{ 
+            .intro_text h5 {
                 color: $lightColor;
             }
 
@@ -129,12 +126,12 @@
                 opacity: 1;
                 visibility: visible;
             }
-
         }
 
         .intro_text {
             z-index: 2;
             position: relative;
+
             h5 {
                 color: $darkGrey;
                 text-transform: uppercase;
@@ -143,12 +140,13 @@
                 margin-bottom: 15px;
             }
 
-            p{
+            p {
                 font-size: 14px;
             }
         }
 
         span {
+            @include backgroundGradient(0deg, $btnFirstColor 0%, $btnThirdColor 100%);
             align-items: center;
             color: #fff;
             display: flex;
@@ -161,10 +159,6 @@
             width: 80px;
             z-index: 2;
             border-radius: 50%;
-            background-image:linear-gradient( 0deg, $btnFirstColor 0%, $btnThirdColor 100%);
-            background-image: -moz-linear-gradient( 0deg,$btnFirstColor 0%, $btnThirdColor 100%);
-            background-image: -webkit-linear-gradient( 0deg, $btnFirstColor 0%, $btnThirdColor 100%);
-            background-image: -ms-linear-gradient( 0deg, $btnFirstColor 0%, $btnThirdColor 100%);
             margin-bottom: 30px;
 
             &::before {
@@ -189,9 +183,11 @@
                 width: 50px;
                 z-index: 1;
                 position: relative;
+
                 &:not(:root) {
                     overflow: hidden;
                 }
+
                 path,
                 rect {
                     fill: $lightColor;
@@ -199,19 +195,19 @@
             }
         }
     }
+
     .statistics {
         padding-top: 40px;
+
         i,
         fa-icon {
             color: #05dbd1;
             font-size: 40px;
         }
-        
+
         h2 {
             font-size: 50px;
             padding-bottom: 0;
         }
     }
 }
-
-
