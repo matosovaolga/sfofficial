@@ -10,6 +10,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class SFContactComponent {
   user = {};
+  errorText: boolean = false;
   sendSuccess: boolean = false;
   constructor(private connectionService: ConnectionService) {}
 
@@ -19,17 +20,15 @@ export class SFContactComponent {
       this.sendSuccess = true;
       setTimeout(() => {
         this.sendSuccess = false;
-        }, 5000);
+        }, 10000);
         form.resetForm();
 
     }, (error: any) => {
-      this.sendSuccess = true;
       setTimeout(() => {
-        this.sendSuccess = false;
+        this.errorText = false;
         form.resetForm();
-        }, 5000);
-       
-      console.log('Error', error);
+        }, 10000);
+       this.errorText = error.statusText;
     });
 
   }

@@ -70,7 +70,8 @@
                         <button color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect text-uppercase"
                             ><i class="ion-ios-navigate"></i></button>
                     </form>
-                    <div *ngIf="sendSuccess">Success</div>
+                    <div class="successPopover" [ngClass]="{messageActive: successPopover}" >Mesasge was sent successfully</div>
+                    <div class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
                     <!--/form-->
                 </div>
             </div>

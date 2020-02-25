@@ -8,7 +8,7 @@ body {
     font-size: 15px;
     line-height: 26px;
     margin: 0 auto;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $primary-font-family;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -81,7 +81,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $primary-font-family;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
     -webkit-font-smoothing:antialiased;
@@ -89,14 +89,14 @@ h6,
 
 P,
 .p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $primary-font-family;
     font-size: 15px;
     line-height: 26px;
-    color: #666;
+    color: $primary-color;
 }
 a {
     text-decoration: none;
-    color: #333;
+    color: $darkGrey;
 }
 a:hover,
 a:focus,
@@ -212,4 +212,37 @@ h1,
 }
 .pos_relative {
     position: relative;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-text-fill-color: $primary-color !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.successPopover {
+    @include transition(opacity $animation-speed linear);
+    margin-top: 20px;
+    background: lighten($btnThirdColor, 30%);
+    color: $primary-color;
+    padding:15px 20px;  
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+
+}
+.errorPopover {
+    @extend .successPopover;
+    background: #F50057;
+    border: none;
+    color: $lightColor;
+}
+
+
+.messageActive {
+    visibility: visible;
+    opacity: 1;
 }
