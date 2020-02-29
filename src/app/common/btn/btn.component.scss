@@ -1,6 +1,12 @@
 @import './../variables';
 @import './../mixin';
 :host {
+    @include respond-to('medium') {
+        max-width: 340px;
+    }
+    @include respond-to('small') {
+        max-width: 100%;
+    }
     border-radius: 5px;
     color: $lightColor;
     display: block;

@@ -73,6 +73,10 @@
         }
 
         button {
+            @include respond-to('medium-large') {
+                right: 10px;
+                font-size: 50px;
+            }
             @include transition(color $animation-speed linear);
             border: none;
             background: transparent;

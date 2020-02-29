@@ -96,7 +96,7 @@ P,
 }
 a {
     text-decoration: none;
-    color: $darkGrey;
+    color: $darkGrey    §A;
 }
 a:hover,
 a:focus,
@@ -144,6 +144,9 @@ h1,
 .h5 {
     font-size: 18px;
     line-height: 28px;
+    @include respond-to('medium-large') {
+        font-size: 15px;
+    }
 }h6,
 .h6 {
     font-size: 16px;
@@ -182,6 +185,9 @@ h1,
 }
 .section_padding {
     padding: 120px 0 130px;
+    @include respond-to('medium-large') {
+        padding: 60px 0;
+    }
 }
 .section_padding2 {
     padding: 130px 0;

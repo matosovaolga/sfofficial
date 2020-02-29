@@ -13,7 +13,7 @@ export class CarouselHolderComponent {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    autoplay: false,
+    autoplay: true,
     margin: 50,
     navText: [ '<span class="leftArrow"></span>', '<span class="rightArrow"></span>' ],
 
@@ -26,10 +26,10 @@ export class CarouselHolderComponent {
               stagePadding: 0
           },
           480: {
-              items: 1,
+              items: 1
           },
           992: {
-              items: 2,
+              items: 2
           }
       },
     nav: true

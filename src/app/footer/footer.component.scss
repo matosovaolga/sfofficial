@@ -1,5 +1,8 @@
 @import "~../app.component.scss";
 .app_footer {
+    @include respond-to('medium') {
+        padding: 10px 0;
+    }
     background: #f8f8f8;
     padding: 50px 0;
    p {
@@ -11,6 +14,12 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+
+        img {
+            @include respond-to('small') {
+                width:60px;
+            }
+        }
     }
 
     .order-1 {
@@ -54,6 +63,9 @@
     }
 }
 .overlay {
+    @include respond-to('small') {
+        display: none;
+    }
     background: #f1f1f1;
     width: 60%;
     position: absolute;
@@ -61,8 +73,19 @@
     top: 0;
     height: 100%;
 }
+
+.widget {
+    ul {
+        @include respond-to('small') {
+            margin-bottom: 20px;
+        }
+    }
+}
 .widget .widget-title, 
 .widget > h4 {
+    @include respond-to('small') {
+        margin-bottom: 10px;
+    }
     font-family: "Open Sans";
     font-size: 14px;
     font-style: normal;
@@ -85,6 +108,9 @@
     }
 }
 .footer-content {
+    @include respond-to('small') {
+        padding: 30px 0 20px 0;
+    }
     padding: 60px 0 40px 0;
     border-bottom: 1px solid #e5e5e5;
 }

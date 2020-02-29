@@ -1,6 +1,10 @@
 @import "~../app.component.scss";
 
 .app_banner {
+    @include respond-to('medium') {
+        padding-top: 120px;
+        padding-bottom:     50px;
+    }
     padding-top: 160px;
     padding-bottom: 250px;
     position: relative;
@@ -11,8 +15,8 @@
         line-height: 65px;
         margin-bottom: 30px;
         @include respond-to('medium-large') {
-            font-size: 37px;
-            line-height: 55px;
+            font-size: 30px;
+            line-height: 50px;
           }
     }
 
@@ -29,6 +33,9 @@
     .app_img {
         position: relative;
         z-index: 4;
+        @include respond-to('medium') {
+            display: none;
+        }
     }
 
     .app_img1 {
@@ -36,6 +43,9 @@
         right: -44px;
         top: -30px;
         z-index: 1;
+        @include respond-to('medium') {
+            display: none;
+        }
     }
 
     .app_img2 {
@@ -61,6 +71,9 @@
 }
 
 .app_banner .shape2 {
+    @include respond-to('medium') {
+        right: -94%;
+    }
     @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
     position: absolute;
@@ -73,10 +86,13 @@
     -ms-transform: rotate(-58deg);
     -o-transform: rotate(-58deg);
     transform: rotate(-58deg);
-    z-index: 1;
+    z-index: 0;
 }
 
 .app_banner .shape3 {
+    @include respond-to('medium') {
+        right: -94%;
+    }
     @include backgroundGradient(20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
     position: absolute;
@@ -89,7 +105,7 @@
     -ms-transform: rotate(-58deg);
     -o-transform: rotate(-58deg);
     transform: rotate(-58deg);
-    z-index: 0;
+    z-index: -1;
 }
 
 .app_about {
@@ -100,6 +116,7 @@
         padding: 30px;
         position: relative;
         margin-bottom: 15px;
+        height: calc(100% - 20px);
 
         &::after {
             @include backgroundGradient(0deg, $btnFirstColor 0%, $btnThirdColor 100%);
@@ -202,16 +219,30 @@
 
     .statistics {
         padding-top: 40px;
+        text-align: center;
+
+        
+        .section_title {
+            @include respond-to('medium-large') {
+                padding-bottom: 0;
+            }
+        }
 
         i,
         fa-icon {
             color: #05dbd1;
             font-size: 40px;
+            @include respond-to('medium-large') {
+                font-size: 30px;
+            }
         }
 
         h2 {
             font-size: 50px;
             padding-bottom: 0;
+            @include respond-to('medium-large') {
+                font-size: 40px;
+            }
         }
     }
 }
