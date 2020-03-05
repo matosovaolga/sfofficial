@@ -1,0 +1,111 @@
+@import "../app.component.scss";
+
+.home2_welcome .section_title2 {
+    margin-bottom: 50px;
+
+    h2::after {
+        background: #e4e4e4 none repeat scroll 0 0;
+        content: "";
+        height: 80px;
+        position: absolute;
+        right: -58px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+}
+
+.home2_welcome.service_page .img_area {
+    background: #fff;
+    box-shadow: none;
+    padding: 0;
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.servicesList {
+    @include backgroundGradient(90deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
+    padding: 35px 0;
+    margin: 60px 0 0;
+
+    .section_title2 {
+        color: $lightColor;
+
+        p {
+            color: $lightColor;
+        }
+    }
+}
+
+.intro_common {
+    padding: 10px 30px 30px;
+    position: relative;
+    margin-bottom: 15px;
+    height: calc(100% - 20px);
+
+    &:hover {
+        background: $lightColor;
+        cursor: pointer;
+
+        .intro_text {
+            h5,
+            p{
+                color: $primary-color;
+            }
+        }
+
+        span {
+            color: $primary-color;
+        }
+    }
+
+    .intro_text {
+        z-index: 2;
+        position: relative;
+
+        h5 {
+            color: $lightColor;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            color: $lightColor;
+        }
+    }
+
+    span {
+        color: $lightColor;
+        font-size: 58px;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+
+        i {
+            z-index: 1;
+            position: relative;
+        }
+
+        svg {
+            width: 50px;
+            z-index: 1;
+            position: relative;
+
+            &:not(:root) {
+                overflow: hidden;
+            }
+
+            path,
+            rect {
+                fill: $lightColor;
+            }
+        }
+    }
+}

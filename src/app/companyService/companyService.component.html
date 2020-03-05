@@ -1,32 +1,32 @@
-<section class="app_banner pos_relative">
-        <span class="shape1"></span>
-        <span class="shape2"></span>
-        <span class="shape3"></span>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1">
-                    <div class="banner_content">
-                        <h1 class="fw_600 color_252">WEB, MOBILE, CMS, E-COMMERCE & CLOUD SOLUTIONS</h1>
-                        <h5 class="title_20 color_55 opens pt_45 pb_60">StableFlow is a software development company driven to deliver uncompromising quality, efficiency, and customer service.
 
-We provide a full range of outsourcing services to create and support custom Web and Mobile applications.</h5>
-                        <ul class="app_link d_inline">
-                            <li class="google_play"><a href=""><span><i class="fa fa-android"></i>Google Play</span></a></li>
-                            <li class="app_store"><a href=""><span><i class="fa fa-apple"></i>App Store</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--/col-->
+<sf-banner  [title]="title"
+[text]="textBanner"></sf-banner>
+<section class="home2_welcome service_page">
+    <div class="container">
+        <div class="row section_title2">
+            <div class="col-lg-4">
+                <h2 class="color_10 pos_relative">What We Offer</h2>
+            </div>
+            <div class="col-lg-7 offset-lg-1">
+                <p>Phasellus et elit eget purus efficitur dignissim. Sed eget pretium quam, non rutrum nisi. Proin arcu dui, posuere id lacus vitae, accumsan egestas arcu. Sed massa libero, elementum a faucibus quis, molestie commodo justo. Quisque a lorem turpis. Praesent ante lectus, tempor sed venenatis et, tempor porta dui. Suspendisse potenti. </p>
+            </div>
+        </div>
 
-                <div class="col-lg-6  order-1 order-lg-2 pos_relative">
-                    <div class="app_img">
-                        <img src="images/app-demo-1.png" alt="app img" class="img-fluid app_img1">
-                        <img src="images/app-demo-2.png" alt="app img" class="img-fluid app_img2">
-                    </div>
+        <div class="row mt_50">
+            <div class="col-lg-5">
+                <h4 class="img_title color_33 roboto pb_25">We Offer Something New For Our Client and always we are trying to satisfy.</h4>
+                <p class="img_txt">Integer ac risus vel est facilisis sagittis sed eu velit. Proin et mi laoreet, tincidunt mauris vitae, egestas enim. In dignissim dui metus. Fusce interdum nisi nisi, a pellentesque purus aliquam id. Morbi eleifend sodales purus quis fringilla. Nullam massa magna, gravida nec tortor ac, vestibulum ultrices felis. <br><br> Integer ac risus vel est facilisis sagittis sed eu velit. Proin et mi laoreet, tincidunt mauris vitae, egestas enim.</p>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="img_area">
+                    <img src="../../assets/images/home2_welcome_img.jpg" alt="image" class="img-fluid">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- ======================================= 
     ==End banner section style== 
     =======================================-->
@@ -35,46 +35,81 @@ We provide a full range of outsourcing services to create and support custom Web
     <!-- ======================================= 
     ==start about section style== 
     =======================================-->
-    <section class="app_about section_padding">
+    <section class="servicesList section_padding">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section_title text-center pb_80">
-                        <h5 class="title_20 color_88">About Us</h5>
-                        <h2 class="fw_600 color_22 pt_15 pb_25">Amazing Features Satisfy you with Our Great Application</h2>
-                        <span class="line"></span>
-                    </div>
+            <div class="row section_title2 mb_70">
+                <div class="col-lg-4">
+                    <h2 class="color_10 pos_relative">Our Services</h2>
+                </div>
+                <div class="col-lg-8">
+                    <p>Phasellus et elit eget purus efficitur dignissim. Sed eget pretium quam, non rutrum nisi. Proin arcu dui, posuere id lacus vitae, accumsan egestas arcu. Sed massa libero, elementum a faucibus quis, molestie commodo justo. Quisque a lorem turpis. Praesent ante lectus, tempor sed venenatis et, tempor porta dui. Suspendisse potenti.</p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="intro_common text-center">
-                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-loop"></i></span>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/uxdesign">
+                        <span  class="d_inline radius_100p pos_relative"><i class="ion-android-color-palette"></i></span>
                         <div class="intro_text">
-                            <h5 class="pt_20 pb_10">Fast Loading</h5>
-                            <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
+                            <h5 class="pt_20 pb_10">UX DESIGN AND PROTOTYPING</h5>
+                            <p class="color_7c7">We offer long-standing design expertise to incrementally produce stunning experiences from raw sketches to working prototypes.</p>
                         </div>
                     </div>
                 </div>
 
                 <!--intro box-2-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="intro_common text-center">
-                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-paper-outline"></i></span>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/software">
+                        <span class="d_inline radius_100p pos_relative"><i class="ion-laptop"></i></span>
                         <div class="intro_text">
-                            <h5 class="pt_20 pb_10">Simple & clean UI</h5>
-                            <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
+                            <h5 class="pt_20 pb_10">Custom Software Development</h5>
+                            <p class="color_7c7">Not every business is the same, neither their requirements. Our proficient development team will devise the best on-demand custom solutions for your business.</p>
                         </div>
                     </div>
                 </div>
 
                 <!--intro box-3-->
-                <div class="col-lg-4 col-md-6">
-                    <div class="intro_common text-center">
-                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-browsers-outline"></i></span>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/mobileapp">
+                        <span class="d_inline radius_100p pos_relative"><i class="ion-iphone"></i></span>
                         <div class="intro_text">
-                            <h5 class="pt_20 pb_10">Multi themes support</h5>
+                            <h5 class="pt_20 pb_10">MOBILE APPLICATION DEVELOPMENT</h5>
+                            <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/appintegration">
+                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-reload"></i></span>
+                        <div class="intro_text">
+                            <h5 class="pt_20 pb_10">APPLICATION INTEGRATION</h5>
+                            <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/qa">
+                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-speedometer-outline"></i></span>
+                        <div class="intro_text">
+                            <h5 class="pt_20 pb_10">INDEPENDENT QA AND TESTING</h5>
+                            <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/discovery">
+                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-pie"></i></span>
+                        <div class="intro_text">
+                            <h5 class="pt_20 pb_10">Discovery Phase</h5>
+                            <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="intro_common" routerLink="/services/consulting">
+                        <span class="d_inline radius_100p pos_relative"><i class="ion-ios-cog-outline"></i></span>
+                        <div class="intro_text">
+                            <h5 class="pt_20 pb_10">SOFTWARE ARCHITECTURE & TECHNOLOGY CONSULTING</h5>
                             <p class="color_7c7">Praesent turpis mauris, aliquet id dolor Gravida adipiscing lectus ut rutrum Aenean at posuere risus.</p>
                         </div>
                     </div>

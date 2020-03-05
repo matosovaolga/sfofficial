@@ -32,40 +32,50 @@
 
                     <nav class="menuzord-menu">
                         <li  >
-                            <a routerLink="/" class="active" routerLinkActive="active">Home</a>
+                            <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}" >Home</a>
                            
                         </li>
                         <li >
-                            <a routerLink="/services">Services</a>
+                            <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Services</a>
                         </li>
+                      
                         <li >
-                            <a routerLink="/solutions">Solutions</a>
-                            <ul class="dropdown">
-                                <li><a href="">Web Development</a></li>
-                                <li><a href="">Mobile applications</a></li>
-                                <li><a href="">CMS Solutions</a></li>
-                                <li><a href="">E-commerce</a></li>
-                                <li><a href="">Cloud Solutions</a></li>
-                                <li><a href="">Business Process Automation</a></li>
-                                <li><a href="">Social Networking</a></li>
-                                <li><a href="">Media Content Distribution</a></li>
+                            <a routerLink="/expertises" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Expertises</a>
+                            <ul class="dropdown multi">
+                                <li>Bussines solutions
+                                    <ul>    
+                                         <li><a href="">Web and Enterprise Portals</a></li>
+                                        <li><a href="">Enterprise Mobile Apps</a></li>
+                                        <li><a href="">Ecommerce</a></li>
+                                        <li><a href="">Social Networking</a></li>
+                                        <li><a href="">Business Process Automation</a></li>
+                                    </ul>
+                                </li>
+                                <li>Development stack
+                                        <ul>    
+                                                <li><a href="">Open Source</a></li>
+                                               <li><a href="">Mobile platforms</a></li>
+                                               <li><a href="">NodeJS</a></li>
+                                               <li><a href="">Cloud Technologies</a></li>
+                                           </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li >
-                            <a routerLink="/expertises">Expertises</a>
-                            <ul class="dropdown">
-                                <li><a href="">Web</a></li>
-                                <li><a href="">Mobile</a></li>
-                                <li><a href="">Cloud</a></li>
-                                <li><a href="">API</a></li>
-                            </ul>
-                        </li>
-                        <li >
-                            <a routerLink="/works">Work</a>
+                        <li>
+                                <a>Engagement Models</a>
+                                <ul class="dropdown">
+                                                <li><a href="">Project-based Outsourcing</a></li>
+                                               <li><a href="">Dedicated Team</a></li>
+                                               <li><a href="">Skills Augmentation</a></li>
+                                           </ul>
                         </li>
                     
                         <li>
-                            <a routerLink="/vacancies">company</a>
+                            <a routerLink="/vacancies" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">company</a>
                             <ul class="dropdown">
                                 <li><a href="">About Us</a></li>
                                 <li><a href="">Vacancies</a></li>
@@ -74,7 +84,8 @@
                             </ul>
                         </li>
                         <li >
-                            <a routerLink="/contact">Contact</a>
+                            <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Contact</a>
                         </li>
                     </nav>
                 </div>

@@ -25,6 +25,8 @@
     &::after,
     &::before {
         @include transition(all $animation-speed cubic-bezier(0.55, 0, 0.1, 1));
+        @include transform(scale(0));
+
         display: block;
         content: ' ';
         height: 100%;
@@ -34,33 +36,32 @@
         left: 0;
         z-index: 1;
         background-color: $btnFirstColor;
-        -webkit-transform: scale(0);
-        transform: scale(0);
         border-radius: 100px;
     }
 
     &::before {
         @include transition(all $animation-speed cubic-bezier(0.165, 0.84, 0.44, 1));
+        @include transform(scale(1));
+
         background-color: rgba(255, 255, 255, 0.25);
-        -webkit-transform: scale(1);
-        transform: scale(1);
         opacity: 0;
         z-index: 2;
     }
 
     &:hover {
-       @include transition(box-shadow $animation-speed cubic-bezier(0.55, 0, 0.1, 1));
-       @include transition(background-color $animation-speed linear);
-       background-color: transparent !important;
+        @include transition(box-shadow $animation-speed cubic-bezier(0.55, 0, 0.1, 1));
+        @include transition(background-color $animation-speed linear);
+
+        background-color: transparent !important;
     }
 
     &:hover:after {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        @include transform(scale(1));
     }
 
     i {
         @include transition(color $animation-speed linear);
+
         line-height: 39px !important;
         width: 39px !important;
         height: 39px !important;
@@ -71,11 +72,11 @@
         position: relative;
         z-index: 10;
         background-color: transparent !important;
-      
     }
 }
 
 .show-scrollTop {
     @include transition(all $animation-speed ease-in-out);
+
     opacity: 1;
 }

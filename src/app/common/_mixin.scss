@@ -5,13 +5,24 @@
     -webkit-transition: $property;
     transition: $property;
 }
+@mixin transform($property) {
+    -o-transform: $property;
+    -moz-transform: $property;
+    -webkit-transform: $property;
+    transform: $property;
+  
+}
 
-@mixin backgroundGradient($property, $firstColor, $secondColor) {
-    background-image: linear-gradient($property, $firstColor, $secondColor);
-    background-image: -moz-linear-gradient($property, $firstColor, $secondColor);
-    background-image: -webkit-linear-gradient($property, $firstColor, $secondColor);
-    background-image: -ms-linear-gradient($property, $firstColor, $secondColor);
-   
+
+@mixin backgroundGradient($direction, $fromColor, $toColor) {
+    background-color: $toColor; /* Fallback Color */
+    background-image: -webkit-gradient(linear, $direction, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient($direction, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient($direction, $fromColor, $toColor); /* FF3.6 */
+    background-image:     -ms-linear-gradient($direction, $fromColor, $toColor); /* IE10 */
+    background-image:      -o-linear-gradient($direction, $fromColor, $toColor); /* Opera 11.10+ */
+    background-image:         linear-gradient($direction, $fromColor, $toColor);
+
 }
 
 @mixin respond-to($breakpoint) {

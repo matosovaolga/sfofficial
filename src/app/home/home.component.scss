@@ -56,6 +56,11 @@
 }
 
 .shape1 {
+    @include respond-to('small') {
+    top: 240px;
+    border-radius: 70px;
+    width: 450px;
+    }
     @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
     position: absolute;
@@ -71,9 +76,14 @@
 }
 
 .app_banner .shape2 {
+    @include respond-to('small') {
+        right: -905px;
+        top: -318px;
+    }
     @include respond-to('medium') {
         right: -94%;
     }
+   
     @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
     position: absolute;
@@ -90,9 +100,14 @@
 }
 
 .app_banner .shape3 {
+    @include respond-to('small') {
+        right: -905px;
+        top: -318px;
+    }
     @include respond-to('medium') {
         right: -94%;
     }
+  
     @include backgroundGradient(20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
     position: absolute;
@@ -119,7 +134,7 @@
         height: calc(100% - 20px);
 
         &::after {
-            @include backgroundGradient(0deg, $btnFirstColor 0%, $btnThirdColor 100%);
+            @include backgroundGradient(90deg, $btnFirstColor 0%, $btnThirdColor 100%);
             @include transition(all $animation-speed linear);
 
             content: "";

@@ -21,8 +21,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {SFScrollToTopComponent} from "./common/scrollToTop/scrollToTop.component";
-import { from } from 'rxjs';
+import {SFScrollToTopComponent} from './common/scrollToTop/scrollToTop.component';
+import {SFContactPageComponent} from './contactPage/contactPage.component';
+import {SFBannerComponent} from './common/banner/banner.component';
+import {SFServiceComponent} from './companyService/service-single/single-service.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,10 @@ import { from } from 'rxjs';
     SFBtnComponent,
     CarouselHolderComponent,
     SFContactComponent,
-    SFScrollToTopComponent
+    SFScrollToTopComponent,
+    SFContactPageComponent,
+    SFBannerComponent,
+    SFServiceComponent
   ],
   imports: [
     BrowserModule,

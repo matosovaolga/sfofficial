@@ -4,15 +4,23 @@ import { SFServicesComponent } from './companyService/companyService.component';
 import { SFExpertisesComponent } from './expertise/expertises.component';
 import { SFExpertiseComponent } from './expertise/expertise-single/expertise.component';
 import { SFHomeComponent } from './home/home.component';
-
+import {SFContactPageComponent} from './contactPage/contactPage.component';
+import {SFServiceComponent} from './companyService/service-single/single-service.component';
 
 const routes: Routes = [
   { path: 'services', component: SFServicesComponent },
+  { path: 'services/:id', component: SFServiceComponent },
   { path: 'expertises/:id', component: SFExpertiseComponent },
+
   {
     path: 'expertises',
     component: SFExpertisesComponent,
     data: { title: 'Heroes List' }
+  },
+  {
+    path: 'contacts',
+    component: SFContactPageComponent,
+    data: { title: 'Contact' }
   },
   { path: '',
     redirectTo: '',

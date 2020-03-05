@@ -1,0 +1,37 @@
+@import "../app.component.scss";
+.benefits{
+    &-sec{
+        position: relative;
+        padding: 30px 0;
+        &::before {
+            content: '';
+            
+            display: block;
+            z-index: -1;
+            
+            background: lighten($lightgreyBg, 5%);
+            position: absolute;
+            
+            border-radius: 0 430px 0 0;
+            top: 55px;
+            background: rgb(239, 244, 252);
+            background: -moz-linear-gradient(top, rgba(239, 244, 252, 1) 1%, rgba(255, 255, 255, 1) 32%);
+            background: -webkit-linear-gradient(top, rgba(239, 244, 252, 1) 1%, rgba(255, 255, 255, 1) 32%);
+            background: linear-gradient(to bottom, rgba(239, 244, 252, 1) 1%, rgba(255, 255, 255, 1) 32%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff4fc', endColorstr='#ffffff', GradientType=0);
+            
+            -webkit-transform: rotate(-9deg);
+            -ms-transform: rotate(-9deg);
+            -o-transform: rotate(-9deg);
+            transform: rotate(-9deg);
+            
+            right: -170px;
+            width: 200%;
+            height: 200%;
+            left: inherit;
+        }
+    }
+    &-box{
+        
+    }
+}

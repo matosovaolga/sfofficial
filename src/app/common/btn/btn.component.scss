@@ -7,7 +7,8 @@
     @include respond-to('small') {
         max-width: 100%;
     }
-    border-radius: 5px;
+    @include transition(all $animation-speed linear);
+    border-radius: $default-border-radius;
     color: $lightColor;
     display: block;
     font-size: 18px;
@@ -17,8 +18,6 @@
     position: relative;
     cursor: pointer;
     font-weight: 300;
-
-    @include transition(all $animation-speed linear);
 
     &:hover{
         color: $darkGrey;
@@ -30,32 +29,32 @@
     }
 
     &:before {
+        @include backgroundGradient(90deg, $btnFirstColor, $btnSecondColor);
+        
         content: "";
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(0deg, $btnFirstColor 0%, $btnSecondColor 100%);
-        background-image: -moz-linear-gradient(0deg, $btnFirstColor 0%, $btnSecondColor 100%);
-        background-image: -webkit-linear-gradient(0deg, $btnFirstColor 0%, $btnSecondColor 100%);
-        border-radius: 5px;
+        border-radius: $default-border-radius;
     }
+
     &:after {
+        @include transform(translate(-50%, -50%));
         opacity: 0;
         visibility: hidden;
         background: $lightColor;
-        border-radius: 5px;
+        border-radius: $default-border-radius;
         content: "";
         height: 50px;
         left: 50%;
         margin-top: 0;
         position: absolute;
         top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
         width: calc(100% - 4px);
     }
+
     a{
         z-index: 1;
         position: relative;

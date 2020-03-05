@@ -1,0 +1,123 @@
+@import "../../app.component.scss";
+
+.app_banner {
+    @include respond-to('medium') {
+        padding-top: 120px;
+        padding-bottom:     50px;
+    }
+    padding-top: 160px;
+    padding-bottom: 250px;
+    position: relative;
+
+    h1 {
+        font-weight: 600;
+        font-size: 47px;
+        line-height: 65px;
+        margin-bottom: 30px;
+        @include respond-to('medium-large') {
+            font-size: 30px;
+            line-height: 50px;
+          }
+    }
+
+    h5 {
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    .banner_content {
+        z-index: 4;
+        position: relative;
+    }
+
+    .app_img {
+        position: relative;
+        z-index: 4;
+        @include respond-to('medium') {
+            display: none;
+        }
+    }
+
+    .app_img1 {
+        position: absolute;
+        right: -44px;
+        top: -30px;
+        z-index: 1;
+        @include respond-to('medium') {
+            display: none;
+        }
+    }
+
+    .app_img2 {
+        position: absolute;
+        top: 110px;
+        left: 0;
+    }
+}
+
+.shape1 {
+    @include respond-to('small') {
+        top: 230px;
+        border-radius: 70px;
+        width: 450px;
+        left: -430px;
+        }
+    @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
+    position: absolute;
+    left: -390px;
+    top: 30px;
+    width: 540px;
+    height: 510px;
+    border-radius: 100px;
+    -webkit-transform: rotate(-47deg);
+    -ms-transform: rotate(-47deg);
+    -o-transform: rotate(-47deg);
+    transform: rotate(-47deg);
+}
+
+.app_banner .shape2 {
+    @include respond-to('medium') {
+        right: -94%;
+    }
+    @include respond-to('small') {
+        right: -925px;
+        top: -240px;
+    }
+    @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
+    position: absolute;
+    right: -415px;
+    top: -240px;
+    width: 810px;
+    height: 1100px;
+    border-radius: 80px;
+    -webkit-transform: rotate(-58deg);
+    -ms-transform: rotate(-58deg);
+    -o-transform: rotate(-58deg);
+    transform: rotate(-58deg);
+    z-index: 0;
+}
+
+.app_banner .shape3 {
+    @include respond-to('medium') {
+        right: -94%;
+    }
+    @include respond-to('small') {
+        right: -925px;
+        top: -240px;
+    }
+    @include backgroundGradient(20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+
+    position: absolute;
+    right: -415px;
+    top: -253px;
+    width: 804px;
+    height: 1190px;
+    border-radius: 90px;
+    -webkit-transform: rotate(-58deg);
+    -ms-transform: rotate(-58deg);
+    -o-transform: rotate(-58deg);
+    transform: rotate(-58deg);
+    z-index: -1;
+}

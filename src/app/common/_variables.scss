@@ -1,9 +1,8 @@
-$font-stack:    Helvetica, sans-serif;
+$font-stack: Helvetica, sans-serif;
 $primary-color: #666;
 $lightGrey: #888;
 $darkGrey: #333;
 $lightColor: #fff;
-
 $borderColor: #eee;
 $lightgreyBg: #ededed;
 $btnFirstColor: #1edfc4;
@@ -12,7 +11,7 @@ $btnThirdColor: #00c6ff;
 $hoverColor: $btnFirstColor;
 
 $border: 1px solid $borderColor;
-
+$default-border-radius: 5px;
 
 $base-text-color: $primary-color !default;
 $base-font-size: 16px !default;
@@ -20,6 +19,7 @@ $second-font-family: Montserrat, sans-serif;
 $primary-font-family: 'Open Sans', Helvetica, sans-serif;
 $third-font-family: "Raleway", "Helvetica", "Arial", sans-serif;
 $animation-speed: 0.3s;
+
 
 $breakpoints: (
     'medium-landscape':  (orientation : landscape ),
