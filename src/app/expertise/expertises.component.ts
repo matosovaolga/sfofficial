@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./expertises.component.scss']
 })
 export class SFExpertisesComponent {
-
+  imageUrl: string = 'assets/images/';
   title: string = 'Expertise';
   textBanner: string = 'Due to the long experience and versatile skills of our specialists, we are able to develop innovative technology solutions to meet the business needs of our clients.';
   

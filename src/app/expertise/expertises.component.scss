@@ -27,11 +27,80 @@
             
             right: -170px;
             width: 200%;
-            height: 200%;
+            height: 400%;
             left: inherit;
         }
     }
     &-box{
-        
+        align-self: stretch;
+        background: $lightColor;
+        border-top: 3px solid $btnThirdColor;
+        height: 100%;
+        padding: 15px;
+    }
+}
+.solutions{
+    display: flex;
+    align-items: stretch;
+    
+}
+.solution{
+    border: $border;
+    height: calc(100% - 20px);
+    margin-bottom: 20px;
+    padding: 20px 10px;
+    position: relative;
+    &Title{
+        text-transform: uppercase;
+        font-weight: 600;
+        position: relative;
+        &::before{
+            content: '';
+            width:50px;
+            display: block;
+            border-bottom: 3px solid $btnThirdColor;
+            margin-bottom: 10px;
+
+        }
+    }
+
+    &Desc{
+        position: relative;
+    }
+
+    .imageOverlay{
+        opacity: 0;
+        @include transition(opacity 0.3s ease-in-out);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        &::after{
+            @extend .imageOverlay;
+            content: '';
+            @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+        }
+    }
+
+    &:hover{
+        color: $lightColor;
+        .imageOverlay{
+             opacity: 1;
+             &::after{
+                opacity: 0.7;
+             }
+
+        }
+        .solutionTitle{
+            &::before{
+                visibility: hidden;
+            }
+        }
+        .solutionDesc{
+            color: $lightColor;
+        }
+       
     }
 }
