@@ -1,0 +1,202 @@
+@import "./../../app.component.scss";
+
+.contact_content {
+    padding-top: 100px;
+
+    h3.contact_title {
+        color: $darkGrey;
+        font-weight: 400;
+        font-family: $second-font-family;
+        margin-bottom: 40px;
+        -webkit-font-smoothing: antialiased;
+        font-size: 25px;
+
+        &::before {
+            background: $borderColor;
+            top: -11px;
+            content: "";
+            height: 1px;
+            left: 3px;
+            position: absolute;
+            width: 50px;
+        }
+    }
+
+    .wrapper {
+        padding-bottom: 50px;
+        padding-right: 40px;
+        padding-top: 40px;
+    }
+
+    .abform_area {
+        .abinput_group {
+            margin-bottom: 30px;
+            width: 49.1%;
+            height: 50px;
+
+            &:nth-child(even) {
+                margin-left: 1.8%;
+            }
+
+            &.msg {
+                width: 100%;
+                clear: both;
+                height: 150px;
+                margin-bottom: 40px;
+            }
+
+            input {
+                padding: 10px 22px;
+                width: 100%;
+                background: none;
+                color: $darkGrey;
+                border: none !important;
+                padding-left: 0;
+                font-family: $primary-font-family;
+            }
+
+            textarea {
+                @extend  input;
+                resize: none;
+                margin-bottom: 0;
+                height: 150px;
+                padding-right: 90px;
+            }
+
+            ::ng-deep .mat-form-field-label {
+                font-size: 14px;
+                color: $lightGrey;
+                font-family: $primary-font-family;
+                top: 1.84375em;
+                line-height: 16px;
+            }
+        }
+
+        button {
+            @include respond-to('medium-large') {
+                right: 10px;
+                font-size: 50px;
+            }
+            @include transition(color $animation-speed linear);
+            border: none;
+            background: transparent;
+            bottom: 30px;
+            color: $btnFirstColor;
+            font-size: 80px;
+            height: auto;
+            position: absolute;
+            right: 50px;
+
+            &:hover {
+                color: $btnSecondColor;
+            }
+        }
+    }
+}
+
+.contact_address {
+    align-items: flex-start;
+    box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    justify-content: center;
+    padding: 45px 35px;
+
+    h4 {
+        color: $darkGrey;
+        margin-bottom: 50px;
+        font-size: 25px;
+
+        &::before {
+            background: $borderColor;
+            top: -11px;
+            content: "";
+            height: 1px;
+            left: 3px;
+            position: absolute;
+            width: 50px;
+        }
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 25px;
+        padding-left: 35px;
+        color: $primary-color;
+        font-family: $primary-font-family;
+
+        i {
+            font-size: 20px;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    .web > a {
+        color: $primary-color;
+
+        &:hover {
+            color: $btnFirstColor;
+        }
+    }
+}
+
+::ng-deep .mat-form-field-infix {
+    border: none;
+}
+
+.contact_content ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: $lightgreyBg;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+    & + label {
+        font-size: 1.25em;
+        font-weight: 700;
+        color: $primary-color;
+        border: $border;
+        padding: 10px;
+        display: inline-block;
+        width: 100%;
+
+
+        i {
+            font-size: 34px;
+            color: $btnFirstColor;
+            margin-right: 15px; 
+            display: inline-block;
+        }
+    }
+    
+    &:focus + label,
+    & + label:hover {
+    }
+}
+
+.filesList {
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 40px;
+
+    li {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        justify-content: space-between; 
+        border-bottom: $border;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        color: inherit;
+        
+    }
+}

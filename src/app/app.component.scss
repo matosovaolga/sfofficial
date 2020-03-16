@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700|Open+Sans:300,300i,400,400i,600,700,700i|Raleway:400,500,600,700&display=swap');
-@import 'common/variables';
-@import 'common/mixin';
-@import 'common/fonts';
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700|Open+Sans:300,300i,400,400i,600,700,700i|Raleway:400,500,600,700&display=swap");
+
+@import "common/variables";
+@import "common/mixin";
+@import "common/fonts";
 
 body {
     padding: 0;
@@ -12,9 +13,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 sf-header,
 sf-footer {
-    display:block;
+    display: block;
 }
 
 .app_landing_body {
@@ -27,33 +29,14 @@ sf-footer {
     top: 0;
     width: 100%;
     z-index: 99;
-    padding:  0;
+    padding: 0;
 }
-
-/************************************************
-Css Table Of Content
------------------------
-01. Resset Css
-02. Typogrpahy
-    2.1 Font Typography
-    2.2 Color Typography
-    2.3 Hedding Tag Typography
-03. Scroll Top CSS
-04. Global Style
-05. Pading and Margin Style
-*************************************************/
-
-
-
-
-/*--------------01. Start Resset Css------------------*/
 
 *:focus {
     box-shadow: none;
     border: none;
     outline: none;
 }
-
 
 h1,
 h2,
@@ -66,7 +49,7 @@ figur,
 a {
     margin: 0;
     font-weight: normal;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -84,7 +67,7 @@ h6,
     font-family: $primary-font-family;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 P,
@@ -94,10 +77,12 @@ P,
     line-height: 26px;
     color: $primary-color;
 }
+
 a {
     text-decoration: none;
-    color: $darkGrey    §A;
+    color: inherit;
 }
+
 a:hover,
 a:focus,
 input:focus,
@@ -108,19 +93,22 @@ a:active {
     outline-offset: 0;
     box-shadow: none;
 }
+
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-ul li{
-   list-style: none;
+
+ul li {
+    list-style: none;
 }
-button{
+
+button {
     cursor: pointer;
 }
-/*------------0.1 End Resset Css----------------------*/
 
+/*------------0.1 End Resset Css----------------------*/
 
 /*-----------2.3 heading tag Typogrpahy------------*/
 
@@ -128,26 +116,37 @@ h1,
 .h1 {
     font-size: 50px;
     line-height: 65px;
-}h2,
+}
+
+h2,
 .h2 {
     font-size: 40px;
     line-height: 54px;
-}h3,
+}
+
+h3,
 .h3 {
     font-size: 30px;
     line-height: 42px;
-}h4,
+}
+
+h4,
 .h4 {
     font-size: 24px;
     line-height: 34px;
-}h5,
+}
+
+h5,
 .h5 {
     font-size: 18px;
     line-height: 28px;
-    @include respond-to('medium-large') {
+
+    @include respond-to("medium-large") {
         font-size: 15px;
     }
-}h6,
+}
+
+h6,
 .h6 {
     font-size: 16px;
     line-height: 26px;
@@ -160,9 +159,10 @@ h1,
 .container {
     margin: 0 auto;
 }
+
 /*-------------03. scroll top css-----------*/
 .scroll_top {
-    background: #027AEC none repeat scroll 0 0;
+    background: $darkBlue none repeat scroll 0 0;
     border-radius: 3px;
     bottom: 50px;
     cursor: pointer;
@@ -173,34 +173,42 @@ h1,
     width: 40px;
     z-index: 99;
 }
+
 .scroll_top:hover i {
-    color: #000;
+    color: black;
 }
+
 .not_visible {
     visibility: hidden;
     display: none;
 }
+
 .scroll_top i {
-    color: #fff;
+    color: $lightColor;
     font-size: 24px;
     line-height: 38px;
 }
+
 .section_padding {
     padding: 120px 0 130px;
-    @include respond-to('medium-large') {
+
+    @include respond-to("medium-large") {
         padding: 60px 0;
     }
 }
+
 .section_padding2 {
     padding: 130px 0;
 }
 
 .section_title {
     padding-bottom: 80px;
-     h5 {
+
+    h5 {
         text-transform: uppercase;
         color: $lightGrey;
     }
+
     h2 {
         margin: 0 auto;
         max-width: 730px;
@@ -210,6 +218,7 @@ h1,
         font-weight: 600;
         padding-top: 15px;
     }
+
     .line {
         display: block;
         width: 100px;
@@ -218,37 +227,40 @@ h1,
         margin: 0 auto;
     }
 }
+
 .pos_relative {
     position: relative;
 }
+
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
     -webkit-text-fill-color: $primary-color !important;
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
 .successPopover {
     @include transition(opacity $animation-speed linear);
+
     margin-top: 20px;
     background: lighten($btnThirdColor, 30%);
     color: $primary-color;
-    padding:15px 20px;  
+    padding: 15px 20px;
     position: absolute;
     bottom: -50px;
     width: 100%;
     visibility: hidden;
     opacity: 0;
-
 }
+
 .errorPopover {
     @extend .successPopover;
-    background: #F50057;
+
+    background: $red;
     border: none;
     color: $lightColor;
 }
-
 
 .messageActive {
     visibility: visible;

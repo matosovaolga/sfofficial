@@ -4,19 +4,18 @@
     margin-bottom: 50px;
 
     h2::after {
-        background: #e4e4e4 none repeat scroll 0 0;
+        background: $lightgreyBg none repeat scroll 0 0;
         content: "";
         height: 80px;
         position: absolute;
         right: -58px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         width: 1px;
     }
 }
 
 .home2_welcome.service_page .img_area {
-    background: #fff;
+    background: $lightColor;
     box-shadow: none;
     padding: 0;
 
@@ -53,7 +52,7 @@
 
         .intro_text {
             h5,
-            p{
+            p {
                 color: $primary-color;
             }
         }
@@ -105,6 +104,7 @@
             path,
             rect {
                 fill: $lightColor;
+                stroke: $lightColor;
             }
         }
     }

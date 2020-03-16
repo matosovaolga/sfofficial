@@ -3,13 +3,11 @@
 :host {
     display: block;
     position: relative;
-
-    // Only apply sticky override if supported by the browser.
 }
 
 .stuck_menu {
     @include respond-to("small") {
-        background: #fff;
+        background: $lightColor;
         box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08);
         position: fixed;
         top: 0;
@@ -28,7 +26,6 @@
     top: 0;
     background-color: $lightColor !important;
     position: fixed;
-    -webkit-box-shadow: 0 12px 6px rgba(0, 0, 0, 0.06);
     box-shadow: 0 12px 6px rgba(0, 0, 0, 0.06);
     padding-bottom: 10px;
 
@@ -151,7 +148,7 @@
                 outline: 0;
                 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                 -webkit-tap-highlight-color: transparent;
-                
+
                 &.active,
                 &:hover {
                     color: $hoverColor;
@@ -160,15 +157,25 @@
 
             &:hover {
                 .dropdown {
+                    @include transition(opacity $animation-speed linear);
                     @include respond-to("small") {
                         position: relative;
                         box-shadow: none;
                         border: 0;
                     }
+
+                    opacity: 1;
+                    display: block;
+                    visibility: visible;
+                    border: $border;
+                    border-radius: 4px;
+                    -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
+                    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
+
                     &.multi {
                         display: flex;
                         padding: 10px 20px;
-            
+
                         ul {
                             li {
                                 a {
@@ -178,29 +185,18 @@
                         }
                     }
 
-                    opacity: 1;
-                    display: block;
-                    visibility: visible;
-
-                    @include transition(opacity $animation-speed linear);
-
-                    border: $border;
-                    border-radius: 4px;
-                    -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
-                    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
-
                     li {
                         display: block;
                         line-height: 30px;
 
                         a {
                             font-size: 13px;
-                            line-height: 14px;
+                            line-height: 1.1;
                             padding: 12px 18px;
                             text-transform: none;
                             font-weight: 400;
                             color: $primary-color;
-                            font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
+                            font-family: $second-font-family;
 
                             &:hover {
                                 color: $hoverColor;
@@ -223,8 +219,6 @@
         min-width: 180px;
         white-space: nowrap;
         background: $lightColor;
-
-        
 
         li {
             ul.dropdown {
@@ -263,7 +257,7 @@
 
     a:not(.btn),
     .title {
-        font-family: "Raleway", "Helvetica", "Arial", sans-serif;
+        font-family: $third-font-family;
         font-size: 12px;
         position: relative;
         display: block;
@@ -321,6 +315,8 @@
     }
 
     .dropdown-list {
+        @include transition(all 300ms ease-out);
+     
         right: -10px;
         margin-top: -12px;
         position: absolute;
@@ -328,16 +324,12 @@
         left: auto;
         top: auto;
         border-radius: 3px;
-        background-color: #ffffff;
-        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: $lightColor;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border: solid 1px #eee;
+        border: $border;
         padding: 0 16px;
         text-align: left;
         opacity: 0;
-        -webkit-transition: all 300ms ease-out;
-        transition: all 300ms ease-out;
-        -ms-transition: all 300ms ease-out;
         transform-origin: 50% 0% 0;
         -moz-transform-origin: 50% 0% 0;
         -webkit-transform-origin: 50% 0% 0;
@@ -351,9 +343,8 @@
             line-height: 30px;
             white-space: nowrap;
             display: block;
-            color: $primary-color;
+            color: inherit;
             padding: 2px 0;
-            border-top: 1px #f0f0f0 solid;
 
             &:hover {
                 color: lighten($darkGrey, 10%);
@@ -375,7 +366,7 @@
 }
 
 .sticky {
-    background: #fff;
+    background: $lightColor;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08);
     position: fixed;
     top: 0;
@@ -393,8 +384,8 @@
     }
 
 
-    display: none; /* используем flex для центрирования содержимого */
-    align-items: center; /* центрируем содержимое кнопки */
+    display: none;
+    align-items: center;
     position: fixed;
     top: 30px;
     right: 20px;
@@ -402,34 +393,30 @@
     height: 26px;
     cursor: pointer;
     z-index: 11;
+
+    & > span,
+    & > span::before,
+    & > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-color;
+        transition-duration: .25s;
+    }
+
+    span::before {
+        content: '';
+        top: -8px;
+    }
+
+    span::after {
+        content: '';
+        top: 8px;
+    }
+    
 }
 
-/* добавляем "гамбургер" */
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #616161;
-}
-
-.menu__btn > span::before {
-    content: '';
-    top: -8px;
-}
-
-.menu__btn > span::after {
-    content: '';
-    top: 8px;
-}
-
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
-    transition-duration: .25s;
-}
 
 .menuzord-menu {
     transition-duration: .25s;

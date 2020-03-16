@@ -1,106 +1,147 @@
 @import "../app.component.scss";
-.benefits{
-    &-sec{
+
+.benefits {
+    &-sec {
         position: relative;
         padding: 30px 0;
+
         &::before {
+            background: rgb(239, 244, 252);
+            @include backgroundGradient(to bottom, rgba(239, 244, 252, 1) 1%, $lightColor 32%);
+            @include transform(rotate(-9deg));
             content: '';
-            
             display: block;
             z-index: -1;
-            
-            background: lighten($lightgreyBg, 5%);
             position: absolute;
-            
             border-radius: 0 430px 0 0;
             top: 55px;
-            background: rgb(239, 244, 252);
-            background: -moz-linear-gradient(top, rgba(239, 244, 252, 1) 1%, rgba(255, 255, 255, 1) 32%);
-            background: -webkit-linear-gradient(top, rgba(239, 244, 252, 1) 1%, rgba(255, 255, 255, 1) 32%);
-            background: linear-gradient(to bottom, rgba(239, 244, 252, 1) 1%, rgba(255, 255, 255, 1) 32%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff4fc', endColorstr='#ffffff', GradientType=0);
-            
-            -webkit-transform: rotate(-9deg);
-            -ms-transform: rotate(-9deg);
-            -o-transform: rotate(-9deg);
-            transform: rotate(-9deg);
-            
             right: -170px;
             width: 200%;
             height: 400%;
             left: inherit;
         }
     }
-    &-box{
+
+    &Title {
+        font-size: 1.75em;
+        line-height: 1.285714;
+    }
+
+    &-icon {
+        margin: 20px 0;
+
+        svg {
+            width: 100px;
+            height: 100px;
+
+            path {
+                fill: #1edfc4;
+            }
+            
+            .cls-1 {
+                fill: none;
+                stroke-miterlimit: 10;
+                stroke-width: 7.5px;
+                stroke: #1edfc4;
+              }
+        }
+    }
+
+    &-box {
         align-self: stretch;
         background: $lightColor;
         border-top: 3px solid $btnThirdColor;
         height: 100%;
-        padding: 15px;
+        padding: 25px 15px;
+        text-align:  center;
+        transition: .4s;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 35px 0 rgba(38,55,69,0.3);
+        }
+
+    }
+    .row > div:nth-child(2)  &-box {
+        border-color: $red;
+    }
+    .row > div:nth-child(3)  &-box {
+        border-color: yellow;
     }
 }
-.solutions{
+
+.solutions {
     display: flex;
     align-items: stretch;
-    
 }
-.solution{
+
+.solution {
     border: $border;
     height: calc(100% - 20px);
     margin-bottom: 20px;
     padding: 20px 10px;
     position: relative;
-    &Title{
+    min-height: 290px;
+    cursor: pointer;
+
+    &Title {
         text-transform: uppercase;
         font-weight: 600;
         position: relative;
-        &::before{
+
+        &::before {
             content: '';
-            width:50px;
+            width: 50px;
             display: block;
             border-bottom: 3px solid $btnThirdColor;
             margin-bottom: 10px;
-
         }
     }
 
-    &Desc{
+    &Desc {
         position: relative;
     }
 
-    .imageOverlay{
-        opacity: 0;
+    .imageOverlay {
         @include transition(opacity 0.3s ease-in-out);
+
+        opacity: 0;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
+        background-repeat: no-repeat;
+        background-size: auto  100%;
 
-        &::after{
+        &::after {
             @extend .imageOverlay;
+            @include backgroundGradient(45deg, $btnFirstColor 0%, $btnSecondColor 100%);
+
             content: '';
-            @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
         }
     }
 
-    &:hover{
+    &:hover {
         color: $lightColor;
-        .imageOverlay{
-             opacity: 1;
-             &::after{
-                opacity: 0.7;
-             }
 
+        .imageOverlay {
+            opacity: 1;
+
+            &::after {
+                opacity: 0.7;
+            }
         }
-        .solutionTitle{
-            &::before{
+
+        .solutionTitle {
+            &::before {
                 visibility: hidden;
             }
         }
-        .solutionDesc{
+
+        .solutionDesc {
             color: $lightColor;
         }
-       
     }
 }
+

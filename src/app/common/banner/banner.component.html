@@ -12,14 +12,14 @@
                     <h5 class="">{{text}}
 </h5>
 
-<sf-btn>Quote request »</sf-btn>
+<sf-btn *ngIf="this.router.url !== '/contacts'">Quote request »</sf-btn>
       </div>
             </div>
             <!--/col-->
 
             <div class="col-lg-6  order-1 order-lg-2 pos_relative">
                 <div class="app_img">
-                    <img src="assets/images/app-demo-2.png" alt="app img" class="img-fluid app_img1"> 
+                    <img  src="assets/images/app-demo-2.png" alt="app img" class="img-fluid app_img1"> 
                     <img src="assets/images/macbook-mc.png" alt="app img" class="img-fluid app_img2"> 
                 </div>
             </div>

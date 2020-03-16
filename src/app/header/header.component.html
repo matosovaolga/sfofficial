@@ -3,16 +3,13 @@
         <div class="row">
             <div class="col-12">
                 <div id="menuzord" class="menuzord">
-                    <!--Logo-->
                     <input id="menu__toggle" type="checkbox" />
                     <label class="menu__btn" for="menu__toggle">
-                      <span></span>
+                        <span></span>
                     </label>
                     <a id="logo" routerLink="/" class="logo menuzord-brand" data-dark-logo="assets/images/logo-dark.png">
                         <img src="assets/images/logo.png" alt="Polo Logo">
                     </a>
-                    <!--End: Logo-->
-                    <!--Header Extras-->
                     <div class="header-extras">
                         <ul>
 
@@ -27,27 +24,24 @@
                             </li>
                         </ul>
                     </div>
-                    <!--end: Header Extras-->
-          
 
                     <nav class="menuzord-menu">
-                        <li  >
+                        <li>
                             <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}" >Home</a>
-                           
+                                true}">Home</a>
                         </li>
-                        <li >
+                        <li>
                             <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}">Services</a>
                         </li>
-                      
-                        <li >
+
+                        <li>
                             <a routerLink="/expertises" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}">Expertises</a>
                             <ul class="dropdown multi">
                                 <li>Bussines solutions
-                                    <ul>    
-                                         <li><a href="">Web and Enterprise Portals</a></li>
+                                    <ul>
+                                        <li><a href="">Web and Enterprise Portals</a></li>
                                         <li><a href="">Enterprise Mobile Apps</a></li>
                                         <li><a href="">Ecommerce</a></li>
                                         <li><a href="">Social Networking</a></li>
@@ -55,24 +49,24 @@
                                     </ul>
                                 </li>
                                 <li>Development stack
-                                        <ul>    
-                                                <li><a href="">Open Source</a></li>
-                                               <li><a href="">Mobile platforms</a></li>
-                                               <li><a href="">JavaScript</a></li>
-                                               <li><a href="">Cloud Technologies</a></li>
-                                           </ul>
+                                    <ul>
+                                        <li><a href="">Open Source</a></li>
+                                        <li><a href="">Mobile platforms</a></li>
+                                        <li><a href="">JavaScript</a></li>
+                                        <li><a href="">Cloud Technologies</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                                <a>Engagement Models</a>
-                                <ul class="dropdown">
-                                                <li><a href="">Project-based Outsourcing</a></li>
-                                               <li><a href="">Dedicated Team</a></li>
-                                               <li><a href="">Skills Augmentation</a></li>
-                                           </ul>
+                            <a>Engagement Models</a>
+                            <ul class="dropdown">
+                                <li><a href="">Project-based Outsourcing</a></li>
+                                <li><a href="">Dedicated Team</a></li>
+                                <li><a href="">Skills Augmentation</a></li>
+                            </ul>
                         </li>
-                    
+
                         <li>
                             <a routerLink="/vacancies" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}">company</a>
@@ -80,10 +74,10 @@
                                 <li><a href="">About Us</a></li>
                                 <li><a href="">Vacancies</a></li>
                                 <li><a href="">Process</a></li>
-                       
+
                             </ul>
                         </li>
-                        <li >
+                        <li>
                             <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}">Contact</a>
                         </li>

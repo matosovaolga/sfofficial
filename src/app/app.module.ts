@@ -16,6 +16,7 @@ import {SFBtnComponent} from './common/btn/btn.component';
 import {CarouselHolderComponent} from './common/testimonials/testimonials.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import {SFContactComponent} from './home/contactForm/contactForm.component';
+import {SFRequestComponent} from './contactPage/requestForm/requestForm.component';
 import {ConnectionService} from './home/contactForm/connection.service';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -25,6 +26,8 @@ import {SFScrollToTopComponent} from './common/scrollToTop/scrollToTop.component
 import {SFContactPageComponent} from './contactPage/contactPage.component';
 import {SFBannerComponent} from './common/banner/banner.component';
 import {SFServiceComponent} from './companyService/service-single/single-service.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import { MatButtonModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import {SFServiceComponent} from './companyService/service-single/single-service
     SFScrollToTopComponent,
     SFContactPageComponent,
     SFBannerComponent,
-    SFServiceComponent
+    SFServiceComponent,
+    SFRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -49,12 +53,13 @@ import {SFServiceComponent} from './companyService/service-single/single-service
     FontAwesomeModule,
     RouterModule,
     OwlModule,
-
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    FileUploadModule
   ],
   providers: [
     ConnectionService],
