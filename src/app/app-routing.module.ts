@@ -6,12 +6,12 @@ import { SFExpertiseComponent } from './expertise/expertise-single/expertise.com
 import { SFHomeComponent } from './home/home.component';
 import {SFContactPageComponent} from './contactPage/contactPage.component';
 import {SFServiceComponent} from './companyService/service-single/single-service.component';
-
+import {SFCompanyComponent} from './copmany/company.component';
 const routes: Routes = [
   { path: 'services', component: SFServicesComponent },
   { path: 'services/:id', component: SFServiceComponent },
   { path: 'expertises/:id', component: SFExpertiseComponent },
-
+  { path: 'company/vacancies', component: SFExpertiseComponent },
   {
     path: 'expertises',
     component: SFExpertisesComponent,
@@ -28,6 +28,11 @@ const routes: Routes = [
     component: SFHomeComponent
   },
   // { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'company',
+    component: SFCompanyComponent,
+    loadChildren: './company/company.module#CompanyModule',
+},
 ];;
 
 @NgModule({

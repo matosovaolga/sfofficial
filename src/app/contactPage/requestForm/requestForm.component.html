@@ -57,7 +57,7 @@
                             <button color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect text-uppercase"><i
                                 class="ion-ios-navigate"></i></button>
                     </mat-form-field>
-                    <input type="file" [(ngModel)]="user.contactFormFile" #contactFormFile="ngModel" name="file" id="file" class="inputfile" ng2FileSelect [uploader]="uploader"
+                    <input type="file"  name="file" id="file" class="inputfile" ng2FileSelect [uploader]="uploader"
                         onFileSelected="" multiple />
                     <label ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
                         [uploader]="uploader" class="my-drop-zone" for="file"><i class="ion-ios-upload-outline"></i>Upload

@@ -28,6 +28,7 @@ import {SFBannerComponent} from './common/banner/banner.component';
 import {SFServiceComponent} from './companyService/service-single/single-service.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatButtonModule } from '@angular/material';
+import {CompanyModule} from './copmany/company.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import { MatButtonModule } from '@angular/material';
     FormsModule,
     HttpClientModule,
     MatButtonModule,
-    FileUploadModule
+    FileUploadModule,
+    CompanyModule
   ],
   providers: [
     ConnectionService],

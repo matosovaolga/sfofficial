@@ -10,7 +10,9 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
   styleUrls: ['./requestForm.component.scss']
 })
 export class SFRequestComponent {
-  user = {};
+  user = {
+    uploader: new FileUploader({})
+  };
   errorText: boolean = false;
   sendSuccess: boolean = false;
   uploader: FileUploader;
@@ -41,6 +43,7 @@ export class SFRequestComponent {
   }
  
   onSubmit(form) {
+    this.user.uploader = this.uploader;
   
     this.connectionService.sendMessage(!this.user).subscribe(() => {
       this.sendSuccess = true;
