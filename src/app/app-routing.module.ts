@@ -28,11 +28,11 @@ const routes: Routes = [
     component: SFHomeComponent
   },
   // { path: '**', component: PageNotFoundComponent }
-  {
+ /* {
     path: 'company',
     component: SFCompanyComponent,
     loadChildren: './company/company.module#CompanyModule',
-},
+},*/
 ];;
 
 @NgModule({

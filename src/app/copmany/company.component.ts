@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './company.component.html'
 })
 export class SFCompanyComponent {
-  
+    
 }

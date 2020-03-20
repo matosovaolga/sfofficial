@@ -21,7 +21,7 @@
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
-    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/angular-fontawesome": "^0.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "body-parser": "^1.19.0",
@@ -34,6 +34,7 @@
     "nodemailer": "^6.4.2",
     "owl.carousel": "^2.3.4",
     "rxjs": "~6.4.0",
+    "rxjs-compat": "^6.5.4",
     "script-loader": "^0.7.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

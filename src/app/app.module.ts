@@ -12,7 +12,7 @@ import { SFExpertisesComponent } from './expertise/expertises.component';
 import { SFServicesComponent } from './companyService/companyService.component';
 import { SFExpertiseComponent } from './expertise/expertise-single/expertise.component';
 import { SFHomeComponent } from './home/home.component';
-import {SFBtnComponent} from './common/btn/btn.component';
+
 import {CarouselHolderComponent} from './common/testimonials/testimonials.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import {SFContactComponent} from './home/contactForm/contactForm.component';
@@ -24,11 +24,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {SFScrollToTopComponent} from './common/scrollToTop/scrollToTop.component';
 import {SFContactPageComponent} from './contactPage/contactPage.component';
-import {SFBannerComponent} from './common/banner/banner.component';
 import {SFServiceComponent} from './companyService/service-single/single-service.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatButtonModule } from '@angular/material';
 import {CompanyModule} from './copmany/company.module';
+import {SharedComponentModule} from './common/sharedModule';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +38,10 @@ import {CompanyModule} from './copmany/company.module';
     SFExpertiseComponent,
     SFServicesComponent,
     SFHomeComponent,
-    SFBtnComponent,
     CarouselHolderComponent,
     SFContactComponent,
     SFScrollToTopComponent,
     SFContactPageComponent,
-    SFBannerComponent,
     SFServiceComponent,
     SFRequestComponent
   ],
@@ -61,10 +59,13 @@ import {CompanyModule} from './copmany/company.module';
     HttpClientModule,
     MatButtonModule,
     FileUploadModule,
-    CompanyModule
+    CompanyModule,
+    SharedComponentModule
   ],
   providers: [
     ConnectionService],
+    exports: [
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,18 +5,23 @@ import {SFVacanciesComponent} from './vacancies/vacancies.component';
 import {SFAboutComponent} from './about/about.component';
 import {companyRouting} from './company.routing';
 import {SFCompanyComponent} from './company.component';
-import { from } from 'rxjs';
+import {SharedComponentModule} from '../common/sharedModule';
+import {SFProcessComponent} from './process/process.component';
+import {VacanciesService} from './vacancies/vacancies.service';
+
 @NgModule({
     imports: [
         CommonModule,
         companyRouting,
+        SharedComponentModule
     ],
     declarations: [
         SFVacanciesComponent,
         SFAboutComponent,
-        SFCompanyComponent
+        SFCompanyComponent,
+        SFProcessComponent
     ],
-    providers: [],
+    providers: [VacanciesService],
     exports: [ RouterModule]
 })
 export class CompanyModule {}

@@ -1,0 +1,23 @@
+@import "../../app.component.scss";
+
+.vacancies {
+    .vacancy {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        margin-bottom: 15px;
+
+        & > * {
+            flex-grow: 1;
+            flex-basis: 20%;
+            max-width: 20%;
+
+            &:first-child {
+                flex-grow: 2;
+                flex-basis: 60%;
+                max-width: 60%;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

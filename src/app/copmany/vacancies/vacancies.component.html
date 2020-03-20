@@ -1,0 +1,27 @@
+<sf-banner  [title]="title"
+[text]="bannerText"></sf-banner>
+<section class="vacancies section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title text-center">
+                      
+                        <h2>Find Your Feature</h2>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                        <ul>
+                                <li class="vacancy" *ngFor="let vacancy of vacancies">
+                                    <a>{{vacancy.role}}</a>
+                                    <span>Details</span>
+                                    <sf-btn>apply</sf-btn>
+                                </li>
+                            </ul>
+                </div>
+            </div>
+        </div>
+        </section>
+
