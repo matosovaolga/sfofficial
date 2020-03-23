@@ -11,6 +11,7 @@ const companyRoutes: Routes = [
         path: 'vacancies',
         component: SFVacanciesComponent
     },
+    { path: 'vacancies/:id', component: SFVacanciesComponent },
     {
         path: 'process',
         component: SFProcessComponent

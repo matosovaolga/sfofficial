@@ -15,8 +15,10 @@
                 <div class="col-12">
                         <ul>
                                 <li class="vacancy" *ngFor="let vacancy of vacancies">
-                                    <a>{{vacancy.role}}</a>
-                                    <span>Details</span>
+                                    <a routerLink="{{'/vacancies/' + vacancy.id}}" [routerLinkActive]="['active']">{{vacancy.role}}</a>
+                                    <span>Experience: {{vacancy.experience}}<br />
+                                            1 position
+                                    </span>
                                     <sf-btn>apply</sf-btn>
                                 </li>
                             </ul>

@@ -1,0 +1,266 @@
+@import "../../app.component.scss";
+
+.circleRotator {
+    background-color: $lightColor;
+    overflow: hidden;
+    &-wrapper {
+        overflow: hidden;
+    }
+
+    &-circle {
+        position: absolute;
+        width: 1346px;
+        height: 1346px;
+        left: -620px;
+        top: -318px;
+        background-position: 50% 50%;
+        background-image: url(/assets/images/circleRotator-bg-transparent.png);
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+    &-item {
+        position: absolute;
+        display: block;
+        width: 220px;
+        right: 0;
+        top: 50%;
+        padding-left: 50px;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 37px;
+            height: 132px;
+            top: -40px;
+            left: 35px;
+            background-position: 0 0;
+            background-image:  url(/assets/images/arc.png);
+            opacity: 0;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+        &--1 {
+            margin-top: -27px;
+            margin-right: -197px;
+        }
+        &--2 {
+            margin-top: 160px;
+            margin-right: -176px;
+            -webkit-transform: rotate(14deg);
+            -ms-transform: rotate(14deg);
+            transform: rotate(14deg);
+        }
+        &--3 {
+            margin-top: 333px;
+            margin-right: -111px;
+            -webkit-transform: rotate(28deg);
+            -ms-transform: rotate(28deg);
+            transform: rotate(28deg);
+        }
+        &--4 {
+            margin-top: 480px;
+            margin-right: -9px;
+            -webkit-transform: rotate(42deg);
+            -ms-transform: rotate(42deg);
+            transform: rotate(42deg);
+        }
+
+        &--active .circleRotator-num {
+            font-weight: 700;
+            line-height: 33px;
+            color: $btnThirdColor;
+            border-width: 2px;
+            border-color: $btnThirdColor;
+        }
+        &--active:before {
+            opacity: 1;
+        }
+    }
+    &-num {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        top: 6px;
+        left: 0;
+        font-size: 16px;
+        line-height: 35px;
+        color: #999;
+        text-align: center;
+        border: 1px solid #9d9d9d;
+        background-color: #FFF;
+        border-radius: 50%;
+    }
+    .icon.circleRotator-icon {
+        max-width: 50px;
+        height: 50px;
+    }
+    &-icon.icon * {
+        fill: #acacac;
+    }
+    &-icon, 
+    &-name {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &-name {
+        margin-left: 10px;
+        font-size: 17px;
+        line-height: 20px;
+        color: #999;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+    .background, .circleRotator-item--active .circleRotator-icon, .circleRotator-item--active .circleRotator-name, .circleRotatorBackground {
+        opacity: 0;
+    }
+    &Background {
+        position: absolute;
+        display: block;
+        width: 206px;
+        height: 206px;
+        top: -76px;
+        left: 68px;
+        text-align: center;
+       background-color: $btnThirdColor;
+      /* @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);*/
+        border-radius: 50%;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+    &-item--active &Background {
+        opacity: 1;
+    }
+    .circleRotatorBackground-img, .circleRotatorBackground:before {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .circleRotatorBackground:before {
+        content: '';
+        height: 100%;
+    }
+    .icon.circleRotatorBackground-img {
+        width: 140px;
+        height: 120px;
+    }
+    .circleRotatorBackground-img.icon * {
+        fill: #FFF;
+    }
+
+    &-info {
+        position: relative;
+        max-width: 496px;
+        margin-top: 180px;
+        padding-left: 48px;
+        
+    }
+    &-heading h3, &-heading h4 {
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-weight: 300;
+        font-size: 52px;
+        line-height: 60px;
+        text-transform: uppercase;
+    }
+    &-description p {
+        line-height: 35px;
+    }
+    &, 
+    &-container,
+    &-wrapper {
+        position: relative;
+        height: 855px;
+    }
+    &Content {
+        padding-top: 243px;
+        &-item {
+            display: none;
+            &--active {
+                display: block;
+            }
+        }
+    }
+    &-title h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-family: Ubuntu,Arial,Helvetica,sans-serif;
+        font-weight: 300;
+        font-size: 30px;
+    }
+    &Pagination {
+        position: absolute;
+        width: 8px;
+        top: 50%;
+        right: -50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+       
+       
+        &-item {
+            position: relative;
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: #d9d9d9;
+            border-radius: 50%;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 12px;
+                height: 12px;
+                top: -2px;
+                left: -2px;
+                background-color: #55c53a;
+                border-radius: 50%;
+                opacity: 0;
+                -webkit-transition: all .2s ease;
+                transition: all .2s ease;
+            }
+        }
+    }
+    .circleRotatorPagination-item+.circleRotatorPagination-item {
+        margin-top: 18px;
+    }
+    .circleRotatorPagination-item--active:after {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1440px){ 
+.circleRotator-circle {
+    left: -756px;
+}
+}
+@media (max-width: 1500px){
+.circleRotatorContent {
+    padding-right: 15px;
+}
+}
+
+.circleRotatorContent ul li {
+    position: relative;
+    font-size: 17px;
+    line-height: 25px;
+    color: #727a82;
+    list-style-type: none!important;
+}
+.circleRotatorContent ul li:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    top: 11px;
+    left: -15px;
+    background-color: #51c336;
+    border-radius: 50%;
+}

@@ -16,7 +16,6 @@ export class SFVacanciesComponent {
     private vacanciesService: VacanciesService
   ) {
     this.vacanciesService.getVacancies().subscribe((resp) => {
-    
       this.vacancies = resp;
     });
   }
