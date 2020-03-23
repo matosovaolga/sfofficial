@@ -8,6 +8,7 @@ import {SFCompanyComponent} from './company.component';
 import {SharedComponentModule} from '../common/sharedModule';
 import {SFProcessComponent} from './process/process.component';
 import {VacanciesService} from './vacancies/vacancies.service';
+import {SFVacancyComponent} from './vacancies/vacancy/vacancy.component';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import {VacanciesService} from './vacancies/vacancies.service';
         SFVacanciesComponent,
         SFAboutComponent,
         SFCompanyComponent,
-        SFProcessComponent
+        SFProcessComponent,
+        SFVacancyComponent
     ],
     providers: [VacanciesService],
     exports: [ RouterModule]

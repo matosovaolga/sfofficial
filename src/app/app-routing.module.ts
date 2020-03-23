@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: 'services', component: SFServicesComponent },
   { path: 'services/:id', component: SFServiceComponent },
   { path: 'expertises/:id', component: SFExpertiseComponent },
-  { path: 'company/vacancies', component: SFExpertiseComponent },
   {
     path: 'expertises',
     component: SFExpertisesComponent,
