@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {VacanciesService} from '../vacancies.service';
 import {Vacancy} from '../vacancy.model';
@@ -7,14 +7,24 @@ import {Vacancy} from '../vacancy.model';
   templateUrl: './vacancy.component.html',
   styleUrls: ['./vacancy.component.scss']
 })
-export class SFVacancyComponent {
-  vacancies: [Vacancy];
+export class SFVacancyComponent implements AfterViewInit {
+  vacancy: Vacancy = {
+    id: 0,
+    role: '',
+    description: '',
+    skills: [''],
+    skillsPlus: ['']
+
+  };
   constructor(
     private router: Router,
     private vacanciesService: VacanciesService
   ) {
-    this.vacanciesService.getVacancies().subscribe((resp) => {
-      this.vacancies = resp;
+    this.vacanciesService.getSingleVacancy(1).subscribe((resp) => {
+      this.vacancy = resp;
     });
+  }
+
+  ngAfterViewInit() {
   }
 }

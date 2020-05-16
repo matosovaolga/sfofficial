@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SFHeaderComponent } from './header/header.component';
 import { SFFooterComponent } from './footer/footer.component';
 import { SFExpertisesComponent } from './expertise/expertises.component';
-import { SFServicesComponent } from './companyService/companyService.component';
 import { SFExpertiseComponent } from './expertise/expertise-single/expertise.component';
 import { SFHomeComponent } from './home/home.component';
 
@@ -24,7 +23,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {SFScrollToTopComponent} from './common/scrollToTop/scrollToTop.component';
 import {SFContactPageComponent} from './contactPage/contactPage.component';
-import {SFServiceComponent} from './companyService/service-single/single-service.component';
+import {ServicesModule} from './companyService/services.module';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatButtonModule } from '@angular/material';
 import {CompanyModule} from './copmany/company.module';
@@ -36,13 +35,11 @@ import {SharedComponentModule} from './common/sharedModule';
     SFFooterComponent,
     SFExpertisesComponent,
     SFExpertiseComponent,
-    SFServicesComponent,
     SFHomeComponent,
     CarouselHolderComponent,
     SFContactComponent,
     SFScrollToTopComponent,
     SFContactPageComponent,
-    SFServiceComponent,
     SFRequestComponent
   ],
   imports: [
@@ -60,7 +57,8 @@ import {SharedComponentModule} from './common/sharedModule';
     MatButtonModule,
     FileUploadModule,
     CompanyModule,
-    SharedComponentModule
+    SharedComponentModule,
+    ServicesModule
   ],
   providers: [
     ConnectionService],

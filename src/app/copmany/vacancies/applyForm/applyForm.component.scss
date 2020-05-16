@@ -1,0 +1,51 @@
+@import "../../../contactPage/requestForm/requestForm.component.scss";
+
+.contact_title {
+    margin-bottom: 30px;
+}
+
+.abform_area {
+    .abinput_group {
+        width: 100%;
+    }
+}
+
+.inputfile + label {
+    font-weight: 500;
+    font-size:  15px;
+    justify-content: center;
+    display: flex;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+
+    &:hover {
+        border-color: $btnFirstColor;
+        cursor: pointer;
+    }
+}
+
+.mat-form-field-label-wrapper {
+    top: -.24375em;
+}
+
+.form-control:focus {
+    background: none;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+.abform_area button {
+    transition: color 0.3s linear;
+    border: none;
+    background: transparent;
+    bottom: 30px;
+    color: #1edfc4;
+    font-size: 80px;
+    height: auto;
+    position: absolute;
+    right: 0;
+}

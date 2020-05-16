@@ -297,3 +297,115 @@
     background-color: #51c336;
     border-radius: 50%;
 }
+
+
+@media (max-width: 1029px) {
+    .circleRotator, .circleRotator-container, .circleRotator-wrapper {
+        height: auto!important;
+    }
+}
+
+
+@media (max-width: 1029px){
+    .circleRotator {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+}
+
+
+@media (max-width: 1029px) {
+    .circleRotator, .circleRotator-container, .circleRotator-wrapper {
+        height: auto!important;
+    }
+}
+
+
+@media (max-width: 1029px) {
+    .circleRotator-circle, .circleRotatorPagination {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .circleRotator-circle {
+        left: -974px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .circleRotator-circle {
+        left: -756px;
+    }
+}
+
+
+@media (max-width: 1029px) {
+    .circleRotator--5-items .circleRotator-info, .circleRotator-info {
+        margin-top: 0;
+        padding-top: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .circleRotator--5-items .circleRotator-info, .circleRotator-info {
+      
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .circleRotator-info {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .circleRotator-heading h4 {
+        font-size: 32px;
+        line-height: 46px;
+    }
+}
+
+@media (max-width: 1029px) {
+    .circleRotatorContent {
+        padding-top: 0;
+        font-size: 0;
+    }
+}
+
+
+@media (max-width: 1500px) {
+    .circleRotatorContent {
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 1029px) {
+    .circleRotatorContent-item:nth-child(odd) {
+        padding-right: 30px;
+    }
+}
+
+
+@media (max-width: 1029px){
+    .circleRotatorContent-item {
+        display: inline-block!important;
+        vertical-align: top;
+        width: 50%;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 1029px) {
+    .circleRotatorContent-item {
+        display: inline-block!important;
+        vertical-align: top;
+        width: 50%;
+        margin-bottom: 50px;
+    }
+}
