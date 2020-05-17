@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.integ.component.scss']
 })
 export class SFServiceIntegComponent {
-    title: string = 'CMS Solutions';
+    title: string = 'Being a seasoned integrator, we will guide you throughout the process and help you build sound Service Oriented and Event Driven Architectures.';
    }

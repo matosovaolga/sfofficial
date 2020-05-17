@@ -13,6 +13,7 @@ import { servicesRouting } from './services.routing';
 import { SharedComponentModule } from '../common/sharedModule';
 import { MatButtonModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
+import {SFServiceCmsComponent} from './service-cms/service.cms.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -30,7 +31,8 @@ import {MatTabsModule} from '@angular/material/tabs';
         SFServiceDiscoveryComponent,
         SFServiceIntegComponent,
         SFServiceQaComponent,
-        SFServiceMobileComponent
+        SFServiceMobileComponent,
+        SFServiceCmsComponent
     ],
     providers: [],
     exports: [RouterModule]

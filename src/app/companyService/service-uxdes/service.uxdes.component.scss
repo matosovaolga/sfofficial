@@ -34,10 +34,14 @@
         padding: 20px 8px;
         width: 30%;
         margin: 1%;
+        @include transition(fill 0.5s ease-out);
         opacity: 1;
 
         svg {
             width: 50px;
+            fill: $lightGrey;
+            stroke: $lightGrey;
+            @include transition(fill 0.5s ease-out);
             g {
                 @include transition(fill 0.5s ease-out);
                 opacity: 0.6;
@@ -45,14 +49,17 @@
         }
    
         &:hover {
+            color: $btnFirstColor;
+            img {
+                filter: invert(33%) sepia(19%) saturate(3190%) hue-rotate(132deg) brightness(137%) contrast(82%);
+            }
             svg{
+                fill: $btnFirstColor;
+                stroke: $btnFirstColor;
                 g {
-                    fill: $btnThirdColor;
+                    fill: $btnFirstColor;
                 }
             } 
-            h3{
-                color: $btnThirdColor;
-            }
         }
 
     h5 {
@@ -117,5 +124,12 @@
         img {
             filter: invert(33%) sepia(19%) saturate(3190%) hue-rotate(132deg) brightness(137%) contrast(82%);
         }
+        svg{
+            fill: $btnFirstColor;
+            stroke: $btnFirstColor;
+            g {
+                fill: $btnFirstColor;
+            }
+        } 
     }
 } 

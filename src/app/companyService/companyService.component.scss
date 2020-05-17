@@ -57,6 +57,16 @@
             }
         }
 
+        svg {
+       
+
+            path,
+            rect {
+                fill: $primary-color;
+                stroke: $primary-color;
+            }
+        }
+
         span {
             color: $primary-color;
         }

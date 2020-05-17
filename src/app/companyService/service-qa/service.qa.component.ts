@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.qa.component.scss']
 })
 export class SFServiceQaComponent {
-    title: string = 'Architecture: User Experience (UX) Design & Prototyping';
-    textBanner: string = 'Creatively aligning user experience with business objectives, to produce engaging digital experiences.';
+    title: string = 'INDEPENDENT QA AND TESTING';
+    textBanner: string = 'Stableflow offers a wide range of independent software QA and testing services that adhere to the highest levels of security and industry standards.';
 }

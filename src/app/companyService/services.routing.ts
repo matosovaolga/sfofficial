@@ -7,6 +7,7 @@ import {SFServiceMobileComponent} from './service-mobile/service.mobile.componen
 import {SFServiceQaComponent} from './service-qa/service.qa.component';
 import {SFServiceSoftComponent} from './service-soft/service.soft.component';
 import {SFServiceUxdesComponent} from './service-uxdes/service.uxdes.component';
+import {SFServiceCmsComponent} from './service-cms/service.cms.component';
 const servicesRoutes: Routes = [
     {
         path: 'services',
@@ -15,6 +16,10 @@ const servicesRoutes: Routes = [
     {
         path: 'services/uxdesign',
         component: SFServiceUxdesComponent
+    },
+    {
+        path: 'services/cms',
+        component: SFServiceCmsComponent
     },
     {
         path: 'services/software',
