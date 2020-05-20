@@ -1,3 +1,63 @@
-
-<sf-banner  [title]="title"
-[text]="textBanner"></sf-banner>
+<section class="serviceDetails section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section_title text-center">
+                        <h2>{{title}}</h2>
+                        <span class="line"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mat-tab-group animationDuration="0ms" dynamicHeight="true">
+    
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <img src="/assets/images/Microservices_header.png" alt="" />
+    
+                    <h5>Architecture</h5>
+                </ng-template>
+    
+                <h3>Architecture</h3>
+                <p>
+                    The detailed structure of the entire project presented in schematics and diagrams showing how the elements interact and how the product functions.       
+                </p>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <img src="/assets/images/kisspng-computer.png" alt="" />
+                    <h5>Design</h5>
+                </ng-template>
+    
+                <h3>Design</h3>
+                <p>
+                    A clickable dynamic prototype of all interrelated pages - an exact replica of what is to come.       
+                </p>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <img src="/assets/images/workflow.png" alt="" />
+    
+                    <h5>Specification</h5>
+                </ng-template>
+    
+                <h3>Specification</h3>
+                <p>
+                        User-story-based specification with a description of each page (of app functionality, between 80 and 200 pages in length).
+                </p>       
+                </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <img src="/assets/images/icons8.png" alt="" />
+                    <h5>Estimation</h5>
+                </ng-template>
+    
+                <h3>Estimation</h3>
+                <p>
+                        An accurate development estimate, providing an exact description of all app features, budget, and development timeframe.
+                </p>
+            </mat-tab>
+            
+            
+        </mat-tab-group>
+    </section>

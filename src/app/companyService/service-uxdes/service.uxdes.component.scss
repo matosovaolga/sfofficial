@@ -37,6 +37,10 @@
         @include transition(fill 0.5s ease-out);
         opacity: 1;
 
+        img {
+            max-height: 70px;
+        }
+
         svg {
             width: 50px;
             fill: $lightGrey;

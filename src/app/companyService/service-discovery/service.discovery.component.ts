@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.discovery.component.scss']
 })
 export class SFServiceDiscoveryComponent {
-    title: string = 'Architecture: User Experience (UX) Design & Prototyping';
-    textBanner: string = 'Creatively aligning user experience with business objectives, to produce engaging digital experiences.';
-}
+    title: string = 'Discovery Phase Gives You';
+  }
