@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.archi.component.scss']
 })
 export class SFServiceArchiComponent {
-    title: string = 'Architecture: User Experience (UX) Design & Prototyping';
-    textBanner: string = 'Creatively aligning user experience with business objectives, to produce engaging digital experiences.';
+    title: string = 'SOFTWARE ARCHITECTURE CONSULTING';
+    textBanner: string = 'Artezio offers software architecture consulting in different directions: within project implementations as a part of pre-production activities and as validation services to ensure that architectural decisions were made right.';
 }
