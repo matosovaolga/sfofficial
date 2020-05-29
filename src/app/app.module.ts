@@ -27,6 +27,7 @@ import {ServicesModule} from './companyService/services.module';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatButtonModule } from '@angular/material';
 import {CompanyModule} from './copmany/company.module';
+import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {SharedComponentModule} from './common/sharedModule';
     FileUploadModule,
     CompanyModule,
     SharedComponentModule,
-    ServicesModule
+    ServicesModule,
+    EngagementModule
   ],
   providers: [
     ConnectionService],

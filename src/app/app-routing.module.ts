@@ -11,13 +11,16 @@ const routes: Routes = [
   { path: 'expertises/:id', component: SFExpertiseComponent },
   {
     path: 'expertises',
-    component: SFExpertisesComponent,
-    data: { title: 'Heroes List' }
+    component: SFExpertisesComponent
   },
   {
     path: 'contacts',
     component: SFContactPageComponent,
     data: { title: 'Contact' }
+  },
+  {
+    path: 'outsoursing',
+    component: SFContactPageComponent
   },
   { path: '',
     redirectTo: '',

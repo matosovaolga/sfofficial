@@ -1,0 +1,76 @@
+@import "../../app.component.scss";
+
+.engagement_models {
+    p{
+        margin-bottom: 40px;
+    }
+
+    ul{
+        li {
+            float: left;
+            width: 25%;
+            padding-left: 12px;
+            padding-right: 4px;
+            margin: 15px 0 0;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                background-color: $darkBlue;
+                display: inline-block;
+                position: absolute;
+                top: 10px;
+                left: 0;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.dedicateResource {
+    padding-top: 56px;
+}
+
+.resourcesBlock1 {
+    background: #fdfdfd;
+    border:  $border;
+    border-radius: 5px;
+    padding: 24px;
+    text-align: center;
+    height: 100%;
+    .count-value {
+        color: $btnSecondColor;
+        font-family: $second-font-family;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 38px;
+        span {
+            color: $lightgreyBg;
+        }
+    }
+
+    .icons {
+        font-size: 65px;
+        color: $btnFirstColor;
+    }
+}
+.resourceTitle {
+    font-family: $third-font-family;
+    text-transform: uppercase;
+    color: $darkGrey;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-top: 11px;
+}
+
+.dedicateResource {
+    margin-bottom: 40px;
+}
+.rModel {
+    border-top: $border;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
