@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
 import {SFOutsourceComponent} from './outsoursing/outsource.component';
 import {SFDedicateComponent} from './dedicate/dedicate.component';
+import {SFStaffaugComponent} from './staff-aug/staffaug.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -18,7 +19,8 @@ import {SFDedicateComponent} from './dedicate/dedicate.component';
     ],
     declarations: [
         SFOutsourceComponent,
-        SFDedicateComponent
+        SFDedicateComponent,
+        SFStaffaugComponent
     ],
     providers: [],
     exports: [RouterModule]

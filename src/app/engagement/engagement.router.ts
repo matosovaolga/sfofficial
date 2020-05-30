@@ -1,7 +1,8 @@
 import {Routes, RouterModule} from '@angular/router';
 import {SFOutsourceComponent} from './outsoursing/outsource.component';
 import {SFDedicateComponent} from './dedicate/dedicate.component';
-import { from } from 'rxjs';
+import {SFStaffaugComponent} from './staff-aug/staffaug.component';
+
 
 const engagementRoutes: Routes = [
     {
@@ -11,6 +12,10 @@ const engagementRoutes: Routes = [
     {
         path: 'dedicate',
         component: SFDedicateComponent
+    },
+    {
+        path: 'staff-augmentation',
+        component: SFStaffaugComponent
     }
 
 
