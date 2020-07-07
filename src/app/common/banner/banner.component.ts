@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
     @Input() title: string;
     @Input() text: string;
     @Input() imageUrl: string = 'assets/images/macbook-mc.png';
-  //  imgUrl: string = 'assets/images/macbook-mc.png'
 
     constructor(private router: Router){
 
