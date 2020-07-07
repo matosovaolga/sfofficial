@@ -10,4 +10,5 @@ export class SFHomeComponent {
 
    title: string = "ONLY THE BEST PRACTICES IN WEB AND MOBILE APPLICATIONS DEVELOPMENT";
    bannerText:string = "StableFlow is a software development company driven to deliver uncompromising quality, efficiency, and customer service.";
-}
+   imgUrl: string = 'assets/images/mac.png'
+  }

@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   export class SFBannerComponent {
     @Input() title: string;
     @Input() text: string;
-    @Input() imgUrl1: string;
-    @Input() imgUrl2: string;
+    @Input() imageUrl: string = 'assets/images/macbook-mc.png';
+
     constructor(private router: Router){
 
     }
