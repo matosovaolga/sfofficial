@@ -27,13 +27,8 @@ const routes: Routes = [
     pathMatch: 'full',
     component: SFHomeComponent
   },
-  // { path: '**', component: PageNotFoundComponent }
- /* {
-    path: 'company',
-    component: SFCompanyComponent,
-    loadChildren: './company/company.module#CompanyModule',
-},*/
-];;
+   { path: '**', component: SFHomeComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
