@@ -16,8 +16,8 @@ const routes: Routes = [
     component: SFExpertisesComponent
   },
   {
-    path: 'company',
-    loadChildren: './company/company.module#CompanyModule',
+    path: 'services',
+    loadChildren: './companyService/services.module#ServicesModule',
   },
   {
     path: 'contacts',
@@ -25,8 +25,8 @@ const routes: Routes = [
     data: { title: 'Contact' }
   },
   {
-    path: 'engagement',
-    loadChildren: './engagement/engagement.module#EngagementModule',
+    path: 'outsoursing',
+    component: SFContactPageComponent
   },
   {
     path: '',

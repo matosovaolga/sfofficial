@@ -47,6 +47,8 @@ const servicesRoutes: Routes = [
         pathMatch: 'full',
         component: SFServicesComponent
       }
+    
+
 ];
 
 export const servicesRouting = RouterModule.forChild(servicesRoutes);

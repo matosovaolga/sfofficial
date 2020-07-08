@@ -6,6 +6,7 @@ import { SFHomeComponent } from './home/home.component';
 import { SFContactPageComponent } from './contactPage/contactPage.component';
 
 const routes: Routes = [
+
   {
     path: 'services',
     loadChildren: './companyService/services.module#ServicesModule',
@@ -16,17 +17,13 @@ const routes: Routes = [
     component: SFExpertisesComponent
   },
   {
-    path: 'company',
-    loadChildren: './company/company.module#CompanyModule',
-  },
-  {
     path: 'contacts',
     component: SFContactPageComponent,
     data: { title: 'Contact' }
   },
   {
-    path: 'engagement',
-    loadChildren: './engagement/engagement.module#EngagementModule',
+    path: 'outsoursing',
+    component: SFContactPageComponent
   },
   {
     path: '',

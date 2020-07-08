@@ -11,7 +11,7 @@ import {SFServiceCmsComponent} from './service-cms/service.cms.component';
 const servicesRoutes: Routes = [
 
       {
-        path: 'uxdesign',
+        path: 'services/uxdesign',
         component: SFServiceUxdesComponent
       },
       {
@@ -47,6 +47,8 @@ const servicesRoutes: Routes = [
         pathMatch: 'full',
         component: SFServicesComponent
       }
+    
+
 ];
 
 export const servicesRouting = RouterModule.forChild(servicesRoutes);

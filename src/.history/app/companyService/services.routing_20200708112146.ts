@@ -9,44 +9,46 @@ import {SFServiceSoftComponent} from './service-soft/service.soft.component';
 import {SFServiceUxdesComponent} from './service-uxdes/service.uxdes.component';
 import {SFServiceCmsComponent} from './service-cms/service.cms.component';
 const servicesRoutes: Routes = [
-
-      {
-        path: 'uxdesign',
+    {
+        path: 'services',
+        component: SFServicesComponent,
+        
+        children: [
+  
+    {
+        path: 'services/uxdesign',
         component: SFServiceUxdesComponent
-      },
-      {
-        path: 'software',
-        component: SFServiceSoftComponent
-      },
-      {
-        path: 'cms',
+    },
+    {
+        path: 'services/cms',
         component: SFServiceCmsComponent
-      },
-      {
-        path: 'qa',
+    },
+    {
+        path: 'services/software',
+        component: SFServiceSoftComponent
+    },
+    {
+        path: 'services/qa',
         component: SFServiceQaComponent
-      },
-      {
-        path: 'consulting',
+    },
+    {
+        path: 'services/consulting',
         component: SFServiceArchiComponent
-      },
-      {
-        path: 'discovery',
+    },
+    {
+        path: 'services/discovery',
         component: SFServiceDiscoveryComponent
-      },
-      {
-        path: 'integration',
+    },
+    {
+        path: 'services/integration',
         component: SFServiceIntegComponent
-      },
-      {
-        path: 'mobile',
+    },
+    {
+        path: 'services/mobile',
         component: SFServiceMobileComponent
-      },
-      {
-        path: '',
-        pathMatch: 'full',
-        component: SFServicesComponent
-      }
+    }]
+}
+
 ];
 
 export const servicesRouting = RouterModule.forChild(servicesRoutes);

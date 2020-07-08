@@ -25,8 +25,8 @@ const routes: Routes = [
     data: { title: 'Contact' }
   },
   {
-    path: 'engagement',
-    loadChildren: './engagement/engagement.module#EngagementModule',
+    path: 'outsoursing',
+    component: SFContactPageComponent
   },
   {
     path: '',

@@ -25,8 +25,9 @@ const routes: Routes = [
     data: { title: 'Contact' }
   },
   {
-    path: 'engagement',
-    loadChildren: './engagement/engagement.module#EngagementModule',
+    path: 'outsoursing',
+    
+    loadChildren: './engagement/engagement.module#CompanyModule',
   },
   {
     path: '',
