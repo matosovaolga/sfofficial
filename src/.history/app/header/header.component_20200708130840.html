@@ -1,0 +1,98 @@
+<div id="header-wrap" class="stuck_menu" [ngClass]="{'header-sticky': windowScrolled}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="menuzord" class="menuzord">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <a id="logo" routerLink="/" class="logo menuzord-brand" data-dark-logo="assets/images/logo-dark.png">
+                        <img src="assets/images/logo.png" alt="Polo Logo">
+                    </a>
+                    <div class="header-extras">
+                        <ul>
+
+                            <li>
+                                <div class="topbar-dropdown">
+                                    <a class="title"><i class="ion-android-globe"></i></a>
+                                    <div class="dropdown-list">
+                                        <a class="list-entry" href="">Русский</a>
+                                        <a class="list-entry" href="">English</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <nav class="menuzord-menu">
+                        <li>
+                            <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Home</a>
+                        </li>
+                        <li>
+                            <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Services</a>
+                                <ul class="dropdown">
+                                    <li><a routerLink="/services/uxdesign">UX Design and Prototypes</a></li>
+                                    <li><a routerLink="/services/software">Web Appliction Development</a></li>
+                                    <li><a routerLink="/services/mobile">Mobile Application Development</a></li>
+                                    <li><a routerLink="/services/cms">CMS Development</a></li>
+                                    <li><a routerLink="/services/qa">QA and Testing</a></li>
+                                    <li><a routerLink="/services/integration">Application Integration</a></li>
+                                    <li><a routerLink="/services/discovery">Discovery Phase</a></li>
+                                    <li><a routerLink="/services/consulting">Software Architecture & Technology Consulting</a></li>
+                                </ul>
+                        </li>
+
+                        <li>
+                            <a routerLink="/expertises" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Expertises</a>
+                            <ul class="dropdown multi">
+                                <li>Bussines solutions
+                                    <ul>
+                                        <li><a href="">Web and Enterprise Portals</a></li>
+                                        <li><a href="">Enterprise Mobile Apps</a></li>
+                                        <li><a href="">Ecommerce</a></li>
+                                        <li><a href="">Social Networking</a></li>
+                                        <li><a href="">Business Process Automation</a></li>
+                                    </ul>
+                                </li>
+                                <li>Development stack
+                                    <ul>
+                                        <li><a href="">Open Source</a></li>
+                                        <li><a href="">Mobile platforms</a></li>
+                                        <li><a href="">JavaScript</a></li>
+                                        <li><a href="">Cloud Technologies</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Engagement Models</a>
+                            <ul class="dropdown">
+                                <li><a routerLink="/engagement/outsourcing" [routerLinkActive]="['active']">Project-based Outsourcing</a></li>
+                                <li><a routerLink="/engagement/dedicate" [routerLinkActive]="['active']">Dedicated Team</a></li>
+                                <li><a  routerLink="/engagement/staff-augmentation" [routerLinkActive]="['active']" >Staff Augmentation</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a routerLink="/about" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">company</a>
+                            <ul class="dropdown">
+                                <li><a routerLink="company/about" [routerLinkActive]="['active']" >About Us</a></li>
+                                <li><a routerLink="/vacancies" [routerLinkActive]="['active']" >Vacancies</a></li>
+                                <li><a routerLink="/process" [routerLinkActive]="['active']">Process</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}">Contact</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

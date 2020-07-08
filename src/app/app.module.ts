@@ -26,7 +26,7 @@ import {SFContactPageComponent} from './contactPage/contactPage.component';
 import {ServicesModule} from './companyService/services.module';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MatButtonModule } from '@angular/material';
-import {CompanyModule} from './copmany/company.module';
+import {CompanyModule} from './company/company.module';
 import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
