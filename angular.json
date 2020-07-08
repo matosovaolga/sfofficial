@@ -22,6 +22,9 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+           
+              
+          
             "aot": false,
             "assets": [
               "src/favicon.ico",
@@ -74,11 +77,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sfofficeal:build"
+            "browserTarget": "sfofficeal:build",
+            "sourceMap": false
           },
           "configurations": {
             "production": {
-              "browserTarget": "sfofficeal:build:production"
+              "browserTarget": "sfofficeal:build:production",
+              "sourceMap": false
             }
           }
         },
