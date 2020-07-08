@@ -29,13 +29,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: SFHomeComponent
   },
-  // { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent }
   // {
   //   path: 'company',
   //   component: SFCompanyComponent,
   //   loadChildren: './company/company.module#CompanyModule',
   // },
-  { path: '404', component: PageNotFoundComponent }
 ];
 
 @NgModule({
