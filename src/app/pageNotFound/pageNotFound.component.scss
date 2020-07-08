@@ -1,0 +1,47 @@
+@import "~../app.component.scss";
+
+.notFound {
+    text-align: center;
+    font-weight: bold;
+    font-family: $primary-font-family;
+
+    .num {
+        font-size: 170px;
+        background: linear-gradient($btnThirdColor 40%, $btnSecondColor 60%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .text {
+        font-size: 40px;
+        font-weight: bold;
+        background: linear-gradient($btnThirdColor 40%, $btnSecondColor 60%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        line-height: initial;
+    }
+
+    button {
+        text-align: center;
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin: 0 auto;
+        border: none;
+        background-color: $btnSecondColor;
+        color: $lightColor;
+        padding: 10px 30px;
+        font-weight: 600;
+    }
+
+    button:active {
+        transform: translateY(1px);
+        filter: saturate(150%);
+    }
+    
+    button:hover {
+        background-color: $btnThirdColor;
+    }
+
+}
