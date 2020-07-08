@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
+import {BrowserModule}  from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { SFServicesComponent } from './companyService/companyService.component';
 import { SFExpertisesComponent } from './expertise/expertises.component';
 import { SFExpertiseComponent } from './expertise/expertise-single/expertise.component';
 import { SFHomeComponent } from './home/home.component';
-import { SFContactPageComponent } from './contactPage/contactPage.component';
-
+import {SFContactPageComponent} from './contactPage/contactPage.component';
 const routes: Routes = [
   {
-    path: 'services',
-    loadChildren: './companyService/services.module#ServicesModule',
+     path: 'services',
+     component: SFServicesComponent,
+     loadChildren: './components/dashboard/service.module#ServicesModule'
   },
   { path: 'expertises/:id', component: SFExpertiseComponent },
   {
@@ -16,28 +18,27 @@ const routes: Routes = [
     component: SFExpertisesComponent
   },
   {
-    path: 'company',
-    loadChildren: './company/company.module#CompanyModule',
-  },
-  {
     path: 'contacts',
     component: SFContactPageComponent,
     data: { title: 'Contact' }
   },
   {
-    path: 'engagement',
-    loadChildren: './engagement/engagement.module#EngagementModule',
+    path: 'outsoursing',
+    component: SFContactPageComponent
   },
-  {
-    path: '',
+  { path: '',
+    redirectTo: '',
     pathMatch: 'full',
     component: SFHomeComponent
   },
-  { path: '**', redirectTo: '' }
+
+
+  { path: '**', component: SFHomeComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  
 })
 export class AppRoutingModule { }
