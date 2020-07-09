@@ -1,76 +1,160 @@
 @import "../../app.component.scss";
 
-.engagement_models {
-    p{
+
+.intro {
+    margin: auto;
+    background-color: $btnThirdColor;
+    color: $lightColor;
+    // padding-bottom: 0 0 50px 0;
+    .introText {
+        padding: 40px 20px;
+        h2 {
+            padding: 20px 0px;
+            font-weight: 400;
+        }
+        p {
+            color: $lightColor;
+            font-size: x-large;
+            line-height: 40px;
+        }
+    }
+}
+
+.description {
+    padding:  50px  0 50px 0  ;
+    .row div {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        margin: 20px 0;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 160px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    
+}
+
+.benefits {
+    text-align: center;
+    background-color: $btnThirdColor;
+    color: $lightColor;
+
+    padding: 50px;
+    .row div {
         margin-bottom: 40px;
     }
+    h3 {
+        line-height: 40px;
+    }
+    img {
+        display: block;
+        width: 100%;
+        max-width: 140px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    h4 {
+    }
+    p {
+        margin-top: 30px;
+        color: $lightColor;
+    }
+}
 
-    ul{
+.advantage {
+    padding: 50px 0;
+    h3 {
+        margin-bottom: 30px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .advantage-item {
+        margin-bottom: 50px;
+    }
+    .advantage-item h4 {
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+}
+
+.checklist {
+    background-color: $btnThirdColor;
+    color: $lightColor;
+    padding: 40px 0;
+
+    h3 {
+        margin: 20px 0;
+    }
+    p {
+        color: $lightColor;
+    }
+    .frame {
+        background-color: $lightColor;
+        height: 100%;
+        margin: 20px 0;
+        border-radius: $default-border-radius;
         li {
-            float: left;
-            width: 25%;
-            padding-left: 12px;
-            padding-right: 4px;
-            margin: 15px 0 0;
-            position: relative;
-
-            &::before {
-                content: '';
-                width: 5px;
-                height: 5px;
-                background-color: $darkBlue;
-                display: inline-block;
-                position: absolute;
-                top: 10px;
-                left: 0;
-                border-radius: 50%;
-            }
+            color: $btnThirdColor;
+            padding: 10px 0;
+        }
+        img {
+            padding-right: 10px;
         }
     }
 }
 
-.dedicateResource {
-    padding-top: 56px;
-}
+.contacts {
+    margin-top: 80px;
 
-.resourcesBlock1 {
-    background: #fdfdfd;
-    border:  $border;
-    border-radius: 5px;
-    padding: 24px;
-    text-align: center;
-    height: 100%;
-    .count-value {
-        color: $btnSecondColor;
-        font-family: $second-font-family;
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 38px;
-        span {
-            color: $lightgreyBg;
-        }
+    .row {
+        background: no-repeat url("../../../assets/images/staff-aug/blue_graphics.svg");
+        background-size: cover;
+    }
+    img {
+        padding-right: 12px;
+    }
+    h3 {
+        padding: 50px 0;
+        color: $lightColor;
+        text-align: center;
+    }
+    h4 {
+        margin: 30px;
+        color: $lightColor;
+    }
+    .btn {
+        text-align: center;
+        margin: 40px;
+    }
+    button {
+        text-align: center;
+        border-radius: 20px;
+        text-transform: uppercase;
+        margin: 0 auto;
+        border: none;
+        background-color: $btnThirdColor;
+        border: 1px solid $btnThirdColor;
+
+        color: $lightColor;
+        padding: 10px 30px;
+        font-weight: 600;
     }
 
-    .icons {
-        font-size: 65px;
-        color: $btnFirstColor;
+    button:active {
+        transform: translateY(1px);
+        filter: saturate(150%);
     }
-}
-.resourceTitle {
-    font-family: $third-font-family;
-    text-transform: uppercase;
-    color: $darkGrey;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding-top: 11px;
-}
 
-.dedicateResource {
-    margin-bottom: 40px;
-}
-.rModel {
-    border-top: $border;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    button:hover {
+        background: none;
+        border: 1px solid $lightGrey;
+        box-sizing: border-box;
+    }
 }
