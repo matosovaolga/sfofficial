@@ -1,27 +1,7 @@
 @import "../../app.component.scss";
 
-
-.intro {
-    margin: auto;
-    background-color: $btnThirdColor;
-    color: $lightColor;
-    // padding-bottom: 0 0 50px 0;
-    .introText {
-        padding: 40px 20px;
-        h2 {
-            padding: 20px 0px;
-            font-weight: 400;
-        }
-        p {
-            color: $lightColor;
-            font-size: x-large;
-            line-height: 40px;
-        }
-    }
-}
-
 .description {
-    padding:  50px  0 50px 0  ;
+    padding: 0px 0 80px 0;
     .row div {
         margin-bottom: 20px;
     }
@@ -37,8 +17,6 @@
         height: 100%;
         margin: 0 auto;
     }
-
-    
 }
 
 .benefits {
@@ -69,7 +47,7 @@
 }
 
 .advantage {
-    padding: 50px 0;
+    padding-top: 50px;
     h3 {
         margin-bottom: 30px;
         line-height: 40px;
@@ -82,26 +60,32 @@
         margin-bottom: 20px;
         font-weight: 400;
     }
+    img {
+        padding-right: 10px;
+    }
 }
 
 .checklist {
-    background-color: $btnThirdColor;
-    color: $lightColor;
-    padding: 40px 0;
-
     h3 {
         margin: 20px 0;
     }
     p {
-        color: $lightColor;
+        // color: $lightColor;
     }
     .frame {
-        background-color: $lightColor;
+        background-color: $btnThirdColor;
         height: 100%;
         margin: 20px 0;
         border-radius: $default-border-radius;
+        padding: 50px;
+        padding-right: 0;
+        clip-path: polygon(39% 0, 100% 0, 100% 84%, 65% 100%, 0 100%, 0 60%, 0 15%);
+        color: $lightColor;
+
+        ul {
+        }
+
         li {
-            color: $btnThirdColor;
             padding: 10px 0;
         }
         img {
