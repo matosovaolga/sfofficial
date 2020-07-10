@@ -3,7 +3,7 @@
 .vacancies {
     .banner {
         position: absolute;
-        background:  no-repeat url("../../../assets/images/banner-bg-5.png");
+        background: no-repeat url("../../../assets/images/banner-bg-5.png");
         background-size: cover;
         height: 100%;
         width: 80%;
@@ -12,11 +12,15 @@
     }
     .app_banner {
         margin: 100px 0;
-        
+
         .banner_content {
             margin-top: 40px;
         }
+
         > img {
+            @include respond-to("medium") {
+                display: none;
+            }
             position: absolute;
             width: 80px;
             transform: scale(0.85);
@@ -38,7 +42,6 @@
             top: 14%;
             right: 14%;
             width: 120px;
-
         }
         .user-2 {
             top: 15%;
