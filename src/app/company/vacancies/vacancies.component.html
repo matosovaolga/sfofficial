@@ -42,10 +42,11 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        All
+                        {{currentFilter}}
                     </button>
                     <div class="dropdown-menu">
-                        <button class="dropdown-item" *ngFor="let vacancy of vacancies">
+                        <button class="dropdown-item"  (click)="getName(vacancy)">All</button>
+                        <button class="dropdown-item" *ngFor="let vacancy of vacancies" (click)="getName(vacancy)">
                             <p>{{vacancy.role}}</p>
                         </button>
                     </div>
@@ -58,7 +59,7 @@
                     <div class="row">
 
                         <ul class="col-12 vacanciesList">
-                            <li *ngFor="let vacancy of vacancies" class="vacancy">
+                            <li *ngFor="let vacancy of filterBy(vacancies)" class="vacancy">
 
                                 <div class="hotIcon"><img src="../../../assets/images/hot_icon.svg"
                                         alt="checklist_icon">

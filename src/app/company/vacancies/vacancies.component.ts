@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
-import {VacanciesService} from './vacancies.service';
-import {Vacancy} from './vacancy.model';
+import { Router } from '@angular/router';
+import { VacanciesService } from './vacancies.service';
+import { Vacancy } from './vacancy.model';
 @Component({
   selector: 'sf-vacancies',
   templateUrl: './vacancies.component.html',
@@ -10,7 +10,8 @@ import {Vacancy} from './vacancy.model';
 export class SFVacanciesComponent {
   vacancies: [Vacancy];
   title: string = 'CAREER';
-  bannerText: string = 'Become part of the anovis team';
+  currentFilter: string = 'All';
+
   constructor(
     private router: Router,
     private vacanciesService: VacanciesService
@@ -19,4 +20,19 @@ export class SFVacanciesComponent {
       this.vacancies = resp;
     });
   }
+
+  getName(vacancy) {
+    if (!vacancy) {
+      this.currentFilter = 'All'
+    } else {
+      this.currentFilter = vacancy.role 
+    }
+  }
+
+  filterBy(arr) {
+    if (this.currentFilter = 'All') return arr
+    return arr.filter(el => el.role == this.currentFilter)
+  }
+
+
 }
