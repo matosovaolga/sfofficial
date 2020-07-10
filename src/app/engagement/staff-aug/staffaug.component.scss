@@ -66,6 +66,9 @@
 }
 
 .checklist {
+    border-bottom: 1px solid #00c6ff;
+    margin: 70px 0;
+    border-top: 1px solid #00c6ff;
     h3 {
         margin: 20px 0;
     }
@@ -75,7 +78,7 @@
     .frame {
         background-color: $btnThirdColor;
         height: 100%;
-        margin: 20px 0;
+        margin: -70px 0;
         border-radius: $default-border-radius;
         padding: 50px;
         padding-right: 0;

@@ -1,29 +1,72 @@
-<sf-banner  [title]="title"
-[text]="bannerText"></sf-banner>
+<!-- <sf-banner [title]="title" [text]="bannerText"></sf-banner> -->
 <section class="vacancies section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section_title text-center">
-                      
-                        <h2>Find Your Feature</h2>
-                        <span class="line"></span>
+
+    <div class="container-fluid intro">
+        <div class="banner"></div>
+        <div class="row">
+            <div class="col-8">
+                <h1>Do not try to be part of a
+                    team, but be a team.</h1>
+                <h4>In the same way that you would never use a hammer to drive screws when building furniture, you want
+                    to make sure that your applications are being build with the right tools.
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row vacanciesBlock">
+
+            <div class="col-3">
+                <h3>Directions</h3>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Action
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">All</a>
+                        <a class="dropdown-item" href="#">.Net</a>
+                        <a class="dropdown-item" href="#">Ios</a>
+                        <a class="dropdown-item" href="#">Android</a>
+                        <a class="dropdown-item" href="#">C++</a>
+                        <a class="dropdown-item" href="#">JavaScript</a>
+                        <a class="dropdown-item" href="#">DevOps</a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                        <ul>
-                                <li class="vacancy" *ngFor="let vacancy of vacancies">
-                                    <a routerLink="{{'/vacancies/' + vacancy.id}}" [routerLinkActive]="['active']">{{vacancy.role}}</a>
-                                    <span>Experience: {{vacancy.experience}}<br />
-                                            1 position
-                                    </span>
-                                    <sf-btn>apply</sf-btn>
-                                </li>
-                            </ul>
+
+            <div class="col-9 paddingLeft">
+                <h3 class="paddingLeft">Vacancies</h3>
+                <div class="container">
+                    <div class="row">
+
+                        <ul class="col-12 vacanciesList">
+                            <li *ngFor="let vacancy of vacancies" class="vacancy">
+                                <a routerLink="{{'/vacancies/' + vacancy.id}}" [routerLinkActive]="['active']">
+                                    <div class="hotIcon"><img src="../../../assets/images/hot_icon.svg" alt="checklist_icon"> <p>Hot</p></div>
+                                    
+                                    <h4>{{vacancy.role}}</h4>
+                                    <p class="seniority">{{vacancy.seniority}}</p>
+                                    <p class="text">{{vacancy.description}}</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        </section>
 
+        </div>
+    </div>
+
+        <div class="container questionary">
+            <h4 >Couldn't find the right vacancy for you? </h4>
+                <p >Send us your information and we'll let you know when something comes up. </p>
+            <div class="row justify-content-center ">
+                <div class="col-3"><button>Send CV</button></div>
+                <div class="col-3"><button>Apply with Linkedin</button></div>
+            </div>
+        </div>
+
+</section>
