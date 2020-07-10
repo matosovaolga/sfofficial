@@ -1,27 +1,71 @@
 @import "../../app.component.scss";
 
 .vacancies {
-    .intro {
-        background: center no-repeat url("../../../assets/images/banner-it.png");
+    .banner {
+        position: absolute;
+        background:  no-repeat url("../../../assets/images/banner-bg-5.png");
         background-size: cover;
-        min-height: 600px;
-        position: relative;
-        padding: 0;
-        .banner {
+        height: 100%;
+        width: 80%;
+        top: 0;
+        right: 0;
+    }
+    .app_banner {
+        margin: 100px 0;
+        
+        .banner_content {
+            margin-top: 40px;
+        }
+        > img {
             position: absolute;
-            background-color: black;
-            opacity: 0.6;
-            min-height: 600px;
-            width: 100%;
+            width: 80px;
+            transform: scale(0.85);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(0.85);
+            }
+            50% {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0.85);
+            }
         }
 
-        h1 {
-            color: $lightColor;
-            padding: 50px;
+        .user-1 {
+            top: 14%;
+            right: 14%;
+            width: 120px;
+
         }
-        h4 {
-            color: $lightColor;
-            padding-left: 50px;
+        .user-2 {
+            top: 15%;
+            right: 47%;
+        }
+        .user-3 {
+            top: 29%;
+            right: 41%;
+            width: 100px;
+        }
+        .user-4 {
+            top: 54%;
+            right: 4%;
+        }
+        .user-5 {
+            top: 54%;
+            left: 9%;
+        }
+        .user-6 {
+            top: 39%;
+            right: 14%;
+            width: 60px;
+        }
+        .user-7 {
+            top: 50%;
+            right: 40%;
+            width: 100px;
         }
     }
 
@@ -33,6 +77,9 @@
         }
         button {
             width: 200px;
+        }
+        .paddingLeft {
+            padding-left: 50px;
         }
         .vacanciesList {
             border-left: 1px solid $lightGrey;
@@ -53,9 +100,6 @@
                 }
             }
 
-            .paddingLeft {
-                padding-left: 50px;
-            }
             .vacancy {
                 border-bottom: 2px solid $lightGrey;
                 padding-bottom: 15px;
@@ -64,7 +108,7 @@
                 h4 {
                     padding: 0 0 15px;
                     font-weight: 700;
-                    color: $darkBlue;
+                    color: $darkGrey;
                 }
                 .seniority {
                     font-weight: 700;
@@ -107,6 +151,7 @@
             color: $darkBlue;
             padding: 10px 30px;
             font-weight: 600;
+            transition-duration: 1s;
         }
 
         button:active {
