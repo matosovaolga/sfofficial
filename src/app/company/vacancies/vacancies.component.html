@@ -59,7 +59,7 @@
                     <div class="row">
 
                         <ul class="col-12 vacanciesList">
-                            <li *ngFor="let vacancy of filterBy(vacancies)" class="vacancy">
+                            <li *ngFor="let vacancy of vacancies | filter:  'role' : currentFilter"  class="vacancy">
 
                                 <div class="hotIcon"><img src="../../../assets/images/hot_icon.svg"
                                         alt="checklist_icon">

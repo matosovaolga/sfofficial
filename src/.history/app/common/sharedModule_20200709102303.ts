@@ -4,12 +4,11 @@ import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {SFBannerComponent} from './banner/banner.component';
 import {SFBtnComponent} from './btn/btn.component';
-import {FilterPipe} from './../_pipe/filter.pipe';
+
 @NgModule({
     declarations: [
         SFBtnComponent,
-        SFBannerComponent,
-        FilterPipe
+        SFBannerComponent
     ],
     imports: [
         CommonModule,
@@ -19,8 +18,7 @@ import {FilterPipe} from './../_pipe/filter.pipe';
     providers: [],
     exports: [
         SFBtnComponent,
-        SFBannerComponent,
-        FilterPipe
+        SFBannerComponent
     ],
       entryComponents: [
         
