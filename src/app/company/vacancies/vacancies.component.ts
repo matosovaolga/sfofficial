@@ -22,17 +22,8 @@ export class SFVacanciesComponent {
   }
 
   getName(vacancy) {
-    if (!vacancy) {
-      this.currentFilter = 'All'
-    } else {
-      this.currentFilter = vacancy.role 
+    if (vacancy) {
+      this.currentFilter = vacancy.role ;
     }
   }
-
-  filterBy(arr) {
-    if (this.currentFilter = 'All') return arr
-    return arr.filter(el => el.role == this.currentFilter)
-  }
-
-
 }
