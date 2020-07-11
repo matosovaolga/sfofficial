@@ -1,39 +1,207 @@
 @import "../../app.component.scss";
 
 .vacancies {
-    .vacancy {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        padding: 10px 15px;
+    .banner {
+        position: absolute;
+        background: no-repeat url("../../../assets/images/banner-bg-5.png");
+        background-size: cover;
+        height: 100%;
+        width: 80%;
+        top: 0;
+        right: 0;
+    }
+    .app_banner {
+        margin: 100px 0;
 
-        &:nth-child(even) {
-            background-color: $lightgreyBg;
+        .banner_content {
+            margin-top: 40px;
         }
 
-        & > * {
-            flex-grow: 1;
-            flex-basis: 10%;
-            max-width: 10%;
-            vertical-align: middle;
-
-            &:first-child {
-                flex-grow: 2;
-                flex-basis: 60%;
-                max-width: 60%;
-                text-transform: uppercase;
+        > img {
+            @include respond-to("medium") {
+                display: none;
             }
-            &:nth-child(2) {
-                flex-grow: 2;
-                flex-basis: 30%;
-                max-width: 30%;
-                font-size: 14px;
-                color: $lightGrey;
+            position: absolute;
+            width: 80px;
+            transform: scale(0.85);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(0.85);
+            }
+            50% {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0.85);
             }
         }
 
-        sf-btn {
-            text-transform: uppercase;
+        .user-1 {
+            top: 14%;
+            right: 14%;
+            width: 120px;
+        }
+        .user-2 {
+            top: 15%;
+            right: 47%;
+        }
+        .user-3 {
+            top: 29%;
+            right: 41%;
+            width: 100px;
+        }
+        .user-4 {
+            top: 54%;
+            right: 4%;
+        }
+        .user-5 {
+            top: 54%;
+            left: 9%;
+        }
+        .user-6 {
+            top: 39%;
+            right: 14%;
+            width: 60px;
+        }
+        .user-7 {
+            top: 50%;
+            right: 40%;
+            width: 100px;
         }
     }
+
+    .vacanciesBlock {
+        h3 {
+            padding: 50px 0 50px 0;
+            font-weight: 700;
+            color: $darkBlue;
+        }
+        button {
+            width: 200px;
+        }
+        .paddingLeft {
+            padding-left: 50px;
+        }
+        .vacanciesList {
+            border-left: 1px solid $lightGrey;
+            padding-left: 50px;
+
+            .hotIcon {
+                width: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-bottom: 15px;
+
+                p {
+                    font-size: 22px;
+                    color: #d02f28;
+                    font-weight: 700;
+                    padding-left: 15px;
+                }
+            }
+
+            .vacancy {
+                border-bottom: 2px solid $lightGrey;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+
+                h4 {
+                    padding: 0 0 15px;
+                    font-weight: 700;
+                    color: $darkGrey;
+                }
+                .seniority {
+                    font-weight: 700;
+                    font-size: larger;
+                    color: $btnThirdColor;
+                }
+                .text {
+                    padding: 15px 0 0;
+                    font-size: 16px;
+                }
+            }
+            .vacancy:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .questionary {
+        margin-top: 100px;
+        text-align: center;
+        h4 {
+            padding: 0 0 15px;
+            font-weight: 700;
+            color: $darkBlue;
+        }
+        p {
+            font-weight: 700;
+            font-size: larger;
+            padding: 0 0 30px;
+        }
+        button {
+            text-align: center;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin: 0 auto;
+            border: none;
+            background-color: $lightColor;
+            border: 1px solid $darkBlue;
+            color: $darkBlue;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition-duration: 1s;
+        }
+
+        button:active {
+            transform: translateY(1px);
+            filter: saturate(150%);
+        }
+
+        button:hover {
+            background: $darkBlue;
+            color: $lightColor;
+            border: 1px solid $darkBlue;
+            box-sizing: border-box;
+        }
+    }
+    // .vacancy {
+    //     display: flex;
+    //     width: 100%;
+    //     align-items: center;
+    //     padding: 10px 15px;
+
+    //     &:nth-child(even) {
+    //         background-color: $lightgreyBg;
+    //     }
+
+    //     & > * {
+    //         flex-grow: 1;
+    //         flex-basis: 10%;
+    //         max-width: 10%;
+    //         vertical-align: middle;
+
+    //         &:first-child {
+    //             flex-grow: 2;
+    //             flex-basis: 60%;
+    //             max-width: 60%;
+    //             text-transform: uppercase;
+    //         }
+    //         &:nth-child(2) {
+    //             flex-grow: 2;
+    //             flex-basis: 30%;
+    //             max-width: 30%;
+    //             font-size: 14px;
+    //             color: $lightGrey;
+    //         }
+    //     }
+
+    //     sf-btn {
+    //         text-transform: uppercase;
+    //     }
+    // }
 }

@@ -1,29 +1,93 @@
-<sf-banner  [title]="title"
-[text]="bannerText"></sf-banner>
 <section class="vacancies section_padding">
+    <div class="banner"></div>
+
+    <div class="app_banner ">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section_title text-center">
-                      
-                        <h2>Find Your Feature</h2>
-                        <span class="line"></span>
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="banner_content">
+                        <h1 class="">Do not try to be part of a
+                            team, but be a team.
+                        </h1>
+                        <h5 class="">In the same way that you would never use a hammer to drive screws when building
+                            furniture, you want to make sure that your applications are being build with the right
+                            tools.
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-6  order-1 order-lg-2 pos_relative">
+                    <div class="app_img">
+                        <img src="../../../assets/images/macbook-mc.png" alt="app img" class="img-fluid">
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                        <ul>
-                                <li class="vacancy" *ngFor="let vacancy of vacancies">
-                                    <a routerLink="{{'/vacancies/' + vacancy.id}}" [routerLinkActive]="['active']">{{vacancy.role}}</a>
-                                    <span>Experience: {{vacancy.experience}}<br />
-                                            1 position
-                                    </span>
-                                    <sf-btn>apply</sf-btn>
-                                </li>
-                            </ul>
+        </div>
+
+        <img src="../../../assets/images/users/user-1.png" alt="user-1" class="user-1">
+        <img src="../../../assets/images/users/user-2.png" alt="user-2" class="user-2">
+        <img src="../../../assets/images/users/user-3.png" alt="user-3" class="user-3">
+        <img src="../../../assets/images/users/user-4.png" alt="user-4" class="user-4">
+        <img src="../../../assets/images/users/user-5.png" alt="user-5" class="user-5">
+        <img src="../../../assets/images/users/user-6.png" alt="user-6" class="user-6">
+        <img src="../../../assets/images/users/user-7.png" alt="user-7" class="user-7">
+
+    </div>
+
+    <div class="container">
+        <div class="row vacanciesBlock">
+
+            <div class="col-3">
+                <h3>Directions</h3>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        {{currentFilter}}
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item"  (click)="getName(vacancy)">All</button>
+                        <button class="dropdown-item" *ngFor="let vacancy of vacancies" (click)="getName(vacancy)">
+                            <p>{{vacancy.role}}</p>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        </section>
 
+            <div class="col-9 paddingLeft">
+                <h3 class="paddingLeft">Vacancies</h3>
+                <div class="container">
+                    <div class="row">
+
+                        <ul class="col-12 vacanciesList">
+                            <li *ngFor="let vacancy of filterBy(vacancies)" class="vacancy">
+
+                                <div class="hotIcon"><img src="../../../assets/images/hot_icon.svg"
+                                        alt="checklist_icon">
+                                    <p>Hot</p>
+                                </div>
+                                <a routerLink="{{'/vacancies/' + vacancy.id}}" [routerLinkActive]="['active']">
+                                    <h4>{{vacancy.role}}</h4>
+                                </a>
+                                <p class="seniority">{{vacancy.seniority}}</p>
+                                <p class="text">{{vacancy.description}}</p>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container questionary">
+        <h4>Couldn't find the right vacancy for you? </h4>
+        <p>Send us your information and we'll let you know when something comes up. </p>
+        <div class="row justify-content-center ">
+            <div class="col-3"><button>Send CV</button></div>
+            <div class="col-3"><button>Apply with Linkedin</button></div>
+        </div>
+    </div>
+
+</section>

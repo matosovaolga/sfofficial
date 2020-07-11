@@ -4,12 +4,14 @@ import { SFExpertisesComponent } from './expertise/expertises.component';
 import { SFExpertiseComponent } from './expertise/expertise-single/expertise.component';
 import { SFHomeComponent } from './home/home.component';
 import { SFContactPageComponent } from './contactPage/contactPage.component';
+import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 
 const routes: Routes = [
   {
     path: 'services',
     loadChildren: './companyService/services.module#ServicesModule',
   },
+
   { path: 'expertises/:id', component: SFExpertiseComponent },
   {
     path: 'expertises',
@@ -33,7 +35,7 @@ const routes: Routes = [
     pathMatch: 'full',
     component: SFHomeComponent
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

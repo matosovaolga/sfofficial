@@ -16,6 +16,7 @@ export class SFVacancyComponent implements AfterViewInit {
     skillsPlus: ['']
 
   };
+  
   constructor(
     private router: Router,
     private vacanciesService: VacanciesService

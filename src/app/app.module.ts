@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material';
 import {CompanyModule} from './company/company.module';
 import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
+import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import {SharedComponentModule} from './common/sharedModule';
     SFExpertisesComponent,
     SFExpertiseComponent,
     SFHomeComponent,
+    PageNotFoundComponent,
     CarouselHolderComponent,
     SFContactComponent,
     SFScrollToTopComponent,
