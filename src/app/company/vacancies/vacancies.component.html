@@ -45,9 +45,9 @@
                         {{currentFilter}}
                     </button>
                     <div class="dropdown-menu">
-                        <button class="dropdown-item"  (click)="getName(vacancy)">All</button>
-                        <button class="dropdown-item" *ngFor="let vacancy of vacancies" (click)="getName(vacancy)">
-                            <p>{{vacancy.role}}</p>
+                        <!-- <button class="dropdown-item" (click)="getName(vacancy)">All</button> -->
+                        <button class="dropdown-item" *ngFor="let vacancy of jobList" (click)="getName(vacancy)">
+                            <p>{{vacancy}}</p>
                         </button>
                     </div>
                 </div>
@@ -59,10 +59,10 @@
                     <div class="row">
 
                         <ul class="col-12 vacanciesList">
-                            <li *ngFor="let vacancy of vacancies | filter:  'role' : currentFilter"  class="vacancy">
+                            <li *ngFor="let vacancy of vacancies | filter:  'role' : currentFilter" class="vacancy">
 
-                                <div class="hotIcon"><img src="../../../assets/images/hot_icon.svg"
-                                        alt="checklist_icon">
+                                <div class="hotIcon">
+                                    <img src="../../../assets/images/hot_icon.svg" alt="checklist_icon">
                                     <p>Hot</p>
                                 </div>
                                 <a routerLink="{{'/vacancies/' + vacancy.id}}" [routerLinkActive]="['active']">

@@ -12,18 +12,26 @@ export class SFVacanciesComponent {
   title: string = 'CAREER';
   currentFilter: string = 'All';
 
+  jobList = [];
   constructor(
     private router: Router,
     private vacanciesService: VacanciesService
   ) {
     this.vacanciesService.getVacancies().subscribe((resp) => {
       this.vacancies = resp;
+
+      this.jobList = resp.reduce((arr, v) => {
+        arr.push(v.role)
+        return arr
+      }, ['All'])
+
     });
+
   }
 
   getName(vacancy) {
     if (vacancy) {
-      this.currentFilter = vacancy.role ;
+      this.currentFilter = vacancy;
     }
   }
 }
