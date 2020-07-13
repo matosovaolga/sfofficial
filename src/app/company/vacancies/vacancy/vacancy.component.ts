@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {VacanciesService} from '../vacancies.service';
-import {Vacancy} from '../vacancy.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import { VacanciesService } from '../vacancies.service';
+import { Vacancy } from '../vacancy.model';
 @Component({
   selector: 'sf-vacancy',
   templateUrl: './vacancy.component.html',
@@ -16,16 +16,20 @@ export class SFVacancyComponent implements AfterViewInit {
     skillsPlus: ['']
 
   };
-  
+  id: number;
+
   constructor(
     private router: Router,
-    private vacanciesService: VacanciesService
+    private vacanciesService: VacanciesService,
+    private route: ActivatedRoute,
+
   ) {
-    this.vacanciesService.getSingleVacancy(1).subscribe((resp) => {
+    this.id = route.snapshot.params['id'];
+
+    this.vacanciesService.getSingleVacancy(this.id).subscribe((resp) => {
       this.vacancy = resp;
     });
   }
 
-  ngAfterViewInit() {
-  }
+  ngAfterViewInit() { }
 }

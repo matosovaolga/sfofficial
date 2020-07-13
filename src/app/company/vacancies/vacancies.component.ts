@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
+
 import { VacanciesService } from './vacancies.service';
 import { Vacancy } from './vacancy.model';
 @Component({
@@ -9,15 +10,17 @@ import { Vacancy } from './vacancy.model';
 })
 export class SFVacanciesComponent {
   vacancies: [Vacancy];
-  title: string = 'CAREER';
+
   currentFilter: string = 'All';
 
   jobList = [];
   constructor(
     private router: Router,
-    private vacanciesService: VacanciesService
+    private vacanciesService: VacanciesService,
+
   ) {
     this.vacanciesService.getVacancies().subscribe((resp) => {
+
       this.vacancies = resp;
 
       this.jobList = resp.reduce((arr, v) => {
