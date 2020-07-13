@@ -1,28 +1,25 @@
 @import "../../app.component.scss";
 
 .engagement_models {
-    p{
+    p {
         margin-bottom: 40px;
     }
-
-    ul{
+    h4 {
+        margin-bottom: 20px;
+    }
+    ul {
         li {
-            float: left;
-            width: 25%;
-            padding-left: 12px;
-            padding-right: 4px;
-            margin: 15px 0 0;
-            position: relative;
+          padding: 10px;
 
             &::before {
-                content: '';
+                content: "";
                 width: 5px;
                 height: 5px;
                 background-color: $darkBlue;
                 display: inline-block;
                 position: absolute;
-                top: 10px;
-                left: 0;
+                top: 20px;
+                left: -1px;
                 border-radius: 50%;
             }
         }
@@ -35,7 +32,7 @@
 
 .resourcesBlock1 {
     background: #fdfdfd;
-    border:  $border;
+    border: $border;
     border-radius: 5px;
     padding: 24px;
     text-align: center;
