@@ -73,6 +73,20 @@
     }
 
     .vacanciesBlock {
+        @include respond-to("small") {
+            h3 {
+                text-align: center;
+                padding: 0;
+            }
+            .paddingLeft {
+                padding-left: 0;
+            }
+            button {
+                text-align: center;
+                margin: 0 auto;
+            }
+           
+        }
         h3 {
             padding: 50px 0 50px 0;
             font-weight: 700;
@@ -85,6 +99,13 @@
             padding-left: 50px;
         }
         .vacanciesList {
+            @include respond-to("small") { 
+                border-left: none;
+                padding-left: 0;
+                .vacancy {
+                    padding-left: 0;
+                }
+            }
             border-left: 1px solid $lightGrey;
             padding-left: 50px;
 
