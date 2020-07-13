@@ -95,6 +95,10 @@
 }
 
 .contact_address {
+    @include respond-to("small") {
+        align-items: center;
+
+    }
     align-items: flex-start;
     box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
     display: flex;
