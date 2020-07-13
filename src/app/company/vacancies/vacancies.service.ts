@@ -24,7 +24,7 @@ export class VacanciesService {
     }
 
     /*get all vacancies*/
-    getSingleVacancy(id): Observable<any> {
+    getSingleVacancy(id: number): Observable<any> {
         this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
         let url: string = `${this.BASE_URL}vacancy-${id}.json/`;

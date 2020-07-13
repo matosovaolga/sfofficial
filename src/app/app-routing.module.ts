@@ -5,6 +5,8 @@ import { SFExpertiseComponent } from './expertise/expertise-single/expertise.com
 import { SFHomeComponent } from './home/home.component';
 import { SFContactPageComponent } from './contactPage/contactPage.component';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
+import { SFVacancyComponent } from './company/vacancies/vacancy/vacancy.component';
+import { SFVacanciesComponent } from './company/vacancies/vacancies.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,11 @@ const routes: Routes = [
     path: 'company',
     loadChildren: './company/company.module#CompanyModule',
   },
+  {
+    path: 'vacancies',
+    component: SFVacanciesComponent
+  },
+  { path: 'vacancies/:id', component: SFVacancyComponent },
   {
     path: 'contacts',
     component: SFContactPageComponent,
