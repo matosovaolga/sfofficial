@@ -1,1 +1,313 @@
 @import "./../../app.component.scss";
+
+.app_banner {
+    padding: 0;
+}
+
+.social {
+    margin-top: 100px;
+    padding: 0;
+    .heading {
+        text-align: center;
+        padding: 40px;
+        margin: 50px 0;
+        h1 {
+            margin: 20px 0 20px 0;
+        }
+    }
+
+    .cards {
+        padding: 0 20px;
+        text-align: center;
+        margin: 40px 0;
+        > div {
+            border-right: 1px solid $lightGrey;
+        }
+        > div:last-child {
+            border: none;
+        }
+        h2 {
+            padding: 40px 0;
+        }
+        p {
+            padding: 0 20px;
+        }
+    }
+
+    .description {
+        padding: 50px 0;
+
+        h1 {
+            padding: 50px 0 20px 0;
+        }
+        .balls {
+            margin-bottom: 50px;
+            padding: 0 50px;
+            text-align: center;
+            background: no-repeat url("../../../assets/images/social/balls.png");
+
+            @include respond-to("small") {
+                background: none;
+                background-color: $btnThirdColor;
+                height: auto;
+            }
+            background-position: bottom;
+            height: 700px;
+            p {
+                padding: 50px 0;
+            }
+        }
+        .box {
+            text-align: center;
+            margin-bottom: 20px;
+
+            h4 {
+                background-color: #fdcc27;
+                color: white;
+                margin: 0 20px 20px 20px;
+                // margin-bottom: 20px;
+            }
+            p {
+                margin: 0 20px;
+
+            }
+        }
+    }
+
+    .mobile {
+        position: relative;
+        text-align: center;
+        padding: 40px 0 100px 0;
+        margin: 50px 0;
+        background: center no-repeat url("../../../assets/images/social/back.jpg");
+        background-size: cover;
+        color: white;
+        h1 {
+            margin: 20px 0 20px 0;
+        }
+        p {
+            color: white;
+            font-size: larger;
+            padding: 15px 160px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+        .phone {
+            @include respond-to("small") {
+                position: none;
+                img {
+                    height: auto;
+                }
+            }
+            position: absolute;
+            bottom: -100px;
+            img {
+                height: 200px;
+            }
+        }
+    }
+    .dimensions {
+        padding: 40px 0;
+        margin: 50px 0 20px 0;
+        text-align: center;
+        h1 {
+            margin: 20px 0 20px 0;
+        }
+        p {
+            font-size: larger;
+            padding: 15px 50px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+
+    .socials {
+        margin: 0 70px 70px 70px;
+        h2 {
+            padding: 20px 0;
+        }
+
+        > div {
+            margin: 0 10px;
+            padding: 40px;
+            border: 1px solid #e6e6e6;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+        :first-child {
+            h2 {
+                color: $darkBlue;
+            }
+        }
+        :last-child {
+            h2 {
+                color: $lightGreen;
+            }
+        }
+    }
+    .network {
+        padding: 40px 0;
+        margin: 50px 0 20px 0;
+        text-align: center;
+        h1 {
+            margin: 20px 0 20px 0;
+        }
+        p {
+            font-size: larger;
+            padding: 15px 50px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+    .scheme {
+        text-align: center;
+        position: relative;
+
+        @include respond-to("medium") {
+            // position: none;
+
+            position: relative;
+            width: 80%;
+            float: left;
+            top: auto;
+        }
+
+        img {
+            margin: 250px 0;
+            @include respond-to("medium") {
+                background: white;
+            }
+        }
+        .box {
+            text-align: left;
+
+            h4 {
+                padding: 10px 0;
+            }
+            li {
+                padding: 5px 0;
+                position: relative;
+                margin-left: 10px;
+            }
+
+            li:before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 4px;
+                height: 4px;
+                top: 0.8em;
+                left: -10px;
+                border-radius: 50%;
+            }
+        }
+        .productivity {
+            @include respond-to("medium") {
+                position: none;
+            }
+            position: absolute;
+            left: 25%;
+            top: 0;
+            h4 {
+                color: #255ccc;
+            }
+            li:before {
+                background-color: #255ccc;
+            }
+        }
+        .content {
+            position: absolute;
+            right: 15%;
+            top: 0;
+            h4 {
+                color: #00ddce;
+            }
+            li:before {
+                background-color: #00ddce;
+            }
+        }
+        .networking {
+            position: absolute;
+            left: 10%;
+            top: 35%;
+            h4 {
+                color: #fdcc27;
+            }
+            li:before {
+                background-color: #fdcc27;
+            }
+        }
+        .gamification {
+            position: absolute;
+            right: 0;
+            top: 35%;
+            h4 {
+                color: #9d26d5;
+            }
+            li:before {
+                background-color: #9d26d5;
+            }
+        }
+        .collab {
+            position: absolute;
+            left: 25%;
+            bottom: 5%;
+            h4 {
+                color: #ff9700;
+            }
+            li:before {
+                background-color: #ff9700;
+            }
+        }
+        .video {
+            position: absolute;
+            right: 15%;
+            bottom: 5%;
+            h4 {
+                color: #f96057;
+            }
+            li:before {
+                background-color: #f96057;
+            }
+        }
+    }
+    .toContact {
+        padding: 40px 20px;
+        text-align: center;
+        color: $lightColor;
+        background-color: $btnThirdColor;
+        h2 {
+            padding: 40px 0 10px 0;
+        }
+        p {
+            color: $lightColor;
+            margin-bottom: 40px;
+        }
+        button {
+            text-align: center;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin: 0 auto;
+            border: none;
+            background-color: $btnThirdColor;
+            border: 1px solid $btnThirdColor;
+
+            color: $lightColor;
+            padding: 10px 30px;
+            font-weight: 600;
+        }
+
+        button:active {
+            transform: translateY(1px);
+            filter: saturate(150%);
+        }
+
+        button:hover {
+            background: none;
+            border: 1px solid $lightColor;
+            box-sizing: border-box;
+        }
+    }
+}

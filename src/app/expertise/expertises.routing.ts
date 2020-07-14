@@ -1,20 +1,23 @@
-import {Routes, RouterModule} from '@angular/router';
-import { SFExpertiseComponent } from './expertise-single/expertise.component';
+import { Routes, RouterModule } from '@angular/router';
+import { SFExpertisesComponent } from './expertises.component';
 import { SFSocialNetworkingComponent } from './social-networking/socialNetworking.component';
+import { SFHospitalManagementComponent } from './hospital-man-sys/hospital.component';
 
 
 const expertiseRoutes: Routes = [
-
-    
-      {
-        path: 'socialNetworking',
-        component: SFSocialNetworkingComponent
-      },
-      {
-        path: '',
-        pathMatch: 'full',
-        component: SFExpertiseComponent
-      }
+  {
+    path: 'social',
+    component: SFSocialNetworkingComponent
+  },
+  {
+    path: 'hospital',
+    component: SFHospitalManagementComponent
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: SFExpertisesComponent
+  }
 ];
 
 export const expertiseRouting = RouterModule.forChild(expertiseRoutes);

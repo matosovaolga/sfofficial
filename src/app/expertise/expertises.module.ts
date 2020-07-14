@@ -5,8 +5,9 @@ import { expertiseRouting } from './expertises.routing';
 import { SharedComponentModule } from '../common/sharedModule';
 import { MatButtonModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
-import { SFExpertiseComponent } from './expertise-single/expertise.component';
+import { SFExpertisesComponent } from './expertises.component';
 import { SFSocialNetworkingComponent } from './social-networking/socialNetworking.component';
+import { SFHospitalManagementComponent } from './hospital-man-sys/hospital.component';
 
 @NgModule({
     imports: [
@@ -18,8 +19,9 @@ import { SFSocialNetworkingComponent } from './social-networking/socialNetworkin
 
     ],
     declarations: [
-        SFExpertiseComponent,
-        SFSocialNetworkingComponent
+        SFExpertisesComponent,
+        SFSocialNetworkingComponent,
+        SFHospitalManagementComponent,
     ],
     providers: [],
     exports: [RouterModule]
