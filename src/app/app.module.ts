@@ -29,7 +29,7 @@ import {CompanyModule} from './company/company.module';
 import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
-import { ExpertisesModule } from './expertise/expertises.module';
+import {ExpertisesModule} from './expertise/expertises.module';
 @NgModule({
   declarations: [
     AppComponent,
