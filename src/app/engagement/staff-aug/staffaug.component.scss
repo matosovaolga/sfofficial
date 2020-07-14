@@ -72,10 +72,12 @@
     h3 {
         margin: 20px 0;
     }
-    p {
-        // color: $lightColor;
-    }
     .frame {
+        @include respond-to("small") {
+            margin: 20px 0;
+            clip-path: none;
+            padding: 10px;
+        }
         background-color: $btnThirdColor;
         height: 100%;
         margin: -70px 0;
@@ -84,9 +86,6 @@
         padding-right: 0;
         clip-path: polygon(39% 0, 100% 0, 100% 84%, 65% 100%, 0 100%, 0 60%, 0 15%);
         color: $lightColor;
-
-        ul {
-        }
 
         li {
             padding: 10px 0;
@@ -99,7 +98,13 @@
 
 .contacts {
     margin-top: 80px;
-
+    @include respond-to("small") {
+        text-align: center;
+        h3 {
+            margin-top: 80px;
+        }
+        
+    }
     .row {
         background: no-repeat url("../../../assets/images/staff-aug/blue_graphics.svg");
         background-size: cover;

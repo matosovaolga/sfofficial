@@ -1,7 +1,9 @@
 @import "../companyService.component";
 
 .serviceDetails ::ng-deep{
-
+    @include respond-to("small") {
+       margin-top: 40px;
+    }
     .mat-tab-group {
         flex-direction: row;
         border-top: 1px solid $borderColor;
@@ -16,6 +18,7 @@
     }
     .mat-tab-body-wrapper,
     .mat-tab-header {
+        
         height: auto;
         width: 50%;
     }
@@ -25,10 +28,15 @@
     }
     .mat-tab-header {
         background: $borderColor;
+        @include respond-to("small") {
+            padding: 0;
+        }
         padding: 65px 15px;
     }
     .mat-tab-label{
-       
+        @include respond-to("small") {
+            width: 100%;
+        }
         height: auto;
         background: $lightColor;
         padding: 20px 8px;
@@ -83,7 +91,9 @@
     } 
 
     .mat-tab-body-wrapper {
-    
+        @include respond-to("small") {
+            padding: 0 5px;
+        }
         padding: 0 100px;
         min-height: 100%;
         &::after {
