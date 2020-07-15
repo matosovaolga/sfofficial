@@ -1,0 +1,227 @@
+<div class="container-fluid portals">
+
+    <div class="row heading">
+        <div class="col-12">
+            <h1>WEB AND ENTERPRISE PORTALS</h1>
+            <p>Best-in-class UX and compelling functionality under the hood – we deliver the best of both worlds.</p>
+        </div>
+    </div>
+
+    <div class="row cards">
+        <div class="col-12 col-lg-4">
+            <img src="../../../assets/images/enterprises/development.svg" alt="card1_icon">
+            <h2>DEVELOPMENT</h2>
+            <p>We offer a decade-long expertise in delivering exquisitely robust portal solutions.</p>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <img src="../../../assets/images/enterprises/integration.svg" alt="card1_icon">
+            <h2>INTEGRATION</h2>
+            <p>Integrating siloed web services and applications under mobile-friendly portal interfaces.</p>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <img src="../../../assets/images/enterprises/optimization.svg" alt="card1_icon">
+            <h2>OPTIMIZATION</h2>
+            <p>Breathing second life into aging and ineffective existing portal solutions and infrastructures.</p>
+        </div>
+
+    </div>
+
+    <div class="row descriptionScenario">
+        <div class="col-12 balls">
+            <h1>SOCIAL NETWORKS & COMMUNITY PORTALS: FROM IDEA TO SUCCESS</h1>
+            <p>We offer a proper framework for innovative social media startup projects, placing the concept of social
+                networking at the heart of the solution and aligning our best development practices around the
+                breakthrough business models you suggest.</p>
+        </div>
+    </div>
+
+    <div class="row twoSides justify-content-between">
+        <div class="col-12 col-sm-6 col-md-4 box">
+            <h3>WEB PORTALS</h3>
+            <p>When the portal is the business, there is no compromising on the performance, cost-efficiency and growth
+                potential of both. Raasoft Infotech has the skillset and the experience required to guarantee delivery
+                of a reliable solution to win, serve and retain your customers. </p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 box">
+            <h3>ENTERPRISE PORTALS</h3>
+            <p>We undertake enterprise-level deployments of highly productive intranets, extranets and engagement
+                workplaces with expansive collaborative capabilities, access to aggregated information, self-service
+                workflows, and enterprise social functionality.</p>
+        </div>
+    </div>
+
+    <div class="row streamline">
+        <div class="col-12">
+            <h1>STREAMLINED ACCESS TO DATA, CONTENT, PROCESSES AND APPLICATIONS</h1>
+            <p>We implement the full scope of portal features – often coming from different technologies, platforms and
+                vendors – into integrated user experiences wrapping advanced content management, process automation and
+                transactional capabilities.</p>
+        </div>
+    </div>
+
+    <div class="row features justify-content-center">
+        <div class="col-12 col-md-3">
+            <h3>Information Management</h3>
+            <ul>
+                <li>Multisite support</li>
+                <li>Knowledge management</li>
+                <li>Document management</li>
+                <li>Advanced search</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-3">
+            <h3>Social</h3>
+            <ul>
+                <li>User profiles</li>
+                <li>Media galleries</li>
+                <li>Activity streams</li>
+                <li>Polls & rating functionality</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-3">
+            <h3>Collaboration</h3>
+            <ul>
+                <li>Workflows</li>
+                <li>Forums and blogs</li>
+                <li>Collaboration tools</li>
+                <li>Collaboration spaces</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-3">
+            <h3>Applications</h3>
+            <ul>
+                <li>E-learning</li>
+                <li>Data feeds</li>
+                <li>Billing and payments</li>
+                <li>Self-service apps and forms</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-3">
+            <h3>Infrastructure</h3>
+            <ul>
+                <li>CMS and back office</li>
+                <li>Authentication and security</li>
+                <li>Role-based delivery</li>
+                <li>Performance tracking</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-3">
+            <h3>Analytics</h3>
+            <ul>
+                <li>Data aggregation</li>
+                <li>Analytical dashboards</li>
+                <li>Business intelligence</li>
+                <li>Access statistics</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row expertise">
+        <div class="col-12 col-lg-7">
+            <h2>MATURE DOMAIN EXPERTISE</h2>
+            <div class="container leftSide">
+                <div class="row justify-content-around">
+                    <button *ngFor="let domain of domains"
+                        [className]="domain.id === currentDomain.id ? 'btnActive col-12 col-md-5' : 'col-12 col-md-5'"
+                        (click)="switchDomain(domain)">
+                        <img src="../../../assets/images/enterprises/btn_icon_{{domain.id}}.svg"
+                            alt="btn_icon_{{domain.id}}">
+                        <p>{{domain.name}}</p>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5">
+            <div class="container rightSide">
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <div> <img src="../../../assets/images/enterprises/btn_icon_{{currentDomain.id}}.svg"
+                                alt="btn_icon_{{currentDomain.id}}"></div>
+                        <h3>{{currentDomain.name}}</h3>
+                        <p>{{currentDomain.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row advanced justify-content-around">
+        <div class="col-12">
+            <h1>ADVANCED PORTAL IMPLEMENTATIONS TAILORED TO YOUR NEEDS</h1>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../../assets/images/enterprises/need_icon_1.svg" alt="card1_icon">
+                    </div>
+                    <div class="col-9 text-box">
+                        <h4>Integration Capability</h4>
+                        <p>We are able to connect a portal solution to multiple data sources and applications, including
+                            implementation of Enterprise Service Bus (ESB) and integration with third-party web
+                            services, data feeds, payment systems and social collaboration tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../../assets/images/enterprises/need_icon_2.svg" alt="card1_icon">
+                    </div>
+                    <div class="col-9 text-box">
+                        <h4>Scalability and Performance</h4>
+                        <p>Technology never stops evolving, so don’t let your portal to. Raasoft designs incredibly
+                            flexible portal architectures with an eye for growth, fault tolerance, and comfortable
+                            accommodation of increasing loads and user numbers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../../assets/images/enterprises/need_icon_3.svg" alt="card1_icon">
+                    </div>
+                    <div class="col-9 text-box">
+                        <h4>Integration Capability</h4>
+                        <p>We are able to connect a portal solution to multiple data sources and applications, including
+                            implementation of Enterprise Service Bus (ESB) and integration with third-party web
+                            services, data feeds, payment systems and social collaboration tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../../assets/images/enterprises/need_icon_4.svg" alt="card1_icon">
+                    </div>
+                    <div class="col-9 text-box">
+                        <h4>Integration Capability</h4>
+                        <p>We are able to connect a portal solution to multiple data sources and applications, including
+                            implementation of Enterprise Service Bus (ESB) and integration with third-party web
+                            services, data feeds, payment systems and social collaboration tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row toContact">
+        <div class="col-12">
+            <h2>WANT TO START A PROJECT?</h2>
+            <p>It’s simple.</p>
+            <button (click)="moveTo()">Contact Us</button>
+        </div>
+    </div>
+
+</div>

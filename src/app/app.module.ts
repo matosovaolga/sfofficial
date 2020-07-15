@@ -8,8 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SFHeaderComponent } from './header/header.component';
 import { SFFooterComponent } from './footer/footer.component';
-import { SFExpertisesComponent } from './expertise/expertises.component';
-import { SFExpertiseComponent } from './expertise/expertise-single/expertise.component';
+
 import { SFHomeComponent } from './home/home.component';
 
 import {CarouselHolderComponent} from './common/testimonials/testimonials.component';
@@ -30,13 +29,13 @@ import {CompanyModule} from './company/company.module';
 import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
+import {ExpertisesModule} from './expertise/expertises.module';
 @NgModule({
   declarations: [
     AppComponent,
     SFHeaderComponent,
     SFFooterComponent,
-    SFExpertisesComponent,
-    SFExpertiseComponent,
+
     SFHomeComponent,
     PageNotFoundComponent,
     CarouselHolderComponent,
@@ -62,7 +61,8 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
     CompanyModule,
     SharedComponentModule,
     ServicesModule,
-    EngagementModule
+    EngagementModule,
+    ExpertisesModule
   ],
   providers: [
     ConnectionService],
