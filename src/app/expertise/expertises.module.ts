@@ -8,6 +8,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SFExpertisesComponent } from './expertises.component';
 import { SFSocialNetworkingComponent } from './social-networking/socialNetworking.component';
 import { SFHospitalManagementComponent } from './hospital-man-sys/hospital.component';
+import { SFEnterprisePortalsComponent } from './portals/portals.component';
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { SFHospitalManagementComponent } from './hospital-man-sys/hospital.compo
         SFExpertisesComponent,
         SFSocialNetworkingComponent,
         SFHospitalManagementComponent,
+        SFEnterprisePortalsComponent
     ],
     providers: [],
     exports: [RouterModule]
