@@ -9,6 +9,13 @@ import { SFExpertisesComponent } from './expertises.component';
 import { SFSocialNetworkingComponent } from './social-networking/socialNetworking.component';
 import { SFHospitalManagementComponent } from './hospital-man-sys/hospital.component';
 import { SFEnterprisePortalsComponent } from './portals/portals.component';
+import { SFEcommerceComponent } from './ecommerce/ecommerce.component';
+import { SFMobileAppsComponent } from './mobile-apps/mobile.component';
+import { SFBusinessAutomationComponent } from './automation/automation.component';
+import { SFOpenSourceComponent } from './open-source/openSource.component';
+import { SFMobilePlatformsComponent } from './mobile-platforms/mobilePlatforms.component';
+import { SFJavaScriptComponent } from './javascript/javascript.component';
+import { SFCloudTechnologiesComponent } from './cloud-tech/cloudTech.component';
 
 @NgModule({
     imports: [
@@ -23,7 +30,14 @@ import { SFEnterprisePortalsComponent } from './portals/portals.component';
         SFExpertisesComponent,
         SFSocialNetworkingComponent,
         SFHospitalManagementComponent,
-        SFEnterprisePortalsComponent
+        SFEnterprisePortalsComponent,
+        SFEcommerceComponent,
+        SFMobileAppsComponent,
+        SFBusinessAutomationComponent,
+        SFOpenSourceComponent,
+        SFMobilePlatformsComponent,
+        SFJavaScriptComponent,
+        SFCloudTechnologiesComponent
     ],
     providers: [],
     exports: [RouterModule]

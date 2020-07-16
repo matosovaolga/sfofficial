@@ -1,7 +1,6 @@
 @import "./../../app.component.scss";
 
 .portals {
-    // margin-top: 100px;
     padding: 0;
     .heading {
         text-align: center;
@@ -11,30 +10,108 @@
             margin: 20px 0 20px 0;
         }
     }
-
-    .cards {
-        padding: 0 20px;
+    .phases {
         text-align: center;
         margin: 40px 0;
-        > div {
-            border-right: 1px solid $lightGrey;
-            margin-bottom: 30px;
-            padding: 20px 0;
+        h4 {
+            padding: 30px 0;
+
             @include respond-to("medium") {
-            border-right: none;
-
-                border-bottom: 1px solid $lightGrey;
-
+                padding: 0;
             }
         }
-        > div:last-child {
-            border: none;
-        }
-        h2 {
-            padding: 30px 0;
-        }
         p {
-            padding: 0 20px;
+            @include respond-to("medium") {
+                padding: 0 10px;
+            }
+        }
+        .phaseText {
+            margin: 20px 0;
+            padding: 0;
+            @include respond-to("medium") {
+                margin-bottom: 60px;
+                :last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .cross {
+            align-items: center;
+            width: 90px;
+            height: 90px;
+            div {
+                margin-left: 40%;
+                @include respond-to("medium") {
+                    margin-left: 55%;
+                }
+            }
+        }
+        span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid $darkBlue;
+            border-right: 2px solid $darkBlue;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            margin: -5px;
+            float: left;
+            -webkit-animation: animate 2s infinite;
+            animation: animate 2s infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                -webkit-transform: rotate(-45deg) translate(-20px, -20px);
+                -ms-transform: rotate(-45deg) translate(-20px, -20px);
+                transform: rotate(-45deg) translate(-20px, -20px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                -webkit-transform: rotate(-45deg) translate(20px, 20px);
+                -ms-transform: rotate(-45deg) translate(20px, 20px);
+                transform: rotate(-45deg);
+            }
+        }
+        @include respond-to("medium") {
+            span {
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                margin: -10px;
+                float: none;
+            }
+
+            @keyframes animate {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: rotate(45deg) translate(-20px, -20px);
+                    -ms-transform: rotate(45deg) translate(-20px, -20px);
+                    transform: rotate(45deg) translate(-20px, -20px);
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    -webkit-transform: rotate(45deg) translate(20px, 20px);
+                    -ms-transform: rotate(45deg) translate(20px, 20px);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        span:nth-child(2) {
+            -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+        }
+        span:nth-child(3) {
+            -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
         }
     }
 
@@ -51,6 +128,7 @@
     }
 
     .twoSides {
+        min-height: 500px;
         background: center no-repeat url("../../../assets/images/enterprises/table.png");
         background-size: 65%;
         background-position: bottom;
@@ -96,9 +174,11 @@
         }
 
         > div {
+            background-color: rgba(132, 189, 247, 0.07);
             margin: 20px 20px;
             padding: 30px;
-            border-top: 8px solid $darkBlue;
+            border-radius: 15px;
+            border-top: 12px solid $btnThirdColor;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
         }
 
@@ -121,92 +201,21 @@
         }
     }
 
-    .expertise {
-        background: no-repeat url("../../../assets/images/enterprises/back.jpg");
-        background-size: cover;
-        padding: 50px 0;
-        margin: 50px 0;
-        h2 {
-            text-align: center;
-            color: $lightColor;
-            padding: 0 50px 50px 60px;
-        }
-        .leftSide {
-            padding-left: 50px;
-            @include respond-to("medium") {
-                padding-left: 0px;
-            }
-            .btnActive {
-                background: $btnThirdColor;
-            }
-            button {
-                margin: 10px;
-                background: none;
-                display: flex;
-                align-items: center;
-                border: none;
-                border: 1px solid white;
-                height: 80px;
-                img {
-                    margin: 10px;
-                }
-                p {
-                    padding-left: 10px;
-                    color: $lightColor;
-                }
-            }
-            button:active {
-                background: rgba(255, 255, 255, 0.466);
-            }
-            button:hover {
-                border: 1px solid $btnSecondColor;
-            }
-        }
-        .rightSide {
-            margin: 50px auto;
-            .col-10 {
-                background-color: white;
-                text-align: center;
-                align-items: center;
-
-                padding: 50px 20px;
-                border-radius: $default-border-radius;
-                div {
-                    margin: 30px auto;
-                    // padding: 50px;
-                    background-color: $btnSecondColor;
-                    border-radius: 50%;
-                    width: 200px;
-                    height: 200px;
-                    img {
-                        margin: 50px;
-
-                        width: 100px;
-                    }
-                }
-
-                h3 {
-                    margin: 20px 0;
-                }
-                p {
-                    padding: 0 40px;
-                }
-            }
-        }
-    }
-
     .advanced {
         > div {
             padding: 0;
             margin: 10px 0;
         }
 
-        padding: 40px 0;
-        margin: 50px 0 20px 0;
+        padding-bottom:  0;
+        margin: 0px 0 20px 0;
         h1 {
             text-align: center;
             padding: 0 30px;
             margin: 60px 0;
+        }
+        .row .col-3 {
+            text-align: center;
         }
         .text-box {
             p {
@@ -219,7 +228,7 @@
         padding: 40px 20px;
         text-align: center;
         color: $lightColor;
-        background-color: $btnThirdColor;
+        background-color: $btnSecondColor;
         h2 {
             padding: 40px 0 10px 0;
         }
@@ -233,8 +242,8 @@
             text-transform: uppercase;
             margin: 0 auto;
             border: none;
-            background-color: $btnThirdColor;
-            border: 1px solid $btnThirdColor;
+            background-color: $btnSecondColor;
+            border: 1px solid $btnSecondColor;
 
             color: $lightColor;
             padding: 10px 30px;
