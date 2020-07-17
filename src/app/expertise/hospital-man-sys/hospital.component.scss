@@ -1,9 +1,8 @@
 @import "./../../app.component.scss";
 
-
 .hospital {
     padding: 0;
-
+    margin-top: 100px;
     .heading {
         text-align: center;
         padding: 80px 40px 20px 40px;
@@ -11,6 +10,250 @@
         h1 {
             margin: 20px 0 20px 0;
         }
-    
+    }
+
+    .counter {
+        .col-10 {
+            background-color: rgba(164, 229, 255, 0.767);
+            border-radius: 25px;
+        }
+
+        .box {
+            text-align: center;
+            margin: 20px 0;
+            padding: 0;
+            :nth-child(2) {
+                font-size: 40px;
+                margin: 20px 0;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .description {
+        text-align: center;
+        padding: 40px 0 100px 0;
+        margin: 50px 0;
+        background: center no-repeat url("../../../assets/images/enterprises/back.jpg");
+        background-size: cover;
+        color: white;
+        h1 {
+            margin: 20px 0 20px 0;
+        }
+        p {
+            color: white;
+            font-size: larger;
+            padding: 15px 160px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+
+    .solution {
+        padding: 80px 0;
+        .left {
+            margin: 0 auto;
+            background: no-repeat url(https://www.cisin.com/images/hs-solution-m-bg.png);
+            // background-size: cover;
+            background-size: 100%;
+            max-width: 677px;
+            img {
+                padding-bottom: 100px;
+                width: 100%;
+            }
+            // @include respond-to("medium") {
+            //     img {
+            //         padding-bottom: 100px;
+            //     }
+            // }
+
+            padding: 26px 30px 30px 30px;
+        }
+
+        .right div {
+            display: block;
+            ul {
+                margin: 0;
+                padding: 0 20px;
+                line-height: normal;
+                li {
+                    border: solid 1px #e6e6e6;
+                    border-radius: 3px;
+                    -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px;
+                    padding: 25px;
+                    list-style: none;
+                    margin: 0 0 18px 0;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                }
+                span {
+                    margin-right: 20px;
+                }
+                li h4 {
+                    color: #2d2c2c;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                li p {
+                    display: block;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                }
+            }
+        }
+    }
+
+    .ecosystem {
+        margin: 20px 50px;
+
+        > div {
+            padding: 0;
+        }
+        .block {
+            background: #fff;
+            box-shadow: rgba(113, 113, 113, 0.18) 0 0 21px;
+            padding: 20px 10px;
+            margin: 10px;
+
+            h4 {
+                display: block;
+                margin-block-start: 1.33em;
+                margin-block-end: 1.33em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+                padding-inline-start: 20px;
+            }
+            ul {
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 20px;
+                li {
+                    text-align: -webkit-match-parent;
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: flex-start;
+                    img {
+                        padding-right: 10px;
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .features {
+        margin-bottom: 70px;
+        h2 {
+            text-align: center;
+        }
+        h3 {
+            padding: 20px 0;
+        }
+
+        > div {
+            text-align: center;
+            margin: 20px 20px;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            padding: 5px 0;
+            position: relative;
+            margin-left: 10px;
+        }
+    }
+
+    .carusel {
+        padding: 0;
+        // height: 100px;
+        width: 100%;
+        background-color: lightblue;
+      
+
+        .box {
+            padding: 80px 0;
+            .left {
+                margin: 0 auto;
+                background: no-repeat url(https://www.cisin.com/images/hs-solution-m-bg.png);
+                // background-size: cover;
+                background-size: 100%;
+                max-width: 677px;
+                img {
+                    padding-bottom: 100px;
+                    width: 100%;
+                }
+
+                padding: 18px 26px 30px 26px;
+            }
+
+            .right {
+                .block {
+                    padding: 20px 10px;
+                    margin: 10px;
+
+                    h4 {
+                        display: block;
+                        margin-block-start: 1.33em;
+                        margin-block-end: 1.33em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        font-weight: bold;
+                        padding-inline-start: 20px;
+                    }
+                    ul {
+                        list-style-type: disc;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        padding-inline-start: 20px;
+                        li {
+                            text-align: -webkit-match-parent;
+                            padding: 10px 0;
+                            display: flex;
+                            align-items: flex-start;
+                            img {
+                                padding-right: 10px;
+                                padding-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .profits {
+        margin-bottom: 70px;
+        h2,
+        p {
+            text-align: center;
+            padding: 20px 60px;
+        }
+        h4 {
+            padding: 20px 0;
+        }
+
+        > div {
+            text-align: center;
+            margin: 20px 20px;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        }
     }
 }

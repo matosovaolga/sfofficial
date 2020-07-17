@@ -16,6 +16,7 @@ import { SFOpenSourceComponent } from './open-source/openSource.component';
 import { SFMobilePlatformsComponent } from './mobile-platforms/mobilePlatforms.component';
 import { SFJavaScriptComponent } from './javascript/javascript.component';
 import { SFCloudTechnologiesComponent } from './cloud-tech/cloudTech.component';
+import { AnimatedDigitComponent } from './hospital-man-sys/animated-digit/animated-digit.component';
 
 @NgModule({
     imports: [
@@ -37,7 +38,8 @@ import { SFCloudTechnologiesComponent } from './cloud-tech/cloudTech.component';
         SFOpenSourceComponent,
         SFMobilePlatformsComponent,
         SFJavaScriptComponent,
-        SFCloudTechnologiesComponent
+        SFCloudTechnologiesComponent,
+        AnimatedDigitComponent
     ],
     providers: [],
     exports: [RouterModule]
