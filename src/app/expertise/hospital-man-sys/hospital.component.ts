@@ -19,4 +19,14 @@ export class SFHospitalManagementComponent {
     { id: 4, title: "Low Total Cost of Ownership", text: "Economy solution; an investment that is comparable to the best in the market at lower" },
     { id: 5, title: "Streamlined User Experience", text: "Refined user experience for Elevated adoption and sleek processes" },
   ]
+
+  features = [
+    { id: 1, title: "Information Management", text: "Improve financial performance and reduce administration" },
+    { id: 2, title: "Social", text: "Empowers your staff by streamlining administrative and clinical tasks with automated process management" },
+    { id: 3, title: "Collaboration", text: "Create new streams of revenue through CIS’s integrated solution suite for healthcare" },
+    { id: 4, title: "Applications", text: "Use Business Intelligence (BI) tools for statistical analysis and get a better understanding of enterprise requirements" },
+    { id: 5, title: "Infrastructure", text: "Presents insight into the work structure, processes and flows from the Company environment" },
+    { id: 6, title: "Analytics", text: "Achieve greater data security by leveraging access-controlled system and role-based access" },
+  ]
+
 }

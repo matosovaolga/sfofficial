@@ -27,6 +27,7 @@ $animation-speed: 0.3s;
 
 $breakpoints: (
     'medium-landscape':  (orientation : landscape ),
+    'extra-small':  ( max-width:  575px ),
     'small':  ( max-width:  767px ),
     'medium': ( max-width:  992px ),
     'medium-large': ( max-width:  1024px ),
