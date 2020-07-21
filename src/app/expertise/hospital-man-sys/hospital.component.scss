@@ -150,32 +150,6 @@
             text-align: center;
             margin: 40px 0;
         }
-        .fadeInUp {
-            -webkit-animation-name: fadeInUp;
-            animation-name: fadeInUp;
-        }
-        .animated {
-            -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateY(20px);
-                -ms-transform: translateY(20px);
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                -webkit-transform: translateY(0);
-                -ms-transform: translateY(0);
-                transform: translateY(0);
-            }
-        }
 
         .feature {
             position: relative;
@@ -202,13 +176,16 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
                 img {
+                    transform: scale(0.9);
+                    width: 80px;
                     transition: all 0.5s ease-out;
                 }
             }
 
             h4 {
-                margin-top: 100px;
+                margin-top: 80px;
                 padding: 20px 0;
                 position: relative;
                 display: block;
@@ -236,13 +213,11 @@
             color: white;
 
             .imgBlock img {
-                // width: 27%;
-                transform: scale(1.1);
+                transform: scale(1);
+                color: white;
             }
             h4::before {
                 background: white;
-                // transform: scale(1.1);
-
             }
             p {
                 color: white;
@@ -250,24 +225,25 @@
         }
 
         .feature:hover::before {
-
-
-
+            transform: scale(1);
+            opacity: 1;
+        }
+        .feature::before {
+            transform: scale(0.8);
             position: absolute;
             content: "";
             left: 0px;
             top: 0px;
             width: 100%;
             height: 100%;
-            opacity: 1;
-            -webkit-transform-origin: top;
-            -ms-transform-origin: top;
-            transform-origin: top;
-
-            background-image: -webkit-linear-gradient(0deg, #4527a4 0%, #0289e7 100%);
-            transition: all 1s ease-out;
+            opacity: 0;
+            border-radius: 15px;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+            background-image: -webkit-linear-gradient(0deg, #c3b9e2 0%, #0288e7af 100%);
+            transition: all 0.5s ease-out;
         }
-
     }
 
     .carusel {
