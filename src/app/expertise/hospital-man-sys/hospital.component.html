@@ -9,76 +9,6 @@
         </div>
     </div>
 
-
-
-    <div class="row counter justify-content-center">
-        <div class="col-11">
-            <div class="container-fluid">
-                <div class="row justify-content-around">
-                    <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
-
-                        <div>
-                            <!-- <img src="../../../assets/images/enterprises/hs-icon-ce1.png" alt="icon_counter_1"> -->
-                            <p>
-                                <animated-digit [digit]="14" [duration]="2000" [steps]="20" [symbol]="'+'">
-                                </animated-digit>
-                            </p>
-                            <p>Years Experience</p>
-                        </div>
-
-
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
-
-                        <div>
-                            <!-- <img src="../../../assets/images/enterprises/hs-icon-ce2.png" alt="icon_counter_2"> -->
-                            <p>
-                                <animated-digit [digit]="40" [duration]="2000" [steps]="20" [symbol]="'%'">
-                                </animated-digit>
-                            </p>
-                            <p>Total Savings</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
-                        <div>
-                            <!-- <img src="../../../assets/images/enterprises/hs-icon-ce3.png" alt="icon_counter_3"> -->
-                            <p>
-                                <animated-digit [digit]="999" [duration]="1000" [steps]="10" [symbol]="'+'">
-                                </animated-digit>
-                            </p>
-                            <p>IT Professionals</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
-                        <div>
-                            <!-- <img src="../../../assets/images/enterprises/hs-icon-ce4.png" alt="icon_counter_4"> -->
-                            <p>
-                                <animated-digit [digit]="999" [duration]="1000" [steps]="10" [symbol]="'+'">
-                                </animated-digit>
-                            </p>
-                            <p>Projects</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
-                        <div>
-                            <!-- <img src="../../../assets/images/enterprises/hs-icon-ce5.png" alt="icon_counter_5"> -->
-                            <p>
-                                <animated-digit [digit]="99" [duration]="1000" [steps]="10" [symbol]="'+'">
-                                </animated-digit>
-                            </p>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
     <div class="row description animated fadeIn">
         <div class="col-12">
             <h1>HOSPITAL INFORMATION SYSTEM</h1>
@@ -99,13 +29,31 @@
     </div>
 
     <div class="row solution align-items-center">
-        <div class="col-12 col-lg-6 left animated fadeInLeft">
-            <div class="imgBlock">
+        <div class="col-12 col-lg-7 left animated fadeInLeft">
+           
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="../../../assets/images/enterprises/slider2.svg" alt="slider2">
+
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../../assets/images/enterprises/slider3.svg" alt="slider3">
+
+                  </div>
+                  <div class="carousel-item">
+                    <img src="../../../assets/images/enterprises/slider4.svg" alt="slider4">
+
+                  </div>
+                </div>
+              </div>
+           
+            <!-- <div class="imgBlock">
                 <img src="../../../assets/images/enterprises/monitor.gif" alt="background_image">
-            </div>
+            </div> -->
         </div>
 
-        <div class="col-12 col-lg-6 right animated fadeInRight">
+        <div class="col-12 col-lg-5 right animated fadeInRight">
             <div>
                 <ul>
                     <li *ngFor="let highlight of highlights">
@@ -217,7 +165,6 @@
             <p>{{feature.text}}</p>
         </div>
     </div>
-
 
     <div id="carouselExampleControls" class="row carusel carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -354,4 +301,16 @@
         </a>
     </div>
 
+    <div class="row profits justify-content-center">
+        <h2 class="col-12">GAINING PROFITS</h2>
+        <p class="col-12">With Hospital Information Systems at work, you can gain the skills to generate revenues from new business
+            lines. Following are just a few such sectors to tap with HIS:</p>
+        <div class="col-12 col-md-3 profit" *ngFor="let profit of profits">
+            <div class="imgBlock">
+                <img src="../../../assets/images/enterprises/hs-icon-ipa{{profit.id}}.png"
+                    alt="icon-feature-{{profit.id}}">
+            </div>
+            <p>{{profit.title}}</p>
+        </div>
+    </div>
 </div>

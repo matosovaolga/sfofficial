@@ -30,6 +30,8 @@ import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import {ExpertisesModule} from './expertise/expertises.module';
+import { AnimatedDigitComponent } from './home/animated-digit/animated-digit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import {ExpertisesModule} from './expertise/expertises.module';
     SFContactComponent,
     SFScrollToTopComponent,
     SFContactPageComponent,
-    SFRequestComponent
+    SFRequestComponent,
+AnimatedDigitComponent
+
   ],
   imports: [
     BrowserModule,
