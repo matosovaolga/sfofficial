@@ -55,9 +55,9 @@
                     li {
                         // background: linear-gradient(to top right, #fff, #d2e9f5);
                         // border: solid 1px #e6e6e6;
-                        border-radius: .25rem;
+                        border-radius: 0.25rem;
 
-                        box-shadow: 0 1px 15px 1px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
+                        box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
                         padding: 10px;
                         list-style: none;
                         margin: 0 0 18px 0;
@@ -145,20 +145,57 @@
 
     .features {
         margin: 50px 0 70px;
+
         h2 {
             text-align: center;
             margin: 40px 0;
         }
+        .fadeInUp {
+            -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+        }
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                -ms-transform: translateY(20px);
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
 
         .feature {
             position: relative;
+            display: block;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 63px 30px 56px 30px;
+            box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
             text-align: center;
             margin: 20px;
-            padding: 30px;
-            border-radius: 5px;
+
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
 
             .imgBlock {
                 position: absolute;
+                top: 50px;
                 left: 0;
                 right: 0;
                 z-index: 1;
@@ -170,25 +207,67 @@
                 }
             }
 
-            h3 {
-                margin-top: 80px;
+            h4 {
+                margin-top: 100px;
                 padding: 20px 0;
+                position: relative;
+                display: block;
+            }
+            h4::before {
+                position: absolute;
+                content: "";
+                background: #4527a4;
+                width: 40px;
+                height: 2px;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                transition: all 500ms ease;
             }
 
             p {
                 font-size: 18px;
-                padding: 5px 0;
+                padding: 10px 0;
                 position: relative;
                 margin-left: 10px;
             }
         }
         .feature:hover {
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+            color: white;
+
             .imgBlock img {
                 // width: 27%;
                 transform: scale(1.1);
             }
+            h4::before {
+                background: white;
+                // transform: scale(1.1);
+
+            }
+            p {
+                color: white;
+            }
         }
+
+        .feature:hover::before {
+
+
+
+            position: absolute;
+            content: "";
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            -webkit-transform-origin: top;
+            -ms-transform-origin: top;
+            transform-origin: top;
+
+            background-image: -webkit-linear-gradient(0deg, #4527a4 0%, #0289e7 100%);
+            transition: all 1s ease-out;
+        }
+
     }
 
     .carusel {
