@@ -1,10 +1,10 @@
-@import './../variables';
-@import './../mixin';
+@import "./../variables";
+@import "./../mixin";
 :host {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
         max-width: 340px;
     }
-    @include respond-to('small') {
+    @include respond-to("small") {
         max-width: 100%;
     }
     @include transition(all $animation-speed linear);
@@ -19,7 +19,7 @@
     cursor: pointer;
     font-weight: 300;
 
-    &:hover{
+    &:hover {
         color: $darkGrey;
 
         &::after {
@@ -29,8 +29,44 @@
     }
 
     &:before {
-        @include backgroundGradient(90deg, $btnFirstColor, $btnSecondColor);
-        
+        background: linear-gradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
+        background-size: 200% 200%;
+        -webkit-animation: AnimationName 4s ease infinite;
+        -moz-animation: AnimationName 4s ease infinite;
+        animation: AnimationName 4s ease infinite;
+        @-webkit-keyframes AnimationName {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 51%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @-moz-keyframes AnimationName {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 51%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes AnimationName {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 51%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
         content: "";
         position: absolute;
         left: 0;
@@ -55,7 +91,7 @@
         width: calc(100% - 4px);
     }
 
-    a{
+    a {
         z-index: 1;
         position: relative;
     }

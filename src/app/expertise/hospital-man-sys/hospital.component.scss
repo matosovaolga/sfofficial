@@ -1,1 +1,355 @@
 @import "./../../app.component.scss";
+
+.hospital {
+    padding: 0;
+    margin-top: 100px;
+    .heading {
+        text-align: center;
+        padding: 80px 40px 20px 40px;
+        margin-top: 50px;
+        h1 {
+            margin: 20px 0 20px 0;
+        }
+    }
+
+    .counter {
+        background: center no-repeat url("../../../assets/images/enterprises/map.png");
+        background-size: 100% 100%;
+        min-height: 400px;
+        @include respond-to("extra-small") {
+            display: none;
+        }
+        .row :nth-child(2n) {
+            div {
+                :nth-child(1) {
+                    color: $btnSecondColor;
+                }
+            }
+        }
+        .box {
+            text-align: center;
+            margin: 20px 0;
+
+            div {
+                width: 80%;
+                position: relative;
+                border-radius: 50%;
+                text-align: center;
+                background-color: #fff;
+                box-shadow: 15px 20px 30px 0 rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                @include respond-to("small") {
+                    width: 90%;
+                }
+                @include respond-to("medium") {
+                    width: 100%;
+                }
+                @include respond-to("large") {
+                    width: 100%;
+                }
+                :nth-child(1) {
+                    font-size: 40px;
+                    line-height: 35px;
+                    margin: 20px 0;
+                    color: $btnThirdColor;
+                }
+
+                p {
+                    font-size: 20px;
+                }
+            }
+            div:after {
+                position: absolute;
+                content: "";
+                background: #fff;
+                width: 110%;
+                height: 110%;
+                left: -10px;
+                top: -10px;
+                border-radius: 50%;
+                box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+                z-index: -1;
+            }
+            :before {
+                position: absolute;
+                content: "";
+                background: #4527a4;
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                right: 0px;
+                border-radius: 50%;
+                transition: all 500ms ease;
+                transform: scale(0, 0);
+                box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+ 
+    .description {
+        text-align: justify;
+        padding: 40px  0;
+        position: relative;
+       
+     
+        p {
+            font-size: larger;
+            padding: 15px 0;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+
+    .solution {
+        padding: 80px 0;
+        .left {
+            padding: 0 30px;
+            div {
+                margin: 0 auto;
+                background: no-repeat url("../../../assets/images/enterprises/computer.png");
+                // background-size: cover;
+                background-size: 100%;
+                max-width: 677px;
+                padding: 18px 24px;
+
+                img {
+                    padding-bottom: 100px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .right {
+            padding: 0;
+            div {
+                display: block;
+                ul {
+                    margin: 0;
+                    padding: 0 20px;
+                    line-height: normal;
+                    li {
+            background: linear-gradient(to top right, #fff, #d2e9f5);
+
+                        border: solid 1px #e6e6e6;
+                        border-radius: 3px;
+                        -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px;
+                        box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px;
+                        padding: 25px;
+                        list-style: none;
+                        margin: 0 0 18px 0;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        transition: background 2s;
+                        
+                    }
+                    li:hover {
+                        background: #d2e9f5;
+
+                    }
+                    span {
+                        margin-right: 20px;
+                    }
+                    li h4 {
+                        color: #2d2c2c;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    li p {
+                        display: block;
+                        font-size: 18px;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ecosystem {
+        margin: 20px 50px;
+
+        > div {
+            padding: 0;
+        }
+        .block {
+            background: #fff;
+            box-shadow: rgba(113, 113, 113, 0.18) 0 0 21px;
+            padding: 20px 10px;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease-out;
+
+            h4 {
+                display: block;
+                margin-block-start: 1.33em;
+                margin-block-end: 1.33em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                font-weight: bold;
+                padding-inline-start: 20px;
+            }
+            ul {
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 20px;
+                li {
+                    text-align: -webkit-match-parent;
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: flex-start;
+                    img {
+                        padding-right: 10px;
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+        .block:hover {
+            margin-top: -10px;
+            // transform: scale(1.1);
+
+        }
+    }
+
+    .features {
+        margin: 50px 0 70px;
+        h2 {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .feature {
+            position: relative;
+            text-align: center;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 5px;
+
+            .imgBlock {
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    transition: all 0.5s ease-out;
+                }
+            }
+
+            h3 {
+                margin-top: 80px;
+                padding: 20px 0;
+            }
+
+            p {
+                font-size: 18px;
+                padding: 5px 0;
+                position: relative;
+                margin-left: 10px;
+            }
+        }
+        .feature:hover {
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+            .imgBlock img {
+                // width: 27%;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .carusel {
+        padding: 0;
+        margin: 0;
+        // height: 100px;
+        width: 100%;
+        &::before {
+            content:'';
+            width: 6400px;
+            height: 198px;  
+            position: absolute;
+            top: -138px;
+            opacity: 0.1;
+            background: url('/assets/images/wave-background.svg') repeat-x;
+        }
+        &:after {
+            background: #62dafc8e;
+            content:'';
+            z-index: -1;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 60px);
+            opacity: 0.1;
+
+        }
+
+        .box {
+            padding: 80px 0;
+
+            .left {
+                div {
+                    margin: 0 auto;
+                    background: no-repeat url("../../../assets/images/enterprises/computer.png");
+                    // background-size: cover;
+                    background-size: 100%;
+                    max-width: 677px;
+                    padding: 18px 24px;
+
+                    img {
+                        padding-bottom: 100px;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .right {
+                .block {
+                    padding: 20px 10px;
+                    margin: 10px;
+
+                    h4 {
+                        display: block;
+                        margin-block-start: 1.33em;
+                        margin-block-end: 1.33em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        font-weight: bold;
+                        padding-inline-start: 20px;
+                    }
+                    ul {
+                        list-style-type: disc;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        padding-inline-start: 20px;
+                        li {
+                            text-align: -webkit-match-parent;
+                            padding: 10px 0;
+                            font-size: 16px;
+                            display: flex;
+                            align-items: flex-start;
+                            img {
+                                padding-right: 10px;
+                                padding-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,364 @@
-
-<div class="container">
-    <div class="row">
-        <div class="col-xl-8 col-lg-7">
-            <h4>HOSPITAL</h4>
+<section class="hospital">
+    <div class="container-fluid">
+        <div class="row heading">
+            <div class="col-12">
+                <div class="section_title text-center">
+                    <h5>Hospital Managment System</h5>
+                    <h2>Manage Your Hospital Seamlessly</h2>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    
+    
+    <!---
+        <div class="row counter justify-content-center">
+            <div class="col-11">
+                <div class="container-fluid">
+                    <div class="row justify-content-around">
+                        <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
+    
+                            <div>
+                                <p>
+                                    <animated-digit [digit]="14" [duration]="2000" [steps]="20" [symbol]="'+'">
+                                    </animated-digit>
+                                </p>
+                                <p>Years Experience</p>
+                            </div>
+    
+    
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
+    
+                            <div>
+                               <p>
+                                    <animated-digit [digit]="40" [duration]="2000" [steps]="20" [symbol]="'%'">
+                                    </animated-digit>
+                                </p>
+                                <p>Total Savings</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
+                            <div>
+                                <p>
+                                    <animated-digit [digit]="999" [duration]="1000" [steps]="10" [symbol]="'+'">
+                                    </animated-digit>
+                                </p>
+                                <p>IT Professionals</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
+                            <div>
+                                <p>
+                                    <animated-digit [digit]="999" [duration]="1000" [steps]="10" [symbol]="'+'">
+                                    </animated-digit>
+                                </p>
+                                <p>Projects</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-4 col-xl-2 box">
+                            <div>
+                                 <p>
+                                    <animated-digit [digit]="99" [duration]="1000" [steps]="10" [symbol]="'+'">
+                                    </animated-digit>
+                                </p>
+                                <p>Happy Clients</p>
+                            </div>
+                        </div>
+    
+    
+    
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        -->
     </div>
-</div>
-    <!--/row-->
-</div>
-<!--/contact content-->
+
+
+    <div class=" description">
+    <div class="container">
+        <div class="row  animated fadeIn">
+            <div class="col-7">
+                <h3>HOSPITAL INFORMATION SYSTEM</h3>
+                <p>CIS sustains an experience in providing a contemporary, scalable platform for hospitals, clinics, and
+                    their branches to deliver improved patient care to achieve operational efficiency and maximizing
+                    profits. CIS's Hospital Information System (HIS) is a modern alternative that allows medical facilities
+                    to conquer the biggest challenges in healthcare. Today these challenges include achieving operational
+                    effectiveness, managing the healthcare provider community's adoption of electronic medical record (EMR)
+                    technology, delivering superior patient care while boosting revenues with new offerings and services.
+                </p>
+                <p>The hospital information system solutions by CIS are web-native, incorporated, multi-facility,
+                    multi-lingual, and scalable systems. The HIS developed by CIS aims at delivering a comprehensive
+                    solution to any healthcare body to increase its effectiveness and return on investment. Our HIS can be
+                    configured to meet communication needs and the information requirements of clinical sections from small
+                    to large hospitals. Therefore, it can be customized as per the administrative, revenue, operational, and
+                    clinical departments' demands of the healthcare body.</p>
+            </div>
+            <div class="col-5 ">
+                <img src="/assets/images/hms.svg" alt="" />
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row solution align-items-center">
+        <div class="col-12 col-lg-6 left animated fadeInLeft">
+            <div class="imgBlock">
+                <img src="../../../assets/images/enterprises/monitor.gif" alt="background_image">
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6 right animated fadeInRight">
+            <div>
+                <ul>
+                    <li *ngFor="let highlight of highlights">
+                        <span>
+                            <img src="https://www.cisin.com/images/hs-solution-icon{{highlight.id}}.png"
+                                alt="icon{{highlight.id}}">
+                        </span>
+                        <div>
+                            <h4>{{highlight.title}}</h4>
+                            <p>{{highlight.text}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ecosystem  animated fadeInUp">
+        <div class="col-12"></div>
+        <div class="col-12 col-md-6 col-lg-3 ">
+            <div class="block">
+                <h4>CRM and Referrals</h4>
+                <ul>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Patient Portal</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Lead Management</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Referral Management</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Lab Networks</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 ">
+            <div class="block">
+                <h4>Transitional and Home Care</h4>
+                <ul>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Post-discharge Care</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Home Care</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Rehab Services</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Care Management</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 ">
+            <div class="block">
+                <h4>Tele-health and Monitoring </h4>
+                <ul>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Chronic Care Management</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Tele Consulation</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Vitals Collection & Monitoring</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Tele Alerts</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 ">
+            <div class="block">
+                <h4>Acute Care</h4>
+                <ul>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        What will come in its place?</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Electronic Medical Record</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Hospital Information System</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Pharmacy Management</li>
+                    <li>
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        Material Management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row features justify-content-center">
+        <h2 class="col-12">HOW WILL IT IMPACT YOUR BUSINESS? </h2>
+        <div class="col-12 col-md-3 feature" *ngFor="let feature of features">
+            <div class="imgBlock">
+                <img src="../../../assets/images/enterprises/hs-icon-ipa{{feature.id}}.png"
+                    alt="icon-feature-{{feature.id}}">
+            </div>
+            <h3>{{feature.title}}</h3>
+            <p>{{feature.text}}</p>
+        </div>
+    </div>
+
+
+    <div id="carouselExampleControls" class="row carusel carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container ">
+                    <div class="row box align-items-center">
+                        <div class="col-12 col-lg-6 left">
+                            <div class="imgBlock">
+                                <img src="../../../assets/images/enterprises/monitor.gif" alt="background_image">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 right">
+                            <div class="block">
+                                <h4>Optimize Financial Flows</h4>
+                                <ul>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Easy
+                                        Integration with agencies and government systems</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Ability
+                                        to create, upgrade and assign bundles</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Direct
+                                        claims for reduction in time while settling the bills</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Complete, computerized credit and collections monitoring</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Coordinate emergency response</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Leverage
+                                        Finance Business Intelligence (BI) Tools for remodeling the planning
+                                        strategy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="container ">
+                    <div class="row box align-items-center">
+                        <div class="col-12 col-lg-6 left">
+                            <div class="imgBlock">
+                                <img src="../../../assets/images/enterprises/monitor.gif" alt="background_image">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 right">
+                            <div class="block">
+                                <h4>Encourage Care During Extensive Clinical Flows 111</h4>
+
+                                <ul>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Computerized Physician Order Entry (CPOE)</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        User-definable clinical documentation template</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Consistent longitudinal summary perspectives</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Full
+                                        screens and graphical representation of vitals</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Clinical
+                                        decision support system with coded credentials</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Care
+                                        Plans</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container ">
+                    <div class="row box align-items-center">
+                        <div class="col-12 col-lg-6 left">
+                            <div class="imgBlock">
+                                <img src="../../../assets/images/enterprises/monitor.gif" alt="background_image">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 right">
+                            <div class="block">
+                                <h4>Transform Patient Experience</h4>
+                                <ul>
+                                    <li> <img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Reduce
+                                        individual waiting times and decrease delays</li>
+                                    <li> <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Administer admittances, transfers, and discharges</li>
+                                    <li> <img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Handle
+                                        bed occupancy and maintenance</li>
+                                    <li> <img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Patient
+                                        portal site for self-service</li>
+                                    <li> <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Coordinate emergency response</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container ">
+                    <div class="row box align-items-center">
+                        <div class="col-12 col-lg-6 left">
+                            <div class="imgBlock">
+                                <img src="../../../assets/images/enterprises/monitor.gif" alt="background_image">
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 right">
+                            <div class="block">
+                                <h4>Dynamic Management Of Inventory</h4>
+                                <ul>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Accomplish real-time, usage-based inventory management</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Acquiescent with consignment inventory</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                                        Automatic alarms when reorder level is reached</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Buy
+                                        request creation by stores</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Expiry
+                                        direction to reduce wastage</li>
+                                    <li><img src="../../../assets/images/enterprises/done.svg" alt="done-icon"> Vendor
+                                        management to efficiently maintain rates and contracts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+</section>

@@ -8,6 +8,7 @@ $lightgreyBg: #ededed;
 $btnFirstColor: #1edfc4;
 $btnSecondColor: #2785e6;
 $btnThirdColor: #00c6ff;
+$btnThirdColor33333: #62dafc8e;
 $darkBlue: #027AEC;
 $red: #F50057;
 $hoverColor: $btnFirstColor;
@@ -27,6 +28,7 @@ $animation-speed: 0.3s;
 
 $breakpoints: (
     'medium-landscape':  (orientation : landscape ),
+    'extra-small':  ( max-width:  575px ),
     'small':  ( max-width:  767px ),
     'medium': ( max-width:  992px ),
     'medium-large': ( max-width:  1024px ),
