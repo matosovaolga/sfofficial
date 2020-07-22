@@ -1,10 +1,9 @@
 @import "./../../app.component.scss";
 
-
 .social {
     // margin-top: 100px;
     // padding: 150px 0;
-padding: 0;
+    padding: 0;
 
     .heading {
         text-align: center;
@@ -13,7 +12,7 @@ padding: 0;
         .section_title {
             padding: 0;
         }
-      
+
         .contentText {
             padding: 40px;
         }
@@ -127,9 +126,8 @@ padding: 0;
     .description {
         padding: 50px 0;
 
-        h1 {
+        h2 {
             padding: 80px 40px 20px 40px;
-
         }
         .balls {
             margin-bottom: 50px;
@@ -242,7 +240,6 @@ padding: 0;
             margin: 20px 0 20px 0;
         }
         p {
-
             padding: 15px 50px;
             @include respond-to("small") {
                 padding: 15px;
@@ -264,7 +261,7 @@ padding: 0;
             position: absolute;
             @include respond-to("medium") {
                 position: relative;
-            text-align: center;
+                text-align: center;
             }
             h4 {
                 padding: 10px 0;
@@ -286,7 +283,7 @@ padding: 0;
                 border-radius: 50%;
                 @include respond-to("medium") {
                     width: 0;
-                height: 0;
+                    height: 0;
                 }
             }
         }
