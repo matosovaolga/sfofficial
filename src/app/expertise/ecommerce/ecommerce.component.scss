@@ -332,16 +332,70 @@
 
         .challenge {
             background: center no-repeat url("../../../assets/images/enterprises/challenge.png");
-
         }
         .deliver {
             background: center no-repeat url("../../../assets/images/enterprises/deliver.png");
-
         }
     }
 
     .whySf {
         padding: 40px 0;
+
+        .tablet {
+            position: relative;
+            width: 400px;
+            @include respond-to("medium") {
+                display: none;
+            }
+            .hands {
+                position: absolute;
+                width: 350px;
+                bottom: 0;
+                right: 50px;
+                text-align: center;
+            }
+            .bolt1 {
+                position: absolute;
+                width: 60px;
+                bottom: 90px;
+                right: 175px;
+                animation: 3s linear 0s normal none infinite running clockwise;
+                -webkit-animation: 6s linear 0s normal none infinite running clockwise;
+            }
+            .bolt2 {
+                position: absolute;
+                width: 50px;
+                bottom: 140px;
+                right: 200px;
+                animation: 3s linear 0s normal none infinite running countclockwise;
+                -webkit-animation: 6s linear 0s normal none infinite running countclockwise;
+            }
+            .bolt3 {
+                position: absolute;
+                width: 50px;
+                bottom: 159px;
+                right: 158px;
+                animation: 3s linear 0s normal none infinite running clockwise;
+                -webkit-animation: 6s linear 0s normal none infinite running clockwise;
+            }
+            @keyframes clockwise {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes countclockwise {
+                0% {
+                    transform: rotate(360deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
         div {
             text-align: center;
             padding: 20px;
