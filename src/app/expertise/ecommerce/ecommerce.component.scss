@@ -16,11 +16,83 @@
         padding: 20px;
         text-align: center;
         background-color: $btnSecondColor;
+        .left {
+            p,
+            h2 {
+                padding: 20px 60px 20px 60px;
+                color: white;
+            }
+        }
+        .right {
+            position: relative;
+            height: 500px;
 
-        p,
-        h2 {
-            padding: 20px 60px 20px 60px;
-            color: white;
+            .phone {
+                position: absolute;
+                width: 260px;
+                top: 0;
+                right: 50px;
+            }
+            .cradit {
+                position: absolute;
+                width: 30%;
+                top: 60px;
+                left: 40px;
+                animation: card 6s ease-in-out infinite;
+                @keyframes card {
+                    from {
+                        transform: translateX(-30px) translateY(30px);
+                    }
+                    50% {
+                        transform: none;
+                    }
+                    to {
+                        transform: translateX(-30px) translateY(30px);
+                    }
+                }
+            }
+            .doller {
+                position: absolute;
+                width: 130px;
+                top: 210px;
+                right: 50px;
+                animation: up 3s ease-in-out infinite;
+            }
+            .bags {
+                position: absolute;
+                width: 15%;
+                bottom: 90px;
+                right: 340px;
+                animation: up 4.5s ease-in-out infinite;
+            }
+            .quality {
+                position: absolute;
+                left: 50%;
+                top: 50px;
+                animation: pulse 3s ease-in-out infinite;
+                @keyframes pulse {
+                    from {
+                        transform: scale(1.1);
+                    }
+                    50% {
+                        transform: scale(0.9);
+                    }
+                    to {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            @keyframes up {
+                from {
+                    transform: translateY(-20px);
+                }
+                50% {
+                    transform: none;
+                }
+                to {
+                    transform: translateY(-20px);
+                }
+            }
         }
     }
 
@@ -30,7 +102,8 @@
         h2 {
             padding: 20px 40px 40px 40px;
         }
-        li {
+        .leftSide li,
+        .rightSide li {
             padding: 5px;
             display: flex;
             margin-bottom: 20px;
@@ -38,12 +111,11 @@
             .iconBlock {
                 width: 120px;
                 padding: 5px;
-
-                // height: 120px;
                 border: 1px solid lightGrey;
                 border-radius: 50%;
+                transition-duration: 2s;
+
                 svg {
-                    // width: 120px;
                     padding: 20px;
                 }
             }
@@ -51,6 +123,12 @@
             p {
                 padding: 0 20px;
                 text-align: left;
+            }
+        }
+        .leftSide li {
+            flex-direction: row-reverse;
+            @include respond-to("medium") {
+                flex-direction: row;
             }
         }
 
@@ -63,9 +141,28 @@
         }
 
         .mobile {
-            background: center no-repeat url("../../../assets/images/enterprises/iphone.png");
-            background-size: 90%;
-            // height: 200px;
+            padding: 0;
+            img {
+                padding: 0 20px;
+                max-height: 450px;
+                transition: all;
+                animation: phoneMove 2s ease-in-out infinite;
+            }
+            @keyframes phoneMove {
+                0% {
+                    -webkit-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+                50% {
+                    -webkit-transform: translateY(-10px);
+                    transform: translateY(-10px);
+                }
+                100% {
+                    -webkit-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+            }
+
             @include respond-to("medium") {
                 display: none;
             }
@@ -174,33 +271,12 @@
             transition: all 0.5s ease-out;
         }
         .btn {
-            text-align: center;
             margin: 40px;
-        }
-        button {
-            text-align: center;
-            border-radius: 20px;
-            text-transform: uppercase;
-            margin: 0 auto;
-            border: none;
-            background-color: $darkBlue;
-            border: 1px solid $darkBlue;
-            color: $lightColor;
-            padding: 20px 40px;
-            font-weight: 900;
-            transition: all 0.5s ease-out;
-        }
 
-        button:active {
-            transform: translateY(1px);
-            filter: saturate(150%);
-        }
-
-        button:hover {
-            color: $darkBlue;
-            background: none;
-            border: 1px solid $darkBlue;
-            box-sizing: border-box;
+            div {
+                margin: 0 auto;
+                width: 300px;
+            }
         }
     }
 
@@ -246,17 +322,17 @@
             }
         }
         .customer {
-            background: center no-repeat url("../../../assets/images/enterprises/customer.jpg");
-            background-size: cover;
+            background: center no-repeat url("../../../assets/images/enterprises/customer.png");
+            background-size: 50%;
         }
 
         .challenge {
-            background: center no-repeat url("../../../assets/images/enterprises/challenge.jpg");
-            background-size: cover;
+            background: center no-repeat url("../../../assets/images/enterprises/challenge.png");
+            background-size: 50%;
         }
         .deliver {
-            background: center no-repeat url("../../../assets/images/enterprises/deliver.jpg");
-            background-size: cover;
+            background: center no-repeat url("../../../assets/images/enterprises/deliver.png");
+            background-size: 50%;
         }
     }
 
