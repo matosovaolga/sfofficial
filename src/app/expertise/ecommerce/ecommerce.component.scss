@@ -295,6 +295,8 @@
                 justify-content: center;
                 text-align: center;
                 background-color: rgba(75, 75, 75, 0.596);
+                background-size: 50%;
+                transition: all 1s ease-out;
             }
             .blockUp {
                 position: absolute;
@@ -317,22 +319,24 @@
             }
         }
         div:hover {
+            div:first-child {
+                opacity: 0;
+            }
             .blockUp {
                 top: 0;
             }
         }
         .customer {
             background: center no-repeat url("../../../assets/images/enterprises/customer.png");
-            background-size: 50%;
         }
 
         .challenge {
             background: center no-repeat url("../../../assets/images/enterprises/challenge.png");
-            background-size: 50%;
+
         }
         .deliver {
             background: center no-repeat url("../../../assets/images/enterprises/deliver.png");
-            background-size: 50%;
+
         }
     }
 
