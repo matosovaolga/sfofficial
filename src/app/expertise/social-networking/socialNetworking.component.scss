@@ -124,40 +124,186 @@
     }
 
     .description {
-        padding: 50px 0;
-
+        padding: 50px 0 0;
+        cursor: default;
         h2 {
             padding: 80px 40px 20px 40px;
         }
+
+        .social {
+            position: relative;
+
+            width: 500px;
+            margin: 0 auto;
+            @include respond-to("small") {
+                display: none;
+            }
+            .circle {
+                animation: 30s linear 0s normal none infinite running clockwise;
+                -webkit-animation: 30s linear 0s normal none infinite running clockwise;
+            }
+            .user {
+                position: absolute;
+                animation: pulse 4s ease-in-out infinite;
+                @keyframes pulse {
+                    from {
+                        transform: scale(0.85);
+                    }
+                    50% {
+                        transform: scale(1);
+                    }
+                    to {
+                        transform: scale(0.85);
+                    }
+                }
+            }
+            .user1 {
+                img {
+                    width: 120px;
+                }
+                top: 190px;
+                left: 190px;
+            }
+            .user2 {
+                img {
+                    width: 60px;
+                }
+                top: 65px;
+                left: 20px;
+            }
+            .user3 {
+                img {
+                    width: 60px;
+                }
+                top: 310px;
+                left: 110px;
+            }
+            .user4 {
+                img {
+                    width: 100px;
+                }
+                top: 120px;
+                right: 40px;
+            }
+            .user5 {
+                img {
+                    width: 50px;
+                }
+                bottom: 30px;
+                right: 140px;
+            }
+
+            @keyframes clockwise {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
         .balls {
             margin-bottom: 50px;
             padding: 0 50px;
             text-align: center;
-            background: no-repeat url("../../../assets/images/enterprises/balls.png");
-
             @include respond-to("small") {
                 background: none;
                 background-color: $btnThirdColor;
                 height: auto;
             }
-            background-position: bottom;
-            height: 700px;
+
             p {
                 padding: 50px 0;
             }
         }
         .box {
+            position: relative;
             text-align: center;
             margin-bottom: 20px;
+            transition: all 0.5s ease-out;
 
             h4 {
-                background-color: $btnSecondColor;
                 color: white;
-                margin: 0 20px 20px 20px;
+                padding: 10px 0;
+                margin: 0 20px;
+                background: linear-gradient(180deg, #2785e6, #adccee, #2785e6);
+                background-size: 600% 600%;
+                border-radius: $default-border-radius;
+                transition: all 0.5s ease-out;
+                -webkit-animation: AnimationName 6s ease infinite;
+                -moz-animation: AnimationName 6s ease infinite;
+                animation: AnimationName 6s ease infinite;
+                @-webkit-keyframes AnimationName {
+                    0% {
+                        background-position: 0% 86%;
+                    }
+                    50% {
+                        background-position: 100% 15%;
+                    }
+                    100% {
+                        background-position: 0% 86%;
+                    }
+                }
+                @-moz-keyframes AnimationName {
+                    0% {
+                        background-position: 0% 86%;
+                    }
+                    50% {
+                        background-position: 100% 15%;
+                    }
+                    100% {
+                        background-position: 0% 86%;
+                    }
+                }
+                @keyframes AnimationName {
+                    0% {
+                        background-position: 0% 86%;
+                    }
+                    50% {
+                        background-position: 100% 15%;
+                    }
+                    100% {
+                        background-position: 0% 86%;
+                    }
+                }
+            }
+
+            p {
+                position: absolute;
+                left: 0;
+                opacity: 0;
+                margin: 0 35px;
+                padding: 0 5px;
+                height: 0;
+                // height: 100%;
+
+                transition: all 0.5s ease-out;
+                background-color: white;
+                border: 1px solid white;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+                border-radius: 15px;
+                box-sizing: border-box;
+            }
+        }
+        .box:hover {
+            h4 {
+                background: linear-gradient(#2785e6, #adccee);
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
             }
             p {
-                margin: 0 20px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                opacity: 1;
+                height: 500%;
+                z-index: 2;
             }
+        }
+        .map {
+            background: no-repeat url("../../../assets/images/enterprises/map-back.png");
+            background-position: center;
         }
     }
 
@@ -181,6 +327,8 @@
             }
         }
         .phone {
+            animation: up 4.5s ease-in-out infinite;
+
             @include respond-to("small") {
                 position: none;
                 img {
@@ -195,14 +343,12 @@
         }
     }
     .dimensions {
-        padding: 40px 0;
-        margin: 50px 0 20px 0;
+        padding: 40px 0 20px;
+        margin: 60px 0 20px 0;
         text-align: center;
-        h2 {
-            margin: 20px 0 20px 0;
-        }
+
         p {
-            padding: 15px 50px;
+            padding: 15px 50px 20px;
             @include respond-to("small") {
                 padding: 15px;
             }
@@ -212,35 +358,38 @@
     .socials {
         margin: 0 70px 70px 70px;
         h2 {
-            padding: 20px 0;
+            padding: 0 0 20px;
         }
 
-        > div {
-            margin: 0 10px;
-            padding: 40px;
-            border: 1px solid #e6e6e6;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-        }
-        :first-child {
+        .text {
             h2 {
                 color: $darkBlue;
             }
+            margin: 20px 10px;
+            padding: 20px;
+            border: 1px solid #e6e6e6;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
         }
-        :last-child {
-            h2 {
-                color: $lightGreen;
+        div:first-child,
+        div:last-child {
+            text-align: center;
+            align-self: center;
+            margin: 0 auto;
+            animation: up 3s ease-in-out infinite;
+            img {
+                width: 80%;
+            }
+            @include respond-to("small") {
+                display: none;
             }
         }
     }
     .network {
-        padding: 40px 0;
+        padding: 40px 0 0;
         margin: 50px 0 20px 0;
         text-align: center;
-        h2 {
-            margin: 20px 0 20px 0;
-        }
         p {
-            padding: 15px 50px;
+            padding: 20px 0 40px;
             @include respond-to("small") {
                 padding: 15px;
             }
@@ -367,6 +516,7 @@
         }
     }
     .toContact {
+        margin: 40px 0 0;
         padding: 40px 20px;
         text-align: center;
         color: $lightColor;
@@ -401,6 +551,18 @@
             background: none;
             border: 1px solid $lightColor;
             box-sizing: border-box;
+        }
+    }
+
+    @keyframes up {
+        from {
+            transform: translateY(-10px);
+        }
+        50% {
+            transform: none;
+        }
+        to {
+            transform: translateY(-10px);
         }
     }
 }

@@ -27,7 +27,10 @@
 
     <div class="row growthBy">
         <div class="col-12">
-            <h2>We steer your e-Commerce growth by</h2>
+            <div class="section_title text-center">
+                <h2>We steer your e-Commerce growth by</h2>
+                <span class="line"></span>
+            </div>
         </div>
         <ul class="col-12 col-sm-6 col-lg-4 leftSide">
             <li>
@@ -197,7 +200,12 @@
     </div>
 
     <div class="row features justify-content-center">
-        <h2 class="col-12">HOW WILL IT IMPACT YOUR BUSINESS? </h2>
+        <div class="col-12">
+            <div class="section_title text-center">
+                <h2>HOW WILL IT IMPACT YOUR BUSINESS? </h2>
+                <span class="line"></span>
+            </div>
+        </div>
         <div class="col-12 col-sm-5 col-md-3  feature" *ngFor="let feature of features">
             <div class="imgBlock">
                 <img src="../../../assets/images/enterprises/hs-icon-ipa{{feature.id}}.svg"
@@ -207,8 +215,10 @@
             <p>{{feature.text}}</p>
         </div>
         <div class="col-12 btn">
-            <div> <sf-btn (click)="moveTo()">Contact Us</sf-btn></div>
-           
+            <div>
+                <sf-btn (click)="moveTo()">Contact Us</sf-btn>
+            </div>
+
         </div>
     </div>
 
@@ -261,14 +271,7 @@
     </div>
 
     <div class="row whySf justify-content-center">
-        <div class="col-12 col-md-6 tablet"   data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top-center">
+        <div class="col-12 col-md-6 tablet">
             <img class="hands" src="../../../assets/images/enterprises/tablet.png" alt="tablet-img">
             <img class="bolt1" src="../../../assets/images/enterprises/bolt.png" alt="bolt-img">
             <img class="bolt2" src="../../../assets/images/enterprises/bolt.png" alt="bolt-img">
