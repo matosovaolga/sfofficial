@@ -123,14 +123,17 @@
     }
 
     .description {
-        padding: 50px 0;
+        padding: 50px 0 0;
+        cursor: default;
+        h2 {
+            padding: 80px 40px 20px 40px;
+        }
 
-       
+
         .balls {
             margin-bottom: 50px;
             padding: 0 50px;
             text-align: center;
-          
             @include respond-to("small") {
                 background: none;
                 background-color: $btnThirdColor;
@@ -374,7 +377,84 @@
           
   
     }
+    .socialCircle {
+        position: relative;
 
+        width: 500px;
+        margin: 0 auto;
+        @include respond-to("small") {
+            display: none;
+        }
+        .circle {
+            animation: 30s linear 0s normal none infinite running clockwise;
+            -webkit-animation: 30s linear 0s normal none infinite running clockwise;
+        }
+
+        .map {
+            background: no-repeat url("../../../assets/images/enterprises/map-back.png");
+            background-position: center;
+        }   
+       
+    }
+    .user {
+        position: absolute;
+        animation: pulse 4s ease-in-out infinite;
+        @keyframes pulse {
+            from {
+                transform: scale(0.85);
+            }
+            50% {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0.85);
+            }
+        }
+    }
+    .user1 {
+        img {
+            width: 120px;
+        }
+        top: 190px;
+        left: 190px;
+    }
+    .user2 {
+        img {
+            width: 60px;
+        }
+        top: 65px;
+        left: 20px;
+    }
+    .user3 {
+        img {
+            width: 60px;
+        }
+        top: 310px;
+        left: 110px;
+    }
+    .user4 {
+        img {
+            width: 100px;
+        }
+        top: 120px;
+        right: 40px;
+    }
+    .user5 {
+        img {
+            width: 50px;
+        }
+        bottom: 30px;
+        right: 140px;
+    }
+
+    @keyframes clockwise {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
     .mobile {
         position: relative;
         text-align: center;
@@ -426,7 +506,6 @@
         padding: 40px 0 20px;
         margin: 60px 0 20px 0;
         text-align: center;
-    
         p {
             padding: 15px 50px 20px;
             @include respond-to("small") {
@@ -437,6 +516,7 @@
 
     .socials {
         margin: 0 70px 70px 70px;
+
         .socIcon {
             position: absolute;
             top: 20px;
@@ -449,7 +529,7 @@
             }
         }
 
-        > div {
+         .text {
             position: relative;
             display: block;
             overflow: hidden;
@@ -468,21 +548,33 @@
                     }
                 }
             }
-            margin: 20px 10px;
-            padding: 20px;
-            border: 1px solid #e6e6e6;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
         }
+
+
         h4 {
             font-weight: 600;
             margin-bottom: 20px;
+
+        div:first-child,
+        div:last-child {
+            text-align: center;
+            align-self: center;
+            margin: 0 auto;
+            animation: up 3s ease-in-out infinite;
+            img {
+                width: 80%;
+            }
+            @include respond-to("small") {
+                display: none;
+            }
+
+
         }
     }
     .network {
         padding: 40px 0 0;
         margin: 50px 0 20px 0;
         text-align: center;
-    
         p {
             padding: 20px 0 40px;
             @include respond-to("small") {
@@ -490,11 +582,13 @@
             }
         }
     }
+}
     .scheme {
         text-align: center;
         position: relative;
+        margin-top: 40px;
         img {
-            width: 30%;
+            width: 80%;
             margin: 250px 0;
             @include respond-to("medium") {
                 display: none;
@@ -503,6 +597,8 @@
         .box {
             text-align: left;
             position: absolute;
+            font-size: 15px;
+            color: $primary-color;
             @include respond-to("medium") {
                 position: relative;
                 text-align: center;
@@ -610,5 +706,22 @@
             }
         }
     }
-    
+ 
+
+    @keyframes up {
+        from {
+            transform: translateY(-10px);
+        }
+        50% {
+            transform: none;
+        }
+        to {
+            transform: translateY(-10px);
+        }
+    }
+.contentText {
+    padding: 15px 50px 20px;
+
+}
+
 }
