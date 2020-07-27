@@ -123,108 +123,26 @@
     }
 
     .description {
-<<<<<<< HEAD
-        padding: 50px 0;
 
        
-=======
+
         padding: 50px 0 0;
         cursor: default;
         h2 {
             padding: 80px 40px 20px 40px;
         }
 
-        .social {
-            position: relative;
+  
 
-            width: 500px;
-            margin: 0 auto;
-            @include respond-to("small") {
-                display: none;
-            }
-            .circle {
-                animation: 30s linear 0s normal none infinite running clockwise;
-                -webkit-animation: 30s linear 0s normal none infinite running clockwise;
-            }
-            .user {
-                position: absolute;
-                animation: pulse 4s ease-in-out infinite;
-                @keyframes pulse {
-                    from {
-                        transform: scale(0.85);
-                    }
-                    50% {
-                        transform: scale(1);
-                    }
-                    to {
-                        transform: scale(0.85);
-                    }
-                }
-            }
-            .user1 {
-                img {
-                    width: 120px;
-                }
-                top: 190px;
-                left: 190px;
-            }
-            .user2 {
-                img {
-                    width: 60px;
-                }
-                top: 65px;
-                left: 20px;
-            }
-            .user3 {
-                img {
-                    width: 60px;
-                }
-                top: 310px;
-                left: 110px;
-            }
-            .user4 {
-                img {
-                    width: 100px;
-                }
-                top: 120px;
-                right: 40px;
-            }
-            .user5 {
-                img {
-                    width: 50px;
-                }
-                bottom: 30px;
-                right: 140px;
-            }
-
-            @keyframes clockwise {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-        }
-
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
         .balls {
             margin-bottom: 50px;
             padding: 0 50px;
             text-align: center;
-<<<<<<< HEAD
-          
-=======
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
             @include respond-to("small") {
                 background: none;
                 background-color: $btnThirdColor;
                 height: auto;
             }
-<<<<<<< HEAD
-=======
-
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
             p {
                 padding: 50px 0;
             }
@@ -447,7 +365,6 @@
                 box-sizing: border-box;
             }
         }
-<<<<<<< HEAD
 
         .feature-column:last-child .feature-block-one:first-child .icon-box {
             color: #4527a4;
@@ -463,28 +380,86 @@
         }
           
   
-=======
-        .box:hover {
-            h4 {
-                background: linear-gradient(#2785e6, #adccee);
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-            p {
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
-                opacity: 1;
-                height: 500%;
-                z-index: 2;
-            }
+
+    }
+    .socialCircle {
+        position: relative;
+
+        width: 500px;
+        margin: 0 auto;
+        @include respond-to("small") {
+            display: none;
         }
+        .circle {
+            animation: 30s linear 0s normal none infinite running clockwise;
+            -webkit-animation: 30s linear 0s normal none infinite running clockwise;
+        }
+
         .map {
             background: no-repeat url("../../../assets/images/enterprises/map-back.png");
             background-position: center;
+        }   
+       
+    }
+    .user {
+        position: absolute;
+        animation: pulse 4s ease-in-out infinite;
+        @keyframes pulse {
+            from {
+                transform: scale(0.85);
+            }
+            50% {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0.85);
+            }
         }
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
+    }
+    .user1 {
+        img {
+            width: 120px;
+        }
+        top: 190px;
+        left: 190px;
+    }
+    .user2 {
+        img {
+            width: 60px;
+        }
+        top: 65px;
+        left: 20px;
+    }
+    .user3 {
+        img {
+            width: 60px;
+        }
+        top: 310px;
+        left: 110px;
+    }
+    .user4 {
+        img {
+            width: 100px;
+        }
+        top: 120px;
+        right: 40px;
+    }
+    .user5 {
+        img {
+            width: 50px;
+        }
+        bottom: 30px;
+        right: 140px;
     }
 
+    @keyframes clockwise {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
     .mobile {
         position: relative;
         text-align: center;
@@ -536,11 +511,6 @@
         padding: 40px 0 20px;
         margin: 60px 0 20px 0;
         text-align: center;
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
         p {
             padding: 15px 50px 20px;
             @include respond-to("small") {
@@ -551,20 +521,9 @@
 
     .socials {
         margin: 0 70px 70px 70px;
-<<<<<<< HEAD
-        .socIcon {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            i {
-                transition: all 0.5s ease-in-out; 
-                font-size: 50px;
-                color: $btnSecondColor;
-                
-            }
-        }
 
-        > div {
+
+         .text {
             position: relative;
             display: block;
             overflow: hidden;
@@ -582,26 +541,14 @@
                         color: $lightGreen;
                     }
                 }
-=======
-        h2 {
-            padding: 0 0 20px;
+
+            }
         }
 
-        .text {
-            h2 {
-                color: $darkBlue;
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
-            }
-            margin: 20px 10px;
-            padding: 20px;
-            border: 1px solid #e6e6e6;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-        }
-<<<<<<< HEAD
         h4 {
             font-weight: 600;
             margin-bottom: 20px;
-=======
+
         div:first-child,
         div:last-child {
             text-align: center;
@@ -614,17 +561,13 @@
             @include respond-to("small") {
                 display: none;
             }
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
+
         }
     }
     .network {
         padding: 40px 0 0;
         margin: 50px 0 20px 0;
         text-align: center;
-<<<<<<< HEAD
-    
-=======
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
         p {
             padding: 20px 0 40px;
             @include respond-to("small") {
@@ -632,11 +575,13 @@
             }
         }
     }
+}
     .scheme {
         text-align: center;
         position: relative;
+        margin-top: 40px;
         img {
-            width: 30%;
+            width: 80%;
             margin: 250px 0;
             @include respond-to("medium") {
                 display: none;
@@ -645,6 +590,8 @@
         .box {
             text-align: left;
             position: absolute;
+            font-size: 15px;
+            color: $primary-color;
             @include respond-to("medium") {
                 position: relative;
                 text-align: center;
@@ -752,47 +699,8 @@
             }
         }
     }
-<<<<<<< HEAD
-    
-=======
-    .toContact {
-        margin: 40px 0 0;
-        padding: 40px 20px;
-        text-align: center;
-        color: $lightColor;
-        background-color: $btnSecondColor;
-        h2 {
-            padding: 40px 0 10px 0;
-        }
-        p {
-            color: $lightColor;
-            margin-bottom: 40px;
-        }
-        button {
-            text-align: center;
-            border-radius: 20px;
-            text-transform: uppercase;
-            margin: 0 auto;
-            border: none;
-            background-color: $btnSecondColor;
-            border: 1px solid $btnSecondColor;
 
-            color: $lightColor;
-            padding: 10px 30px;
-            font-weight: 600;
-        }
-
-        button:active {
-            transform: translateY(1px);
-            filter: saturate(150%);
-        }
-
-        button:hover {
-            background: none;
-            border: 1px solid $lightColor;
-            box-sizing: border-box;
-        }
-    }
+ 
 
     @keyframes up {
         from {
@@ -805,5 +713,8 @@
             transform: translateY(-10px);
         }
     }
->>>>>>> ee5f8cd775157431f6e825a7a1ab234acfaa9bf2
+.contentText {
+    padding: 15px 50px 20px;
+}
+
 }
