@@ -227,9 +227,22 @@
                 left: 100%;
                 width: 100%;
                 height: 100%;
-                background-color: $darkBlue;
                 border-radius: 15px;
                 transition: all 0.5s ease-out;
+                display: flex;
+                align-self: center;
+                justify-content: center;
+                background-image: url("../../../assets/images/enterprises/case.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            .blockUp::before {
+                content: "";
+                opacity: 0.8;
+                width: 100%;
+                height: 100%;
+                background-color: $darkBlue;
             }
         }
 

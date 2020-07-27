@@ -123,16 +123,12 @@
     }
 
     .description {
-
-       
-
         padding: 50px 0 0;
         cursor: default;
         h2 {
             padding: 80px 40px 20px 40px;
         }
 
-  
 
         .balls {
             margin-bottom: 50px;
@@ -380,7 +376,6 @@
         }
           
   
-
     }
     .socialCircle {
         position: relative;
@@ -522,6 +517,17 @@
     .socials {
         margin: 0 70px 70px 70px;
 
+        .socIcon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            i {
+                transition: all 0.5s ease-in-out; 
+                font-size: 50px;
+                color: $btnSecondColor;
+                
+            }
+        }
 
          .text {
             position: relative;
@@ -541,9 +547,9 @@
                         color: $lightGreen;
                     }
                 }
-
             }
         }
+
 
         h4 {
             font-weight: 600;
@@ -561,6 +567,7 @@
             @include respond-to("small") {
                 display: none;
             }
+
 
         }
     }
@@ -699,7 +706,6 @@
             }
         }
     }
-
  
 
     @keyframes up {
@@ -715,6 +721,7 @@
     }
 .contentText {
     padding: 15px 50px 20px;
+
 }
 
 }
