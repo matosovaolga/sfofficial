@@ -1,9 +1,4 @@
-
-import { ConnectionService } from '../../home/contactForm/connection.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'sf-expertises.hospital',
@@ -27,6 +22,15 @@ export class SFHospitalManagementComponent {
     { id: 4, title: "Applications", text: "Use Business Intelligence (BI) tools for statistical analysis and get a better understanding of enterprise requirements" },
     { id: 5, title: "Infrastructure", text: "Presents insight into the work structure, processes and flows from the Company environment" },
     { id: 6, title: "Analytics", text: "Achieve greater data security by leveraging access-controlled system and role-based access" },
+  ]
+
+  profits = [
+    { id: 1, title: "TeleHealth Support Service" },
+    { id: 2, title: "Patient Monitoring Service"  },
+    { id: 3, title: "Long Term care" },
+    { id: 4, title: "Referral management" },
+    { id: 5, title: "Home care" },
+    { id: 6, title: "CRM/patient portal" }
   ]
 
 }
