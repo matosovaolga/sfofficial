@@ -4,7 +4,12 @@
     display: block;
     position: relative;
 }
-
+.activeSection {
+    color: $darkBlue !important;
+}
+.activeSubSection {
+    color: $darkBlue !important;
+}
 .stuck_menu {
     @include respond-to("small") {
         background: $lightColor;
