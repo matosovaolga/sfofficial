@@ -32,6 +32,7 @@
                                 true}" (click)="click('home', '')"
                                 [className]="currentSection === 'home' ? 'activeSection' : ''">Home</a>
                         </li>
+
                         <li>
                             <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}" [className]="currentSection === 'services' ? 'activeSection' : ''"
@@ -49,37 +50,29 @@
                                 [routerLinkActiveOptions]="{exact: true}" (click)="click('expertises', '')"
                                 [className]="currentSection === 'expertises' ? 'activeSection' : ''">Expertises</a>
                             <ul class="dropdown multi">
-                                <li>Bussines solutions
+                                <li *ngFor="let expertise of expertises">
+                                    {{expertise.title}}
                                     <ul>
-                                        <li *ngFor="let solution of bussinesSolutions">
+                                        <li *ngFor="let solution of expertise.subSection">
                                             <a routerLink="/expertises/{{solution.name}}"
                                                 (click)="click('expertises',solution.name)"
                                                 [className]="solution.name === currentSubSection ? 'activeSubSection' : ''">{{solution.desc}}</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li>Development stack
-                                    <ul>
-                                        <li *ngFor="let stack of developmentStack">
-                                            <a routerLink="/expertises/{{stack.name}}"
-                                                (click)="click('expertises',stack.name)"
-                                                [className]="stack.name === currentSubSection ? 'activeSubSection' : ''">{{stack.desc}}</a>
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                         </li>
+
                         <li>
-                            <a (click)="click('engagement', '')"
-                                [className]="currentSection === 'engagement' ? 'activeSection' : ''">Engagement
-                                Models</a>
+                            <a routerLink="/engagement/outsourcing" (click)="click('engagement', '')"
+                                [routerLinkActive]="['active']"
+                                [className]="currentSection === 'engagement' ? 'activeSection' : ''">
+                                Engagement Models</a>
                             <ul class="dropdown">
-                                <li><a routerLink="/engagement/outsourcing"
-                                        [routerLinkActive]="['active']">Project-based Outsourcing</a></li>
-                                <li><a routerLink="/engagement/dedicate" [routerLinkActive]="['active']">Dedicated
-                                        Team</a></li>
-                                <li><a routerLink="/engagement/staff-augmentation" [routerLinkActive]="['active']">Staff
-                                        Augmentation</a></li>
+                                <li *ngFor="let model of engagementModels">
+                                    <a routerLink="/engagement/{{model.name}}" (click)="click('engagement',model.name)"
+                                        [className]="model.name === currentSubSection ? 'activeSubSection' : ''">{{model.desc}}</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -94,6 +87,7 @@
                                 </li>
                             </ul>
                         </li>
+
                         <li>
                             <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}" (click)="click('contact', '')"
