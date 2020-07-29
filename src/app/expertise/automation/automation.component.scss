@@ -1,9 +1,9 @@
 @import "./../../app.component.scss";
 
-
 .businessAutomation {
     padding: 0;
-
+    margin-bottom: 100px;
+    // margin-top: 150px;
     .heading {
         text-align: center;
         padding: 80px 40px 20px 40px;
@@ -11,6 +11,320 @@
         h1 {
             margin: 20px 0 20px 0;
         }
-    
+    }
+
+    .description {
+        margin-bottom: 50px;
+        padding: 50px 30px;
+        text-align: center;
+        background-color: $btnSecondColor;
+        .left {
+            p,
+            h2 {
+                padding: 20px 60px 20px 60px;
+                color: white;
+            }
+        }
+        .right {
+            position: relative;
+            height: 500px;
+            margin: auto;
+
+            .bpa3 {
+                width: 600px;
+                top: 0;
+                right: 0;
+            }
+            .bpa2 {
+                position: absolute;
+                width: 120px;
+                top: 180px;
+                right: 20%;
+            }
+            .bpa1 {
+                position: absolute;
+                width: 200px;
+                bottom: 5%;
+                left: 5%;
+            }
+        }
+    }
+
+    .streamline {
+        margin: 50px 0 20px 0;
+        text-align: center;
+        h1 {
+            margin: 10px 0;
+            padding: 0 30px;
+        }
+        p {
+            font-size: larger;
+            padding: 0px 80px 40px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+
+    .features {
+        margin: 0px 0 70px;
+
+        .feature {
+            position: relative;
+            display: block;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 15px;
+            padding: 63px 30px 56px 30px;
+            box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px 20px 70px;
+
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            .imgBlock {
+                position: absolute;
+                top: 50px;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                display: flex;
+
+                align-items: flex-start;
+                justify-content: center;
+
+                svg {
+                    transform: scale(0.9);
+                    width: 80px;
+                    height: 80px;
+                    transition: all 0.5s ease-out;
+                }
+            }
+
+            h4 {
+                margin-top: 80px;
+                padding: 20px 0;
+                position: relative;
+                display: block;
+            }
+            h4::before {
+                position: absolute;
+                content: "";
+                background: #4527a4;
+                width: 40px;
+                height: 2px;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                transition: all 500ms ease;
+            }
+
+            p {
+                font-size: 18px;
+                padding: 10px 0;
+                position: relative;
+                margin-left: 10px;
+            }
+        }
+        .feature:hover {
+            color: white;
+
+            .imgBlock svg {
+                transform: scale(1);
+                color: white;
+                fill: white;
+            }
+            h4::before {
+                background: white;
+            }
+            p {
+                color: white;
+            }
+        }
+
+        .feature:hover::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .feature::before {
+            transform: scale(0.8);
+            position: absolute;
+            content: "";
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            border-radius: 15px;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+            background-image: -webkit-linear-gradient(0deg, #c3b9e2 0%, #0288e7af 100%);
+            transition: all 0.5s ease-out;
+        }
+    }
+
+    .users {
+        margin-bottom: 50px;
+        padding: 50px 30px;
+        text-align: center;
+        background-color: rgba(191, 221, 255, 0.719);
+        .right {
+            h2 {
+                padding: 20px 60px 20px 60px;
+                // color: white;
+            }
+            li {
+                // color: white;
+                padding: 5px 20px;
+            }
+        }
+        .left {
+            position: relative;
+            height: 450px;
+            margin: auto;
+            text-align: center;
+
+            // padding-bottom: 50px;
+            .avatar {
+                position: absolute;
+                top: 20px;
+                right: 10%;
+                z-index: 9;
+                animation: up 3s ease-in-out infinite;
+            }
+            .camera {
+                position: absolute;
+                top: 75px;
+                right: 35%;
+                z-index: 9;
+                animation: pulse 3s ease-in-out infinite;
+            }
+            .musicNote {
+                position: absolute;
+                top: 0px;
+                right: 45%;
+                width: 100px;
+                z-index: 9;
+                animation: up 3s ease-in-out infinite;
+            }
+            .envelope {
+                position: absolute;
+                left: 18%;
+                top: 140px;
+                width: 160px;
+                transform: rotateZ(-45deg);
+                z-index: 9;
+                animation: pulse 3s ease-in-out infinite;
+            }
+            .message {
+                position: absolute;
+                left: 20%;
+                top: 60px;
+                width: 100px;
+                transform: rotateZ(-15deg);
+                z-index: 9;
+                animation: reverse-up 3s ease-in-out infinite;
+            }
+            .user {
+                position: absolute;
+                width: 300px;
+                margin: auto;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 10;
+            }
+            @keyframes up {
+                from {
+                    transform: translateY(-20px);
+                }
+                50% {
+                    transform: none;
+                }
+                to {
+                    transform: translateY(-20px);
+                }
+            }
+            @keyframes reverse-up {
+                from {
+                    transform: none;
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+                to {
+                    transform: none;
+                }
+            }
+            @keyframes pulse {
+                from {
+                    transform: scale(1.1);
+                }
+                50% {
+                    transform: scale(0.9);
+                }
+                to {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .equalize {
+        margin: 0;
+        cursor: default;
+
+        > div {
+            padding: 0;
+            margin: 20px 0;
+
+            .box {
+                position: relative;
+                margin: 20px;
+                text-align: center;
+                transition: all 1s ease-out;
+            }
+
+            .icon {
+                position: absolute;
+                top: 10px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                margin: 20px auto;
+                width: 110px;
+                height: 110px;
+                transition: all 1s ease-out;
+                padding: 30px;
+                background-color: #f4f4f4b0;
+                border-radius: 50%;
+
+                svg {
+                    fill: $darkBlue;
+                    width: 50px;
+                    height: 50px;
+                    transition: all 0.5s ease-out;
+                }
+            }
+            h4 {
+                padding: 180px 10px 10px;
+                font-weight: 600;
+            }
+        }
+        .box:hover {
+            -webkit-box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
+            -moz-box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
+            box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
+            .icon {
+                background-color: $darkBlue;
+                svg {
+                    fill: white;
+                }
+            }
+        }
     }
 }
