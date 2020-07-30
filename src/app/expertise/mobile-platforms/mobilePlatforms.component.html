@@ -1,4 +1,4 @@
-<div class="container mobilePlatforms">
+<div class="container-fluid mobilePlatforms">
     <div class="row heading">
         <div class="col-12">
             <div class="section_title text-center">
@@ -8,4 +8,129 @@
             </div>
         </div>
     </div>
+
+
+    <div class="row partnerCategories align-items-center">
+        <div class="col-12 col-lg-8 left">
+            <div class="block">
+                <h4>Partner with us to develop trendy feature rich responsive mobile application in the following
+                    categories: </h4>
+                <ul>
+                    <li *ngFor="let category of categories">
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        {{category}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 right">
+            <div class="imgBlock">
+                <img src="../../../assets/images/enterprises/iphone-info.png" alt="background_image">
+            </div>
+            <h5>Have anything interesting in your mind?</h5>
+            <div>
+                <sf-btn (click)="moveTo()">Contact Us</sf-btn>
+            </div>
+        </div>
+    </div>
+
+    <div class="row headBlock">
+        <div class="col-12">
+            <div class="section_title text-center">
+                <h5>WHAT WE DO</h5>
+                <h2>Best iOS App Development Services</h2>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row weDo justify-content-center">
+        <div class="col-12 col-md-3 feature" *ngFor="let service of iosDo">
+            <div class="blockUp ios"></div>
+            <h4>{{service.title}}</h4>
+            <p>{{service.text}}</p>
+        </div>
+    </div>
+
+    <div class="row partnerCategories align-items-center">
+        <div class="col-12 col-lg-8 left">
+            <div class="block">
+                <h4>Partner with us to develop trendy, feature-rich, responsive React Native application in the
+                    following categories: </h4>
+                <ul>
+                    <li *ngFor="let category of categories">
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        {{category}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 right">
+            <div class="imgBlock">
+                <img src="../../../assets/images/enterprises/react-info.png" alt="background_image">
+            </div>
+            <h5>Have anything interesting in your mind?</h5>
+            <div>
+                <sf-btn (click)="moveTo()">Contact Us</sf-btn>
+            </div>
+        </div>
+    </div>
+
+    <div class="row headBlock">
+        <div class="col-12">
+            <div class="section_title text-center">
+                <h5>WHAT WE DO</h5>
+                <h2>Our React Native App Development Services</h2>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row weDo justify-content-center">
+        <div class="col-12 col-md-3 feature" *ngFor="let service of androidDo">
+            <div class="blockUp react"></div>
+            <h4>{{service.title}}</h4>
+            <p>{{service.text}}</p>
+        </div>
+    </div>
+
+    <div class="row partnerCategories align-items-center">
+        <div class="col-12 col-lg-8 left">
+            <div class="block">
+                <h4>Partner with us to develop trendy feature rich responsive web application in the following
+                    categories: </h4>
+                <ul>
+                    <li *ngFor="let category of categories">
+                        <img src="../../../assets/images/enterprises/done.svg" alt="done-icon">
+                        {{category}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 right">
+            <div class="imgBlock">
+                <img src="../../../assets/images/enterprises/android-info.png" alt="background_image">
+            </div>
+            <h5>Have anything interesting in your mind?</h5>
+            <div>
+                <sf-btn (click)="moveTo()">Contact Us</sf-btn>
+            </div>
+        </div>
+    </div>
+
+    <div class="row headBlock">
+        <div class="col-12">
+            <div class="section_title text-center">
+                <h5>WHAT WE DO</h5>
+                <h2>Android Application Development Services</h2>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row weDo justify-content-center">
+        <div class="col-12 col-md-3 feature" *ngFor="let service of reactDo">
+            <div class="blockUp  android"></div>
+            <h4>{{service.title}}</h4>
+            <p>{{service.text}}</p>
+        </div>
+    </div>
+
 </div>
