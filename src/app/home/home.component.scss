@@ -6,9 +6,8 @@
         padding-bottom: 50px;
     }
 
-
     padding-top: 160px;
-    padding-bottom: 250px;
+    padding-bottom: 150px;
     position: relative;
 
     h1 {
@@ -67,7 +66,6 @@
         width: 450px;
     }
 
-
     @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
     @include transform(rotate(-47deg));
 
@@ -85,11 +83,9 @@
         top: -318px;
     }
 
-
     @include respond-to("medium") {
         right: -94%;
     }
-
 
     @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
     @include transform(rotate(-58deg));
@@ -109,11 +105,9 @@
         top: -318px;
     }
 
-
     @include respond-to("medium") {
         right: -94%;
     }
-
 
     @include backgroundGradient(20deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
     @include transform(rotate(-58deg));
@@ -269,18 +263,21 @@
     }
 
     .counter {
+        margin-top: 100px;
         padding: 0 50px;
         background: center no-repeat url("../../assets/images/enterprises/map.png");
         background-size: 100% 100%;
-        min-height: 400px;
         @include respond-to("extra-small") {
             display: none;
+        }
+        .row {
+            padding: 15% 0;
         }
 
         .box {
             text-align: center;
             margin: 20px auto;
-            
+
             div {
                 width: 220px;
                 height: 220px;
@@ -296,7 +293,7 @@
                 fa-icon {
                     color: $lightGreen;
                     font-size: 40px;
-        
+
                     @include respond-to("medium-large") {
                         font-size: 30px;
                     }

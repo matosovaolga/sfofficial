@@ -6,7 +6,7 @@
         padding-bottom:     50px;
     }
     padding-top: 160px;
-    padding-bottom: 250px;
+    padding-bottom: 150px;
     position: relative;
 
     h1 {
@@ -33,10 +33,25 @@
     .app_img {
         position: relative;
         z-index: 4;
+        animation: up 3s ease-in-out infinite;
+
         @include respond-to('medium') {
             display: none;
         }
+        @keyframes up {
+            from {
+                transform: translateY(-20px);
+            }
+            50% {
+                transform: none;
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
     }
+
+    
 
     .app_img1 {
         position: absolute;

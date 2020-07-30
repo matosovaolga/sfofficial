@@ -568,8 +568,8 @@
     <div class="row mobileFeatures">
         <div class="col-12 col-md-6" *ngFor="let feature of mobileFeatures">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-3">
+                <div class="row justify-content-center" (mouseover)="hoverdId=feature.id" (mouseout)="hoverdId=null">
+                    <div [className]="hoverdId === feature.id ? 'col-3 activeAnimation block' : 'col-3 disableAnimation'">
                         <img src="../../../assets/images/enterprises/mobile-feature-{{feature.id}}.svg"
                             alt="card1_icon">
                     </div>

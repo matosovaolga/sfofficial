@@ -18,6 +18,44 @@
         }
     }
 
+    .description-banner {
+        margin-bottom: 50px;
+        padding: 20px;
+        text-align: center;
+        background-color: $btnSecondColor;
+        .left {
+            p,
+            h2 {
+                padding: 20px 60px 20px 60px;
+                color: white;
+            }
+        }
+        .right {
+            // position: relative;
+            // height: 500px;
+
+            .phoner {
+                // position: absolute;
+                // left: 0;
+                // top: 50px;
+                padding: 50px 0;
+                transform-origin: 100% 100%;
+                animation: rotate 6s ease-in-out infinite;
+            }
+            @keyframes rotate {
+                from {
+                    transform: rotateZ(10deg);
+                }
+                50% {
+                    transform: rotateZ(-10deg);
+                }
+                to {
+                    transform: rotateZ(10deg);
+                }
+            }
+        }
+    }
+
     .phases {
         text-align: center;
         // margin: 40px 0;

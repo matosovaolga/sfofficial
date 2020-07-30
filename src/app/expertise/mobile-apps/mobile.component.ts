@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class SFMobileAppsComponent {
+  hoverdId: number;
+
+  constructor() {
+    this.hoverdId = null;
+  }
 
   industries = [
     { id: 1, title: "Manufacturing", text: "We develop quality Manufacturing Mobility App to empower your employees with smart tools which they can manage from anywhere." },

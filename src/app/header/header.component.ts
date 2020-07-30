@@ -46,10 +46,11 @@ export class SFHeaderComponent implements OnInit {
         },
         {
             title: "Development stack", subSection: [
-                { name: "open-source", desc: "Open Source" },
-                { name: "mobile-platforms", desc: "Mobile platforms" },
-                { name: "javascript", desc: "JavaScript" },
-                { name: "cloud-tech", desc: "Cloud Technologies" },
+                { name: "mobile-platforms", desc: "Mobile" },
+                { name: "server-side", desc: "Server Side" },
+                { name: "front-end", desc: "Front-End" },
+                { name: "database", desc: "Database" },
+                { name: "cms", desc: "CMS" },
             ]
         },
     ]
