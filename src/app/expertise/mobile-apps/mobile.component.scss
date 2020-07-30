@@ -1,6 +1,5 @@
 @import "./../../app.component.scss";
 
-
 .mobileComponent {
     padding: 0;
 
@@ -11,6 +10,332 @@
         h1 {
             margin: 20px 0 20px 0;
         }
-    
+    }
+
+    .description {
+        margin-bottom: 50px;
+        padding: 40px 0;
+        text-align: center;
+        background-color: $btnSecondColor;
+        .left {
+            p,
+            h3 {
+                padding: 20px 60px 20px 60px;
+                color: white;
+            }
+            p {
+                text-align: justify;
+            }
+        }
+        .right {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+
+            .mobility {
+                animation: up 3s ease-in-out infinite;
+                width: 90%;
+            }
+
+            @keyframes up {
+                from {
+                    transform: translateY(-20px);
+                }
+                50% {
+                    transform: none;
+                }
+                to {
+                    transform: translateY(-20px);
+                }
+            }
+        }
+    }
+
+    .streamline {
+        margin: 50px 0 20px 0;
+        text-align: center;
+        h1 {
+            margin: 10px 0;
+            padding: 0 30px;
+        }
+        p {
+            font-size: larger;
+            padding: 20px 80px 40px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+
+    .mobileBenefits {
+        margin-bottom: 70px;
+
+        > div {
+            border-radius: 15px;
+            margin: 20px 20px;
+            padding: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+            // align-self: center;
+            text-align: center;
+            svg {
+                position: relative;
+                text-align: center;
+                fill: #255ccc;
+                width: 80px;
+                height: 80px;
+                transition: all 0.5s ease-out;
+            }
+            h4 {
+                position: relative;
+                padding: 20px 0;
+                color: black;
+                transition: all 0.5s ease-out;
+            }
+            p {
+                transition: all 0.5s ease-out;
+                padding: 5px 0;
+                position: relative;
+                text-align: justify;
+            }
+
+            .blockUp {
+                position: absolute;
+                top: 0;
+                right: 100%;
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                transition: all 0.5s ease-out;
+                display: flex;
+                align-self: center;
+                justify-content: center;
+                background-image: url("../../../assets/images/enterprises/mobile-app.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            .blockUp::before {
+                content: "";
+                opacity: 0.9;
+                width: 100%;
+                height: 100%;
+                background-color: $darkBlue;
+            }
+        }
+
+        > div:hover {
+            h4,
+            p {
+                color: white;
+            }
+            svg {
+                fill: white;
+            }
+            .blockUp {
+                right: 0;
+            }
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .equalize {
+        margin: 0;
+        cursor: default;
+        
+        > div {
+            padding: 0;
+            margin: 20px 0;
+
+            .box {
+                position: relative;
+                margin:  20px;
+                text-align: center;
+                transition: all 1s ease-out;
+                
+            }
+
+            .icon {
+
+                position: absolute;
+                top: 10px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                margin: 20px auto;
+                width: 110px;
+                height: 110px;
+                transition: all 1s ease-out;
+                padding: 30px;
+                background-color: #f4f4f4b0;
+                border-radius: 50%;
+
+                svg {
+                    fill: $darkBlue;
+                    width: 50px;
+                    height: 50px;
+                    transition: all 0.5s ease-out;
+                }
+            }
+            h4 {
+                padding: 150px 0 10px;
+                font-weight: 600;
+            }
+            p {
+                padding: 10px 10px 15px;
+            }
+        }
+         .box:hover {
+            -webkit-box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
+            -moz-box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
+            box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
+            .icon {
+                background-color: $darkBlue;
+                svg {
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    .industries {
+        padding: 0;
+
+        .industry {
+            margin: 20px 15px;
+            padding: 20px 0;
+
+            text-align: center;
+            // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+            h4 {
+                padding: 20px 10px;
+            }
+            p {
+                padding: 0 20px;
+                @include respond-to("small") {
+                    padding: 0 50px;
+                }
+            }
+            .icon {
+                height: 180px;
+                width: 180px;
+                margin: 0 auto;
+                position: relative;
+
+                .firstLayer {
+                    text-align: center;
+                    display: -webkit-box;
+                    display: flex;
+                    align-content: center;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                    width: 150px;
+                    height: 150px;
+                    margin: auto;
+
+                    background-color: $darkBlue;
+                    background-image: linear-gradient(45deg, $darkBlue 0%, #4ac4f3 100%);
+                    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+                    -webkit-animation: one-animated 10s infinite;
+                    animation: one-animated 10s infinite;
+                    overflow: hidden;
+                }
+                .secondLayer {
+                    position: absolute;
+                    top: 20px;
+                    left: 35px;
+
+                    text-align: center;
+                    display: -webkit-box;
+                    display: flex;
+                    align-content: center;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                    width: 110px;
+                    height: 110px;
+                    background-color: white;
+                    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
+
+                    -webkit-animation: two-animated 10s infinite;
+                    animation: two-animated 10s infinite;
+                    overflow: hidden;
+                }
+                .thirdLayer {
+                    position: absolute;
+                    top: 40px;
+                    left: 60px;
+                    width: 60px;
+                }
+                @keyframes one-animated {
+                    0% {
+                        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                    }
+
+                    25% {
+                        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                    }
+                    50% {
+                        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+                    }
+                    75% {
+                        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+                    }
+                }
+                @keyframes two-animated {
+                    0% {
+                        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                    }
+
+                    25% {
+                        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+                    }
+                    50% {
+                        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                    }
+                    75% {
+                        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+                    }
+                }
+            }
+        }
+    }
+
+    .mobileFeatures {
+        > div {
+            padding: 0;
+            margin: 10px 0;
+            cursor: default;
+        }
+        img {
+            width: 80px;
+        }
+        padding-bottom: 0;
+        margin: 0px 0 20px 0;
+
+        .row .col-3 {
+            text-align: center;
+            padding: 0;
+            transform-style: preserve-3d;
+            transition: all 2s ease-out;
+        }
+
+        > div :hover {
+            .row .col-3 {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .text-box {
+            p {
+                padding: 20px 20px 20px 0;
+            }
+        }
     }
 }

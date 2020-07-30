@@ -38,7 +38,7 @@ const expertiseRoutes: Routes = [
     component: SFEcommerceComponent
   },
   {
-    path: 'mobile',
+    path: 'mobile-enterprise',
     component: SFMobileAppsComponent
   },
   {

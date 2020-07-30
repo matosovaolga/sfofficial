@@ -7,7 +7,8 @@
                     <label class="menu__btn" for="menu__toggle">
                         <span></span>
                     </label>
-                    <a id="logo" routerLink="/" class="logo menuzord-brand" data-dark-logo="assets/images/logo-dark.png">
+                    <a id="logo" routerLink="/" class="logo menuzord-brand"
+                        data-dark-logo="assets/images/logo-dark.png">
                         <img src="assets/images/logo.png" alt="Polo Logo">
                     </a>
                     <div class="header-extras">
@@ -28,68 +29,69 @@
                     <nav class="menuzord-menu">
                         <li>
                             <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}">Home</a>
-                        </li>
-                        <li>
-                            <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}">Services</a>
-                                <ul class="dropdown">
-                                    <li><a routerLink="/services/uxdesign">UX Design and Prototypes</a></li>
-                                    <li><a routerLink="/services/software">Web Appliction Development</a></li>
-                                    <li><a routerLink="/services/mobile">Mobile Application Development</a></li>
-                                    <li><a routerLink="/services/cms">CMS Development</a></li>
-                                    <li><a routerLink="/services/qa">QA and Testing</a></li>
-                                    <li><a routerLink="/services/integration">Application Integration</a></li>
-                                    <li><a routerLink="/services/discovery">Discovery Phase</a></li>
-                                    <li><a routerLink="/services/consulting">Software Architecture & Technology Consulting</a></li>
-                                </ul>
+                                true}" (click)="click('home', '')"
+                                [className]="currentSection === 'home' ? 'activeSection' : ''">Home</a>
                         </li>
 
                         <li>
-                            <a routerLink="/expertises" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}">Expertises</a>
-                            <ul class="dropdown multi">
-                                <li>Bussines solutions
-                                    <ul>
-                                        <li><a routerLink="/expertises/portals" [routerLinkActive]="['active']">Web and Enterprise Portals</a></li>
-                                        <li><a routerLink="/expertises/mobile" [routerLinkActive]="['active']">Enterprise Mobile Apps</a></li>
-                                        <li><a routerLink="/expertises/ecommerce" [routerLinkActive]="['active']">Ecommerce</a></li>
-                                        <li><a routerLink="/expertises/social" [routerLinkActive]="['active']">Social Networking</a></li>
-                                        <li><a routerLink="/expertises/automation" [routerLinkActive]="['active']">Business Process Automation</a></li>
-                                        <li><a routerLink="/expertises/hospital" [routerLinkActive]="['active']">Hospital Managment System</a></li>
-                                    </ul>
+                            <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}" [className]="currentSection === 'services' ? 'activeSection' : ''"
+                                (click)="click('services', '')">Services</a>
+                            <ul class="dropdown">
+                                <li *ngFor="let service of services">
+                                    <a routerLink="/services/{{service.name}}" (click)="click('services',service.name)"
+                                        [className]="service.name === currentSubSection ? 'activeSubSection' : ''">{{service.desc}}</a>
                                 </li>
-                                <li>Development stack
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a routerLink="/expertises" [routerLinkActive]="['active']"
+                                [routerLinkActiveOptions]="{exact: true}" (click)="click('expertises', '')"
+                                [className]="currentSection === 'expertises' ? 'activeSection' : ''">Expertises</a>
+                            <ul class="dropdown multi">
+                                <li *ngFor="let expertise of expertises">
+                                    {{expertise.title}}
                                     <ul>
-                                        <li><a routerLink="/expertises/open-source" [routerLinkActive]="['active']">Open Source</a></li>
-                                        <li><a routerLink="/expertises/mobile-platforms" [routerLinkActive]="['active']">Mobile platforms</a></li>
-                                        <li><a routerLink="/expertises/javascript" [routerLinkActive]="['active']">JavaScript</a></li>
-                                        <li><a routerLink="/expertises/cloud-tech" [routerLinkActive]="['active']">Cloud Technologies</a></li>
+                                        <li *ngFor="let solution of expertise.subSection">
+                                            <a routerLink="/expertises/{{solution.name}}"
+                                                (click)="click('expertises',solution.name)"
+                                                [className]="solution.name === currentSubSection ? 'activeSubSection' : ''">{{solution.desc}}</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
+
                         <li>
-                            <a>Engagement Models</a>
+                            <a routerLink="/engagement/outsourcing" (click)="click('engagement', '')"
+                                [routerLinkActive]="['active']"
+                                [className]="currentSection === 'engagement' ? 'activeSection' : ''">
+                                Engagement Models</a>
                             <ul class="dropdown">
-                                <li><a routerLink="/engagement/outsourcing" [routerLinkActive]="['active']">Project-based Outsourcing</a></li>
-                                <li><a routerLink="/engagement/dedicate" [routerLinkActive]="['active']">Dedicated Team</a></li>
-                                <li><a  routerLink="/engagement/staff-augmentation" [routerLinkActive]="['active']" >Staff Augmentation</a></li>
+                                <li *ngFor="let model of engagementModels">
+                                    <a routerLink="/engagement/{{model.name}}" (click)="click('engagement',model.name)"
+                                        [className]="model.name === currentSubSection ? 'activeSubSection' : ''">{{model.desc}}</a>
+                                </li>
                             </ul>
                         </li>
 
                         <li>
                             <a routerLink="/company/about" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}">company</a>
+                                true}" (click)="click('company', '')"
+                                [className]="currentSection === 'company' ? 'activeSection' : ''">company</a>
                             <ul class="dropdown">
-                                <li><a routerLink="/company/about" [routerLinkActive]="['active']" >About Us</a></li>
-                                <li><a routerLink="/company/vacancies" [routerLinkActive]="['active']" >Vacancies</a></li>
-                                <li><a routerLink="/company/process" [routerLinkActive]="['active']">Process</a></li>
+                                <li *ngFor="let company of companySection">
+                                    <a routerLink="/company/{{company.name}}" (click)="click('company',company.name)"
+                                        [className]="company.name === currentSubSection ? 'activeSubSection' : ''">{{company.desc}}</a>
+                                </li>
                             </ul>
                         </li>
+
                         <li>
                             <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}">Contact</a>
+                                true}" (click)="click('contact', '')"
+                                [className]="currentSection === 'contact' ? 'activeSection' : ''">Contact</a>
                         </li>
                     </nav>
                 </div>
