@@ -322,14 +322,20 @@
         .row .col-3 {
             text-align: center;
             padding: 0;
-            transform-style: preserve-3d;
-            transition: all 2s ease-out;
+          
         }
 
-        > div :hover {
-            .row .col-3 {
-                transform: rotateY(360deg);
-            }
+        .block {
+            transform-style: preserve-3d;
+            transition: all 1s ease-out;
+        }
+
+        .activeAnimation {
+            transform: rotateY(360deg);
+        }
+
+        .disableAnimation {
+            transition: none;
         }
 
         .text-box {

@@ -30,17 +30,17 @@
                         <li>
                             <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}" (click)="click('home', '')"
-                                [className]="currentSection === 'home' ? 'activeSection' : ''">Home</a>
+                                [className]="currentSection === 'home' ? 'active' : ''">Home</a>
                         </li>
 
                         <li>
                             <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                                true}" [className]="currentSection === 'services' ? 'activeSection' : ''"
+                                true}" [className]="currentSection === 'services' ? 'active' : ''"
                                 (click)="click('services', '')">Services</a>
                             <ul class="dropdown">
                                 <li *ngFor="let service of services">
                                     <a routerLink="/services/{{service.name}}" (click)="click('services',service.name)"
-                                        [className]="service.name === currentSubSection ? 'activeSubSection' : ''">{{service.desc}}</a>
+                                        [className]="service.name === currentSubSection ? 'active' : ''">{{service.desc}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -48,7 +48,7 @@
                         <li>
                             <a routerLink="/expertises" [routerLinkActive]="['active']"
                                 [routerLinkActiveOptions]="{exact: true}" (click)="click('expertises', '')"
-                                [className]="currentSection === 'expertises' ? 'activeSection' : ''">Expertises</a>
+                                [className]="currentSection === 'expertises' ? 'active' : ''">Expertises</a>
                             <ul class="dropdown multi">
                                 <li *ngFor="let expertise of expertises">
                                     {{expertise.title}}
@@ -56,7 +56,7 @@
                                         <li *ngFor="let solution of expertise.subSection">
                                             <a routerLink="/expertises/{{solution.name}}"
                                                 (click)="click('expertises',solution.name)"
-                                                [className]="solution.name === currentSubSection ? 'activeSubSection' : ''">{{solution.desc}}</a>
+                                                [className]="solution.name === currentSubSection ? 'active' : ''">{{solution.desc}}</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -66,12 +66,12 @@
                         <li>
                             <a routerLink="/engagement/outsourcing" (click)="click('engagement', '')"
                                 [routerLinkActive]="['active']"
-                                [className]="currentSection === 'engagement' ? 'activeSection' : ''">
+                                [className]="currentSection === 'engagement' ? 'active' : ''">
                                 Engagement Models</a>
                             <ul class="dropdown">
                                 <li *ngFor="let model of engagementModels">
                                     <a routerLink="/engagement/{{model.name}}" (click)="click('engagement',model.name)"
-                                        [className]="model.name === currentSubSection ? 'activeSubSection' : ''">{{model.desc}}</a>
+                                        [className]="model.name === currentSubSection ? 'active' : ''">{{model.desc}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -79,11 +79,11 @@
                         <li>
                             <a routerLink="/company/about" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}" (click)="click('company', '')"
-                                [className]="currentSection === 'company' ? 'activeSection' : ''">company</a>
+                                [className]="currentSection === 'company' ? 'active' : ''">company</a>
                             <ul class="dropdown">
                                 <li *ngFor="let company of companySection">
                                     <a routerLink="/company/{{company.name}}" (click)="click('company',company.name)"
-                                        [className]="company.name === currentSubSection ? 'activeSubSection' : ''">{{company.desc}}</a>
+                                        [className]="company.name === currentSubSection ? 'active' : ''">{{company.desc}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -91,7 +91,7 @@
                         <li>
                             <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
                                 true}" (click)="click('contact', '')"
-                                [className]="currentSection === 'contact' ? 'activeSection' : ''">Contact</a>
+                                [className]="currentSection === 'contact' ? 'active' : ''">Contact</a>
                         </li>
                     </nav>
                 </div>

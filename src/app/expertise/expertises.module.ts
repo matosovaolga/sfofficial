@@ -12,10 +12,11 @@ import { SFEnterprisePortalsComponent } from './portals/portals.component';
 import { SFEcommerceComponent } from './ecommerce/ecommerce.component';
 import { SFMobileAppsComponent } from './mobile-apps/mobile.component';
 import { SFBusinessAutomationComponent } from './automation/automation.component';
-import { SFOpenSourceComponent } from './open-source/openSource.component';
+import { SFDataBaseComponent } from './database/database.component';
 import { SFMobilePlatformsComponent } from './mobile-platforms/mobilePlatforms.component';
-import { SFJavaScriptComponent } from './javascript/javascript.component';
-import { SFCloudTechnologiesComponent } from './cloud-tech/cloudTech.component';
+import { SFFrontEndComponent } from './front-end/front-end.component';
+import { SFServerSideComponent } from './serverSide/serverSide.component';
+import { SFCMSComponent } from './cms/cms.component';
 
 @NgModule({
     imports: [
@@ -34,10 +35,11 @@ import { SFCloudTechnologiesComponent } from './cloud-tech/cloudTech.component';
         SFEcommerceComponent,
         SFMobileAppsComponent,
         SFBusinessAutomationComponent,
-        SFOpenSourceComponent,
+        SFDataBaseComponent,
         SFMobilePlatformsComponent,
-        SFJavaScriptComponent,
-        SFCloudTechnologiesComponent
+        SFFrontEndComponent,
+        SFServerSideComponent,
+        SFCMSComponent
     ],
     providers: [],
     exports: [RouterModule]

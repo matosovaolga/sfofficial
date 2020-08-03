@@ -69,7 +69,7 @@
         <div class="col-12 ">
             <div class="section_title text-center">
 
-                <h2>SOCIAL NETWORKS & COMMUNITY PORTALS: FROM IDEA TO SUCCESS</h2>
+                <h2>Social Networks & Community Portals: from idea to success</h2>
                 <p>We offer a proper framework for innovative social media startup projects, placing the concept of
                     social
                     networking at the heart of the solution and aligning our best development practices around the
@@ -81,7 +81,7 @@
 
     <div class="row twoSides justify-content-between">
         <div class="col-12 col-sm-6 col-md-5 box">
-            <h3>WEB PORTALS</h3>
+            <h3>Web Portals</h3>
             <p>When the portal is the business, there is no compromising on the performance, cost-efficiency and
                 growth
                 potential of both. Raasoft Infotech has the skillset and the experience required to guarantee
@@ -89,7 +89,7 @@
                 of a reliable solution to win, serve and retain your customers. </p>
         </div>
         <div class="col-12 col-sm-6 col-md-5 box">
-            <h3>ENTERPRISE PORTALS</h3>
+            <h3>Enterprise Portals</h3>
             <p>We undertake enterprise-level deployments of highly productive intranets, extranets and
                 engagement
                 workplaces with expansive collaborative capabilities, access to aggregated information,
@@ -101,7 +101,7 @@
     <div class="row streamline">
         <div class="col-12">
             <div class="section_title text-center">
-                <h2>STREAMLINED ACCESS TO DATA, CONTENT, PROCESSES AND APPLICATIONS</h2>
+                <h2>Streamlined access to data, content, processes and applications</h2>
                 <p>We implement the full scope of portal features – often coming from different technologies,
                     platforms and
                     vendors – into integrated user experiences wrapping advanced content management, process
@@ -414,72 +414,20 @@
     <div class="row advanced justify-content-around">
         <div class="col-12">
             <div class="section_title text-center">
-                <h2>ADVANCED PORTAL IMPLEMENTATIONS TAILORED TO YOUR NEEDS</h2>
+                <h2>Advanced portal implementations tailored to your needs</h2>
                 <span class="line"></span>
             </div>
         </div>
 
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6" *ngFor="let integration of integrations">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-3">
-                        <img src="../../../assets/images/enterprises/need_icon_1.svg" alt="card1_icon">
+                <div class="row justify-content-center" (mouseover)="hoverdId=integration.id" (mouseout)="hoverdId=null">
+                    <div  [className]="hoverdId === integration.id ? 'col-3 activeAnimation block' : 'col-3 disableAnimation'">
+                        <img src="../../../assets/images/enterprises/need_icon_{{integration.id}}.svg" alt="card1_icon">
                     </div>
                     <div class="col-9 text-box">
-                        <h4>Integration Capability</h4>
-                        <p>We are able to connect a portal solution to multiple data sources and applications,
-                            including
-                            implementation of Enterprise Service Bus (ESB) and integration with third-party web
-                            services, data feeds, payment systems and social collaboration tools.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="../../../assets/images/enterprises/need_icon_2.svg" alt="card1_icon">
-                    </div>
-                    <div class="col-9 text-box">
-                        <h4>Scalability and Performance</h4>
-                        <p>Technology never stops evolving, so don’t let your portal to. Raasoft designs
-                            incredibly
-                            flexible portal architectures with an eye for growth, fault tolerance, and
-                            comfortable
-                            accommodation of increasing loads and user numbers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="../../../assets/images/enterprises/need_icon_3.svg" alt="card1_icon">
-                    </div>
-                    <div class="col-9 text-box">
-                        <h4>Integration Capability</h4>
-                        <p>We are able to connect a portal solution to multiple data sources and applications,
-                            including
-                            implementation of Enterprise Service Bus (ESB) and integration with third-party web
-                            services, data feeds, payment systems and social collaboration tools.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="../../../assets/images/enterprises/need_icon_4.svg" alt="card1_icon">
-                    </div>
-                    <div class="col-9 text-box">
-                        <h4>Integration Capability</h4>
-                        <p>We are able to connect a portal solution to multiple data sources and applications,
-                            including
-                            implementation of Enterprise Service Bus (ESB) and integration with third-party web
-                            services, data feeds, payment systems and social collaboration tools.</p>
+                        <h4>{{integration.title}}</h4>
+                        <p>{{integration.text}}</p>
                     </div>
                 </div>
             </div>
@@ -488,7 +436,7 @@
 
     <div class="row toContact">
         <div class="col-12">
-            <h2>WANT TO START A PROJECT?</h2>
+            <h2>Want to start a project?</h2>
             <p>It’s simple.</p>
             <button (click)="moveTo()">Contact Us</button>
         </div>

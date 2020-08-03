@@ -248,22 +248,7 @@
                 satisfaction. Enterprise Mobility App Solutions speedup the workflow that ultimately enabled your
                 employees to solve your customer’s query as well as issue faster and smarter.</p>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
-            x="0px" y="0px" viewBox="0 0 1920 271.9" style="enable-background:new 0 0 1920 271.9;" xml:space="preserve">
-            <style type="text/css">
-                .we-can-do {
-                    fill: url(#wecando);
-                }
-            </style>
-            <title>we can do</title>
-            <linearGradient id="wecando" gradientUnits="userSpaceOnUse" x1="882" y1="1728.1089" x2="882" y2="1999.9978"
-                gradientTransform="matrix(1 0 0 -1 78 1999.9978)">
-                <stop offset="0" style="stop-color:#FEF8F2" />
-                <stop offset="1" style="stop-color:#FFFFFF" />
-            </linearGradient>
-            <path class="we-can-do"
-                d="M0,0v251c0,0,378,47,810,0c0,0,135-17,201-32c0,0,137-23,231-25s303-23,678,58V0H0z" />
-        </svg>
+       
     </div>
 
     <div class="row streamline">
@@ -583,8 +568,8 @@
     <div class="row mobileFeatures">
         <div class="col-12 col-md-6" *ngFor="let feature of mobileFeatures">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-3">
+                <div class="row justify-content-center" (mouseover)="hoverdId=feature.id" (mouseout)="hoverdId=null">
+                    <div [className]="hoverdId === feature.id ? 'col-3 activeAnimation block' : 'col-3 disableAnimation'">
                         <img src="../../../assets/images/enterprises/mobile-feature-{{feature.id}}.svg"
                             alt="card1_icon">
                     </div>
