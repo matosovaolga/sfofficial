@@ -604,11 +604,22 @@
                 }
             }
         }
+
+        @include respond-to("extra-small") {
+            margin: 5px;
+            .text {
+                margin: 5px;
+            }
+            p {
+                padding: 5px;
+            }
+        }
     }
+
     .scheme {
         text-align: center;
         position: relative;
-        margin-top: 40px;
+        margin: 40px 0;
         img {
             width: 80%;
             margin: 250px 0;

@@ -76,6 +76,26 @@
                 }
             }
         }
+
+        @include respond-to("extra-small") {
+            padding: 0px;
+            .right {
+                h5 {
+                    font-weight: 300;
+                    padding: 0;
+                }
+            }
+            .left {
+                .block {
+                    h4 {
+                        padding: 0;
+                        text-align: center;
+                    }
+                    padding: 0px;
+                    margin: 0px;
+                }
+            }
+        }
     }
 
     .weDo {
@@ -102,6 +122,9 @@
                 padding: 20px 0;
                 color: black;
                 transition: all 0.5s ease-out;
+                @include respond-to("extra-small") {
+                    padding:   0;
+                }
             }
             p {
                 transition: all 0.5s ease-out;
@@ -163,5 +186,4 @@
             box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
         }
     }
-
 }

@@ -222,6 +222,9 @@ img {
         font-size: 33px;
         font-weight: 600;
         padding-top: 15px;
+        @include respond-to("extra-small") {
+            font-size: 25px;
+        }
     }
 
     .line {

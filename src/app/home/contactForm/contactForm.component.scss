@@ -70,6 +70,9 @@
                 top: 1.84375em;
                 line-height: 16px;
             }
+            @include respond-to('extra-small') {
+                width: 100%;
+            }
         }
 
         button {

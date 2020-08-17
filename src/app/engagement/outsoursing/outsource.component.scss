@@ -9,7 +9,7 @@
     }
     ul {
         li {
-          padding: 10px;
+            padding: 10px;
 
             &::before {
                 content: "";
@@ -21,6 +21,24 @@
                 top: 20px;
                 left: -1px;
                 border-radius: 50%;
+            }
+        }
+    }
+    @include respond-to("extra-small") {
+        p {
+            margin: 0 20px 20px;
+            text-align: justify;
+        }
+        h4 {
+            margin: 20px;
+            text-align: center;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            li::before {
+                content: none;
             }
         }
     }

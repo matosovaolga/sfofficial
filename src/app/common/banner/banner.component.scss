@@ -1,9 +1,9 @@
 @import "../../app.component.scss";
 
 .app_banner {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
         padding-top: 120px;
-        padding-bottom:     50px;
+        padding-bottom: 50px;
     }
     padding-top: 160px;
     padding-bottom: 150px;
@@ -14,15 +14,23 @@
         font-size: 47px;
         line-height: 65px;
         margin-bottom: 30px;
-        @include respond-to('medium-large') {
+        @include respond-to("medium-large") {
             font-size: 30px;
             line-height: 50px;
-          }
+        }
+        @include respond-to("extra-small") {
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+        }
     }
 
     h5 {
         font-weight: 600;
         margin-bottom: 30px;
+        @include respond-to("extra-small") {
+            text-align: center;
+        }
     }
 
     .banner_content {
@@ -35,7 +43,7 @@
         z-index: 4;
         animation: up 3s ease-in-out infinite;
 
-        @include respond-to('medium') {
+        @include respond-to("medium") {
             display: none;
         }
         @keyframes up {
@@ -51,14 +59,12 @@
         }
     }
 
-    
-
     .app_img1 {
         position: absolute;
         right: -44px;
         top: -30px;
         z-index: 1;
-        @include respond-to('medium') {
+        @include respond-to("medium") {
             display: none;
         }
     }
@@ -71,12 +77,12 @@
 }
 
 .shape1 {
-    @include respond-to('small') {
+    @include respond-to("small") {
         top: 230px;
         border-radius: 70px;
         width: 450px;
         left: -430px;
-        }
+    }
     @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
     position: absolute;
@@ -92,10 +98,10 @@
 }
 
 .app_banner .shape2 {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
         right: -94%;
     }
-    @include respond-to('small') {
+    @include respond-to("small") {
         right: -925px;
         top: -240px;
     }
@@ -115,10 +121,10 @@
 }
 
 .app_banner .shape3 {
-    @include respond-to('medium') {
+    @include respond-to("medium") {
         right: -94%;
     }
-    @include respond-to('small') {
+    @include respond-to("small") {
         right: -925px;
         top: -240px;
     }

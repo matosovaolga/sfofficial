@@ -10,6 +10,10 @@
         margin-bottom: 40px;
         -webkit-font-smoothing: antialiased;
         font-size: 25px;
+        @include respond-to("extra-small") {
+            font-size: 20px;
+            text-align: justify;
+        }
 
         &::before {
             background: $borderColor;
@@ -33,7 +37,9 @@
             margin-bottom: 30px;
             width: 49.1%;
             height: 50px;
-
+            @include respond-to("extra-small") {
+                width: 100%;
+            }
             &:nth-child(even) {
                 margin-left: 1.8%;
             }
