@@ -17,10 +17,22 @@
         text-align: center;
         background-color: $btnSecondColor;
         .left {
+            padding: 0;
             p,
-            h2 {
+            h3 {
                 padding: 20px 60px 20px 60px;
                 color: white;
+            }
+            p {
+                text-align: justify;
+            }
+
+            @include respond-to("small") {
+                p,
+                h3 {
+                    padding: 10px;
+                    margin-bottom: 10px;
+                }
             }
         }
         .right {
@@ -99,8 +111,16 @@
     .growthBy {
         padding: 20px 50px;
         text-align: center;
+        margin: 0px;
+        @include respond-to("small") {
+            padding: 0px;
+        }
+
         h2 {
             padding: 20px 40px 40px 40px;
+            @include respond-to("small") {
+                padding: 20px 10px;
+            }
         }
         .leftSide li,
         .rightSide li {
@@ -123,12 +143,21 @@
             p {
                 padding: 0 20px;
                 text-align: left;
+               
+            }
+            @include respond-to("small") {
+                padding: 10px;
+                p { 
+                padding-left: 20px;
+                }
             }
         }
         .leftSide li {
             flex-direction: row-reverse;
             @include respond-to("medium") {
                 flex-direction: row;
+            }
+            @include respond-to("small") {
             }
         }
 
@@ -171,7 +200,12 @@
 
     .features {
         margin: 50px 0 70px;
-
+        @include respond-to("small") {
+            padding: 0 25px;
+            .feature {
+                padding: 20px 10px;
+            }
+        }
         .feature {
             position: relative;
             display: block;
@@ -181,7 +215,7 @@
             padding: 63px 30px 56px 30px;
             box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
             text-align: center;
-            margin: 20px;
+            margin: 10px;
 
             -webkit-animation-duration: 1s;
             animation-duration: 1s;

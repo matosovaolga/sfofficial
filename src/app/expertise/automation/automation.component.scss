@@ -77,7 +77,12 @@
 
     .features {
         margin: 0px 0 70px;
-
+        @include respond-to("small") {
+            padding: 0 25px;
+            .feature {
+                padding: 20px 10px;
+            }
+        }
         .feature {
             position: relative;
             display: block;
@@ -308,14 +313,16 @@
     .equalize {
         margin: 0;
         cursor: default;
-
+        @include respond-to("small") {
+            padding: 0 20px;
+        }
         > div {
             padding: 0;
             margin: 20px 0;
 
             .box {
                 position: relative;
-                margin: 20px 40px;
+                margin: 20px;
                 text-align: center;
                 transition: all 1s ease-out;
             }
@@ -344,14 +351,19 @@
             h4 {
                 padding: 180px 10px 10px;
                 font-weight: 600;
+               
             }
-            @include respond-to("extra-small") {
-                margin: 0;
+            @include respond-to("small") {
+
                 .box {
-                    margin: 10px 0;
+                    margin: 20px 0;
                 }
                 .icon {
                     margin: 0px auto;
+                }
+                h4 {
+                    padding: 140px 10px 10px;
+                    
                 }
             }
         }
