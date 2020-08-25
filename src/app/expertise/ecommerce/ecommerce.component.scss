@@ -146,9 +146,12 @@
                
             }
             @include respond-to("small") {
+                flex-direction: column;
                 padding: 10px;
                 p { 
-                padding-left: 20px;
+                    padding:  20px;
+
+                text-align: center;
                 }
             }
         }
@@ -158,6 +161,9 @@
                 flex-direction: row;
             }
             @include respond-to("small") {
+                flex-direction: column;
+                 
+
             }
         }
 
