@@ -1,8 +1,8 @@
 @import "../companyService.component";
 
-.serviceDetails ::ng-deep{
+.serviceDetails ::ng-deep {
     @include respond-to("small") {
-       margin-top: 40px;
+        margin-top: 40px;
     }
     .mat-tab-group {
         flex-direction: row;
@@ -16,13 +16,27 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+    @include respond-to("small") {
+        .mat-tab-group {
+            flex-direction: column-reverse;
+            width: 100%;
+        }
+        .mat-tab-labels {
+            flex-wrap: nowrap;
+            // margin-left: 30px;
+
+        }
+    }
     .mat-tab-body-wrapper,
     .mat-tab-header {
-        
         height: auto;
         width: 50%;
+        @include respond-to("small") {
+        width: 100%;
+
+        }
     }
-    .mat-tab-header, 
+    .mat-tab-header,
     .mat-tab-nav-bar {
         border: 0;
     }
@@ -33,9 +47,10 @@
         }
         padding: 65px 15px;
     }
-    .mat-tab-label{
+    .mat-tab-label {
         @include respond-to("small") {
             width: 100%;
+            margin: 0;
         }
         height: auto;
         background: $lightColor;
@@ -59,36 +74,35 @@
                 opacity: 0.6;
             }
         }
-   
+
         &:hover {
             color: $btnFirstColor;
             img {
                 filter: invert(33%) sepia(19%) saturate(3190%) hue-rotate(132deg) brightness(137%) contrast(82%);
             }
-            svg{
+            svg {
                 fill: $btnFirstColor;
                 stroke: $btnFirstColor;
                 g {
                     fill: $btnFirstColor;
                 }
-            } 
+            }
         }
 
-    h5 {
-        opacity: .6;
-        font-size: 14px;
-        line-height: 18px;
-        margin-top: 12px;
-        font-weight: 600;
-        @include transition(fill 0.5s ease-out);
-    }
+        h5 {
+            opacity: 0.6;
+            font-size: 14px;
+            line-height: 18px;
+            margin-top: 12px;
+            font-weight: 600;
+            @include transition(fill 0.5s ease-out);
+        }
 
         .mat-tab-label-content {
             flex-direction: column;
             white-space: break-spaces;
-            
         }
-    } 
+    }
 
     .mat-tab-body-wrapper {
         @include respond-to("small") {
@@ -97,7 +111,7 @@
         padding: 0 100px;
         min-height: 100%;
         &::after {
-            content: '';
+            content: "";
             background: rgba(255, 255, 255, 0.2);
             position: absolute;
             top: 0;
@@ -120,7 +134,7 @@
                 position: relative;
 
                 &::after {
-                    content: '';
+                    content: "";
                     width: 45px;
                     left: 0;
                     position: absolute;
@@ -130,20 +144,20 @@
             }
         }
     }
-    .mat-ink-bar{
+    .mat-ink-bar {
         display: none;
     }
-    .mat-tab-label-active{
+    .mat-tab-label-active {
         color: $btnFirstColor;
         img {
             filter: invert(33%) sepia(19%) saturate(3190%) hue-rotate(132deg) brightness(137%) contrast(82%);
         }
-        svg{
+        svg {
             fill: $btnFirstColor;
             stroke: $btnFirstColor;
             g {
                 fill: $btnFirstColor;
             }
-        } 
+        }
     }
-} 
+}

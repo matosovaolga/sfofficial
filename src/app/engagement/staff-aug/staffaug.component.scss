@@ -9,7 +9,14 @@
     h3 {
         margin: 20px 0;
     }
-
+    @include respond-to("extra-small") {
+        h3 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+        }
+    }
     img {
         display: block;
         width: 100%;
@@ -103,7 +110,6 @@
         h3 {
             margin-top: 80px;
         }
-        
     }
     .row {
         background: no-repeat url("../../../assets/images/staff-aug/blue_graphics.svg");

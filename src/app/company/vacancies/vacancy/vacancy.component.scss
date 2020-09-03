@@ -1,25 +1,10 @@
 @import "../../../app.component.scss";
 .section_padding {
-    background: url('/assets/images/team-bg-right.png') no-repeat 100% 150px;
-}
-.backBtn {
-    @include transition(all 0.2s ease-out);
-    border: $border;
-    color: $borderColor;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-    cursor: pointer;
-
-    &:hover {
-        border-color: $btnThirdColor;
-        color: $btnThirdColor;
-    }
+    background: url("/assets/images/team-bg-right.png") no-repeat 100% 150px;
 }
 
-.job{
-    padding-top: 20px;
+.job {
+    padding-top: 40px;
 
     &Options {
         margin-bottom: 30px;
@@ -35,6 +20,38 @@
         font-family: $second-font-family;
         align-content: center;
         line-height: 50px;
+
+        .backBtn {
+            @include transition(all 0.2s ease-out);
+            border: $border;
+            color: $lightGrey;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            cursor: pointer;
+
+            &:hover {
+                border-color: $btnThirdColor;
+                color: $btnThirdColor;
+            }
+        }
+
+        @include respond-to("extra-small") {
+            // display: block;
+            span {
+                text-align: center;
+                margin-top: 20px;
+                margin-left: 45%;
+            }
+            h2 {
+                font-size: 25px;
+            }
+            flex-direction: column;
+            justify-content: center;
+
+            text-align: center;
+        }
     }
 }
 
@@ -45,7 +62,7 @@
         margin-bottom: 5px;
 
         &::before {
-            content: '';
+            content: "";
             background: $btnThirdColor;
             width: 5px;
             height: 5px;
@@ -59,6 +76,6 @@
 }
 
 .applyForm {
-    background-color: rgba(237, 237, 237,0.4);
+    background-color: rgba(237, 237, 237, 0.4);
     padding: 30px 20px;
 }

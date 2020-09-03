@@ -59,20 +59,21 @@
     .phases {
         text-align: center;
         // margin: 40px 0;
+
         h4 {
             padding: 30px 0;
 
             @include respond-to("medium") {
-                padding: 0;
+                padding: 10px 0;
             }
         }
         p {
             @include respond-to("medium") {
-                // padding: 0 10px;
+                padding: 0 10%;
             }
         }
         .phaseText {
-            margin: 20px 0;
+            margin-top: 60px;
             padding: 0;
             @include respond-to("medium") {
                 margin-bottom: 60px;
@@ -565,6 +566,10 @@
             z-index: 1;
             transition: all 500ms ease;
 
+            p {
+                padding: 20px 10px;
+            }
+
             &:hover {
                 .socIcon {
                     i {
@@ -593,22 +598,35 @@
                 }
             }
         }
-        .network {
-            padding: 40px 0 0;
-            margin: 50px 0 20px 0;
-            text-align: center;
+
+        @include respond-to("extra-small") {
+            margin: 5px;
+            .text {
+                margin: 5px;
+            }
             p {
-                padding: 20px 40px 40px;
-                @include respond-to("small") {
-                    padding: 15px;
-                }
+                padding: 5px;
             }
         }
     }
+
+    .network {
+        padding: 40px 0 0;
+        margin: 50px 0 20px 0;
+        text-align: center;
+
+        p {
+            padding: 20px 40px 40px;
+            @include respond-to("small") {
+                padding: 15px;
+            }
+        }
+    }
+
     .scheme {
         text-align: center;
         position: relative;
-        margin-top: 40px;
+        margin-bottom: 40px;
         img {
             width: 80%;
             margin: 250px 0;
@@ -624,6 +642,7 @@
             @include respond-to("medium") {
                 position: relative;
                 text-align: center;
+                margin-bottom: 25px;
             }
             h4 {
                 padding: 10px 0;

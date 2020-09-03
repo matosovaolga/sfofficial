@@ -1,68 +1,67 @@
-
 @import "~../../app.component.scss";
 
 .singleTestimonial {
-        border: $border;
-        padding: 40px 25px 30px;
-        z-index: 2;
-        position: relative;
-        background: $lightColor;
-        height: 100%;
+    border: $border;
+    padding: 40px 25px 30px;
+    z-index: 2;
+    position: relative;
+    background: $lightColor;
+    height: 100%;
 
-        .authorImg {
-            height: 90px;
-            left: -45px;
-            margin-top: -45px;
-            position: absolute;
-            top: 50%;
-            width: 90px;
+    .authorImg {
+        height: 90px;
+        left: -45px;
+        margin-top: -45px;
+        position: absolute;
+        top: 50%;
+        width: 90px;
 
-            img {
-                width: 100%;
-            }
-        }
-
-        .authorComment{
-            color: lighten($lightGrey, 10%);
-            font-size: 15px;
-            margin-bottom: 10px;
-            
-            &::before {
-                color: $lightGrey;
-                content: "\f38d";
-                font-family: Ionicons;
-                top: -26px;
-                font-size: 33px;
-                right: 14px;
-                position: absolute;
-                top: 10px;
-             }
-        }
-
-        h5 {
-            color: $btnFirstColor;
-            font-size: 14px;
-            position: relative;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-
-        .line {
-            background: $primary-color;
-            display: inline-block;
-            height: 1px;
-            margin-left: 15px;
-            position: relative;
-            top: -4px;
-            width: 26px;
+        img {
+            width: 100%;
         }
     }
-    
+
+    .authorComment {
+        color: lighten($lightGrey, 10%);
+        font-size: 15px;
+        margin-bottom: 10px;
+
+        &::before {
+            color: $lightGrey;
+            content: "\f38d";
+            font-family: Ionicons;
+            top: -26px;
+            font-size: 33px;
+            right: 14px;
+            position: absolute;
+            top: 10px;
+        }
+    }
+
+    h5 {
+        color: $btnFirstColor;
+        font-size: 14px;
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    .line {
+        background: $primary-color;
+        display: inline-block;
+        height: 1px;
+        margin-left: 15px;
+        position: relative;
+        top: -4px;
+        width: 26px;
+    }
+}
+
 .testimonialsWrap {
     display: flex;
 }
 
-owl-carousel ::ng-deep  {
+owl-carousel ::ng-deep {
     .owl-theme {
         .owl-prev {
             font-size: 24px;
@@ -74,6 +73,9 @@ owl-carousel ::ng-deep  {
             color: $lightgreyBg;
             outline: none;
             margin-left: -18px;
+            @include respond-to("small") {
+                top: 110%;
+            }
         }
         .owl-next {
             @extend .owl-prev;
@@ -85,11 +87,12 @@ owl-carousel ::ng-deep  {
                 height: 70px;
                 left: -10px;
                 position: absolute;
-                top: -16px;
                 width: 1px;
+                top: -16px;
+                
             }
         }
-    } 
+    }
 
     .owl-stage {
         align-items: stretch;
@@ -100,7 +103,7 @@ owl-carousel ::ng-deep  {
                 height: 100%;
             }
         }
-    } 
+    }
 
     .leftArrow,
     .rightArrow {
@@ -121,9 +124,9 @@ owl-carousel ::ng-deep  {
         }
     }
 
-    .owl-nav [class*='owl-']:hover {
-        background: none; 
-        color: $lightgreyBg; 
+    .owl-nav [class*="owl-"]:hover {
+        background: none;
+        color: $lightgreyBg;
         outline: none;
-   }
+    }
 }

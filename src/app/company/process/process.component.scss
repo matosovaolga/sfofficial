@@ -4,6 +4,7 @@
     background-color: $lightColor;
     overflow: hidden;
 
+
     &-wrapper {
         overflow: hidden;
     }
@@ -19,8 +20,8 @@
         -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
         transform: rotate(0);
-        -webkit-transition: all .4s ease;
-        transition: all .4s ease;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
     }
 
     &-item {
@@ -34,7 +35,7 @@
         cursor: pointer;
 
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             display: block;
             width: 37px;
@@ -44,8 +45,8 @@
             background-position: 0 0;
             background-image: url(/assets/images/arc.png);
             opacity: 0;
-            -webkit-transition: all .2s ease;
-            transition: all .2s ease;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         &--1 {
@@ -101,7 +102,7 @@
         color: #999;
         text-align: center;
         border: 1px solid #9d9d9d;
-        background-color: #FFF;
+        background-color: #fff;
         border-radius: 50%;
     }
 
@@ -125,11 +126,14 @@
         font-size: 17px;
         line-height: 20px;
         color: #999;
-        -webkit-transition: all .2s ease;
-        transition: all .2s ease;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
     }
 
-    .background, .circleRotator-item--active .circleRotator-icon, .circleRotator-item--active .circleRotator-name, .circleRotatorBackground {
+    .background,
+    .circleRotator-item--active .circleRotator-icon,
+    .circleRotator-item--active .circleRotator-name,
+    .circleRotatorBackground {
         opacity: 0;
     }
 
@@ -145,21 +149,22 @@
 
         /* @include backgroundGradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);*/
         border-radius: 50%;
-        -webkit-transition: all .2s ease;
-        transition: all .2s ease;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
     }
 
     &-item--active &Background {
         opacity: 1;
     }
 
-    .circleRotatorBackground-img, .circleRotatorBackground:before {
+    .circleRotatorBackground-img,
+    .circleRotatorBackground:before {
         display: inline-block;
         vertical-align: middle;
     }
 
     .circleRotatorBackground:before {
-        content: '';
+        content: "";
         height: 100%;
     }
 
@@ -169,7 +174,7 @@
     }
 
     .circleRotatorBackground-img.icon * {
-        fill: #FFF;
+        fill: #fff;
     }
 
     &-info {
@@ -179,7 +184,8 @@
         padding-left: 48px;
     }
 
-    &-heading h3, &-heading h4 {
+    &-heading h3,
+    &-heading h4 {
         margin-top: 0;
         margin-bottom: 24px;
         font-weight: 300;
@@ -214,7 +220,7 @@
     &-title h3 {
         margin-top: 0;
         margin-bottom: 20px;
-        font-family: Ubuntu,Arial,Helvetica,sans-serif;
+        font-family: Ubuntu, Arial, Helvetica, sans-serif;
         font-weight: 300;
         font-size: 30px;
     }
@@ -235,11 +241,11 @@
             height: 8px;
             background-color: #d9d9d9;
             border-radius: 50%;
-            -webkit-transition: all .2s ease;
-            transition: all .2s ease;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
 
             &:after {
-                content: '';
+                content: "";
                 position: absolute;
                 display: block;
                 width: 12px;
@@ -249,8 +255,8 @@
                 background-color: $btnThirdColor;
                 border-radius: 50%;
                 opacity: 0;
-                -webkit-transition: all .2s ease;
-                transition: all .2s ease;
+                -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
             }
         }
     }
@@ -285,13 +291,12 @@
     font-size: 15px;
     margin-bottom: 10px;
     @include respond-to("small") {
-       padding-left: 5px;
+        padding-left: 5px;
     }
 }
 
 .circleRotatorContent ul li:after {
-
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     width: 4px;
@@ -302,39 +307,38 @@
     border-radius: 50%;
     @include respond-to("small") {
         left: -4px;
-
-     }
-}
-
-
-@media (max-width: 1029px) {
-    .circleRotator, .circleRotator-container, .circleRotator-wrapper {
-        height: auto!important;
     }
 }
 
+@media (max-width: 1029px) {
+    .circleRotator,
+    .circleRotator-container,
+    .circleRotator-wrapper {
+        height: auto !important;
+    }
+}
 
-@media (max-width: 1029px){
+@media (max-width: 1200px) {
     .circleRotator {
         padding-top: 100px;
         padding-bottom: 50px;
     }
 }
 
-
 @media (max-width: 1029px) {
-    .circleRotator, .circleRotator-container, .circleRotator-wrapper {
-        height: auto!important;
+    .circleRotator,
+    .circleRotator-container,
+    .circleRotator-wrapper {
+        height: auto !important;
     }
 }
 
-
 @media (max-width: 1029px) {
-    .circleRotator-circle, .circleRotatorPagination {
+    .circleRotator-circle,
+    .circleRotatorPagination {
         display: none;
     }
 }
-
 
 @media (max-width: 1200px) {
     .circleRotator-circle {
@@ -348,9 +352,9 @@
     }
 }
 
-
 @media (max-width: 1029px) {
-    .circleRotator--5-items .circleRotator-info, .circleRotator-info {
+    .circleRotator--5-items .circleRotator-info,
+    .circleRotator-info {
         margin-top: 0;
         padding-top: 0;
         text-align: center;
@@ -358,10 +362,9 @@
     }
 }
 
-
 @media (max-width: 1200px) {
-    .circleRotator--5-items .circleRotator-info, .circleRotator-info {
-      
+    .circleRotator--5-items .circleRotator-info,
+    .circleRotator-info {
         padding-left: 0;
     }
 }
@@ -387,7 +390,6 @@
     }
 }
 
-
 @media (max-width: 1500px) {
     .circleRotatorContent {
         padding-right: 15px;
@@ -400,21 +402,26 @@
     }
 }
 
-
-@media (max-width: 1029px){
+@media (max-width: 1029px) {
     .circleRotatorContent-item {
-        display: inline-block!important;
+        display: inline-block !important;
         vertical-align: top;
         width: 50%;
         margin-bottom: 50px;
     }
 }
 
-@media (max-width: 1029px) {
+@include respond-to("extra-small") {
     .circleRotatorContent-item {
-        display: inline-block!important;
-        vertical-align: top;
-        width: 50%;
-        margin-bottom: 50px;
+        width: 100%;
+    }
+    .circleRotatorContent-item:nth-child(odd),
+    .circleRotatorContent,
+    .circleRotatorContent-item {
+        text-align: center;
+        padding: 0 10px;
+    }
+    .circleRotatorContent-item ul li:after {
+        content: none;
     }
 }

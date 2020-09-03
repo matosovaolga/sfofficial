@@ -1,6 +1,35 @@
 @import "../../app.component.scss";
 
-.howTo {
-    padding-top: 120px;
-    
+.AboutUs {
+    padding-bottom: 0;
+    .description {
+        p {
+            text-align: justify;
+            padding: 20px 70px 0 0;
+        }
+        @include respond-to("extra-small") {
+            p {
+                padding: 20px;
+            }
+        }
+    }
+
+    .journey {
+        p {
+            text-align: justify;
+            padding: 20px 0 0 70px;
+        }
+        @include respond-to("extra-small") {
+            p {
+                padding: 30px 20px;
+            }
+        }
+    }
+
+    .howTo {
+        padding-top: 50px;
+        .aboutus_howwedo_biz2 {
+            margin: 20px 0;
+        }
+    }
 }

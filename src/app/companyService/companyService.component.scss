@@ -2,7 +2,9 @@
 
 .home2_welcome .section_title2 {
     margin-bottom: 50px;
-
+    @include respond-to("small") {
+        text-align: center;
+    }
     h2::after {
         background: $lightgreyBg none repeat scroll 0 0;
         content: "";
@@ -18,13 +20,19 @@
     background: $lightColor;
     box-shadow: none;
     padding: 0;
-
+    @include respond-to("small") {
+        text-align: center;
+    }
     .img-fluid {
         max-width: 100%;
         height: auto;
     }
 }
-
+.centeredSmall {
+    @include respond-to("small") {
+        text-align: center;
+    }
+}
 .servicesList {
     @include backgroundGradient(90deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
 
@@ -33,7 +41,7 @@
 
     .section_title2 {
         color: $lightColor;
-
+       
         p {
             color: $lightColor;
         }
@@ -46,6 +54,9 @@
     margin-bottom: 15px;
     height: calc(100% - 20px);
 
+    @include respond-to("small") {
+        text-align: center;
+    }
     &:hover {
         background: $lightColor;
         cursor: pointer;
@@ -58,8 +69,6 @@
         }
 
         svg {
-       
-
             path,
             rect {
                 fill: $primary-color;

@@ -17,16 +17,16 @@
             padding: 30px 0;
 
             @include respond-to("medium") {
-                padding: 0;
+                padding: 10px 0;
             }
         }
         p {
             @include respond-to("medium") {
-                padding: 0 10px;
+                padding: 0 10%;
             }
         }
         .phaseText {
-            margin: 20px 0;
+            margin-top: 60px;
             padding: 0;
             @include respond-to("medium") {
                 margin-bottom: 60px;
@@ -37,13 +37,11 @@
         }
         .cross {
             align-items: center;
-            width: 90px;
-            height: 90px;
             div {
-                margin-left: 40%;
-                @include respond-to("medium") {
-                    margin-left: 55%;
-                }
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
         span {
@@ -126,6 +124,9 @@
             font-size: larger;
             padding: 40px 0;
         }
+        @include respond-to("small") {
+            padding: 0px 20px;
+        }
     }
 
     .twoSides {
@@ -184,21 +185,28 @@
 
     .features {
         margin-bottom: 70px;
-
-        > div {
+        @include respond-to("small") {
+            padding: 0px 30px;
+        }
+        .feature {
             border-radius: 15px;
             margin: 20px 20px;
             padding: 30px;
             overflow: hidden;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
             // align-self: center;
-            svg {
+            .featureIcon {
+                margin: 0 auto;
+                text-align: center;
+            }
+            .featureIcon svg {
                 position: relative;
                 fill: #255ccc;
                 width: 80px;
                 height: 80px;
                 transition: all 0.5s ease-out;
             }
+
             h4 {
                 position: relative;
                 padding: 20px 0;
@@ -222,6 +230,20 @@
                 left: -10px;
                 border-radius: 50%;
                 background-color: #255ccc;
+            }
+            @include respond-to("small") {
+                padding: 20px 10px;
+                .featureIcon svg {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                li,
+                h4 {
+                    text-align: center;
+                }
+                li:before {
+                    content: none;
+                }
             }
             .blockUp {
                 position: absolute;
@@ -253,7 +275,7 @@
             li {
                 color: white;
             }
-            svg {
+            .featureIcon svg {
                 fill: white;
             }
             .blockUp {
@@ -266,8 +288,12 @@
     .advanced {
         > div {
             padding: 0 20px;
-            margin: 10px 0;
+            margin: 10px 0 20px;
             cursor: default;
+            @include respond-to("small") {
+                text-align: center;
+               
+            }
         }
 
         padding-bottom: 0;
@@ -277,15 +303,13 @@
             padding: 0 30px;
             margin: 60px 0;
         }
-        .row .col-3 {
-            text-align: center;
-            padding: 0;
-          
-        }
 
         .block {
             transform-style: preserve-3d;
             transition: all 1s ease-out;
+            text-align: center;
+
+            padding: 0;
         }
 
         .activeAnimation {
@@ -297,8 +321,19 @@
         }
 
         .text-box {
+            padding: 0 20px;
+            // margin: 0 20px;
+
             p {
                 padding: 20px 40px 20px 0;
+            }
+            @include respond-to("small") {
+                h4 {
+                    padding: 20px 0 10px;
+                }
+                p {
+                    padding: 20px 0;
+                }
             }
         }
     }
