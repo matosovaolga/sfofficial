@@ -42,6 +42,10 @@
             }
             &:nth-child(even) {
                 margin-left: 1.8%;
+                @include respond-to("small") {
+                    margin-left: 0%;
+
+                }
             }
 
             &.msg {
