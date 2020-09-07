@@ -14,31 +14,25 @@
                 </div>
                 <div class="col-md-3">
                     <div class="widget">
-                        <h4><a href=""></a><a href="/solutions">Solutions</a></h4>
+                        <h4><a href=""></a><a href="/expertises">Expertises</a></h4>
                         <ul class="list-icon list-icon-arrow">
-                            <li class=""><a href="/page/web-development">Website Development</a></li>
-                            <li class=""><a href="/page/mobile-development">Mobile applications</a></li>
-                            <li class=""><a href="/page/cms">CMS solutions</a></li>
-                            <li class=""><a href="/page/e-commerce">E-commerce solutions</a></li>
-                            <li class=""><a href="/page/cloud">Cloud solutions</a></li>
-                            <li class=""><a href="/page/workflow-automation">Business Process Automation</a></li>
-                            <li class=""><a href="/page/social-networking">Social Networking</a></li>
-                            <li class=""><a href="/page/media-content-distribution">Media Content Distribution</a> </li>
+                            <li *ngFor="let expertise of expertises"><a href="/expertises/{{expertise.name}}">{{expertise.desc}}</a></li>
+
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="widget">
+                    <div class="widget clearfix">
                         <h4><a href="/services">Services</a></h4>
                         <ul class="list-icon list-icon-arrow">
-                            <li><a routerLink="/services/uxdesign">UX Design and Prototypes</a></li>
-                            <li><a routerLink="/services/software">Web Appliction Development</a></li>
-                            <li><a routerLink="/services/mobile">Mobile Application Development</a></li>
-                            <li><a routerLink="/services/cms">CMS Development</a></li>
-                            <li><a routerLink="/services/qa">QA and Testing</a></li>
-                            <li><a routerLink="/services/integration">Application Integration</a></li>
-                            <li><a routerLink="/services/discovery">Discovery Phase</a></li>
-                            <li><a routerLink="/services/consulting">Software Architecture & Technology Consulting</a></li>
+                            <li><a  href="/services/uxdesign">UX Design and Prototypes</a></li>
+                            <li><a href="/services/software">Web Appliction Development</a></li>
+                            <li><a href="/services/mobile">Mobile Application Development</a></li>
+                            <li><a href="/services/cms">CMS Development</a></li>
+                            <li><a href="/services/qa">QA and Testing</a></li>
+                            <li><a href="/services/integration">Application Integration</a></li>
+                            <li><a href="/services/discovery">Discovery Phase</a></li>
+                            <li><a href="/services/consulting">Software Architecture & Technology Consulting</a></li>
                         </ul>
                     </div>
                 </div>

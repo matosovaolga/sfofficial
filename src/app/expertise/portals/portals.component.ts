@@ -24,6 +24,7 @@ export class SFEnterprisePortalsComponent {
 
   moveTo(): void {
     this.router.navigateByUrl('contacts');
+    window.scroll(0,0);
   }
 
 }
