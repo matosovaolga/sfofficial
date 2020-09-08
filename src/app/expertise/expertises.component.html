@@ -1,93 +1,23 @@
 <sf-banner [title]="title" [text]="textBanner"></sf-banner>
 <div class="container solutions">
     <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/portals">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'rectangle-24.png)'}"></div>
-                <h5 class="solutionTitle">Web and Enterprise Portals</h5>
-                <p class="solutionDesc">Be it a specific vertical or horizontal enterprise solution, Iflexion has a
-                    rich skillset to develop turnkey web portals boosting your business performance and customer
-                    satisfaction.</p>
-            </div>
-        </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/social">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'soc_network.jpg)'}"></div>
-                <h5 class="solutionTitle">Social Networking</h5>
-                <p class="solutionDesc">Iflexion creates dazzling cross-platform social experiences rooted in
-                    comprehensive networking platforms, enterprise portals and web apps.</p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/automation">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'bp_automation.jpg)'}"></div>
-                <h5 class="solutionTitle">Business Process Automation</h5>
-                <p class="solutionDesc">We craft advanced BP automation software, transforming the way operations are
-                    done to achieve time/effort saving and business growth.</p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/mobile">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'mob_app.jpg)'}"></div>
-                <h5 class="solutionTitle">Enterprise Mobile Apps</h5>
-                <p class="solutionDesc">iOS, Android and hybrid mobile software development</p>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/ecommerce">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'ecommerce.jpg)'}"></div>
-                <h5 class="solutionTitle">Ecommerce</h5>
-                <p class="solutionDesc">We understand that your online website store needs to be profitable. </p>
-            </div>
-        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let expertise of expertises">
+           
 
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/cloud-tech">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'Cloud-Computing.jpg)'}"></div>
-                <h5 class="solutionTitle">Cloud Technologies</h5>
-                <p class="solutionDesc">With cloud services, you can harness the power of the Internet to reduce your
-                    dependence on hardware and software.</p>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/hospital">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'Cloud-Computing.jpg)'}"></div>
-                <h5 class="solutionTitle">HOSPITAL MANAGMENT SYSTEM</h5>
-                <p class="solutionDesc">With cloud services, you can harness the power of the Internet to reduce your
-                    dependence on hardware and software.</p>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/open-source">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'Cloud-Computing.jpg)'}"></div>
-                <h5 class="solutionTitle">OPEN SOURCE</h5>
-                <p class="solutionDesc">With cloud services, you can harness the power of the Internet to reduce your
-                    dependence on hardware and software.</p>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/mobile-platforms">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'Cloud-Computing.jpg)'}"></div>
-                <h5 class="solutionTitle">MOBILE PLATFORMS</h5>
-                <p class="solutionDesc">With cloud services, you can harness the power of the Internet to reduce your
-                    dependence on hardware and software.</p>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="solution" routerLink="/expertises/javascript">
-                <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'Cloud-Computing.jpg)'}"></div>
-                <h5 class="solutionTitle">JAVASCRIPT</h5>
-                <p class="solutionDesc">With cloud services, you can harness the power of the Internet to reduce your
-                    dependence on hardware and software.</p>
-            </div>
+<div class="solution">
+    <a  href="/expertises/{{expertise.link}}">
+        <div class="imageOverlay" [ngStyle]="{'background-image': 'url(' + imageUrl + 'Cloud-Computing.jpg)'}"></div>
+        <h5 class="solutionTitle">{{expertise.title}}</h5>
+        <p class="solutionDesc">{{expertise.desc}}</p>
+    </a>
+</div>
+            
         </div>
     </div>
+
 </div>
+
 <section class="benefits-sec">
     <div class="container">
         <div class="row">
