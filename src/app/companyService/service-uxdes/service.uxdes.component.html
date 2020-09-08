@@ -14,69 +14,17 @@
     <mat-tab-group animationDuration="0ms" dynamicHeight="true" class="container">
         <div class="row">
 
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/ui1.png" alt="" />
-               
-                <h5>UX/UI Research</h5>
-            </ng-template>
+            <mat-tab *ngFor="let uxd of uxdes">
+                <ng-template mat-tab-label>
+                    <img src="/assets/images/ui{{uxd.id}}.png" alt="" />
 
-            <h3>UX/UI RESEARCH & ANALYSIS</h3>
-            <p>At CIS it is all about delivering stunning experiences and we achieve that we research and analyse
-                various aspects of user interface design. Gathering requirements, audience analysis, online surveys we
-                go lengths to achieve our design goals using the data we collect.
-            </p>
-        </mat-tab>
+                    <h5>{{uxd.name}}</h5>
+                </ng-template>
 
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/ui2.png" alt="" />
-                <h5>Human Factor Analysis</h5>
-            </ng-template>
+                <h3>{{uxd.name}}</h3>
+                <p>{{uxd.text}}</p>
+            </mat-tab>
 
-            <h3>HUMAN FACTOR ANALYSIS</h3>
-            <p>We make sure your websites are user friendly and thus human factor analysis is done at CIS to determine
-                the necessary changes needed in designs. With this we take on to important factors such as icon size,
-                sound, colour palate, and others to deliver nothing but the best.
-            </p>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/ui3.png" alt="" />
-
-                <h5>Wire Frames and Prototypes</h5>
-            </ng-template>
-
-            <h3>WIRE FRAMES AND PROTOTYPES</h3>
-            <p>To make sure your UX/UI design and development is impeccable we work with wireframes strengthening the
-                development process. We design and develop the layout of your website, create clickable prototypes to
-                make sure the design and user friendly and seamless.
-            </p>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/ui4.png" alt="" />
-                <h5>UI Design</h5>
-            </ng-template>
-
-            <h3>UI Design</h3>
-            <p>One of the most important things for any website or applications is to have a class-A user experience.
-                To make that sure we consider a lot of factors to never go wrong. The factors include user navigation,
-                concept mapping, user mapping, visual design and architecture
-            </p>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/ui6.png" alt="" />
-                <h5>UX Evaluation</h5>
-            </ng-template>
-
-            <h3>UX Evaluation </h3>
-            <p>At CIS we make sure your users are delivered with nothing less than awe-inspiring and thus we do a
-                complete evaluation on the factors to understand how your websites and apps are being perceived
-                graphically by your users. We do usability tests, content audit, expert reviews etc.
-            </p>
-        </mat-tab>
         </div>
     </mat-tab-group>
 </section>

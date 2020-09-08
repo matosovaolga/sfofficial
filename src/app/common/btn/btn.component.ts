@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./btn.component.scss']
   })
   
-  export class SFBtnComponent {}
+  export class SFBtnComponent {
+
+    
+  }

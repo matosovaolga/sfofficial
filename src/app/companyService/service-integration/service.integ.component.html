@@ -11,51 +11,17 @@
     </div>
     <mat-tab-group animationDuration="0ms" dynamicHeight="true">
 
-        <mat-tab>
+        <mat-tab *ngFor="let integration of integrations">
             <ng-template mat-tab-label>
-                <img src="/assets/images/cms1.png" alt="" />
+                <img src="/assets/images/cms{{integration.id}}.png" alt="" />
 
-                <h5>Backend Integration</h5>
+                <h5>{{integration.name}}</h5>
             </ng-template>
 
-            <h3>Backend Integration</h3>
-            <p>
-                    Iflexion helps you deliver a rich set of services by integrating new software with existing corporate back office systems. Depending on your needs, we can create a consolidated backend for disparate solutions or integrate specific backend elements of different applications into one another.
-                </p>
+            <h3>{{integration.name}}</h3>
+            <p>{{integration.text}}</p>
         </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/cms2.png" alt="" />
-                <h5>Data Integration</h5>
-            </ng-template>
-
-            <h3>Data Integration</h3>
-            <p>
-                    Our experts integrate data sources across dispersed IT-environments, helping you establish deeper connections with databases and storage systems throughout your organization and facilitate data collection, conversion, formatting and processing.    
-            </p>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/cms3.png" alt="" />
-
-                <h5>Web Services Integration</h5>
-            </ng-template>
-
-            <h3>Web Services Integration</h3>
-            <p>
-                    We focus on web application interoperability with enterprise systems and 3rd-party web services via standard communication protocols. Iflexion integrates your infrastructure with web services to ensure seamless communication behind the scenes and facilitate business transactions, automate processes, organize information and more.   </p>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <img src="/assets/images/cms4.png" alt="" />
-                <h5>API-Based Integration</h5>
-            </ng-template>
-
-            <h3>API-Based Integration</h3>
-            <p>
-                    Iflexion makes it possible for your applications to piggyback on the online offerings of 3rd party services. We utilize their application programming interfaces so that you can benefit from fast and efficient interaction with payment gateways, geolocation services, e-commerce solutions, media services, advertising platforms, social networks and cloud storages.    
-            </p>
-        </mat-tab>
+      
         
         
     </mat-tab-group>
