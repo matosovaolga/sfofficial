@@ -81,20 +81,21 @@
                 opacity: 0.6;
             }
         }
-
-        &:hover {
-            color: $btnFirstColor;
-            img {
-                filter: invert(33%) sepia(19%) saturate(3190%) hue-rotate(132deg) brightness(137%) contrast(82%);
-            }
-            svg {
-                fill: $btnFirstColor;
-                stroke: $btnFirstColor;
-                g {
-                    fill: $btnFirstColor;
-                }
-            }
-        }
+        // @include respond-to("medium") {
+        //     &:hover {
+        //         color: $btnFirstColor;
+        //         img {
+        //             filter: invert(33%) sepia(19%) saturate(3190%) hue-rotate(132deg) brightness(137%) contrast(82%);
+        //         }
+        //         svg {
+        //             fill: $btnFirstColor;
+        //             stroke: $btnFirstColor;
+        //             g {
+        //                 fill: $btnFirstColor;
+        //             }
+        //         }
+        //     }
+        // }
 
         h5 {
             opacity: 0.6;

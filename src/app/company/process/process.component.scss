@@ -3,7 +3,7 @@
 .circleRotator {
     background-color: $lightColor;
     overflow: hidden;
-    @include respond-to("small") {
+    @include respond-to("medium-large") {
         .circleRotatorContent,
         .circleRotatorContent-item,
         .circleRotatorContent-item-active {
