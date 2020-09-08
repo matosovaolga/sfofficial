@@ -78,6 +78,9 @@
     }
 
     .vacanciesBlock {
+        >div {
+            padding: 0;
+        }
         @include respond-to("small") {
             h3 {
                 text-align: center;
