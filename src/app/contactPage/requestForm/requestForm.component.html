@@ -13,8 +13,9 @@
 
                 <form class="text-center" novalidate #contactForm="ngForm" (ngSubmit)=" onSubmit(contactForm)">
                     <mat-form-field class="abinput_group name ">
-                        <input type="text" name="contactFormName" required maxlength="60" [(ngModel)]="user.contactFormName"
-                            #contactFormName="ngModel" class="form-control" matInput matValidate />
+                        <input type="text" name="contactFormName" required maxlength="60"
+                            [(ngModel)]="user.contactFormName" #contactFormName="ngModel" class="form-control" matInput
+                            matValidate />
                         <mat-label for="materialContactFormEmail">FullName</mat-label>
                         <mat-error *ngIf="contactForm.submitted && contactFormName.invalid">Name is required
                         </mat-error>
@@ -48,19 +49,19 @@
                     </mat-form-field>
 
                     <mat-form-field class="md-form abinput_group msg">
-                        <textarea type="text" name="message" [(ngModel)]="user.contactFormMessage" #contactFormMessage="ngModel"
-                            required id="materialContactFormMessage" class="form-control md-textarea" matInput
-                            matValidate></textarea>
+                        <textarea type="text" name="message" [(ngModel)]="user.contactFormMessage"
+                            #contactFormMessage="ngModel" required id="materialContactFormMessage"
+                            class="form-control md-textarea" matInput matValidate></textarea>
                         <mat-label for="materialContactFormMessage">Project requirements: </mat-label>
-                        <mat-error *ngIf="contactForm.submitted && contactFormMessage.invalid">Input
-                            invalid</mat-error>
-                            <button color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect text-uppercase"><i
-                                class="ion-ios-navigate"></i></button>
+                        <mat-error *ngIf="contactForm.submitted && contactFormMessage.invalid">Input invalid</mat-error>
+                        <button color="info" outline="true" rounded="true" block="true"
+                            class="z-depth-0 my-4 waves-effect text-uppercase"><i class="ion-ios-navigate"></i></button>
                     </mat-form-field>
-                    <input type="file"  name="file" id="file" class="inputfile" ng2FileSelect [uploader]="uploader"
+                    <input type="file" name="file" id="file" class="inputfile" ng2FileSelect [uploader]="uploader"
                         onFileSelected="" multiple />
-                    <label ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
-                        [uploader]="uploader" class="my-drop-zone" for="file"><i class="ion-ios-upload-outline"></i>Upload
+                    <label ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                        (fileOver)="fileOverBase($event)" [uploader]="uploader" class="my-drop-zone" for="file"><i
+                            class="ion-ios-upload-outline"></i>Upload
                         or drag & drop files (5mb)</label>
                     <ul class="filesList">
                         <li *ngFor="let item of uploader.queue">
@@ -70,9 +71,10 @@
                             </span>
                         </li>
                     </ul>
-                 
+
                 </form>
-                <div class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully</div>
+                <div class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully
+                </div>
                 <div class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
                 <!--/form-->
             </div>
@@ -82,10 +84,12 @@
         <div class="col-xl-4 col-lg-5">
             <div class="contact_address">
                 <h4 class="pos_relative">Contact Information</h4>
-                <p class="address pos_relative"><i class="flaticon-placeholder"></i><span class="text-uppercase">ADDRESS:</span>
+                <p class="address pos_relative"><i class="flaticon-placeholder"></i><span
+                        class="text-uppercase">ADDRESS:</span>
                     28
                     Green Tower, <br>Street Name New York City, USA</p>
-                <p class="phone pos_relative"><i class="flaticon-phone-call"></i><span class="text-uppercase">Phone:</span>
+                <p class="phone pos_relative"><i class="flaticon-phone-call"></i><span
+                        class="text-uppercase">Phone:</span>
                     +84 846
                     250 592</p>
                 <p class="email pos_relative"><i class="flaticon-mail"></i><span class="text-uppercase">Email:</span>
