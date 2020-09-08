@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SFExpertisesComponent {
   imageUrl: string = 'assets/images/';
-  title: string = 'Expertise';
+  title: string = 'Expertises';
   textBanner: string = 'Due to the long experience and versatile skills of our specialists, we are able to develop innovative technology solutions to meet the business needs of our clients.';
  
 
