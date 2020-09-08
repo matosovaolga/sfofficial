@@ -73,6 +73,7 @@ export class SFHeaderComponent implements OnInit {
 
         this.currentSection = sect;
         this.currentSubSection = subSection;
+        window.scroll(0,0);
 
     }
 

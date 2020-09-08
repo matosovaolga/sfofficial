@@ -146,7 +146,10 @@
                 background-size: 65%;
             }
         }
-
+        @include respond-to("medium") {
+            background-size: 65%;
+             animation: none;
+        }
         @include respond-to("small") {
             background: none;
         }
