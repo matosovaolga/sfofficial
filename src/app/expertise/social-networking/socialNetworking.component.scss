@@ -31,13 +31,7 @@
             }
         }
         .right {
-            // position: relative;
-            // height: 500px;
-
             .phoner {
-                // position: absolute;
-                // left: 0;
-                // top: 50px;
                 padding: 50px 0;
                 transform-origin: 100% 100%;
                 animation: rotate 6s ease-in-out infinite;
@@ -58,7 +52,6 @@
 
     .phases {
         text-align: center;
-        // margin: 40px 0;
 
         h4 {
             padding: 30px 0;
@@ -95,8 +88,8 @@
             display: block;
             width: 30px;
             height: 30px;
-            border-bottom: 2px solid $btnFirstColor;
-            border-right: 2px solid $btnFirstColor;
+            border-bottom: 2px solid $darkBlue;
+            border-right: 2px solid $darkBlue;
             -webkit-transform: rotate(-45deg);
             -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
