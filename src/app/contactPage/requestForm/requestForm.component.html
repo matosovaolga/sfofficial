@@ -55,8 +55,11 @@
                         <mat-label for="materialContactFormMessage">Project requirements: </mat-label>
                         <mat-error *ngIf="contactForm.submitted && contactFormMessage.invalid">Input invalid</mat-error>
                         <button color="info" outline="true" rounded="true" block="true"
-                            class="z-depth-0 my-4 waves-effect text-uppercase"><i class="ion-ios-navigate"></i></button>
+                            class="z-depth-0 my-4 waves-effect text-uppercase">
+                            <i class="ion-ios-navigate"></i>
+                        </button>
                     </mat-form-field>
+
                     <input type="file" name="file" id="file" class="inputfile" ng2FileSelect [uploader]="uploader"
                         onFileSelected="" multiple />
                     <label ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
@@ -89,11 +92,9 @@
                     28
                     Green Tower, <br>Street Name New York City, USA</p>
                 <p class="phone pos_relative"><i class="flaticon-phone-call"></i><span
-                        class="text-uppercase">Phone:</span>
-                    +84 846
-                    250 592</p>
-                <p class="email pos_relative"><i class="flaticon-mail"></i><span class="text-uppercase">Email:</span>
-                    contact@staker.com</p>
+                        class="text-uppercase">Phone:</span>+84 846 250 592</p>
+                <p class="email pos_relative"><i class="flaticon-mail"></i>
+                    <span class="text-uppercase">Email:</span>contact@staker.com</p>
                 <p class="web pos_relative"><i class="flaticon-internet"></i><span class="text-uppercase">WEbsite:
                     </span> <a href="#" target="_blank">demostaker.com</a></p>
             </div>
