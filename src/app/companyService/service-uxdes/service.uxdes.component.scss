@@ -1,6 +1,8 @@
 @import "../companyService.component";
 
 .serviceDetails ::ng-deep {
+    margin-top: 20px;
+
     @include respond-to("small") {
         margin-top: 40px;
     }
