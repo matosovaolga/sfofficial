@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.discovery.component.scss']
 })
 export class SFServiceDiscoveryComponent {
-  title: string = 'Discovery Phase Gives You';
+  title: string = 'Discovery Phase';
+  textBanner: string = '------- Some text here -------';
 
   discovers = [
     { name: "Architecture", imgSrc: "Microservices_header", text: "The detailed structure of the entire project presented in schematics and diagrams showing how the elements interact and how the product functions." },

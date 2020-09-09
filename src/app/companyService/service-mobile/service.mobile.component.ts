@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.mobile.component.scss']
 })
 export class SFServiceMobileComponent {
-  title: string = 'Astounding App Experiences for Multiple operating systems, cross and hybrid app development approach and vitality to leading app development platforms';
+  title: string = 'Mobile Application Development';
   textBanner: string = 'Creatively aligning user experience with business objectives, to produce engaging digital experiences.';
 
   mobiles = [

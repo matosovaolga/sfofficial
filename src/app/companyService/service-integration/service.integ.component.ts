@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.integ.component.scss']
 })
 export class SFServiceIntegComponent {
-    title: string = 'Being a seasoned integrator, we will guide you throughout the process and help you build sound Service Oriented and Event Driven Architectures.';
+    title: string = 'Application Integration';
+    textBanner: string = 'Being a seasoned integrator, we will guide you throughout the process and help you build sound Service Oriented and Event Driven Architectures.';
    
   integrations = [
     {id: 1, name: "Backend Integration", text: "Iflexion helps you deliver a rich set of services by integrating new software with existing corporate back office systems. Depending on your needs, we can create a consolidated backend for disparate solutions or integrate specific backend elements of different applications into one another."},

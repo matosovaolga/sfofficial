@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.qa.component.scss']
 })
 export class SFServiceQaComponent {
-    title: string = 'INDEPENDENT QA AND TESTING';
+    title: string = 'QA and Testing';
     textBanner: string = 'Stableflow offers a wide range of independent software QA and testing services that adhere to the highest levels of security and industry standards.';
     qaTestings = [
       { id: 1, name: "FULL-CYCLE TESTING", text: "We render QA and testing services along the whole development lifecycle, including integration testing, regression testing, black/white box testing, environment testing, performance testing, stress testing, localization testing and user acceptance testing." },

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.uxdes.component.scss']
 })
 export class SFServiceUxdesComponent {
-  title: string = 'Architecture: User Experience (UX) Design & Prototyping';
+  title: string = 'UX Design and Prototypes';
   textBanner: string = 'Creatively aligning user experience with business objectives, to produce engaging digital experiences.';
 
 

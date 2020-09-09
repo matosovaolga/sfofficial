@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./service.soft.component.scss']
 })
 export class SFServiceSoftComponent {
-    title: string = 'TECHNOLOGIES THAT EMPOWERS YOUR CUSTOM SOFTWARE DEVELOPMENT';
+    title: string = 'Web Appliction Development';
+    textBanner: string = 'TECHNOLOGIES THAT EMPOWERS YOUR CUSTOM SOFTWARE DEVELOPMENT';
     webApps = [
       { id: 1, name: "Python", text: "Find custom software development services powered on giving you the needed flexibility and robustness in your products. With Python you are able to get a perfect data visualization, easy-to-use interface on multi-source Data, data analysis, solid infrastructure and easy management of massive data in one go." },
       { id: 2, name: "PHP", text: "PHP as wonderful and object-oriented as it is can be used for about almost everything from web applications to data analysis. It lands great functionality and feature-richness in business applications, enterprise applications, with all the customization needed to give you an enriched experience." },
