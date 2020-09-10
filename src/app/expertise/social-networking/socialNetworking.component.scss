@@ -31,10 +31,17 @@
             }
         }
         .right {
+
             .phoner {
-                padding: 50px 0;
+
+                padding: 50px 20px 50px 0px;
                 transform-origin: 100% 100%;
                 animation: rotate 6s ease-in-out infinite;
+                @include respond-to("small") {
+
+
+                    padding: 50px 20px;
+                }
             }
             @keyframes rotate {
                 from {

@@ -25,6 +25,7 @@
         padding: 0px 20px;
 
         .right {
+            padding: 0;
             div {
                 margin: 0 auto;
                 padding: 10px;
@@ -41,7 +42,63 @@
             }
             .buttonCategory {
                 margin: 0 auto;
+                max-width: 240px;
+            }
+            .hive {
+                width: 400px;
+                height: 400px;
 
+                padding: 0;
+                text-align: center;
+                .hexagon {
+                    padding: 0;
+                    height: 100%;
+
+                    margin: 0 5px;
+                    width: 130px;
+                    height: 130px;
+          
+                    background: no-repeat url("../../../assets/images/enterprises/hexagon.svg");
+                    background-position: center;
+                    background-size: 100% auto;
+                    p {
+                        color: #fff;
+                        font-size: 20px;
+                        padding: 0 5px;
+                        margin: 30% 0;
+                    }
+                }
+                .rectLogo {
+                    width: 130px;
+                    height: 130px;
+                    padding: 0;
+                    align-self: center;
+
+                    img {
+                    margin: 20px 0 0;
+
+                        width: 75%;
+                    }
+                    // padding: 10px;
+                    // background: white;
+                    // filter: brightness(0) invert(1);
+                }
+                .firstRow {
+                    padding: 0;
+                    display: flex;
+                    height: 33%;
+                    // width: 33%;
+                    justify-content: center;
+                }
+                .secondRow {
+                    padding: 0;
+                    display: flex;
+                    height: 33%;
+                    // width: 33%;
+
+                    justify-content: center;
+                    margin: -20px 0;
+                }
             }
         }
 
