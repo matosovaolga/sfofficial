@@ -45,16 +45,16 @@
                 max-width: 240px;
             }
             .hive {
-                width: 400px;
-                height: 400px;
+                width: 380px;
+                height: 380px;
 
-                padding: 0;
+
                 text-align: center;
                 .hexagon {
                     padding: 0;
                     height: 100%;
 
-                    margin: 0 5px;
+                    margin: 0;
                     width: 130px;
                     height: 130px;
           
@@ -63,7 +63,7 @@
                     background-size: 100% auto;
                     p {
                         color: #fff;
-                        font-size: 20px;
+                        font-size: 18px;
                         padding: 0 5px;
                         margin: 30% 0;
                     }
@@ -75,7 +75,7 @@
                     align-self: center;
 
                     img {
-                    margin: 20px 0 0;
+                    margin: 25px 0 0;
 
                         width: 75%;
                     }
@@ -97,7 +97,7 @@
                     // width: 33%;
 
                     justify-content: center;
-                    margin: -20px 0;
+                    margin: -15px 0;
                 }
             }
         }

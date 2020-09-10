@@ -19,7 +19,6 @@ export class SFEcommerceComponent {
   ]
 
   moveTo(): void {
-    this.router.navigateByUrl('contacts');
     window.scroll(0,0);
   }
 }
