@@ -48,4 +48,9 @@ textarea {
     height: auto;
     position: absolute;
     right: 0;
+    @include respond-to("small") {
+        font-size: 50px;
+padding: 0;
+right: 5px;
+    }
 }

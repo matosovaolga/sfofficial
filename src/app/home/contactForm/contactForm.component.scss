@@ -79,9 +79,14 @@
         }
 
         button {
+            padding: 0;
             @include respond-to('medium-large') {
                 right: 10px;
                 font-size: 50px;
+            }
+            @include respond-to('small') {
+                right: 10px;
+
             }
             @include transition(color $animation-speed linear);
             border: none;
