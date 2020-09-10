@@ -25,6 +25,7 @@ export class SFVacanciesComponent {
 
       this.jobList = resp.reduce((arr, v) => {
         arr.push(v.role)
+        
         return arr
       }, ['All'])
 
@@ -35,6 +36,7 @@ export class SFVacanciesComponent {
   getName(vacancy) {
     if (vacancy) {
       this.currentFilter = vacancy;
+
     }
   }
 }

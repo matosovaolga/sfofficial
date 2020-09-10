@@ -38,7 +38,10 @@
         .right {
             position: relative;
             height: 500px;
-
+            @include respond-to("small") {
+              padding: 0;
+margin-left: 10px;
+                }
             .phone {
                 position: absolute;
                 width: 260px;
@@ -76,6 +79,10 @@
                 bottom: 90px;
                 right: 340px;
                 animation: up 4.5s ease-in-out infinite;
+                @include respond-to("small") {
+                right: 305px;
+
+                }
             }
             .quality {
                 position: absolute;

@@ -155,7 +155,7 @@
                 &:hover {
                     color: $hoverColor;
                     @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-                        color:#333333;
+                        color: $btnThirdColor33333;
                     }
                 }
             }
