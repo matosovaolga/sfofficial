@@ -12,7 +12,7 @@
 
 .inputfile + label {
     font-weight: 500;
-    font-size:  15px;
+    font-size: 15px;
     justify-content: center;
     display: flex;
     padding: 0 10px;
@@ -26,7 +26,7 @@
 }
 
 .mat-form-field-label-wrapper {
-    top: -.24375em;
+    top: -0.24375em;
 }
 
 .form-control:focus {
@@ -48,9 +48,9 @@ textarea {
     height: auto;
     position: absolute;
     right: 0;
+    padding: 0;
+   
     @include respond-to("small") {
-        font-size: 50px;
-padding: 0;
-right: 5px;
+        right: 5px;
     }
 }

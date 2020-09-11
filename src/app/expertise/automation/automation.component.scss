@@ -100,8 +100,7 @@
             animation-fill-mode: both;
 
             @include respond-to("extra-small") {
-                margin: 20px ;
-
+                margin: 20px;
             }
             .imgBlock {
                 position: absolute;
@@ -220,6 +219,9 @@
                 right: 35%;
                 z-index: 9;
                 animation: pulse 3s ease-in-out infinite;
+                @include respond-to("small") {
+                    display: none;
+                }
             }
             .musicNote {
                 position: absolute;
@@ -228,6 +230,9 @@
                 width: 100px;
                 z-index: 9;
                 animation: up 3s ease-in-out infinite;
+                @include respond-to("small") {
+                    display: none;
+                }
             }
             .envelope {
                 position: absolute;
@@ -351,10 +356,8 @@
             h4 {
                 padding: 180px 10px 10px;
                 font-weight: 600;
-               
             }
             @include respond-to("small") {
-
                 .box {
                     margin: 20px 0;
                 }
@@ -363,7 +366,6 @@
                 }
                 h4 {
                     padding: 140px 10px 10px;
-                    
                 }
             }
         }

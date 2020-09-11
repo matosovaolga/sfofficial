@@ -18,7 +18,4 @@ export class SFEcommerceComponent {
     { id: 5, title: "Support and Maintenance", text: "We maximize your e-commerce platform’s performance, customer engagement, and conversion rate under peak load conditions" },
   ]
 
-  moveTo(): void {
-    window.scroll(0,0);
-  }
 }

@@ -15,18 +15,18 @@ export class SFContactComponent {
   constructor(private connectionService: ConnectionService) {}
 
   onSubmit(form) {
-
+console.log('form ------->',form)
     this.connectionService.sendMessage(!this.user).subscribe(() => {
       this.sendSuccess = true;
       setTimeout(() => {
         this.sendSuccess = false;
         }, 10000);
-        form.resetForm();
+        // form.resetForm();
 
     }, (error: any) => {
       setTimeout(() => {
         this.errorText = false;
-        form.resetForm();
+        // form.resetForm();
         }, 10000);
        this.errorText = error.statusText;
     });
