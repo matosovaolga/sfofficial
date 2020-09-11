@@ -9,9 +9,6 @@ export class SFServiceUxdesComponent {
   title: string = 'UX Design and Prototypes';
   textBanner: string = 'Creatively aligning user experience with business objectives, to produce engaging digital experiences.';
 
-
-
-
   uxdes = [
     { id: 1, name: "UX/UI Research", text: "At CIS it is all about delivering stunning experiences and we achieve that we research and analyse various aspects of user interface design. Gathering requirements, audience analysis, online surveys we go lengths to achieve our design goals using the data we collect." },
     { id: 2, name: "HUMAN FACTOR ANALYSIS", text: "We make sure your websites are user friendly and thus human factor analysis is done at CIS to determine the necessary changes needed in designs. With this we take on to important factors such as icon size, sound, colour palate, and others to deliver nothing but the best." },
