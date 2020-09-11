@@ -31,5 +31,7 @@ export class SFVacancyComponent implements AfterViewInit {
     });
   }
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() {
+    window.scroll(0, 0);
+  }
 }
