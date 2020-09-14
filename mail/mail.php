@@ -80,9 +80,7 @@ function validate($data)
         $errors['error']['email'] = 'Email incorrect!';
     }
 
-    if (empty($data['contactFormPhone'])) {
-        $errors['error']['phone'] = 'Field Phone required!';
-    } elseif (!preg_match("/^[0-9\-\(\)\/\+\s]*$/", $data['contactFormPhone'])) {
+    if (!empty($data['contactFormPhone']) && !preg_match("/^[0-9\-\(\)\/\+\s]*$/", $data['contactFormPhone'])) {
         $errors['error']['phone'] = 'Phone incorrect!';
     }
 
