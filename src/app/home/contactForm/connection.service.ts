@@ -6,7 +6,7 @@ providedIn: 'root'
 })
 export class ConnectionService {
 // url: string = 'http://localhost:3000/send';
-url: string = '/email/mail.php';
+url: string = '/mail/mail.php';
 constructor(private http: HttpClient) { }
 
 sendMessage(messageContent: any) {
