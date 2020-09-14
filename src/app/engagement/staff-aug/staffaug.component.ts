@@ -42,11 +42,5 @@ export class SFStaffaugComponent {
   checklist = [
     'English proficiency', 'Timezone and workday overlap', 'Expertise and experience', 'Security standards and protocols', 'Workflow processes', 'Development methodology', 'Proven track record and portfolio', 'Client control and management support'
   ]
-
-
-  moveTo(): void {
-    window.scroll(0,0);
-
-  }
-
+ 
 }
