@@ -38,7 +38,7 @@ try {
 
             //Recipients
             $mail->setFrom($data['contactFormEmail'], $data['contactFormName']);
-            $mail->addAddress('sepavlen@gmail.com');     // add address to
+            $mail->addAddress('info@stableflow.com');     // add address to
 
 
             // Content
