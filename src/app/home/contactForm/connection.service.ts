@@ -5,12 +5,14 @@ import { Injectable } from '@angular/core';
 providedIn: 'root'
 })
 export class ConnectionService {
-url: string = 'http://localhost:3000/send';
+// url: string = 'http://localhost:3000/send';
+url: string = 'http://sfofficial.loc/mail.php';
 constructor(private http: HttpClient) { }
 
 sendMessage(messageContent: any) {
+  console.log('string => ', messageContent);
   return this.http.post(this.url,
-  JSON.stringify(messageContent),
-  { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'text' });
+  messageContent,
+  { headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8'), responseType: 'text' });
 }
 }

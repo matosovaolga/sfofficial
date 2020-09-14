@@ -16,7 +16,7 @@ export class SFContactComponent {
 
   onSubmit(form) {
 
-    this.connectionService.sendMessage(!this.user).subscribe(() => {
+    this.connectionService.sendMessage(this.user).subscribe(() => {
       this.sendSuccess = true;
       setTimeout(() => {
         this.sendSuccess = false;
