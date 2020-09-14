@@ -38,16 +38,14 @@ try {
 
             //Recipients
             $mail->setFrom($data['contactFormEmail'], $data['contactFormName']);
-            $mail->addAddress('info@stableflow.com');     // add address to
+            $mail->addAddress('sepavlen@gmail.com');     // add address to
 
 
             // Content
-            $str = "<h1>You received a letter!</h1>";
-            $str .= "<p><b>Name: </b> {$data['contactFormName']}</p>";
-            $str .= "<p><b>Email: </b> {$data['contactFormEmail']}</p>";
-            $str .= "<p><b>Phone: </b> {$data['contactFormPhone']}</p>";
-            $str .= "<p><b>Subject: </b> {$data['contactFormSubject']}</p>";
-            $str .= "<p><b>Message: </b> <br> {$data['contactFormMessage']}</p>";
+
+            ob_start();
+            include 'views/send_mail.php';
+            $str = ob_get_clean();
 
             $mail->isHTML(true);
             $mail->Subject = $data['contactFormSubject'];
