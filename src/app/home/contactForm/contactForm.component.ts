@@ -15,7 +15,7 @@ export class SFContactComponent {
   constructor(private connectionService: ConnectionService) {}
 
   onSubmit(form) {
-      this.connectionService.sendMessage(!this.user).subscribe(() => {
+      this.connectionService.sendMessage(this.user).subscribe(() => {
 
       this.sendSuccess = true;
       setTimeout(() => {
