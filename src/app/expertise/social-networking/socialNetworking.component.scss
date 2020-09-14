@@ -31,15 +31,11 @@
             }
         }
         .right {
-
             .phoner {
-
                 padding: 50px 20px 50px 0px;
                 transform-origin: 100% 100%;
                 animation: rotate 6s ease-in-out infinite;
                 @include respond-to("small") {
-
-
                     padding: 50px 20px;
                 }
             }
@@ -73,6 +69,9 @@
             }
         }
         .phaseText {
+            .col-12 {
+                padding: 0;
+            }
             margin-top: 60px;
             padding: 0;
             @include respond-to("medium") {
@@ -83,6 +82,7 @@
             }
         }
         .cross {
+            padding: 0;
             align-items: center;
             div {
                 position: absolute;
@@ -93,8 +93,8 @@
         }
         span {
             display: block;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border-bottom: 2px solid $darkBlue;
             border-right: 2px solid $darkBlue;
             -webkit-transform: rotate(-45deg);
@@ -104,6 +104,11 @@
             float: left;
             -webkit-animation: animate 2s infinite;
             animation: animate 2s infinite;
+
+            @include respond-to("medium") {
+                width: 30px;
+                height: 30px;
+            }
         }
 
         @keyframes animate {
