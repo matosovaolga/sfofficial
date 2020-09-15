@@ -1,9 +1,30 @@
 <?php
 
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("HTTP_ACCEPT: application/x-www-form-urlencoded");
+//header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Methods: POST");
+//header("HTTP_ACCEPT: application/x-www-form-urlencoded");
+
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With"');
+//header('Content-Type: multipart/form-data');
+
+
+$json = file_get_contents('php://input');
+
+
+
+echo "<pre>";
+var_dump($json);
+echo "<br>";
+var_export($_POST);
+echo "<br>";
+var_export($_FILES);
+echo "</pre>";
+die;
+
 
 
 use PHPMailer\PHPMailer\PHPMailer;
