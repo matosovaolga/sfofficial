@@ -1,8 +1,8 @@
 
 import { ConnectionService } from '../../home/contactForm/connection.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
+import { Component } from '@angular/core';
+import {  FileUploader } from 'ng2-file-upload';
 const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 @Component({
   selector: 'sf-requestForm',
@@ -11,39 +11,27 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 })
 export class SFRequestComponent {
   user = {
-    uploader: new FileUploader({})
+    name: '',
+    length: '',
+    contentType: '',
+    date: new Date(),
+    file: {}
   };
   errorText: boolean = false;
   sendSuccess: boolean = false;
-  uploader: FileUploader;
-  hasBaseDropZoneOver:boolean;
-  hasAnotherDropZoneOver:boolean;
+  fileToUpload: File = null;
+
   response:string;
   constructor(private connectionService: ConnectionService) {
-    this.uploader = new FileUploader({
-      url: URL,
-      disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
-      formatDataFunctionIsAsync: true,
-      formatDataFunction: async (item) => {
-        return new Promise( (resolve, reject) => {
-          resolve({
-            name: item._file.name,
-            length: item._file.size,
-            contentType: item._file.type,
-            date: new Date()
-          });
-        });
-      }
-    });
- 
- 
-    this.response = '';
- 
-    this.uploader.response.subscribe( res => this.response = res );
   }
  
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+    console.log('handleFileInput',this.fileToUpload)
+} 
+
   onSubmit(form) {
-    this.user.uploader = this.uploader;
+    this.user.file = this.fileToUpload;
   
     this.connectionService.sendMessage(!this.user).subscribe(() => {
       this.sendSuccess = true;
