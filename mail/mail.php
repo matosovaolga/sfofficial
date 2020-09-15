@@ -1,9 +1,30 @@
 <?php
 
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("HTTP_ACCEPT: application/x-www-form-urlencoded");
+//header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Methods: POST");
+//header("HTTP_ACCEPT: application/x-www-form-urlencoded");
+
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With"');
+//header('Content-Type: multipart/form-data');
+
+
+$json = file_get_contents('php://input');
+
+
+
+echo "<pre>";
+var_dump($json);
+echo "<br>";
+var_export($_POST);
+echo "<br>";
+var_export($_FILES);
+echo "</pre>";
+die;
+
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -42,12 +63,10 @@ try {
 
 
             // Content
-            $str = "<h1>You received a letter!</h1>";
-            $str .= "<p><b>Name: </b> {$data['contactFormName']}</p>";
-            $str .= "<p><b>Email: </b> {$data['contactFormEmail']}</p>";
-            $str .= "<p><b>Phone: </b> {$data['contactFormPhone']}</p>";
-            $str .= "<p><b>Subject: </b> {$data['contactFormSubject']}</p>";
-            $str .= "<p><b>Message: </b> <br> {$data['contactFormMessage']}</p>";
+
+            ob_start();
+            include 'views/send_mail.php';
+            $str = ob_get_clean();
 
             $mail->isHTML(true);
             $mail->Subject = $data['contactFormSubject'];
