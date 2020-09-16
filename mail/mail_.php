@@ -27,8 +27,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-$mail = new PHPMailer(false);
-
+$mail = new PHPMailer(true);
 
 try {
     if ($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -57,8 +56,7 @@ try {
             if (!isset($data['error'])){
 
                 $mail->setFrom($data['contactFormEmail'], $data['contactFormName']);
-//                $mail->addAddress('info@stableflow.com');     // add address to
-                $mail->addAddress('sepavlen@gmail.com');     // add address to
+                $mail->addAddress('info@stableflow.com');     // add address to
 
                 foreach ($_FILES['files'] as $FILE) {
                     move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
