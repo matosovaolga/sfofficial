@@ -12,14 +12,10 @@
             <div class="abform_area pos_relative">
 
                 <form class="text-center" [formGroup]="myForm" (ngSubmit)="submit()">
-  
+
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input 
-                            formControlName="name"
-                            id="name" 
-                            type="text" 
-                            class="form-control">
+                        <input formControlName="name" id="name" type="text" class="form-control">
                         <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
                             <div *ngIf="f.name.errors.required">Name is required.</div>
                             <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div>
@@ -28,32 +24,44 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input 
-                            formControlEmail="email"
-                            id="email" 
-                            type="text" 
-                            class="form-control">
+                        <input formControlName="email" id="email" type="text" class="form-control">
                         <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
-                            <div *ngIf="f.email.errors.required">Enail is required.</div>
+                            <div *ngIf="f.email.errors.required">Email is required.</div>
                             <div *ngIf="f.email.errors.minlength">Email should be 3 character.</div>
                         </div>
                     </div>
-                      
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input formControlName="phone" id="phone" type="text" class="form-control">
+                        <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                            <div *ngIf="f.phone.errors.required">Phone is required.</div>
+                            <div *ngIf="f.phone.errors.minlength">Phone should be .</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <input formControlName="message" id="message" type="text" class="form-control">
+                        <div *ngIf="f.message.touched && f.message.invalid" class="alert alert-danger">
+                            <div *ngIf="f.message.errors.required">Message is required.</div>
+                            <div *ngIf="f.message.errors.minlength">not less then 40 letters</div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="file">File</label>
-                        <input 
-                            formControlName="file"
-                            id="file" 
-                            type="file" 
-                            class="form-control"
+                        <input formControlName="file" id="file" type="file" class="form-control"
                             (change)="onFileChange($event)">
                         <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
                             <div *ngIf="f.file.errors.required">File is required.</div>
                         </div>
                     </div>
-                          <br>
-                          <br>
-                    <button class=" " type="submit"><p>Submit</p></button>
+                    <br>
+                    <br>
+                    <button class=" " type="submit">
+                        <p>Submit</p>
+                    </button>
                 </form>
             </div>
 
