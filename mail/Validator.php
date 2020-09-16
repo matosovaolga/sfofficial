@@ -11,34 +11,26 @@ class Validator
         $errors = [];
 
         if (empty($data['contactFormName'])) {
-            $errors['error']['name'] = 'Field FullName required!';
+            $errors['error']['name'] = 'Field Name required!';
         }
 
         if (empty($data['contactFormEmail'])) {
-            $errors['error']['email'] = 'Field E-mail required!';
+            $errors['error']['email'] = 'Field Email required!';
         } elseif (!filter_var($data['contactFormEmail'], FILTER_VALIDATE_EMAIL)) {
-            $errors['error']['email'] = 'E-mail incorrect!';
-        }
-
-        if (empty($data['contactFormMessage'])) {
-            $errors['error']['project'] = 'Field Project required!';
+            $errors['error']['email'] = 'Email incorrect!';
         }
 
         if (!empty($data['contactFormPhone']) && !preg_match("/^[0-9\-\(\)\/\+\s]*$/", $data['contactFormPhone'])) {
             $errors['error']['phone'] = 'Phone incorrect!';
         }
 
-
-        if (empty($files)){
-            $errors['error']['file'] = 'Files not upload!';
-        } else {
-            foreach ($files as $file){
-                if (!empty($file['size']) && $file['size'] > 50000){
-                    $errors['error']['file'] = 'File ' . $file['name'] . ' size is too large!';
-                }
-            }
+        if (empty($data['contactFormSubject'])) {
+            $errors['error']['subject'] = 'Field Subject required!';
         }
 
+        if (empty($data['contactFormMessage'])) {
+            $errors['error']['message'] = 'Field Message required!';
+        }
 
         if (!$errors){
             return $data;
@@ -101,5 +93,4 @@ class Validator
         }
         return $arr;
     }
-
 }
