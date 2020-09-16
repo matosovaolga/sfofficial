@@ -14,6 +14,7 @@ export class SFRequestComponent {
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl(''),
     phone: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    company: new FormControl('', [  Validators.minLength(7)]),
     message: new FormControl('', [ Validators.minLength(40)]),
     file: new FormControl(''),
     fileSource: new FormControl('', [Validators.required])
@@ -38,7 +39,12 @@ export class SFRequestComponent {
      
   submit(){
     const formData = new FormData();
-    formData.append('myForm', this.myForm.value);
+    formData.append('file', this.myForm. value);
+    formData.append('name', this.myForm.get('name').value);
+    formData.append('email', this.myForm.get('email').value);
+    formData.append('phone', this.myForm.get('phone').value);
+    formData.append('company', this.myForm.get('company').value);
+    formData.append('message', this.myForm.get('message').value);
 
     this.http.post(this.connectionService.url, formData)
       .subscribe(res => {
