@@ -35,7 +35,7 @@ try {
             $mail->SMTPAuth   = $config['auth'];
             $mail->Username   = $config['name'];
             $mail->Password   = $config['pass'];
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = $config['port'];
         } else {
             $mail->isSendmail();
