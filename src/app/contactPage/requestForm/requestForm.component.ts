@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class SFRequestComponent {
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.minLength(3)]),
     file: new FormControl('', [Validators.required]),
     fileSource: new FormControl('', [Validators.required])
   });
@@ -36,7 +37,9 @@ export class SFRequestComponent {
   submit(){
     const formData = new FormData();
     formData.append('file', this.myForm.get('fileSource').value);
-   
+    formData.append('name', this.myForm.get('name').value);
+    formData.append('email', this.myForm.get('email').value);
+
     this.http.post(this.connectionService.url, formData)
       .subscribe(res => {
         console.log(res);
