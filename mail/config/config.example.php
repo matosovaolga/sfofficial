@@ -6,4 +6,5 @@ return [
     'name' => 'username',
     'pass' => 'password',
     'port' => 'port',
+    'email' => 'test@email.com',
 ];
