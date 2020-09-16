@@ -7,4 +7,5 @@ return [
     'pass' => 'password',
     'port' => 'port',
     'email' => 'test@email.com',
+    'auth' => false,
 ];

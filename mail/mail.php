@@ -32,7 +32,7 @@ try {
             //        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
             $mail->isSMTP();
             $mail->Host       = $config['host'];
-            $mail->SMTPAuth   = true;
+            $mail->SMTPAuth   = $config['auth'];
             $mail->Username   = $config['name'];
             $mail->Password   = $config['pass'];
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
