@@ -8,6 +8,7 @@
 /bazel-out
 /mail/log
 /mail/config/config.php
+file.txt
 # dependencies
 /node_modules
 
