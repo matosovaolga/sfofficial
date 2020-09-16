@@ -12,6 +12,6 @@ constructor(private http: HttpClient) { }
 sendMessage(messageContent: any) {
   return this.http.post(this.url,
   messageContent,
-  { headers: new HttpHeaders().set('Content-Type', 'multipart/form-data; charset=utf-8'), responseType: 'json' });
+  { headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8'), responseType: 'json' });
 }
 }
