@@ -2,7 +2,9 @@
 import { ConnectionService } from '../../home/contactForm/connection.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
-import {  FileUploader } from 'ng2-file-upload';
+import { FileUploader } from 'ng2-file-upload';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 @Component({
   selector: 'sf-requestForm',
@@ -11,42 +13,49 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 })
 export class SFRequestComponent {
   user = {
-    name: '',
-    length: '',
-    contentType: '',
-    date: new Date(),
-    file: {}
+    data: File = null
   };
   errorText: boolean = false;
   sendSuccess: boolean = false;
+  response: string;
   fileToUpload: File = null;
 
-  response:string;
-  constructor(private connectionService: ConnectionService) {
+
+
+  constructor(private connectionService: ConnectionService, private http: HttpClient) {
+
+  }
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0); 
+    let formData = new FormData(); 
+    formData.append('file', this.fileToUpload, this.fileToUpload.name); 
+    // this.http.post('Your end-point URL', formData).subscribe((val) => {
+    
+    // console.log(val);
+    // });
+    // return false; 
+    this.user.data =  formData;
+    console.log(formData)
   }
  
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-    console.log('handleFileInput',this.fileToUpload)
-} 
 
   onSubmit(form) {
-    this.user.file = this.fileToUpload;
-  
+
+    // console.log(this.user)
     this.connectionService.sendMessage(this.user).subscribe(() => {
       this.sendSuccess = true;
       setTimeout(() => {
         this.sendSuccess = false;
-        }, 10000);
-        form.resetForm();
+      }, 10000);
+      // form.resetForm();
 
     }, (error: any) => {
       setTimeout(() => {
         this.errorText = false;
-        form.resetForm();
-        }, 10000);
-        console.log(this.user);
-       this.errorText = error.statusText;
+        // form.resetForm();
+      }, 10000);
+      console.log(this.user);
+      this.errorText = error.statusText;
     });
 
   }

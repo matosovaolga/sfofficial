@@ -60,18 +60,12 @@
                         </button>
                     </mat-form-field>
 
-                    <label for="file">Choose File</label>
-                    <input type="file"
-                           id="file"
-                           (change)="handleFileInput($event.target.files)">
-                    <!-- <ul class="filesList">
-                        <li *ngFor="let item of uploader.queue">
-                            <span>{{ item?.file?.name }}</span>
-                            <span type="button" (click)="item.remove()">
-                                <i class="ion-android-cancel"></i>
-                            </span>
-                        </li>
-                    </ul> -->
+                    <input type="file" name="file" id="file" class="inputfile"  
+                    [(ngModel)]="user.contactFormFile" (change)="handleFileInput($event.target.files)" multiple />
+
+                    <label class="my-drop-zone" for="file">
+                        <i class="ion-ios-upload-outline"></i>Upload or drag & drop files (5mb)</label>
+
 
                 </form>
                 <div class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully
