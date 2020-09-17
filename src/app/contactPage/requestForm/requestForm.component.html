@@ -10,68 +10,77 @@
             <h3 class="contact_title  pos_relative">Please submit your project details using the form below and we will
                 get back to you promptly regarding your request.</h3>
             <div class="abform_area pos_relative">
-
                 <form class="text-center" [formGroup]="myForm" (ngSubmit)="submit()">
 
-                    <div class="form-group">
-                        <label for="name">Name*</label>
-                        <input formControlName="name" id="name" type="text" class="form-control">
+               
+                    <div class="form-group abinput_group name">
+                        <input placeholder="FullName *" required formControlName="name" id="name" type="text"
+                            class="form-control">
                         <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
                             <div *ngIf="f.name.errors.required">Name is required.</div>
                             <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input formControlName="email" id="email" type="text" class="form-control">
+                    <div class="form-group abinput_group email">
+
+                        <input placeholder="Email *" formControlName="email" id="email" type="text"
+                            class="form-control">
                         <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
                             <div *ngIf="f.email.errors.required">Email is required.</div>
                             <div *ngIf="f.email.errors.minlength">Email should be 3 character.</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="phone">Phone*</label>
-                        <input formControlName="phone" id="phone" type="text" class="form-control">
+                    <div class="form-group abinput_group phone">
+
+                        <input placeholder="Phone *" formControlName="phone" id="phone" type="text"
+                            class="form-control">
                         <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
                             <div *ngIf="f.phone.errors.required">Phone is required.</div>
                             <div *ngIf="f.phone.errors.minlength">Phone should be .</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="company">Company name</label>
-                        <input formControlName="company" id="company" type="text" class="form-control">
+                    <div class="form-group abinput_group subject">
+                        <input placeholder="Company / Organization"  formControlName="company" id="company" type="text" class="form-control">
                         <div *ngIf="f.company.touched && f.company.invalid" class="alert alert-danger">
                             <div *ngIf="f.company.errors.required">Phone is required.</div>
                             <div *ngIf="f.company.errors.minlength">Phone should be .</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <input formControlName="message" id="message" type="text" class="form-control">
+                    <div class="form-group abinput_group msg">
+                        <input placeholder="Project requirements: " formControlName="message" id="message" type="text"
+                            class="form-control textarea">
                         <div *ngIf="f.message.touched && f.message.invalid" class="alert alert-danger">
                             <div *ngIf="f.message.errors.required">Message is required.</div>
                             <div *ngIf="f.message.errors.minlength">not less then 40 letters</div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="file">File</label>
-                        <input formControlName="file" id="file" type="file" class="form-control"
-                            (change)="onFileChange($event)">
-                        <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
-                            <div *ngIf="f.file.errors.required">File is required.</div>
-                        </div>
+                  
+                    <input formControlName="file" id="file" type="file" class="inputfile form-control"
+                        (change)="onFileChange($event)">
+                    <label for="file" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                        (fileOver)="fileOverBase($event)" class="my-drop-zone">
+                        <i class="ion-ios-upload-outline"></i>Upload file (5mb)</label>
+                    <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+                        <div *ngIf="f.file.errors.required">File is required.</div>
                     </div>
-                    <br>
-                    <br>
-                    <button class=" " type="submit">
-                        <p>Submit</p>
+
+                    
+                  
+                    <button type="submit" color="info" outline="true" rounded="true" block="true"
+                        class="z-depth-0 my-4 waves-effect text-uppercase">
+                        <i class="ion-ios-navigate"></i>
                     </button>
                 </form>
+
+                <div class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully
+                </div>
+                <div class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
+
             </div>
 
         </div>
@@ -91,8 +100,6 @@
                     </span> <a href="#" target="_blank">demostaker.com</a></p>
             </div>
         </div>
-        <!--/col-->
+
     </div>
-    <!--/row-->
 </div>
-<!--/contact content-->

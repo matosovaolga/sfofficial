@@ -39,6 +39,7 @@ export class SFRequestComponent {
      
   submit(){
     const formData = new FormData();
+
     formData.append('file', this.myForm.get('fileSource').value);
     formData.append('name', this.myForm.get('name').value);
     formData.append('email', this.myForm.get('email').value);

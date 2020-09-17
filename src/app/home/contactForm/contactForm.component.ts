@@ -1,7 +1,8 @@
 
 import { ConnectionService } from './connection.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, HostListener } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'sf-contactForm',
@@ -9,28 +10,37 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./contactForm.component.scss']
 })
 export class SFContactComponent {
-  user = {};
-  errorText: boolean = false;
-  sendSuccess: boolean = false;
-  constructor(private connectionService: ConnectionService) {}
+  myForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('',[Validators.required]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    company: new FormControl('', [  Validators.minLength(7)]),
+    message: new FormControl('', [ Validators.minLength(40)]),
+  });
 
-  onSubmit(form) {
-      this.connectionService.sendMessage(this.user).subscribe(() => {
+  constructor(private connectionService: ConnectionService,private http: HttpClient) {
+  
+  }
+  get f(){
+    return this.myForm.controls;
+  }
+     
+   
+     
+  submit(){
+    const formData = new FormData();
 
-      this.sendSuccess = true;
-      setTimeout(() => {
-        this.sendSuccess = false;
-        }, 10000);
-        // form.resetForm();
+    formData.append('name', this.myForm.get('name').value);
+    formData.append('email', this.myForm.get('email').value);
+    formData.append('phone', this.myForm.get('phone').value);
+    formData.append('company', this.myForm.get('company').value);
+    formData.append('message', this.myForm.get('message').value);
 
-    }, (error: any) => {
-      setTimeout(() => {
-        this.errorText = false;
-        // form.resetForm();
-        }, 10000);
-       this.errorText = error.statusText;
-    });
-
+    this.http.post(this.connectionService.url, formData)
+      .subscribe(res => {
+        console.log(res);
+        alert('Uploaded Successfully.');
+      })
   }
 
 }
