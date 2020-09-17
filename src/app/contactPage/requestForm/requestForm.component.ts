@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
 export class SFRequestComponent {
   myFiles: string[] = [];
 
-
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required]),
@@ -20,7 +19,6 @@ export class SFRequestComponent {
     company: new FormControl('', [Validators.minLength(7)]),
     message: new FormControl('', [Validators.minLength(40)]),
     file: new FormControl(''),
-    fileSource: new FormControl('', [Validators.required])
   });
 
   constructor(private connectionService: ConnectionService, private http: HttpClient) {
@@ -31,13 +29,15 @@ export class SFRequestComponent {
   }
 
   onFileChange(event) {
-
     if (event.target.files.length > 0) {
       for (var i = 0; i < event.target.files.length; i++) {
         this.myFiles.push(event.target.files[i]);
+        // console.log(this.myFiles[i].name)
       }
-
     }
+  }
+  deleteFile(index: number) {
+    this.myFiles.splice(index, 1);
   }
 
   submit() {

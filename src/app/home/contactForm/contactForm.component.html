@@ -31,7 +31,15 @@
                                 <div *ngIf="f.email.errors.minlength">Email should be 3 character.</div>
                             </div>
                         </div>
-    
+
+                        <div class="form-group abinput_group subject">
+                            <input placeholder="Subject *"  formControlName="company" id="company" type="text" class="form-control">
+                            <div *ngIf="f.company.touched && f.company.invalid" class="alert alert-danger">
+                                <div *ngIf="f.company.errors.required">Subject is required.</div>
+                                <div *ngIf="f.company.errors.minlength">Subject should be .</div>
+                            </div>
+                        </div>
+
                         <div class="form-group abinput_group phone">
     
                             <input placeholder="Phone *" formControlName="phone" id="phone" type="text"
@@ -39,14 +47,6 @@
                             <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
                                 <div *ngIf="f.phone.errors.required">Phone is required.</div>
                                 <div *ngIf="f.phone.errors.minlength">Phone should be .</div>
-                            </div>
-                        </div>
-    
-                        <div class="form-group abinput_group subject">
-                            <input placeholder="Subject *"  formControlName="company" id="company" type="text" class="form-control">
-                            <div *ngIf="f.company.touched && f.company.invalid" class="alert alert-danger">
-                                <div *ngIf="f.company.errors.required">Subject is required.</div>
-                                <div *ngIf="f.company.errors.minlength">Subject should be .</div>
                             </div>
                         </div>
     

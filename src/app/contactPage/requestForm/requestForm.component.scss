@@ -82,7 +82,23 @@
             }
         }
 
-        button {
+        .filesList {
+            ul {
+                display: flex;
+                button{
+                    border: none;
+                    background: none;
+                    height: 20px;
+                }
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+           
+        }
+
+        .btnSubmit {
             padding: 0;
             @include transition(color $animation-speed linear);
             border: none;

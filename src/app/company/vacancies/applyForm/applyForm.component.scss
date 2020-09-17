@@ -37,12 +37,27 @@ textarea {
     resize: none;
     height: 120px;
 }
+.filesList {
+    ul {
+        display: flex;
+        button{
+            border: none;
+            background: none;
+            height: 20px;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+   
+}
 
-.abform_area button {
+.btnSubmit {
     transition: color 0.3s linear;
     border: none;
     background: transparent;
-    top: 230px;
+    bottom: -200px;
     color: #1edfc4;
     font-size: 80px;
     height: auto;

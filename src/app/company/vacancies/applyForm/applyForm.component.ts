@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['applyForm.component.scss']
 })
 export class SFApplyFormComponent {
+  isFileUpload: boolean = false;
+  file:{}= null;
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('',[Validators.required]),
@@ -30,13 +32,20 @@ export class SFApplyFormComponent {
   onFileChange(event) {
   
     if (event.target.files.length > 0) {
-      const file = event.target.files[0];
+       this.file = event.target.files[0];
       this.myForm.patchValue({
-        fileSource: file
+        fileSource: this.file
       });
+      this.isFileUpload = true
     }
   }
-
+  deleteFile() {
+    this.myForm.patchValue({
+      fileSource: {}
+    });
+    this.file = null;
+    this.isFileUpload = false;
+  }
   submit(){
     const formData = new FormData();
 
