@@ -44,7 +44,7 @@ export class SFRequestComponent {
     const formData = new FormData();
     // formData.append('file', this.myForm.get('fileSource').value);
     for (var i = 0; i < this.myFiles.length; i++) { 
-      formData.append("file[i]", this.myFiles[i]);
+      formData.append(`file ${i}`, this.myFiles[i]);
     }
 
     formData.append('name', this.myForm.get('name').value);
