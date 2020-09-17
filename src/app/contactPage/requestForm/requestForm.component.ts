@@ -16,12 +16,15 @@ export class SFRequestComponent {
     phone: new FormControl('', [Validators.required, Validators.minLength(3)]),
     company: new FormControl('', [  Validators.minLength(7)]),
     message: new FormControl('', [ Validators.minLength(40)]),
-    file: new FormControl(''),
+     
+    file: this.formBuilder.array([
+      this.formBuilder.control('', [Validators.required])
+    ]),
     fileSource: new FormControl('', [Validators.required])
   });
 
-  constructor(private connectionService: ConnectionService,private http: HttpClient) {
-  
+  constructor(private connectionService: ConnectionService,private http: HttpClient, private formBuilder: FormBuilder) {
+
   }
   get f(){
     return this.myForm.controls;
@@ -32,15 +35,15 @@ export class SFRequestComponent {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.myForm.patchValue({
-        fileSource: file
+        fileSource: file,
+        file: event.target.files
       });
     }
   }
      
   submit(){
     const formData = new FormData();
-
-    formData.append('file', this.myForm.get('fileSource').value);
+    formData.append('files', this.myForm.get('file').value);
     formData.append('name', this.myForm.get('name').value);
     formData.append('email', this.myForm.get('email').value);
     formData.append('phone', this.myForm.get('phone').value);
