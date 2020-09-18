@@ -1,6 +1,6 @@
 <?php
 
-const FILE_SIZE = 50000;
+const FILE_SIZE = 5242880;
 
 class Validator
 {
@@ -45,21 +45,17 @@ class Validator
     {
         $errors = [];
 
-        if (empty($data['contactFormName'])) {
+        if (empty($data['name'])) {
             $errors['error']['name'] = 'Field FullName required!';
         }
 
-        if (empty($data['contactFormEmail'])) {
+        if (empty($data['email'])) {
             $errors['error']['email'] = 'Field E-mail required!';
-        } elseif (!filter_var($data['contactFormEmail'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             $errors['error']['email'] = 'E-mail incorrect!';
         }
 
-        if (empty($data['contactFormMessage'])) {
-            $errors['error']['project'] = 'Field Project required!';
-        }
-
-        if (!empty($data['contactFormPhone']) && !preg_match("/^[0-9\-\(\)\/\+\s]*$/", $data['contactFormPhone'])) {
+        if (empty($data['phone']) || !preg_match("/^[0-9\-\(\)\/\+\s]*$/", $data['phone'])) {
             $errors['error']['phone'] = 'Phone incorrect!';
         }
 
@@ -67,10 +63,12 @@ class Validator
         if (empty($files)){
             $errors['error']['file'] = 'Files not upload!';
         } else {
+            $size = 0;
             foreach ($files as $file){
-                if (!empty($file['size']) && $file['size'] > FILE_SIZE){
-                    $errors['error']['file'] = 'File ' . $file['name'] . ' size is too large!';
-                }
+                $size += $file['size'];
+            }
+            if ($size > FILE_SIZE){
+                $errors['error']['file'] = 'Files size is too large!';
             }
         }
 

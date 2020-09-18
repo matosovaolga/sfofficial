@@ -57,19 +57,17 @@ try {
 
 
             $data = Validator::validationContact($_POST, $_FILES);
-            echo "<pre>";
-            var_export(123123123);
-            echo "</pre>";
-            die;
+
 
             if (!isset($data['error'])){
 
                 $mail->setFrom($data['contactFormEmail'], $data['contactFormName']);
                 $mail->addAddress($config['email']);
 
-                foreach ($_FILES['files'] as $FILE) {
+                foreach ($_FILES as $FILE) {
                     move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
                     $mail->addAttachment('uploads/' . $FILE['name']);
+                    unlink('uploads/' . $FILE['name']);
                 }
 
                 // Content
@@ -88,6 +86,21 @@ try {
             }
 
             echo json_encode($data);exit;
+
+        } elseif (preg_match('#/vacancies/*#', $parse_url['path'])){
+
+
+
+
+            echo "<pre>";
+            var_export(999999999090909090);
+            echo "</pre>";
+            die;
+
+
+
+
+
 
         } else {
 
