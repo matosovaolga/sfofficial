@@ -1,7 +1,7 @@
-<h3 class="contact_title  pos_relative">Get Your Dream Job</h3>
-<div class="abform_area pos_relative">
+<h3 class="contact_title  ">Get Your Dream Job</h3>
+<div class="abform_area ">
 
-    <form class="text-center" [formGroup]="myForm" (ngSubmit)="submit()">
+    <form class="text-center pos_relative" #formDirective="ngForm"  [formGroup]="myForm" (ngSubmit)="submit(myForm,formDirective)">
 
 
         <div class="form-group abinput_group name">
@@ -39,14 +39,15 @@
             </div>
         </div>
 
-        <div>
-            <input formControlName="file" id="file" type="file" class="inputfile form-control"
-                (change)="onFileChange($event)">
+        <div >
+           <input formControlName="file" id="file" type="file" class="inputfile form-control"
+                (change)="onFileChange($event)"  >
             <label for="file" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
                 class="my-drop-zone">
                 <i class="ion-ios-upload-outline"></i>Upload file (5mb)</label>
-            <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
-                <div *ngIf="f.file.errors.required">File is required.</div>
+            <div *ngIf="fileSizeError" class="alert alert-danger">
+                <!-- <div *ngIf="f.file.errors.required">File is required.</div> -->
+           <P>no fucking way, too sized !!!</P>
             </div>
         </div>
         <div *ngIf="isFileUpload" class="filesList">
@@ -139,7 +140,7 @@
 
 
     </form> -->
-    <div class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully</div>
-    <div class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
+    <div *ngIf="sendSuccess" class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully</div>
+    <div *ngIf="errorText" class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
     <!--/form-->
 </div>

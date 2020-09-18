@@ -5,67 +5,67 @@
 }
 
 .abform_area {
+    padding-bottom: 60px;
     .abinput_group {
         width: 100%;
     }
-}
 
-.inputfile + label {
-    font-weight: 500;
-    font-size: 15px;
-    justify-content: center;
-    display: flex;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-
-    &:hover {
-        border-color: $btnFirstColor;
-        cursor: pointer;
-    }
-}
-
-.mat-form-field-label-wrapper {
-    top: -0.24375em;
-}
-
-.form-control:focus {
-    background: none;
-}
-
-textarea {
-    resize: none;
-    height: 120px;
-}
-.filesList {
-    ul {
+    .inputfile + label {
+        font-weight: 500;
+        font-size: 15px;
+        justify-content: center;
         display: flex;
-        button{
-            border: none;
-            background: none;
-            height: 20px;
-        }
-        svg {
-            width: 20px;
-            height: 20px;
+        padding: 0 10px;
+        height: 60px;
+        line-height: 60px;
+
+        &:hover {
+            border-color: $btnFirstColor;
+            cursor: pointer;
         }
     }
-   
-}
 
-.btnSubmit {
-    transition: color 0.3s linear;
-    border: none;
-    background: transparent;
-    bottom: -200px;
-    color: #1edfc4;
-    font-size: 80px;
-    height: auto;
-    position: absolute;
-    right: 0;
-    padding: 0;
-   
-    @include respond-to("small") {
-        right: 5px;
+    .mat-form-field-label-wrapper {
+        top: -0.24375em;
+    }
+
+    .form-control:focus {
+        background: none;
+    }
+
+    textarea {
+        resize: none;
+        height: 120px;
+    }
+    .filesList {
+        ul {
+            display: flex;
+            button {
+                border: none;
+                background: none;
+                height: 20px;
+            }
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .btnSubmit {
+        transition: color 0.3s linear;
+        border: none;
+        background: transparent;
+        bottom: -135px;
+        color: #1edfc4;
+        font-size: 80px;
+        height: auto;
+        position: absolute;
+        right: 0;
+        padding: 0;
+
+        @include respond-to("small") {
+            right: 5px;
+        }
     }
 }
