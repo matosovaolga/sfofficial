@@ -61,7 +61,7 @@ try {
 
             if (!isset($data['error'])){
 
-                $mail->setFrom($data['contactFormEmail'], $data['contactFormName']);
+                $mail->setFrom($data['email'], $data['name']);
                 $mail->addAddress($config['email']);
 
                 foreach ($_FILES as $FILE) {
@@ -76,7 +76,7 @@ try {
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
-                $mail->Subject = $data['contactFormName'];
+                $mail->Subject = $data['company'];
                 $mail->Body    = $str;
 
                 $mail->send();
