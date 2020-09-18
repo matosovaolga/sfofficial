@@ -1,7 +1,8 @@
 <h3 class="contact_title  ">Get Your Dream Job</h3>
 <div class="abform_area ">
 
-    <form class="text-center pos_relative" #formDirective="ngForm"  [formGroup]="myForm" (ngSubmit)="submit(myForm,formDirective)">
+    <form class="text-center pos_relative" #formDirective="ngForm" [formGroup]="myForm"
+        (ngSubmit)="submit(myForm,formDirective)">
 
 
         <div class="form-group abinput_group name">
@@ -39,19 +40,19 @@
             </div>
         </div>
 
-        <div >
-           <input formControlName="file" id="file" type="file" class="inputfile form-control"
-                (change)="onFileChange($event)"  >
+        <div>
+            <input formControlName="file" id="file" type="file" class="inputfile form-control"
+                (change)="onFileChange($event)">
             <label for="file" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
                 class="my-drop-zone">
                 <i class="ion-ios-upload-outline"></i>Upload file (5mb)</label>
             <div *ngIf="fileSizeError" class="alert alert-danger">
                 <!-- <div *ngIf="f.file.errors.required">File is required.</div> -->
-           <P>no fucking way, too sized !!!</P>
+                <P>no fucking way, too sized !!!</P>
             </div>
         </div>
         <div *ngIf="isFileUpload" class="filesList">
-            <ul  >
+            <ul>
                 <li>
                     <p>{{file.name}}</p>
                     <button type="button" (click)="deleteFile()">
@@ -67,8 +68,7 @@
                             </g>
                             <g>
                                 <g>
-                                    <path
-                                        d="M343.586,315.302L284.284,256l59.302-59.302c7.81-7.81,7.811-20.473,0.001-28.284c-7.812-7.811-20.475-7.81-28.284,0
+                                    <path d="M343.586,315.302L284.284,256l59.302-59.302c7.81-7.81,7.811-20.473,0.001-28.284c-7.812-7.811-20.475-7.81-28.284,0
                                L256,227.716l-59.303-59.302c-7.809-7.811-20.474-7.811-28.284,0c-7.81,7.811-7.81,20.474,0.001,28.284L227.716,256
                                l-59.302,59.302c-7.811,7.811-7.812,20.474-0.001,28.284c7.813,7.812,20.476,7.809,28.284,0L256,284.284l59.303,59.302
                                c7.808,7.81,20.473,7.811,28.284,0C351.398,335.775,351.397,323.112,343.586,315.302z" />
@@ -85,62 +85,11 @@
             class="z-depth-0 my-4 waves-effect text-uppercase btnSubmit">
             <i class="ion-ios-navigate"></i>
         </button>
+        <div *ngIf="sendSuccess" class="alert alert-success" [ngClass]="{messageActive: successPopover}">Mesasge was
+            sent successfully</div>
+        <div *ngIf="isError" class="alert alert-danger" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
+
     </form>
 
-    <!-- <form class="text-center" novalidate #contactForm="ngForm" (ngSubmit)=" onSubmit(contactForm)">
-        <mat-form-field class="abinput_group name ">
-            <input type="text" name="contactFormName" required maxlength="60" [(ngModel)]="user.contactFormName"
-                #contactFormName="ngModel" class="form-control" matInput matValidate />
-            <mat-label for="materialContactFormEmail">FullName</mat-label>
-            <mat-error *ngIf="contactForm.submitted && contactFormName.invalid">Name is required
-            </mat-error>
 
-        </mat-form-field>
-
-        <mat-form-field class="md-form abinput_group email">
-            <input type="email" name="email" [(ngModel)]="user.contactFormEmail" #contactFormEmail="ngModel" pattern="^\S+@\S+$"
-                required id="materialContactFormEmail" class="form-control" matInput matValidate />
-            <mat-label for="materialContactFormEmail">E-mail</mat-label>
-            <mat-error *ngIf="contactForm.submitted && contactFormEmail.invalid">
-                <span *ngIf="contactFormEmail.errors.required">Email is required</span>
-                <span *ngIf="contactFormEmail.errors.pattern">Wrong email format</span></mat-error>
-        </mat-form-field>
-
-
-        <mat-form-field class="md-form abinput_group phone">
-            <input type="text" name="phone" [(ngModel)]="user.contactFormPhone" #contactFormPhone="ngModel" pattern="^\+\d{12}$"
-                id="materialContactFormPhone" class="form-control" matInput matValidate />
-            <mat-label for="materialContactFormPhone">Phone</mat-label>
-            <mat-error *ngIf="contactForm.submitted && contactFormPhone.invalid">Input
-                invalid</mat-error>
-        </mat-form-field>
-
-        <mat-form-field class="md-form abinput_group msg">
-            <textarea type="text" name="message" [(ngModel)]="user.contactFormMessage" #contactFormMessage="ngModel"
-                required id="materialContactFormMessage" class="form-control md-textarea" matInput matValidate></textarea>
-            <mat-label for="materialContactFormMessage">Cover Letter: </mat-label>
-            <mat-error *ngIf="contactForm.submitted && contactFormMessage.invalid">Input
-                invalid</mat-error>
-            <button color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect text-uppercase"><i
-                    class="ion-ios-navigate"></i></button>
-        </mat-form-field>
-        <input type="file" name="file" id="file" class="inputfile" ng2FileSelect [uploader]="uploader" onFileSelected=""
-            multiple />
-        <label ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
-            [uploader]="uploader" class="my-drop-zone" for="file"><i class="ion-ios-upload-outline"></i>Upload
-            or drag & drop files (5mb)</label>
-        <ul class="filesList">
-            <li *ngFor="let item of uploader.queue">
-                <span>{{ item?.file?.name }}</span>
-                <span type="button" (click)="item.remove()">
-                    <i class="ion-android-cancel"></i>
-                </span>
-            </li>
-        </ul>
-
-
-    </form> -->
-    <div *ngIf="sendSuccess" class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully</div>
-    <div *ngIf="errorText" class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
-    <!--/form-->
 </div>

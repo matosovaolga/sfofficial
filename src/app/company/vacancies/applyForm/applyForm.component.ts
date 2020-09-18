@@ -18,6 +18,7 @@ export class SFApplyFormComponent {
   fileSizeError: boolean = false;
 
   errorText: string = '';
+  isError: boolean = false;
   sendSuccess: boolean = false;
 
   file: File = null;
@@ -51,7 +52,6 @@ export class SFApplyFormComponent {
         this.fileSizeError = true;
         setTimeout(() => {
           this.fileSizeError = false;
-
         }, 5000);
       }
 
@@ -75,6 +75,7 @@ export class SFApplyFormComponent {
 
     this.http.post(this.connectionService.url, formData)
       .subscribe(res => {
+        console.log('no errro')
         this.sendSuccess = true;
         setTimeout(() => {
           this.sendSuccess = false;
@@ -83,17 +84,17 @@ export class SFApplyFormComponent {
         this.deleteFile();
 
       }, (error: any) => {
-        // console.log(error)
+        console.log(error)
         setTimeout(() => {
           setTimeout(() => {
             this.errorText = '';
-            formDirective.resetForm();
-            this.deleteFile();
+          this.isError = false;
 
-
+            
           }, 5000);
+          this.isError = true;
 
-          this.errorText = error.status + " " + error.statusText;
+          this.errorText =  error.statusText;
         }, 5000);
 
       })
