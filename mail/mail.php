@@ -81,6 +81,10 @@ try {
 
                 $mail->send();
 
+                foreach ($_FILES as $FILE) {
+                    if (file_exists('uploads/' . $FILE['name']))
+                    unlink('uploads/' . $FILE['name']);
+                }
                 echo json_encode(['success' => "Message has be sent"]);exit;
 
             }
