@@ -7,8 +7,8 @@
 
     <div class="row">
         <div class="col-xl-8 col-lg-7">
-                <h3 class="contact_title  pos_relative">Drop us a Line</h3>
-                <div class="pos_relative">
+                <h3 class="contact_title  ">Drop us a Line</h3>
+                <div class="">
 
                     <form class="text-center abform_area" [formGroup]="myForm" (ngSubmit)="submit()">
 
@@ -24,7 +24,7 @@
     
                         <div class="form-group abinput_group email">
     
-                            <input placeholder="Email *" formControlName="email" id="email" type="text"
+                            <input   placeholder="Email *" formControlName="email" id="email" type="text"
                                 class="form-control">
                             <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
                                 <div *ngIf="f.email.errors.required">Email is required.</div>
@@ -51,7 +51,7 @@
                         </div>
     
                         <div class="form-group abinput_group msg">
-                            <input placeholder="Message * " formControlName="message" id="message" type="text"
+                            <input  placeholder="Message * " formControlName="message" id="message" type="text"
                                 class="form-control textarea">
                             <div *ngIf="f.message.touched && f.message.invalid" class="alert alert-danger">
                                 <div *ngIf="f.message.errors.required">Message is required.</div>

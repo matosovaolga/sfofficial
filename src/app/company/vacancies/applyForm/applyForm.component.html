@@ -47,8 +47,7 @@
                 class="my-drop-zone">
                 <i class="ion-ios-upload-outline"></i>Upload file (5mb)</label>
             <div *ngIf="fileSizeError" class="alert alert-danger">
-                <!-- <div *ngIf="f.file.errors.required">File is required.</div> -->
-                <P>no fucking way, too sized !!!</P>
+                <P>Size is too large, no more than 5mb</P>
             </div>
         </div>
         <div *ngIf="isFileUpload" class="filesList">
@@ -85,9 +84,12 @@
             class="z-depth-0 my-4 waves-effect text-uppercase btnSubmit">
             <i class="ion-ios-navigate"></i>
         </button>
-        <div *ngIf="sendSuccess" class="alert alert-success" [ngClass]="{messageActive: successPopover}">Mesasge was
-            sent successfully</div>
-        <div *ngIf="isError" class="alert alert-danger" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
+       
+        <div *ngIf="sendSuccess" class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully
+        </div>
+        <div *ngIf="isError" class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
+        <div *ngIf="fileSizedOverloaded"   [ngClass]="{messageActive: errorText}">File sized overloaded Max is 5mb</div>
+
 
     </form>
 

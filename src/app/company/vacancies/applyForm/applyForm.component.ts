@@ -54,8 +54,8 @@ export class SFApplyFormComponent {
           this.fileSizeError = false;
         }, 5000);
       }
-
     }
+    event.srcElement.value = "";
   }
   deleteFile() {
     this.myForm.patchValue({
@@ -66,7 +66,7 @@ export class SFApplyFormComponent {
   }
   submit(form: any, formDirective: FormGroupDirective) {
     const formData = new FormData();
-    console.log(form)
+
     formData.append('file', this.myForm.get('fileSource').value);
     formData.append('name', this.myForm.get('name').value);
     formData.append('email', this.myForm.get('email').value);
@@ -75,7 +75,7 @@ export class SFApplyFormComponent {
 
     this.http.post(this.connectionService.url, formData)
       .subscribe(res => {
-        console.log('no errro')
+        console.log('res', res)
         this.sendSuccess = true;
         setTimeout(() => {
           this.sendSuccess = false;
@@ -88,13 +88,11 @@ export class SFApplyFormComponent {
         setTimeout(() => {
           setTimeout(() => {
             this.errorText = '';
-          this.isError = false;
-
-            
+            this.isError = false;
           }, 5000);
-          this.isError = true;
 
-          this.errorText =  error.statusText;
+          this.isError = true;
+          this.errorText = error.statusText;
         }, 5000);
 
       })

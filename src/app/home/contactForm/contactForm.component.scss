@@ -29,6 +29,7 @@
     }
 
     .abform_area {
+        padding-bottom: 80px;
         .abinput_group {
             margin-bottom: 30px;
             width: 49.1%;
@@ -56,11 +57,12 @@
                 border: none !important;
                 padding-left: 0;
                 font-family: $primary-font-family;
+                white-space: normal;
             }
 
-            textarea {
+            .textarea {
                 @extend input;
-                resize: none;
+                // resize: none;
                 margin-bottom: 0;
                 height: 150px;
                 padding-right: 90px;
@@ -88,7 +90,7 @@
 
             border: none;
             background: transparent;
-            bottom: 30px;
+            bottom: -80px;
             color: $btnFirstColor;
             font-size: 80px;
             height: auto;
