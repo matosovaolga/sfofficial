@@ -10,6 +10,15 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With"');
 header("HTTP_ACCEPT: multipart/form-data");
+//$json = file_get_contents('php://input');
+//$data_decode = json_decode($json);
+//echo "<pre>";
+//var_export($_FILES);
+//echo "<br>";
+//var_export($_POST);
+//
+//die;
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -41,15 +50,17 @@ try {
             $mail->isSendmail();
         }
 
-        $json = file_get_contents('php://input');
-        $data_decode = json_decode($json);
 
         $parse_url = parse_url($_SERVER['HTTP_REFERER']);
 
         if (trim($parse_url['path'],  '/') === 'contacts'){
 
 
-            $data = Validator::validationContact($data_decode, $_FILES);
+            $data = Validator::validationContact($_POST, $_FILES);
+            echo "<pre>";
+            var_export(123123123);
+            echo "</pre>";
+            die;
 
             if (!isset($data['error'])){
 
@@ -80,12 +91,11 @@ try {
 
         } else {
 
-            $data = Validator::validationHome($data_decode);
-
+            $data = Validator::validationHome($_POST);
 
             if (!isset($data['error'])){
 
-                $mail->setFrom($data['contactFormEmail'], $data['contactFormName']);
+                $mail->setFrom($data['email'], $data['name']);
                 $mail->addAddress($config['email']);
 
                 ob_start();
@@ -93,7 +103,7 @@ try {
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
-                $mail->Subject = $data['contactFormSubject'];
+                $mail->Subject = $data['company'];
                 $mail->Body    = $str;
 
                 $mail->send();
