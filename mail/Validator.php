@@ -30,8 +30,6 @@ class Validator
 
         if (empty($data['message'])) {
             $errors['error']['message'] = 'Field Message required!';
-        }  elseif (strlen($data['message']) < 40) {
-            $errors['error']['message'] = 'Not less then 40 letters!';
         }
 
         if (!$errors){
