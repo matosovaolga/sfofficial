@@ -100,7 +100,7 @@ try {
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
-                $mail->Subject = $data['company'];
+                $mail->Subject = $data['name'];
                 $mail->Body    = $str;
 
                 $mail->send();
