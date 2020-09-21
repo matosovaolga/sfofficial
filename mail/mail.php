@@ -65,6 +65,14 @@ try {
                 $mail->addAddress($config['email']);
 
                 foreach ($_FILES as $FILE) {
+                    echo "<pre>";
+                    var_export($FILE);
+                    echo "</pre>";
+                    $res = move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
+                    echo "<pre>";
+                    var_dump($res);
+                    die;
+
                     move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
                     $mail->addAttachment('uploads/' . $FILE['name']);
                     unlink('uploads/' . $FILE['name']);
