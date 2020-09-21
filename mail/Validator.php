@@ -93,4 +93,39 @@ class Validator
         }
         return $arr;
     }
+
+    public static function validationVacancy ($data, $files)
+    {
+        $errors = [];
+
+        if (empty($data['name'])) {
+            $errors['error']['name'] = 'Field FullName required!';
+        }
+
+        if (empty($data['email'])) {
+            $errors['error']['email'] = 'Field E-mail required!';
+        } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors['error']['email'] = 'E-mail incorrect!';
+        }
+
+        if (empty($data['phone']) || !preg_match("/^[0-9\-\(\)\/\+\s]*$/", $data['phone'])) {
+            $errors['error']['phone'] = 'Phone incorrect!';
+        }
+
+
+        if (empty($files)){
+            $errors['error']['file'] = 'Files not upload!';
+        } else {
+            if ($files['file']['size'] > FILE_SIZE){
+                $errors['error']['file'] = 'Files size is too large!';
+            }
+        }
+
+
+        if (!$errors){
+            return $data;
+        }
+
+        return $errors;
+    }
 }
