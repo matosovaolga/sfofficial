@@ -65,37 +65,8 @@ try {
                 $mail->addAddress($config['email']);
 
                 foreach ($_FILES as $FILE) {
-                    echo "<pre>";
-                    var_export($FILE);
-                    echo "</pre>";
-                    $res = move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
-                    echo "<pre>";
-                    var_dump($res);
-                    $rs1 = $mail->addAttachment('uploads/' . $FILE['name']);
-                    echo "</pre>";
-                    echo "<pre>";
-
-                    var_dump($rs1);
-                    echo "</pre>";
-
-                    ob_start();
-                    include 'views/send_mail_contacts.php';
-                    $str = ob_get_clean();
-
-                    $mail->isHTML(true);
-                    $mail->Subject = $data['company'];
-                    $mail->Body    = $str;
-
-                    $send = $mail->send();
-                    echo "<pre>";
-
-                    var_dump($send);
-                    echo "</pre>";
-                    die;
-
                     move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
                     $mail->addAttachment('uploads/' . $FILE['name']);
-                    unlink('uploads/' . $FILE['name']);
                 }
 
                 // Content
@@ -109,10 +80,10 @@ try {
 
                 $mail->send();
 
-//                foreach ($_FILES as $FILE) {
-//                    if (file_exists('uploads/' . $FILE['name']))
-//                    unlink('uploads/' . $FILE['name']);
-//                }
+                foreach ($_FILES as $FILE) {
+                    if (file_exists('uploads/' . $FILE['name']))
+                    unlink('uploads/' . $FILE['name']);
+                }
                 echo json_encode(['success' => "Message has be sent"]);exit;
 
             }
