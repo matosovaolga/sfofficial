@@ -64,11 +64,11 @@ try {
                 $mail->setFrom($data['email'], $data['name']);
                 $mail->addAddress($config['email']);
 
-//                foreach ($_FILES as $FILE) {
-//                    move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
-//                    $mail->addAttachment('uploads/' . $FILE['name']);
-//                    unlink('uploads/' . $FILE['name']);
-//                }
+                foreach ($_FILES as $FILE) {
+                    move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
+                    $mail->addAttachment('uploads/' . $FILE['name']);
+                    unlink('uploads/' . $FILE['name']);
+                }
 
                 // Content
                 ob_start();
