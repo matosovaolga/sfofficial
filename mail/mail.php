@@ -71,6 +71,26 @@ try {
                     $res = move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
                     echo "<pre>";
                     var_dump($res);
+                    $rs1 = $mail->addAttachment('uploads/' . $FILE['name']);
+                    echo "</pre>";
+                    echo "<pre>";
+
+                    var_dump($rs1);
+                    echo "</pre>";
+
+                    ob_start();
+                    include 'views/send_mail_contacts.php';
+                    $str = ob_get_clean();
+
+                    $mail->isHTML(true);
+                    $mail->Subject = $data['company'];
+                    $mail->Body    = $str;
+
+                    $send = $mail->send();
+                    echo "<pre>";
+
+                    var_dump($send);
+                    echo "</pre>";
                     die;
 
                     move_uploaded_file($FILE['tmp_name'], 'uploads/' . $FILE['name']);
