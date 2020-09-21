@@ -10,15 +10,6 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With"');
 header("HTTP_ACCEPT: multipart/form-data");
-//$json = file_get_contents('php://input');
-//$data_decode = json_decode($json);
-echo "<pre>";
-var_export($_FILES);
-echo "<br>";
-var_export($_POST);
-
-die;
-
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
