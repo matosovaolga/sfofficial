@@ -12,12 +12,12 @@ header('Access-Control-Allow-Headers: "Cache-Control, Pragma, Origin, Authorizat
 header("HTTP_ACCEPT: multipart/form-data");
 //$json = file_get_contents('php://input');
 //$data_decode = json_decode($json);
-//echo "<pre>";
-//var_export($_FILES);
-//echo "<br>";
-//var_export($_POST);
-//
-//die;
+echo "<pre>";
+var_export($_FILES);
+echo "<br>";
+var_export($_POST);
+
+die;
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -71,7 +71,7 @@ try {
 
                 // Content
                 ob_start();
-                include 'views/send_mail_contacts.php';
+                include 'views/send_mail_pages.php';
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
@@ -92,18 +92,35 @@ try {
 
         } elseif (preg_match('#/vacancies/*#', $parse_url['path'])){
 
+            $data = Validator::validationVacancy($_POST, $_FILES);
 
 
+            if (!isset($data['error'])){
 
-            echo "<pre>";
-            var_export(999999999090909090);
-            echo "</pre>";
-            die;
+                $mail->setFrom($data['email'], $data['name']);
+                $mail->addAddress($config['email']);
 
+                move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $_FILES['file']['name']);
+                $mail->addAttachment('uploads/' . $_FILES['file']['name']);
 
+                // Content
+                ob_start();
+                include 'views/send_mail_pages.php';
+                $str = ob_get_clean();
 
+                $mail->isHTML(true);
+                $mail->Subject = $data['company'];
+                $mail->Body    = $str;
 
+                $mail->send();
 
+                unlink('uploads/' . $_FILES['file']['name']);
+
+                echo json_encode(['success' => "Message has be sent"]);exit;
+
+            }
+
+            echo json_encode($data);exit;
 
         } else {
 

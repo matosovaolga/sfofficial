@@ -8,4 +8,6 @@
 <?php if (isset($data['phone'])): ?>
     <p><b>Subject: </b> <?php echo $data['phone']; ?></p>
 <?php endif ?>
-<p><b>Message: </b> <br> <?php echo $data['message']; ?></p>
+<?php if (isset($data['message'])): ?>
+    <p><b>Message: </b> <br> <?php echo $data['message']; ?></p>
+<?php endif ?>
