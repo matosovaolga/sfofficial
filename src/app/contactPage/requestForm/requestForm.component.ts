@@ -3,12 +3,16 @@ import { ConnectionService } from '../../home/contactForm/connection.service';
 import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective, FormControlName } from '@angular/forms';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+interface response {
+  success: boolean;
+  error: string;
+}
 @Component({
   selector: 'sf-requestForm',
   templateUrl: './requestForm.component.html',
   styleUrls: ['./requestForm.component.scss']
 })
+
 export class SFRequestComponent {
   myFiles: string[] = [];
   fileSizes: number[] = []
@@ -87,27 +91,41 @@ export class SFRequestComponent {
     formData.append('message', this.myForm.get('message').value);
 
     this.http.post(this.connectionService.url, formData)
-      .subscribe(res => {
-        this.sendSuccess = true;
-        setTimeout(() => {
-          this.sendSuccess = false;
-        }, 5000);
+      .subscribe(
+        (res: response) => {
+          if(res.success) {
+            this.sendSuccess = true;
+            setTimeout(() => {
+              this.sendSuccess = false;
+            }, 5000);
+  
+            // formDirective.resetForm();
+            // this.myFiles = []
+          } else {
+            setTimeout(() => {
+              setTimeout(() => {
+                this.errorText = '';
+                this.isError = false;
+              }, 5000);
+    
+              this.isError = true;
+              this.errorText = res.error;
+            }, 5000);
+          }
+          
 
-        formDirective.resetForm();
-        this.myFiles = []
-
-      }, (error: any) => {
-        console.log(error)
-        setTimeout(() => {
+        }, (error: any) => {
+          console.log(error)
           setTimeout(() => {
-            this.errorText = '';
-            this.isError = false;
-          }, 5000);
+            setTimeout(() => {
+              this.errorText = '';
+              this.isError = false;
+            }, 5000);
 
-          this.isError = true;
-          this.errorText = error.statusText;
-        }, 5000);
-      })
+            this.isError = true;
+            this.errorText = error.statusText;
+          }, 5000);
+        })
   }
 
 

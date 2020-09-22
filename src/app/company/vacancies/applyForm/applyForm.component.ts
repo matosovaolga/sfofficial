@@ -4,6 +4,10 @@ import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective } f
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
 import { HttpClient } from '@angular/common/http';
+interface response {
+  success: boolean;
+  error: string;
+}
 interface File {
   size: number,
 }
@@ -75,14 +79,27 @@ export class SFApplyFormComponent {
     formData.append('message', this.myForm.get('message').value);
 
     this.http.post(this.connectionService.url, formData)
-      .subscribe(res => {
-        console.log('res', res)
-        this.sendSuccess = true;
-        setTimeout(() => {
-          this.sendSuccess = false;
-        }, 5000);
-        formDirective.resetForm();
-        this.deleteFile();
+      .subscribe(
+        (res: response) => {
+          if(res.success) {
+            this.sendSuccess = true;
+            setTimeout(() => {
+              this.sendSuccess = false;
+            }, 5000);
+  
+            formDirective.resetForm();
+            this.deleteFile()
+          } else {
+            setTimeout(() => {
+              setTimeout(() => {
+                this.errorText = '';
+                this.isError = false;
+              }, 5000);
+    
+              this.isError = true;
+              this.errorText = res.error;
+            }, 5000);
+          }
 
       }, (error: any) => {
         console.log(error)

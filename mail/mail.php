@@ -11,6 +11,7 @@ header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With"');
 header("HTTP_ACCEPT: multipart/form-data");
 
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 //use PHPMailer\PHPMailer\SMTP;
@@ -107,7 +108,7 @@ try {
 
                 unlink('uploads/' . $_FILES['file']['name']);
 
-                echo json_encode(['success' => "Message has be sent"]);exit;
+                echo json_encode(['success' => true]);exit;
 
             }
 
@@ -127,7 +128,7 @@ try {
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
-                $mail->Subject = $data['company'];
+                $mail->Subject = $data['subject'];
                 $mail->Body    = $str;
 
                 $mail->send();

@@ -24,7 +24,7 @@ class Validator
             $errors['error']['phone'] = 'Phone incorrect!';
         }
 
-        if (empty($data['company'])) {
+        if (empty($data['subject'])) {
             $errors['error']['subject'] = 'Field Subject required!';
         }
 

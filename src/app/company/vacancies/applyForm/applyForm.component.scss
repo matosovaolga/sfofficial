@@ -3,127 +3,137 @@
 .contact_title {
     margin-bottom: 30px;
 }
-
 .abform_area {
-    padding-bottom: 60px;
-    .abinput_group {
-        width: 100%;
+    .vacanciesForm {
+        padding-bottom: 60px;
+        .abinput_group {
+            width: 100%;
+        }
+        input {
+            padding: 10px 22px;
+            width: 100%;
+            // background: none;
+            color: $darkGrey;
+            // border: none !important;
+            // padding-left: 0;
+            font-family: $primary-font-family;
+            // background: $lightgreyBg;
+        }
+        label {
+            font-size: 16px;
+            color: $lightGrey;
+            font-family: $primary-font-family;
+            top: 1.84375em;
+            transition: all 1s ease-out;
+            line-height: 16px;
+        }
+        .activeInput {
+            // background-color: red;
+            // font-size: 12px;
+            transform: scale(0.8);
+        }
     }
-    input {
-        padding: 10px 22px;
-        width: 100%;
-        // background: none;
-        color: $darkGrey;
-        // border: none !important;
-        // padding-left: 0;
-        font-family: $primary-font-family;
-        // background: $lightgreyBg;
-    }
-    label {
-        font-size: 16px;
-        color: $lightGrey;
-        font-family: $primary-font-family;
-        top: 1.84375em;
-        transition: all 1s ease-out;
-        line-height: 16px;
-    }
-    .activeInput {
-        // background-color: red;
-        // font-size: 12px;
-        transform: scale(0.8);
-    }
-}
-.inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-    & + label {
-        font-size: 1.25em;
-        font-weight: 700;
-        color: $primary-color;
-        border: $border;
-        padding: 10px;
-        display: inline-block;
-        width: 100%;
-
-        i {
-            font-size: 34px;
-            color: $btnFirstColor;
-            margin-right: 15px;
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        & + label {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: $primary-color;
+            border: $border;
+            padding: 10px;
             display: inline-block;
+            width: 100%;
+
+            i {
+                font-size: 34px;
+                color: $btnFirstColor;
+                margin-right: 15px;
+                display: inline-block;
+            }
         }
     }
-}
 
-.inputfile + label {
-    font-weight: 500;
-    font-size: 15px;
-    justify-content: center;
-    display: flex;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-
-    &:hover {
-        border-color: $btnFirstColor;
-        cursor: pointer;
-    }
-}
-
-
-
-.form-control:focus {
-    background: none;
-}
- 
-textarea {
-    @extend input;
-    resize: none;
-    height: 120px;
-}
-.filesList {
-    ul {
+    .inputfile + label {
+        font-weight: 500;
+        font-size: 15px;
+        justify-content: center;
         display: flex;
-        li {
-            text-overflow: ellipsis
-        }
-        button {
-            border: none;
-            background: none;
-            height: 20px;
-        }
-        svg {
-            width: 20px;
-            height: 20px;
+        padding: 0 10px;
+        height: 60px;
+        line-height: 60px;
+
+        &:hover {
+            border-color: $btnFirstColor;
+            cursor: pointer;
         }
     }
-}
 
-.btnSubmit {
-    transition: color 0.3s linear;
-    border: none;
-    background: transparent;
-    bottom: -135px;
-    color: #1edfc4;
-    font-size: 80px;
-    height: auto;
-    position: absolute;
-    right: 0;
-    padding: 0;
-
-    @include respond-to("small") {
-        right: 5px;
+    .form-control:focus {
+        background: none;
     }
-}
-.notActive {
-    @extend .btnSubmit;
-    color: $primary-color;
-    
 
-    &:hover {
+    textarea {
+        @extend input;
+        resize: none;
+        height: 120px;
+    }
+    .filesList {
+        ul {
+            display: flex;
+            li {
+                text-overflow: ellipsis;
+            }
+            button {
+                border: none;
+                background: none;
+                height: 20px;
+            }
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .btnSubmit {
+        padding: 0;
+        @include transition(color $animation-speed linear);
+        border: none;
+        margin: 0;
+        background: transparent;
+        bottom: -15px;
+        color: $btnFirstColor;
+        font-size: 80px;
+        // height: auto;
+        position: absolute;
+        right: 20px;
+        @include respond-to("small") {
+            right: 10px;
+        }
+        &:hover {
+            color: $btnSecondColor;
+        }
+    }
+    .notActive {
+        padding: 0;
+        @include transition(color $animation-speed linear);
+        border: none;
+        margin: 0;
+        background: transparent;
+        bottom: -15px;
+
+        font-size: 80px;
+        // height: auto;
+        position: absolute;
+        right: 20px;
         color: $primary-color;
+        &:hover {
+            color: $primary-color;
+        }
     }
 }
