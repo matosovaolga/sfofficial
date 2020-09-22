@@ -23,11 +23,10 @@ export class SFApplyFormComponent {
 
   file: File = null;
   myForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    company: new FormControl('', [Validators.minLength(7)]),
-    message: new FormControl('', [Validators.minLength(40)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+    email: new FormControl('', [Validators.required,Validators.email,Validators.minLength(3), Validators.maxLength(30)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8),Validators.pattern('^[0-9]+$'), Validators.maxLength(14)]),
+    message: new FormControl('', [Validators.minLength(20),Validators.maxLength(450)]),
     file: new FormControl(''),
     fileSource: new FormControl('', [Validators.required])
   });
@@ -65,6 +64,8 @@ export class SFApplyFormComponent {
     this.isFileUpload = false;
   }
   submit(form: any, formDirective: FormGroupDirective) {
+    if (!form.valid) return null
+
     const formData = new FormData();
 
     formData.append('file', this.myForm.get('fileSource').value);

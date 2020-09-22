@@ -1,8 +1,8 @@
 @import "./../../app.component.scss";
 
-.contact_content {
+.request_content {
     padding-top: 100px;
-
+  
     h3.contact_title {
         color: $darkGrey;
         font-weight: 400;
@@ -26,20 +26,21 @@
         }
     }
 
-    .wrapper {
-        padding-bottom: 50px;
-        padding-right: 40px;
-        padding-top: 40px;
-    }
-
     .abform_area {
-    padding-bottom: 80px;
+        padding-bottom: 80px;
 
         .abinput_group {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             width: 49.1%;
             height: 50px;
             float: left;
+            text-align: left;
+
+            .errorMessage {
+            color: $red;
+            font-size: 12px;
+            }
+
             @include respond-to("extra-small") {
                 width: 100%;
             }
@@ -50,7 +51,7 @@
                 }
             }
 
-            &.msg {
+            &.message {
                 width: 100%;
                 clear: both;
                 height: 150px;
@@ -60,11 +61,12 @@
             input {
                 padding: 10px 22px;
                 width: 100%;
-                background: none;
+                // background: none;
                 color: $darkGrey;
-                border: none !important;
-                padding-left: 0;
+                // border: none !important;
+                // padding-left: 0;
                 font-family: $primary-font-family;
+                // background: $lightgreyBg;
             }
 
             .textarea {
@@ -75,19 +77,25 @@
                 padding-right: 90px;
             }
 
-            ::ng-deep .mat-form-field-label {
-                font-size: 14px;
+            label {
+                font-size: 16px;
                 color: $lightGrey;
                 font-family: $primary-font-family;
-                top: 1.84375em;
+                // top: 1.84375em;
+                transition: all 1s ease-out;
                 line-height: 16px;
+            }
+            .activeInput {
+                // background-color: red;
+                // font-size: 12px;
+                transform: scale(0.8);
             }
         }
 
         .filesList {
             ul {
                 display: flex;
-                button{
+                button {
                     border: none;
                     background: none;
                     height: 20px;
@@ -97,7 +105,6 @@
                     height: 20px;
                 }
             }
-           
         }
 
         .btnSubmit {
@@ -119,125 +126,119 @@
                 color: $btnSecondColor;
             }
         }
+        .notActive {
+            color: $primary-color;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
     }
-}
 
-.contact_address {
-    align-items: flex-start;
-    box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
-    padding: 45px 35px;
+    .contact_address {
+        align-items: flex-start;
+        box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+        padding: 45px 35px;
 
-    h4 {
-        color: $darkGrey;
-        margin-bottom: 50px;
-        font-size: 25px;
+        h4 {
+            color: $darkGrey;
+            margin-bottom: 50px;
+            font-size: 25px;
 
-        &::before {
-            background: $borderColor;
-            top: -11px;
-            content: "";
-            height: 1px;
-            left: 3px;
-            position: absolute;
-            width: 50px;
+            &::before {
+                background: $borderColor;
+                top: -11px;
+                content: "";
+                height: 1px;
+                left: 3px;
+                position: absolute;
+                width: 50px;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 25px;
+            margin-bottom: 25px;
+            padding-left: 35px;
+            color: $primary-color;
+            font-family: $primary-font-family;
+
+            i {
+                font-size: 20px;
+                left: 0;
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        .web > a {
+            color: $primary-color;
+
+            &:hover {
+                color: $btnFirstColor;
+            }
         }
     }
 
-    p {
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        & + label {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: $primary-color;
+            border: $border;
+            padding: 10px;
+            display: inline-block;
+            width: 100%;
+
+            i {
+                font-size: 34px;
+                color: $btnFirstColor;
+                margin-right: 15px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .inputfile + label {
+        font-weight: 500;
         font-size: 15px;
-        line-height: 25px;
-        margin-bottom: 25px;
-        padding-left: 35px;
-        color: $primary-color;
-        font-family: $primary-font-family;
-
-        i {
-            font-size: 20px;
-            left: 0;
-            position: absolute;
-            top: 0;
-        }
-    }
-
-    .web > a {
-        color: $primary-color;
+        justify-content: center;
+        display: flex;
+        padding: 0 10px;
+        height: 60px;
+        line-height: 60px;
 
         &:hover {
-            color: $btnFirstColor;
-        }
-    }
-}
-
-::ng-deep .mat-form-field-infix {
-    border: none;
-}
-
-.contact_content ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
-    background: $lightgreyBg;
-}
-
-.inputfile {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-    & + label {
-        font-size: 1.25em;
-        font-weight: 700;
-        color: $primary-color;
-        border: $border;
-        padding: 10px;
-        display: inline-block;
-        width: 100%;
-
-        i {
-            font-size: 34px;
-            color: $btnFirstColor;
-            margin-right: 15px;
-            display: inline-block;
+            border-color: $btnFirstColor;
+            cursor: pointer;
         }
     }
 
-    &:focus + label,
-    & + label:hover {
-    }
-}
+    .filesList {
+        margin-top: 20px;
+        text-align: left;
+        margin-bottom: 40px;
 
-.inputfile + label {
-    font-weight: 500;
-    font-size: 15px;
-    justify-content: center;
-    display: flex;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-
-    &:hover {
-        border-color: $btnFirstColor;
-        cursor: pointer;
-    }
-}
-
-
-.filesList {
-    margin-top: 20px;
-    text-align: left;
-    margin-bottom: 40px;
-
-    li {
-        display: flex;
-        width: 80%;
-        margin: 0 auto;
-        position: relative;
-        justify-content: space-between;
-        border-bottom: $border;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        color: inherit;
+        li {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            justify-content: space-between;
+            border-bottom: $border;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            color: inherit;
+        }
     }
 }

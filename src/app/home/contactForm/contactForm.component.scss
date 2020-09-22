@@ -35,6 +35,11 @@
             width: 49.1%;
             height: 50px;
             float: left;
+            text-align: left;
+            .errorMessage {
+                color: $red;
+                font-size: 12px;
+                }
             &:nth-child(even) {
                 margin-left: 1.8%;
                 @include respond-to("small") {
@@ -54,10 +59,12 @@
                 width: 100%;
                 background: none;
                 color: $darkGrey;
-                border: none !important;
+                // border: none !important;
+                // border-bottom: 1px solid grey ;
                 padding-left: 0;
                 font-family: $primary-font-family;
-                white-space: normal;
+                // background: $lightgreyBg;
+
             }
 
             .textarea {
@@ -68,12 +75,16 @@
                 padding-right: 90px;
             }
 
-            ::ng-deep .mat-form-field-label {
+            label {
                 font-size: 14px;
                 color: $lightGrey;
                 font-family: $primary-font-family;
-                top: 1.84375em;
+                // top: 1.84375em;
                 line-height: 16px;
+                transition: all 1s ease-out;
+            }
+            .activeInput {
+                transform: scale(0.8);
             }
             @include respond-to("extra-small") {
                 width: 100%;
@@ -90,7 +101,7 @@
 
             border: none;
             background: transparent;
-            bottom: -80px;
+            bottom: -120px;
             color: $btnFirstColor;
             font-size: 80px;
             height: auto;
@@ -99,6 +110,12 @@
 
             &:hover {
                 color: $btnSecondColor;
+            }
+        }
+        .notActive {
+            color: $primary-color;
+            &:hover {
+                color: $primary-color;
             }
         }
     }
@@ -158,12 +175,4 @@
             color: $btnFirstColor;
         }
     }
-}
-
-::ng-deep .mat-form-field-infix {
-    border: none;
-}
-
-.contact_content ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
-    background: $lightgreyBg;
 }

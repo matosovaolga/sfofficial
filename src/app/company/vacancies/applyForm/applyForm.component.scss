@@ -9,7 +9,55 @@
     .abinput_group {
         width: 100%;
     }
+    input {
+        padding: 10px 22px;
+        width: 100%;
+        // background: none;
+        color: $darkGrey;
+        // border: none !important;
+        // padding-left: 0;
+        font-family: $primary-font-family;
+        // background: $lightgreyBg;
+    }
+    label {
+        font-size: 16px;
+        color: $lightGrey;
+        font-family: $primary-font-family;
+        top: 1.84375em;
+        transition: all 1s ease-out;
+        line-height: 16px;
+    }
+    .activeInput {
+        // background-color: red;
+        // font-size: 12px;
+        transform: scale(0.8);
+    }
 }
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    & + label {
+        font-size: 1.25em;
+        font-weight: 700;
+        color: $primary-color;
+        border: $border;
+        padding: 10px;
+        display: inline-block;
+        width: 100%;
+
+        i {
+            font-size: 34px;
+            color: $btnFirstColor;
+            margin-right: 15px;
+            display: inline-block;
+        }
+    }
+}
+
 .inputfile + label {
     font-weight: 500;
     font-size: 15px;
@@ -25,21 +73,23 @@
     }
 }
 
-.mat-form-field-label-wrapper {
-    top: -0.24375em;
-}
+
 
 .form-control:focus {
     background: none;
 }
-
+ 
 textarea {
+    @extend input;
     resize: none;
     height: 120px;
 }
 .filesList {
     ul {
         display: flex;
+        li {
+            text-overflow: ellipsis
+        }
         button {
             border: none;
             background: none;
@@ -66,5 +116,14 @@ textarea {
 
     @include respond-to("small") {
         right: 5px;
+    }
+}
+.notActive {
+    @extend .btnSubmit;
+    color: $primary-color;
+    
+
+    &:hover {
+        color: $primary-color;
     }
 }

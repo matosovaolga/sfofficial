@@ -17,7 +17,6 @@ export class SFVacanciesComponent {
   constructor(
     private router: Router,
     private vacanciesService: VacanciesService,
-
   ) {
     this.vacanciesService.getVacancies().subscribe((resp) => {
 

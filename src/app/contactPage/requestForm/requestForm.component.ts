@@ -1,6 +1,6 @@
 
 import { ConnectionService } from '../../home/contactForm/connection.service';
-import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective, FormControlName } from '@angular/forms';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -18,16 +18,28 @@ export class SFRequestComponent {
   totalFileSize: number = 0;
   fileSizedOverloaded: boolean = false;
 
+  activeInput: string = '';
+
+
+  forms = [
+    { id: "name", label: "FullName", requiredError: "Name is required", minlengthError: "Name should be 3 character.", isTouched: "f.name.touched", isInvalid: "f.name.invalid", isErrorRequired: "f.name.errors.required", isErrorMinlength: "f.name.errors.minlength" },
+    { id: "email", label: "Email", requiredError: "Email is required.", minlengthError: "Email should be 3 character.", isTouched: "f.email.touched", isInvalid: "f.email.invalid", isErrorRequired: "f.email.errors.required", isErrorMinlength: "f.email.errors.minlength" },
+    { id: "phone", label: "Phone", requiredError: "Phone is required.", minlengthError: "Phone should be.", isTouched: "f.phone.touched", isInvalid: "f.phone.invalid", isErrorRequired: "f.phone.errors.required", isErrorMinlength: "f.phone.errors.minlength" },
+    { id: "company", label: "Company", requiredError: "Company is required.", minlengthError: "Company should be ", isTouched: "f.company.touched", isInvalid: "f.company.invalid", isErrorRequired: "f.company.errors.required", isErrorMinlength: "f.company.errors.minlength" },
+    { id: "message", label: "Project requirements", requiredError: "Message is required.", minlengthError: "not less then 40 letters", isTouched: "f.message.touched", isInvalid: "f.message.invalid", isErrorRequired: "f.message.errors.required", isErrorMinlength: "f.message.errors.minlength" }
+  ]
+
   myForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    company: new FormControl('', [Validators.minLength(7)]),
-    message: new FormControl('', [Validators.minLength(40)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+    email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(30)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(14)]),
+    company: new FormControl('', [Validators.minLength(4), Validators.maxLength(30)]),
+    message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
     file: new FormControl(''),
   });
 
   constructor(private connectionService: ConnectionService, private http: HttpClient) {
+
 
   }
   get f() {
@@ -54,7 +66,9 @@ export class SFRequestComponent {
     const formData = new FormData();
     this.totalFileSize = this.fileSizes.reduce((a, b) => a + b, 0)
 
-    if (this.totalFileSize > 1000000) {
+    // console.log('formDirective', formDirective)
+    if (!form.valid) return null
+    if (this.totalFileSize > 5000000) {
       console.log('files more than 5mg')
       this.fileSizedOverloaded = true;
       setTimeout(() => {
@@ -66,7 +80,6 @@ export class SFRequestComponent {
     for (var i = 0; i < this.myFiles.length; i++) {
       formData.append(`file ${i}`, this.myFiles[i]);
     }
-console.log(formDirective)
     formData.append('name', this.myForm.get('name').value);
     formData.append('email', this.myForm.get('email').value);
     formData.append('phone', this.myForm.get('phone').value);

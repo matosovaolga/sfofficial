@@ -2,6 +2,8 @@ import { Component, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { VacanciesService } from '../vacancies.service';
 import { Vacancy } from '../vacancy.model';
+
+
 @Component({
   selector: 'sf-vacancy',
   templateUrl: './vacancy.component.html',
