@@ -20,6 +20,7 @@ interface File {
 export class SFApplyFormComponent {
   isFileUpload: boolean = false;
   fileSizeError: boolean = false;
+  needToploadFile: boolean = false;
 
   errorText: string = '';
   isError: boolean = false;
@@ -28,9 +29,9 @@ export class SFApplyFormComponent {
   file: File = null;
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-    email: new FormControl('', [Validators.required,Validators.email,Validators.minLength(3), Validators.maxLength(30)]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(8),Validators.pattern('^[0-9]+$'), Validators.maxLength(14)]),
-    message: new FormControl('', [Validators.minLength(20),Validators.maxLength(450)]),
+    email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(30)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(14)]),
+    message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
     file: new FormControl(''),
     fileSource: new FormControl('', [Validators.required])
   });
@@ -68,6 +69,15 @@ export class SFApplyFormComponent {
     this.isFileUpload = false;
   }
   submit(form: any, formDirective: FormGroupDirective) {
+    if (!this.file) {
+      this.needToploadFile = true
+      setTimeout(() => {
+        this.needToploadFile = false;
+        return null
+      }, 5000);
+    }
+
+
     if (!form.valid) return null
 
     const formData = new FormData();
@@ -81,12 +91,12 @@ export class SFApplyFormComponent {
     this.http.post(this.connectionService.url, formData)
       .subscribe(
         (res: response) => {
-          if(res.success) {
+          if (res.success) {
             this.sendSuccess = true;
             setTimeout(() => {
               this.sendSuccess = false;
             }, 5000);
-  
+
             formDirective.resetForm();
             this.deleteFile()
           } else {
@@ -95,25 +105,25 @@ export class SFApplyFormComponent {
                 this.errorText = '';
                 this.isError = false;
               }, 5000);
-    
+
               this.isError = true;
               this.errorText = res.error;
             }, 5000);
           }
 
-      }, (error: any) => {
-        console.log(error)
-        setTimeout(() => {
+        }, (error: any) => {
+          console.log(error)
           setTimeout(() => {
-            this.errorText = '';
-            this.isError = false;
+            setTimeout(() => {
+              this.errorText = '';
+              this.isError = false;
+            }, 5000);
+
+            this.isError = true;
+            this.errorText = error.statusText;
           }, 5000);
 
-          this.isError = true;
-          this.errorText = error.statusText;
-        }, 5000);
-
-      })
+        })
   }
 
 }

@@ -59,7 +59,7 @@ class Validator
 
 
         if (empty($files)){
-            $errors['error']['file'] = 'Files not upload!';
+            // $errors['error']['file'] = 'Files not upload!';
         } else {
             $size = 0;
             foreach ($files as $file){

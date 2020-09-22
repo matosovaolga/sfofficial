@@ -18,21 +18,25 @@
             <input matInput required formControlName="email" id="email" type="text" class="form-control">
             <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.required">Email is
                 required.</mat-error>
-                <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.email">Email is not correct.</mat-error>
-            <mat-error *ngIf="f.email.touched && f.email.invalid && f.email.errors.minlength">Email should not be less than 3 character.</mat-error>
+            <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.email">Email is not correct.
+            </mat-error>
+            <mat-error *ngIf="f.email.touched && f.email.invalid && f.email.errors.minlength">Email should not be less
+                than 3 character.</mat-error>
         </mat-form-field>
 
-       
+
 
         <mat-form-field class="form-group abinput_group phone">
             <mat-label for="phone">Phone</mat-label>
             <!-- <span matPrefix>+ &nbsp;</span> -->
-            <input   matInput required formControlName="phone" id="phone" type="tel" class="form-control">
+            <input matInput required formControlName="phone" id="phone" type="tel" class="form-control">
             <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.required">Phone is
                 required.
             </mat-error>
-            <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.minlength">Phone should be not less than 8 numbers </mat-error>
-            <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.maxlength">Phone should be not more than 14 numbers </mat-error>
+            <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.minlength">Phone should be not less
+                than 8 numbers </mat-error>
+            <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.maxlength">Phone should be not more
+                than 14 numbers </mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-group abinput_group msg">
@@ -49,13 +53,16 @@
         </mat-form-field>
 
         <div>
-            <input formControlName="file" id="file" type="file" class="inputfile form-control"
+            <input  formControlName="file" id="file" type="file" class="inputfile form-control"
                 (change)="onFileChange($event)">
             <label for="file" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
                 class="my-drop-zone">
                 <i class="ion-ios-upload-outline"></i>Upload file (5mb)</label>
             <div *ngIf="fileSizeError" class="alert alert-danger">
                 <P>Size is too large, no more than 5mb</P>
+            </div>
+            <div *ngIf="needToploadFile" class="alert alert-danger">
+                <P>You nedd to upload file</P>
             </div>
         </div>
         <div *ngIf="isFileUpload" class="filesList">
@@ -88,8 +95,8 @@
         </div>
 
 
-        <button type="submit" color="info" outline="true" rounded="true" block="true"
-            class="btnSubmit" [ngClass]="{'notActive':  myForm.status === 'INVALID'}" >
+        <button type="submit" color="info" outline="true" rounded="true" block="true" class="btnSubmit"
+            [ngClass]="{'notActive':  myForm.status === 'INVALID'}">
             <i class="ion-ios-navigate"></i>
         </button>
 

@@ -67,11 +67,10 @@ export class SFRequestComponent {
   }
 
   submit(form: any, formDirective: FormGroupDirective) {
+    if (!form.valid) return null
+
     const formData = new FormData();
     this.totalFileSize = this.fileSizes.reduce((a, b) => a + b, 0)
-
-    // console.log('formDirective', formDirective)
-    if (!form.valid) return null
     if (this.totalFileSize > 5000000) {
       console.log('files more than 5mg')
       this.fileSizedOverloaded = true;
@@ -93,14 +92,15 @@ export class SFRequestComponent {
     this.http.post(this.connectionService.url, formData)
       .subscribe(
         (res: response) => {
+          console.log(res)
           if(res.success) {
             this.sendSuccess = true;
             setTimeout(() => {
               this.sendSuccess = false;
             }, 5000);
   
-            // formDirective.resetForm();
-            // this.myFiles = []
+            formDirective.resetForm();
+            this.myFiles = []
           } else {
             setTimeout(() => {
               setTimeout(() => {

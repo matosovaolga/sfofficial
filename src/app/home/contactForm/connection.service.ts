@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class ConnectionService {
     activeInput: string = '';
 
-    url: string = '/mail/mail.php';
-    // url: string = 'http://localhost/sfofficial/mail/mail.php';
+    // url: string = '/mail/mail.php';
+    url: string = 'http://localhost/sfofficial/mail/mail.php';
     
 
 }

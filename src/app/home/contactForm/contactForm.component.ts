@@ -1,6 +1,6 @@
 
 import { ConnectionService } from './connection.service';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators,FormGroupDirective } from '@angular/forms';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 interface response {
@@ -25,6 +25,12 @@ export class SFContactComponent {
     subject: new FormControl('', [Validators.minLength(7), Validators.maxLength(30)]),
     message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
 
+    // name: new FormControl(''),
+    // email: new FormControl(''),
+    // phone: new FormControl(''),
+    // subject: new FormControl(''),
+    // message: new FormControl(''),
+
   });
 
   constructor(private connectionService: ConnectionService, private http: HttpClient) {
@@ -36,7 +42,7 @@ export class SFContactComponent {
 
 
 
-  submit(form) {
+  submit(form:any, formDirective: FormGroupDirective) {
     if (!form.valid) return null
     const formData = new FormData();
 
@@ -49,15 +55,19 @@ export class SFContactComponent {
     this.http.post(this.connectionService.url, formData)
       .subscribe(
         (res: response) => {
+console.log(res)
           if(res.success) {
+            console.log('trueweq')
             this.sendSuccess = true;
             setTimeout(() => {
               this.sendSuccess = false;
             }, 5000);
   
-            // formDirective.resetForm();
-            // this.myFiles = []
-          } else {
+            formDirective.resetForm();
+
+          } 
+          if(res.error) {
+            console.log(res.error)
             setTimeout(() => {
               setTimeout(() => {
                 this.errorText = '';

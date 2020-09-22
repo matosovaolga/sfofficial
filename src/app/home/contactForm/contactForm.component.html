@@ -10,7 +10,8 @@
             <h3 class="contact_title  ">Drop us a Line</h3>
             <div class="">
 
-                <form class="text-center abform_area" [formGroup]="myForm" (ngSubmit)="submit(myForm)">
+                <form class="text-center abform_area" #formDirective="ngForm" [formGroup]="myForm"
+                (ngSubmit)="submit(myForm,formDirective)">
 
 
 
@@ -71,7 +72,7 @@
                         <i class="ion-ios-navigate"></i>
                     </button>
                 </form>
-                <div class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent successfully
+                <div class="successPopover" [ngClass]="{messageActive: sendSuccess}">Mesasge was sent successfully
                 </div>
                 <div class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
             </div>

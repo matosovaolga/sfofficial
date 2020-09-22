@@ -133,7 +133,7 @@ try {
 
                 $mail->send();
 
-                echo json_encode(['success' => "Message has be sent"]);exit;
+                echo json_encode(['success' => true]);exit;
             }
             echo json_encode($data);exit;
         }
