@@ -2,7 +2,10 @@
 
 .contact_content {
     background: $lightColor;
+.form-home {
+    padding-bottom: 80px;
 
+}
     h3.contact_title {
         color: $darkGrey;
         font-weight: 400;
@@ -101,10 +104,10 @@
 
             border: none;
             background: transparent;
-            bottom: -120px;
+            bottom: 0;
             color: $btnFirstColor;
             font-size: 80px;
-            height: auto;
+            height: 80px;
             position: absolute;
             right: 50px;
 

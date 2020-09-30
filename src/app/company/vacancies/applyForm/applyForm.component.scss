@@ -91,6 +91,10 @@
                 display: flex;
                 justify-content: space-between;
             }
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             button {
                 border: none;
                 background: none;
@@ -109,10 +113,10 @@
         border: none;
         margin: 0;
         background: transparent;
-        bottom: -15px;
+        bottom: 0;
         color: $btnFirstColor;
         font-size: 80px;
-        // height: auto;
+        height: 80px;
         position: absolute;
         right: 20px;
         @include respond-to("small") {
@@ -128,7 +132,7 @@
         border: none;
         margin: 0;
         background: transparent;
-        bottom: -15px;
+        bottom: 0;
 
         font-size: 80px;
         // height: auto;

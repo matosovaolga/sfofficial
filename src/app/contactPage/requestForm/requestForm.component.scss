@@ -2,7 +2,7 @@
 
 .request_content {
     padding-top: 100px;
-  
+
     h3.contact_title {
         color: $darkGrey;
         font-weight: 400;
@@ -37,8 +37,8 @@
             text-align: left;
 
             .errorMessage {
-            color: $red;
-            font-size: 12px;
+                color: $red;
+                font-size: 12px;
             }
 
             @include respond-to("extra-small") {
@@ -132,7 +132,6 @@
                 color: $primary-color;
             }
         }
-
     }
 
     .contact_address {
@@ -228,10 +227,11 @@
         margin-top: 20px;
         text-align: left;
         margin-bottom: 40px;
+        width: 100%;
 
         li {
             display: flex;
-            width: 80%;
+            width: 100%;
             margin: 0 auto;
             position: relative;
             justify-content: space-between;
@@ -239,6 +239,12 @@
             padding-bottom: 5px;
             padding-top: 5px;
             color: inherit;
+            overflow: hidden;
+
+            p {
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
         }
     }
 }
