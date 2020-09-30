@@ -1,8 +1,11 @@
 @import "./../../app.component.scss";
-
+ 
 .request_content {
     padding-top: 100px;
-
+.pad10 {
+    padding: 10px 0;
+    height: 10px;
+}
     h3.contact_title {
         color: $darkGrey;
         font-weight: 400;
@@ -55,7 +58,7 @@
                 width: 100%;
                 clear: both;
                 height: 150px;
-                margin-bottom: 40px;
+                margin-bottom: 50px;
             }
 
             input {
@@ -84,6 +87,7 @@
                 // top: 1.84375em;
                 transition: all 1s ease-out;
                 line-height: 16px;
+
             }
             .activeInput {
                 // background-color: red;
@@ -183,7 +187,7 @@
         }
     }
 
-    .inputfile {
+    .inputfile {;
         width: 0.1px;
         height: 0.1px;
         opacity: 0;
