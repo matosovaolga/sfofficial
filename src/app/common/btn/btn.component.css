@@ -1,0 +1,101 @@
+:host {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  height: 54px;
+  line-height: 53px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+@media (max-width: 992px) {
+  :host {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 767px) {
+  :host {
+    max-width: 100%;
+  }
+}
+
+:host:hover {
+  color: #333;
+}
+
+:host:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+:host:before {
+  background: linear-gradient(45deg, #1edfc4 0%, #2785e6 100%);
+  background-size: 200% 200%;
+  -webkit-animation: AnimationName 4s ease infinite;
+  animation: AnimationName 4s ease infinite;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+:host:after {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  border-radius: 5px;
+  content: "";
+  height: 50px;
+  left: 50%;
+  margin-top: 0;
+  position: absolute;
+  top: 50%;
+  width: calc(100% - 4px);
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  :host:after {
+    content: none;
+  }
+}
+
+:host a {
+  z-index: 1;
+  position: relative;
+}
+/*# sourceMappingURL=btn.component.css.map */
