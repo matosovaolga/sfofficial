@@ -176,12 +176,10 @@
             font-size: larger;
             padding: 0 0 30px;
         }
-        button {
+        a {
             text-align: center;
             border-radius: 20px;
             text-transform: uppercase;
-            margin: 0 auto;
-            border: none;
             background-color: $lightColor;
             border: 1px solid $darkBlue;
             color: $darkBlue;
@@ -193,12 +191,12 @@
             margin: 10px 0 10px 0;
         }
 
-        button:active {
+        a:active {
             transform: translateY(1px);
             filter: saturate(150%);
         }
 
-        button:hover {
+        a:hover {
             background: $darkBlue;
             color: $lightColor;
             border: 1px solid $darkBlue;

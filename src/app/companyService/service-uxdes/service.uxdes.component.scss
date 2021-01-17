@@ -136,6 +136,8 @@
             justify-content: center;
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.2s ease;
             h3 {
                 color: #333;
                 font-size: 22px;
@@ -152,6 +154,11 @@
                     border-bottom: 2px solid $btnFirstColor;
                 }
             }
+        }
+    }
+    .mat-tab-body-active {
+        .mat-tab-body-content {
+            opacity: 1;
         }
     }
     .mat-ink-bar {

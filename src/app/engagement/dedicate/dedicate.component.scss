@@ -5,24 +5,18 @@
     }
 
     ul {
+        margin-top: 15px;
         li {
-            float: left;
-            width: 25%;
-            padding-left: 12px;
-            padding-right: 4px;
-            margin: 15px 0 0;
-            position: relative;
-
-            &::before {
-                content: "";
-                width: 5px;
-                height: 5px;
-                background-color: $darkBlue;
-                display: inline-block;
-                position: absolute;
-                top: 10px;
-                left: 0;
-                border-radius: 50%;
+            margin-left: 0;
+            padding-left: 0;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Open Sans';
+            font-size: 15px;
+            margin-bottom: 10px;
+        
+            i {
+                color: $btnThirdColor;
+                margin-right: 10px;
             }
         }
     }
@@ -79,12 +73,14 @@
 
 .variaty {
     .models {
-        border-bottom-width: 3px;
-        border-bottom-color: $btnSecondColor;
-        border-bottom-style: solid;
+       
         overflow: hidden;
-        padding: 20px 15px;
+        margin: 0;
+        padding: 20px 10px;
         transition: all 0.4s ease-out;
+        position: relative;
+        height: 100%;
+
         p,
         h3 {
             position: relative;
@@ -96,7 +92,6 @@
             text-align: center;
             font-weight: 600;
             font-family: $third-font-family;
-            width: 60%;
             margin: 0 auto 20px;
         }
         .curve {
@@ -159,4 +154,11 @@
             }
         }
     }
+}
+
+.dedicatedTeam {
+    margin: 0 20px;
+    border-bottom-width: 3px;
+    border-bottom-color: $btnSecondColor;
+    border-bottom-style: solid;
 }

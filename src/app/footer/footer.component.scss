@@ -67,13 +67,29 @@
             margin-left: 15px;
             display: inline-block;
 
+            &.upworkLink {
+                margin-left: 5px;
+            }
+            &.clutchLink {
+                margin-left: -5px;
+            }
+
             a {
                 color: $primary-color;
-                font-size: 18px;
+                font-size: 24px;
 
                 &:hover {
                     color: $btnThirdColor;
+
+                    svg {
+                        fill: $btnThirdColor;
+                    }
                 }
+            }
+
+            svg {
+                fill: $primary-color;
+                height: 45px;
             }
         }
 

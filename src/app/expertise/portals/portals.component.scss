@@ -153,6 +153,29 @@
         @include respond-to("small") {
             background: none;
         }
+
+        ul {
+            
+            li {
+                font: 400 15px "Open Sans" ;
+                color: $primary-color;
+                -webkit-font-smoothing: antialiased;
+                line-height: 26px;
+             
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 5px;
+                    height: 5px;
+                    margin-right: 10px;
+                    background: $primary-color;
+                    border-radius: 50%;
+                }
+            
+            }
+        }
+
         .box {
             text-align: center;
             padding: 0 30px;
@@ -189,10 +212,9 @@
     .features {
         margin-bottom: 70px;
         @include respond-to("small") {
-            padding: 0px 30px;
+            padding: 0 30px;
         }
         .feature {
-            border-radius: 15px;
             margin: 20px 20px;
             padding: 30px;
             overflow: hidden;
@@ -254,7 +276,6 @@
                 left: 100%;
                 width: 100%;
                 height: 100%;
-                border-radius: 15px;
                 transition: all 0.5s ease-out;
                 display: flex;
                 align-self: center;
@@ -358,7 +379,6 @@
             border-radius: 20px;
             text-transform: uppercase;
             margin: 0 auto;
-            border: none;
             background-color: $btnSecondColor;
             border: 1px solid $btnSecondColor;
 

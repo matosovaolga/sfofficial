@@ -2,8 +2,7 @@
 
 .businessAutomation {
     padding: 0;
-    margin-bottom: 100px;
-    // margin-top: 150px;
+
     .heading {
         text-align: center;
         padding: 80px 40px 20px 40px;
@@ -88,9 +87,8 @@
             display: block;
             background: #fff;
             overflow: hidden;
-            border-radius: 15px;
             padding: 63px 30px 56px 30px;
-            box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
             text-align: center;
             margin: 20px 20px 70px;
 
@@ -170,12 +168,11 @@
             transform: scale(0.8);
             position: absolute;
             content: "";
-            left: 0px;
-            top: 0px;
+            left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
             opacity: 0;
-            border-radius: 15px;
             -webkit-transform-origin: center;
             -ms-transform-origin: center;
             transform-origin: center;
@@ -185,7 +182,6 @@
     }
 
     .users {
-        margin-bottom: 50px;
         padding: 50px 30px;
         text-align: center;
         background-color: rgba(191, 221, 255, 0.719);
@@ -225,7 +221,7 @@
             }
             .musicNote {
                 position: absolute;
-                top: 0px;
+                top: 0;
                 right: 45%;
                 width: 100px;
                 z-index: 9;
@@ -297,7 +293,7 @@
         }
         @include respond-to("extra-small") {
             padding: 10px 30px;
-            margin-bottom: 0px;
+            margin-bottom: 0;
 
             .right {
                 h2,
@@ -315,70 +311,5 @@
         }
     }
 
-    .equalize {
-        margin: 0;
-        cursor: default;
-        @include respond-to("small") {
-            padding: 0 20px;
-        }
-        > div {
-            padding: 0;
-            margin: 20px 0;
-
-            .box {
-                position: relative;
-                margin: 20px;
-                text-align: center;
-                transition: all 1s ease-out;
-            }
-
-            .icon {
-                position: absolute;
-                top: 10px;
-                left: 0;
-                right: 0;
-                text-align: center;
-                margin: 20px auto;
-                width: 110px;
-                height: 110px;
-                transition: all 1s ease-out;
-                padding: 30px;
-                background-color: #f4f4f4b0;
-                border-radius: 50%;
-
-                svg {
-                    fill: $darkBlue;
-                    width: 50px;
-                    height: 50px;
-                    transition: all 0.5s ease-out;
-                }
-            }
-            h4 {
-                padding: 180px 10px 10px;
-                font-weight: 600;
-            }
-            @include respond-to("small") {
-                .box {
-                    margin: 20px 0;
-                }
-                .icon {
-                    margin: 0px auto;
-                }
-                h4 {
-                    padding: 140px 10px 10px;
-                }
-            }
-        }
-        .box:hover {
-            -webkit-box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
-            -moz-box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
-            box-shadow: 0px 0px 30px -10px rgba(0, 198, 255, 0.8);
-            .icon {
-                background-color: $darkBlue;
-                svg {
-                    fill: white;
-                }
-            }
-        }
-    }
+    
 }

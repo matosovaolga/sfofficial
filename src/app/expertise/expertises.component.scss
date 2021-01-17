@@ -81,7 +81,7 @@
     margin-bottom: 20px;
     padding: 20px 10px;
     position: relative;
-    min-height: 290px;
+    min-height: 250px;
     cursor: pointer;
 
     &Title {
@@ -112,7 +112,7 @@
         left: 0;
         width: 100%;
         background-repeat: no-repeat;
-        background-size: auto  100%;
+        background-size: 100%  100%;
 
         &::after {
             @extend .imageOverlay;

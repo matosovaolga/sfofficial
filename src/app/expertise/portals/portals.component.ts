@@ -16,10 +16,10 @@ export class SFEnterprisePortalsComponent {
     this.hoverdId = null;
   }
   integrations = [
-    { id: 1, title: "Integration Capability", text: "We are able to connect a portal solution to multiple data sources and applications, including implementation of Enterprise Service Bus (ESB) and integration with third-party web services, data feeds, payment systems and social collaboration tools." },
-    { id: 2, title: "Scalability and Performance", text: "Technology never stops evolving, so don’t let your portal to. Raasoft designs incredibly flexible portal architectures with an eye for growth, fault tolerance, and comfortable accommodation of increasing loads and user numbers." },
-    { id: 3, title: "Integration Capability", text: "We are able to connect a portal solution to multiple data sources and applications, including implementation of Enterprise Service Bus (ESB) and integration with third-party web services, data feeds, payment systems and social collaboration tools." },
-    { id: 4, title: "Integration Capability", text: "We are able to connect a portal solution to multiple data sources and applications, including implementation of Enterprise Service Bus (ESB) and integration with third-party web services, data feeds, payment systems and social collaboration tools." }
+    { id: 1, title: "Integration Capability", text: "We have capabilities to connect a portal solution to multiple data sources and applications, including implementation of Enterprise Service Bus (ESB) and integration with third-party web services, data feeds, payment systems and social collaboration tools." },
+    { id: 2, title: "Scalability and Performance", text: "We build portals with flexible software architecture having in view growth in terms of both technology and user numbers." },
+    { id: 3, title: "Cost efficiency", text: "Employee productivity, improved sales generation, better cooperation, fast and secured information sharing of well built portals lead to quick ROI." },
+    { id: 4, title: "Cross-Platform Connectivity", text: "In today’s rather hypersonic digital environment, consumers and employees prefer dealing with businesses with a multiple touchpoint strategy. Keeping in mind the changing demands of your potential users, we design portals and applications that provide extensive cross platform connectivity and multiple touch points." }
   ]
 
   moveTo(): void {

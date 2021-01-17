@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SFServiceCmsComponent {
     title: string = 'CMS Solutions';
-    textBanner: string = '------- Some text here -------';
+    textBanner: string = 'Driving your content marketing and customer experience, we provide you with the CMS software that fits you best.';
 
     cmss = [
       {imgName: "cms1", title: "CMS Web Design", text: "We are an expert CMS development company that brings you the scalability and performance in your web applications. get powerful and user-friendly web application built to empower your business with relevant features and ease of customization."},

@@ -34,7 +34,7 @@ export class SFHeaderComponent implements OnInit {
 
     expertises = [
         {
-            title: "Bussines solutions", subSection: [
+            title: /*"Bussines solutions"*/"", subSection: [
                 { name: "portals", desc: "Web and Enterprise Portals" },
                 { name: "mobile-enterprise", desc: "Enterprise Mobile Apps" },
                 { name: "ecommerce", desc: "Ecommerce" },
@@ -44,15 +44,15 @@ export class SFHeaderComponent implements OnInit {
 
             ]
         },
-        {
-            title: "Development stack", subSection: [
-                { name: "mobile-platforms", desc: "Mobile" },
-                { name: "server-side", desc: "Server Side" },
-                { name: "front-end", desc: "Front-End" },
-                { name: "database", desc: "Database" },
-                { name: "cms", desc: "CMS" },
-            ]
-        },
+        // {
+        //     title: "Development stack", subSection: [
+        //         { name: "mobile-platforms", desc: "Mobile" },
+        //         { name: "server-side", desc: "Server Side" },
+        //         { name: "front-end", desc: "Front-End" },
+        //         { name: "database", desc: "Database" },
+        //         { name: "cms", desc: "CMS" },
+        //     ]
+        // },
     ]
     
     engagementModels = [

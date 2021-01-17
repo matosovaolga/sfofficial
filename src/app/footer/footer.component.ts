@@ -17,12 +17,8 @@ export class SFFooterComponent {
     { name: "ecommerce", desc: "Ecommerce" },
     { name: "social", desc: "Social Networking" },
     { name: "automation", desc: "Business Process Automation" },
-    { name: "hospital", desc: "Hospital Managment System" },
-    { name: "mobile-platforms", desc: "Mobile" },
-    { name: "server-side", desc: "Server Side" },
-    { name: "front-end", desc: "Front-End" },
-    { name: "database", desc: "Database" },
-    { name: "cms", desc: "CMS" },
+    { name: "hospital", desc: "Hospital Managment System" }
+
   ]
 
 
