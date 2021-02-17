@@ -36,7 +36,7 @@ export class SFStaffaugComponent {
     },
     {
       title: 'High rate of retention and referrals',
-      text: 'Stableflow team members stick around and refer other developers, designers, and project managers because they love the work and we take care of them.'
+      text: 'Spiral Scout team members stick around and refer other developers, designers, and project managers because they love the work and we take care of them.'
     }
   ]
   checklist = [

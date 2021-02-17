@@ -10,7 +10,7 @@ export class SFServiceCmsComponent {
     textBanner: string = 'Driving your content marketing and customer experience, we provide you with the CMS software that fits you best.';
 
     cmss = [
-      {imgName: "cms1", title: "CMS Web Design", text: "We are an expert CMS development company that brings you the scalability and performance in your web applications, get powerful and user-friendly web application built to empower your business with relevant features and ease of customization."},
+      {imgName: "cms1", title: "CMS Web Design", text: "We are an expert CMS development company that brings you the scalability and performance in your web applications. get powerful and user-friendly web application built to empower your business with relevant features and ease of customization."},
       {imgName: "cms2", title: "CMS Website Development", text: "We are an expert CMS development company that brings you the scalability and performance in your web applications. get powerful and user-friendly web application built to empower your business with relevant features and ease of customization."},
       {imgName: "cms3", title: "CMS Customization", text: "Add more functionality and feature-richness. Get an easy upgrade on your current CMS websites allowing you to have a thematic design, customized features in your websites and applications. We help you from development to deployment of your website."},
       {imgName: "cms4", title: "Custom CMS Integration", text: "Get a robust and dependable CMS system integrated to your current website. Our web developers give you seamless content management system software integration to your websites allowing you always staying ahead of your industrial curve "},
