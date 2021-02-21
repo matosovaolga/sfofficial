@@ -1,0 +1,23 @@
+{
+    "id": 2,
+    "role": "PHP Developer(Junior/Middle/Senior)",
+    "description": "We are looking for talented PHP-developers to work on major internal projects as part of a big company engaged in gaming development.",
+    "skills": [
+        "Be able to work in a team (be open to other points of view and defend your position with a reasoned argument),",
+        "Good knowledge of PHP, OOP and modern approaches of software development,",
+        "Adherence to PSR, SOLID and best practices of the used tool(programming language, framework etc)",
+        "Experience with HTML, JavaScript and CSS",
+        "Have a solid experience with databases and SQL, be able to optimize queries.",
+        "Git / JIRA / Gitlab"
+    ],
+    "skillsPlus": [
+        "English knowledge level B1+,",
+        "Unix, bash",
+        "Cloud technologies"
+    ],
+    "responsible": [
+        "Write, test, maintain, and troubleshoot source code using standardized processes and development guidelines.",
+        "Provide time estimates for assigned development tasks",
+        "Profile and tune database designs for performance and scalability"
+    ]
+}

@@ -3,7 +3,7 @@
         "id": 1,
         "role": "IT Recruiter",
         "hot": true,
-        "experience": "1+ Years",
+        "experience": "0 - 4 Years",
         "description": "We are looking for a qualified specialist who will perform detailed sourcing in IT field using extensive research methodologies.",
         "seniority": "junior"
     },
@@ -11,16 +11,8 @@
         "id": 2,
         "role": "PHP Developer(Junior/Middle/Senior)",
         "hot": true,
-        "experience": "1+ Years",
+        "experience": "0 - 4 Years",
         "description": "We are looking for talented PHP-developers to work on major internal projects as part of a big company engaged in gaming development.",
-        "seniority": "middle"
-    },
-    {
-        "id": 3,
-        "role": "Project Manager",
-        "hot": true,
-        "experience": "2+",
-        "description": "In Canadian product team we're looking for a team player.",
         "seniority": "middle"
     }
 

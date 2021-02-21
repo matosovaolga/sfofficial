@@ -1,0 +1,23 @@
+{
+    "id": 1,
+    "role": "IT Recruiter",
+    "description": "Client is a leading American public refrigerated warehouse operator with 38 facilities located in 13 states. It is a full-scale warehouse management system for refrigerated warehouses that includes features for receipt and order management, real-time inventory status, yard management, RF capabilities, advanced reporting and various integrations.",
+    "skills": [
+        "Proactive pipeline development and sourcing: execute on tactical research, referrals, sourcing, digital campaigns and other talent attraction efforts to find and engage active and passive candidates, as well as diverse talent",
+        "Experience in dealing with Linux and its standard tools",
+        "Very good handling on the shell with vi",
+        "Experience with HTML, JavaScript and CSS",
+        "PHP and Bash - knowledge as well as SQL knowledge with mySQL and Postgres",
+        "Experience with domain registrations and EPP is an advantage",
+        "Knowledge of the DNS system, knowledge of mail systems; Postfix and Dovecot experience is advantageous",
+        "Willingness to learn (online as well) using documentation and tools",
+        "Ability to work work independently and reliably, a strong customer and service focus, and a high level of quality awareness",
+        "Very good knowledge of German and English"
+    ],
+    "skillsPlus": [
+        "Oracle DB",
+        "Unix, bash",
+        "Cloud technologies",
+        "Knowledge of C++"
+    ]
+}

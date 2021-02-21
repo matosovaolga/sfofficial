@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "role": "Office On-The-Go",
+        "hot": false,
+        "experience": "0 - 4 Years",
+        "description": "Client is a leading American public refrigerated warehouse operator with 38 facilities located in 13 states. It is a full-scale warehouse management system for refrigerated warehouses that includes features for receipt and order management, real-time inventory status, yard management, RF capabilities, advanced reporting and various integrations.",
+        "seniority": "junior"
+    },
+    {
+        "id": 2,
+        "role": "Datacenter Engineer",
+        "hot": true,
+        "experience": "0 - 4 Years",
+        "description": "Client is a leading American public refrigerated warehouse operator with 38 facilities located in 13 states. It is a full-scale warehouse management system for refrigerated warehouses that includes features for receipt and order management, real-time inventory status, yard management, RF capabilities, advanced reporting and various integrations.",
+        "seniority": "middle"
+    },
+    {
+        "id": 3,
+        "role": "QA",
+        "hot": false,
+        "experience": "0 - 4 Years",
+        "description": "Client is a leading American public refrigerated warehouse operator with 38 facilities located in 13 states. It is a full-scale warehouse management system for refrigerated warehouses that includes features for receipt and order management, real-time inventory status, yard management, RF capabilities, advanced reporting and various integrations.",
+        "seniority": "junior"
+    },
+    {
+        "id": 4,
+        "role": "WordPress developer",
+        "hot": true,
+        "experience": "0 - 4 Years",
+        "description": "Client is a leading American public refrigerated warehouse operator with 38 facilities located in 13 states. It is a full-scale warehouse management system for refrigerated warehouses that includes features for receipt and order management, real-time inventory status, yard management, RF capabilities, advanced reporting and various integrations.",
+        "seniority": "senior"
+    }
+]

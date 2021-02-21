@@ -1,0 +1,19 @@
+{
+    "id": 3,
+    "role": "Project Manager",
+    "description": "In Canadian product team we're looking for a team player.",
+    "skills": [
+        "3 years of relevant experience",
+        "Excellent command of English",
+        "Solid technical background with understanding or hands-on experience in software development and web technologies",
+        "Fast learner and self-study skills",
+        "Deep understanding of the agile processes and methodologies",
+        "Hands-on experience with Atlassian Stack (Jira, Confluence, Bamboo, Bitbucket)"
+    ],
+    "skillsPlus": [
+        "Oracle DB",
+        "Unix, bash",
+        "Cloud technologies",
+        "Knowledge of C++"
+    ]
+}

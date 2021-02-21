@@ -1,0 +1,23 @@
+{
+    "id": 3,
+    "role": "Project Manager",
+    "description": "In Canadian product team we're looking for a team player.",
+    "skills": [
+        "3 years of relevant experience",
+        "Excellent command of English",
+        "Solid technical background with understanding or hands-on experience in software development and web technologies",
+        "Fast learner and self-study skills",
+        "PHP and Bash - knowledge as well as SQL knowledge with mySQL and Postgres",
+        "Experience with domain registrations and EPP is an advantage",
+        "Knowledge of the DNS system, knowledge of mail systems; Postfix and Dovecot experience is advantageous",
+        "Willingness to learn (online as well) using documentation and tools",
+        "Ability to work work independently and reliably, a strong customer and service focus, and a high level of quality awareness",
+        "Very good knowledge of German and English"
+    ],
+    "skillsPlus": [
+        "Oracle DB",
+        "Unix, bash",
+        "Cloud technologies",
+        "Knowledge of C++"
+    ]
+}

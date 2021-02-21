@@ -4,20 +4,16 @@
     "description": "We are looking for talented PHP-developers to work on major internal projects as part of a big company engaged in gaming development.",
     "skills": [
         "Expert level PHP5 skills (at least 4 years of experience developing web applications using the LAMP stack)",
-        "Extensive MVC Experience (i.e. Zend Framework, Symfony, etc.)",
-        "Experience with MySQL 5+, Memcache, etc.",
-        "Ability to write and consume SOAP/REST web services",
-        "JavaScript fundamentals and jQuery proficiency",
-        "Proficient with XHTML and HTML 5",
-        "Experience with 3rd party APIs (Facebook, Twitter, Vertical Response, etc.)",
-        "Working knowledge of advanced code optimization techniques",
+        "Good knowledge of PHP, OOP and modern approaches of software development,",
+        "Adherence to PSR, SOLID and best practices of the used tool(programming language, framework etc)",
+        "Experience with HTML, JavaScript and CSS",
+        "Have a solid experience with databases and SQL, be able to optimize queries.",
         "Git / JIRA / Gitlab"
     ],
     "skillsPlus": [
         "English knowledge level B1+,",
         "Unix, bash",
-        "Cloud technologies",
-        "Degree in Computer Science, IT, software engineering, web development, programming or other relevant subjects (or equivalent work experience)"
+        "Cloud technologies"
     ],
     "responsible": [
         "Write, test, maintain, and troubleshoot source code using standardized processes and development guidelines.",
