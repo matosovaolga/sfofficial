@@ -28,7 +28,7 @@ export class SFMobileAppsComponent {
 
   mobileFeatures = [
     { id: 3, title: "Amazing User Experience", text: "The purpose of Enterprise Mobility App is to provide comfort and ease of operation such as sharing & getting data & information and getting office-on-the-go. Besides, it requires amazing user interface to be interactive." },
-    { id: 4, title: "Real-Time Connectivity and Analytics", text: "One of the best benefits of enterprise Mobility App is that it offers real-time service and complete analytics report. Connectivity turns quite easy and helps field employees to perform tasks in a better way." },
+    { id: 4, title: "Real-Time Connectivity & Analytics", text: "One of the best benefits of enterprise Mobility App is that it offers real-time service and complete analytics report. Connectivity turns quite easy and helps field employees to perform tasks in a better way." },
     { id: 5, title: "Cloud Storage", text: "Cloud Storage helps organisations to share critical information, data and files to the executive, management, and staff on-the-go. This will also help the field employees to carry out office work remotely yet safely." },
     { id: 6, title: "Secure Data Transfer", text: "In the age of the internet, online data, information is the most vulnerable commodities and losing can cost you more severely. Enterprise Mobility App offers robust security while offering the best platform to do your job." }
   ]

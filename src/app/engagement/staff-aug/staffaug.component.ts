@@ -38,9 +38,9 @@ export class SFStaffaugComponent {
       title: 'High rate of retention and referrals',
       text: 'Stableflow team members stick around and refer other developers, designers, and project managers because they love the work and we take care of them.'
     }
-  ]
+  ];
   checklist = [
     'English proficiency', 'Timezone and workday overlap', 'Expertise and experience', 'Security standards and protocols', 'Workflow processes', 'Development methodology', 'Proven track record and portfolio', 'Client control and management support'
-  ]
+  ];
  
 }

@@ -27,10 +27,10 @@ export class SFHospitalManagementComponent {
   profits = [
     { id: 1, title: "TeleHealth Support Service" },
     { id: 2, title: "Patient Monitoring Service"  },
-    { id: 3, title: "Long Term care" },
-    { id: 4, title: "Referral management" },
-    { id: 5, title: "Home care" },
-    { id: 6, title: "CRM/patient portal" }
+    { id: 3, title: "Long Term Care" },
+    { id: 4, title: "Referral Management" },
+    { id: 5, title: "Home Care" },
+    { id: 6, title: "CRM/Patient Portal" }
   ]
 
 }

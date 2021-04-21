@@ -5709,6 +5709,7 @@ img {
   font-size: 33px;
   font-weight: 600;
   padding-top: 15px;
+  text-transform: capitalize;
 }
 
 @media (max-width: 575px) {

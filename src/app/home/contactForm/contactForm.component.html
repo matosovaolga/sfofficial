@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-xl-8 col-lg-7 form-home">
-            <h3 class="contact_title  ">Drop us a Line</h3>
+            <h3 class="contact_title  ">Drop us a line</h3>
             <div class="">
 
                 <form class="text-center abform_area" #formDirective="ngForm" [formGroup]="myForm"
@@ -16,7 +16,7 @@
 
 
                     <mat-form-field class="form-group abinput_group name">
-                        <mat-label for="name">FullName</mat-label>
+                        <mat-label for="name">Full Name</mat-label>
                         <input matInput required formControlName="name" id="name" type="text" class="form-control">
                         <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.required">Name is required.
                         </mat-error>
@@ -82,20 +82,16 @@
         <div class="col-xl-4 col-lg-5">
             <div class="contact_address">
                 <h4 class="pos_relative">Contact Information</h4>
-                <p class="address pos_relative">
-                    <i class="flaticon-placeholder"></i>
-                    <span class="text-uppercase">ADDRESS:</span>
-                    28 Green Tower, <br>Street Name New York City, USA</p>
-                <p class="phone pos_relative">
-                    <i class="flaticon-phone-call"></i>
-                    <span class="text-uppercase">Phone:</span>
-                    +84 846 250 592</p>
-                <p class="email pos_relative">
-                    <i class="flaticon-mail"></i>
-                    <span class="text-uppercase">Email:</span>
-                    contact@staker.com</p>
-                <p class="web pos_relative"><i class="flaticon-internet"></i><span class="text-uppercase">WEbsite:
-                    </span> <a href="#" target="_blank">demostaker.com</a></p>
+                <p class="address pos_relative"><i class="flaticon-placeholder"></i><span
+                    class="text-uppercase">ADDRESS:</span>
+                    Kaupmehe 7-120,<br />
+                    Tallinn, Estonia<br />
+                   
+                    Nauki pr 40, Kharkiv, Ukraine</p>
+            <p class="phone pos_relative"><i class="flaticon-phone-call"></i><span
+                    class="text-uppercase">Phone:</span> +380636361121</p>
+            <p class="email pos_relative"><i class="flaticon-mail"></i>
+                <span class="text-uppercase">Email:</span> sales@stableflow.com</p>
             </div>
         </div>
         <!--/col-->
