@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
-
+import { ViewEncapsulation } from '@angular/core';
 import { VacanciesService } from './vacancies.service';
 import { Vacancy } from './vacancy.model';
 @Component({
   selector: 'sf-vacancies',
   templateUrl: './vacancies.component.html',
-  styleUrls: ['./vacancies.component.scss']
+  styleUrls: ['./vacancies.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SFVacanciesComponent {
   vacancies: [Vacancy];
-
   currentFilter: string = 'All';
 
   jobList = [];
@@ -23,9 +23,8 @@ export class SFVacanciesComponent {
       this.vacancies = resp;
 
       this.jobList = resp.reduce((arr, v) => {
-        arr.push(v.role)
-        
-        return arr
+        arr.push(v.role);
+        return arr;
       }, ['All'])
 
     });

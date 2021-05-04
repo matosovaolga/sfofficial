@@ -20,10 +20,14 @@ export class SFRequestComponent {
   isError: boolean = false;
   sendSuccess: boolean = false;
   totalFileSize: number = 0;
-  fileSizedOverloaded: boolean = false;
-
+  public hasBaseDropZoneOver:boolean = false;
+  fileSizedOverloaded: boolean = false; 
+  public fileOverBase(e:any):void {
+      console.log("hasBaseDropZoneOver", e);
+      this.hasBaseDropZoneOver = e;
+  }
   activeInput: string = '';
-
+  successPopover: boolean = false;
 
   forms = [
     { id: "name", label: "FullName", requiredError: "Name is required", minlengthError: "Name should be 3 character.", isTouched: "f.name.touched", isInvalid: "f.name.invalid", isErrorRequired: "f.name.errors.required", isErrorMinlength: "f.name.errors.minlength" },
@@ -72,7 +76,7 @@ export class SFRequestComponent {
     const formData = new FormData();
     this.totalFileSize = this.fileSizes.reduce((a, b) => a + b, 0)
     if (this.totalFileSize > 5000000) {
-      console.log('files more than 5mg')
+ 
       this.fileSizedOverloaded = true;
       setTimeout(() => {
         this.fileSizedOverloaded = false;

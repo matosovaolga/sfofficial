@@ -7,17 +7,18 @@ import { SFVacancyComponent } from './company/vacancies/vacancy/vacancy.componen
 import { SFVacanciesComponent } from './company/vacancies/vacancies.component';
 
 const routes: Routes = [
-  {
-    path: 'services',
-    loadChildren: './companyService/services.module#ServicesModule',
+  { 
+    path: 'services', loadChildren: () => import('./companyService/services.module').then(m => m.ServicesModule) 
+ 
   },
   {
-    path: 'expertises',
-    loadChildren: './expertise/expertises.module#ExpertisesModule',
+    path: 'expertises', loadChildren: () => import('./expertise/expertises.module').then(m => m.ExpertisesModule) 
+ 
   },
   {
-    path: 'company',
-    loadChildren: './company/company.module#CompanyModule',
+
+    path: 'company', loadChildren: () => import('./company/company.module').then(m => m.CompanyModule) 
+ 
   },
   {
     path: 'vacancies',
@@ -30,8 +31,7 @@ const routes: Routes = [
     data: { title: 'Contact' }
   },
   {
-    path: 'engagement',
-    loadChildren: './engagement/engagement.module#EngagementModule',
+    path: 'engagement', loadChildren: () => import('./engagement/engagement.module').then(m => m.EngagementModule)
   },
   {
     path: '',

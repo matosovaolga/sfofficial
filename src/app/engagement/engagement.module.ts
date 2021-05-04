@@ -8,6 +8,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {SFOutsourceComponent} from './outsoursing/outsource.component';
 import {SFDedicateComponent} from './dedicate/dedicate.component';
 import {SFStaffaugComponent} from './staff-aug/staffaug.component';
+import {SFEngagementComponent} from './engagement';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -20,7 +22,8 @@ import {SFStaffaugComponent} from './staff-aug/staffaug.component';
     declarations: [
         SFOutsourceComponent,
         SFDedicateComponent,
-        SFStaffaugComponent
+        SFStaffaugComponent,
+        SFEngagementComponent
     ],
     providers: [],
     exports: [RouterModule]

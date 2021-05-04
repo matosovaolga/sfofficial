@@ -6,5 +6,5 @@ export interface Vacancy {
     experience?: string;
     description: string;
     skillsPlus: [string];
-  
+    responsible: [string];
 }

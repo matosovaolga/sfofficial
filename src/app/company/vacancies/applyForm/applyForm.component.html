@@ -98,6 +98,7 @@
         <button type="submit" color="info" outline="true" rounded="true" block="true" class="btnSubmit"
             [ngClass]="{'notActive':  myForm.status === 'INVALID'}">
             <i class="ion-ios-navigate"></i>
+            
         </button>
 
         <div *ngIf="sendSuccess" class="successPopover" [ngClass]="{messageActive: successPopover}">Mesasge was sent

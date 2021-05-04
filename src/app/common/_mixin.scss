@@ -5,12 +5,12 @@
     -webkit-transition: $property;
     transition: $property;
 }
+
 @mixin transform($property) {
     -o-transform: $property;
     -moz-transform: $property;
     -webkit-transform: $property;
     transform: $property;
-  
 }
 
 

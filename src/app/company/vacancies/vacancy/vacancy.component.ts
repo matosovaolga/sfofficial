@@ -15,8 +15,8 @@ export class SFVacancyComponent implements AfterViewInit {
     role: '',
     description: '',
     skills: [''],
-    skillsPlus: ['']
-
+    skillsPlus: [''],
+    responsible: ['']
   };
   id: number;
 

@@ -9,7 +9,8 @@ interface response {
   error: string;
 }
 interface File {
-  size: number,
+  size: number;
+  name: string;
 }
 
 @Component({
@@ -21,11 +22,11 @@ export class SFApplyFormComponent {
   isFileUpload: boolean = false;
   fileSizeError: boolean = false;
   needToploadFile: boolean = false;
-
+  successPopover: boolean = false;
   errorText: string = '';
   isError: boolean = false;
   sendSuccess: boolean = false;
-
+  fileSizedOverloaded: boolean = false;
   file: File = null;
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
@@ -37,6 +38,13 @@ export class SFApplyFormComponent {
   });
   constructor(private connectionService: ConnectionService, private http: HttpClient) {
 
+  }
+  public hasBaseDropZoneOver:boolean = false;
+  //public hasAnotherDropZoneOver:boolean = false;
+  
+ fileOverBase(e:any):void {
+      console.log("hasBaseDropZoneOver", e);
+      this.hasBaseDropZoneOver = e;
   }
   get f() {
     return this.myForm.controls;
