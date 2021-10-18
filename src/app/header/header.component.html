@@ -7,23 +7,13 @@
                     <label class="menu__btn" for="menu__toggle">
                         <span></span>
                     </label>
-                    <a id="logo" routerLink="/" class="logo menuzord-brand"
+                    <a id="logo"  routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                        true}" (click)="click('home', '')"
+                        [className]="currentSection === 'home' ? 'active' : ''" class="logo menuzord-brand"
                         data-dark-logo="assets/images/logo-dark.png">
                         <img src="assets/images/logo.png" alt="Polo Logo">
                     </a>
-                    <!-- <div class="header-extras">
-                        <ul>
-                            <li>
-                                <div class="topbar-dropdown">
-                                    <a class="title"><i class="ion-android-globe"></i></a>
-                                    <div class="dropdown-list">
-                                        <a class="list-entry" href="">Русский</a>
-                                        <a class="list-entry" href="">English</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> -->
+                    
 
                     <nav class="menuzord-menu">
                         <li>
