@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 
 
 export class SFFooterComponent {
-
-
+  currentSection: string = '';
+  currentSubSection: string = '';
   expertises = [
 
     { name: "portals", desc: "Web and Enterprise Portals" },
@@ -20,6 +20,12 @@ export class SFFooterComponent {
     { name: "hospital", desc: "Hospital Managment System" }
 
   ]
+  click(sect, subSection) {
 
+    this.currentSection = sect;
+    this.currentSubSection = subSection;
+    window.scroll(0,0);
+
+}
 
 }
