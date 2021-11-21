@@ -74,6 +74,10 @@
     a {
         @include transition(color $animation-speed linear);
         @include transition(background $animation-speed linear);
+
+        img {
+            max-height: 70px;
+        }
     }
 
     /* 3 - MENU */

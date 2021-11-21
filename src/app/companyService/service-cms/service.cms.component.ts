@@ -15,6 +15,6 @@ export class SFServiceCmsComponent {
       {imgName: "cms4", title: "Custom CMS integration", text: "Get a robust and dependable CMS system integrated to your current website. Our web developers give you seamless content management system software integration to your websites allowing you always staying ahead of your industrial curve "},
       {imgName: "cms5", title: "CMS migration", text: "We help you migrate to a more efficient CMS applications without disturbing your current processes. We help you in moving your existing web database to a whole new platform in a very secure way. With us you able to make shift your valuable database securely "},
       {imgName: "cms6", title: "CMS support & maintenance", text: "Get a reliable team for CMS Development helping you in maintaining your website and applications. We give you 3600 CMS support and maintenance services allowing you to lavish round the clock support on call or email with instant resolutions"}
-    ]
+    ];
 
    }
