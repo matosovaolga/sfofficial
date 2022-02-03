@@ -132,7 +132,7 @@
         border: none;
         margin: 0;
         background: transparent;
-        bottom: 0;
+        bottom: -20px;
 
         font-size: 80px;
         // height: auto;
@@ -143,4 +143,8 @@
             color: $primary-color;
         }
     }
+
+    // .recoordBtn {
+    //     bottom: -20px;
+    // }
 }

@@ -116,6 +116,7 @@
             }
         }
         .notActive {
+            bottom: -10px;
             color: $primary-color;
             &:hover {
                 color: $primary-color;
