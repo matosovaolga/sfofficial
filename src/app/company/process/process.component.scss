@@ -10,6 +10,14 @@
             opacity: 1 !important;
         }
     }
+    @include respond-to("min-large") {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @include respond-to("extra-small") {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     &-wrapper {
         overflow: hidden;
     }
@@ -94,6 +102,11 @@
 
         &--active:before {
             opacity: 1;
+        }
+
+        @include respond-to("extra-small") {
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 
@@ -282,12 +295,6 @@
     }
 }
 
-@media (max-width: 1500px) {
-    .circleRotatorContent {
-        padding-right: 15px;
-    }
-}
-
 .circleRotatorContent ul li {
     position: relative;
     line-height: 35px;
@@ -297,7 +304,11 @@
     font-size: 15px;
     margin-bottom: 10px;
     @include respond-to("small") {
-        padding-left: 5px;
+        padding-left: 10px;
+    }
+
+    @include respond-to("extra-small") {
+        padding-left: 0;
     }
 }
 
@@ -313,14 +324,6 @@
     border-radius: 50%;
     @include respond-to("small") {
         left: -4px;
-    }
-}
-
-@media (max-width: 1029px) {
-    .circleRotator,
-    .circleRotator-container,
-    .circleRotator-wrapper {
-        height: auto !important;
     }
 }
 
@@ -402,6 +405,12 @@
     }
 }
 
+@media (max-width: 992px) {
+    .circleRotatorContent {
+        padding-right: 0;
+    }
+}
+
 @media (max-width: 1029px) {
     .circleRotatorContent-item:nth-child(odd) {
         padding-right: 30px;
@@ -417,6 +426,18 @@
     }
 }
 
+// @media (max-width: 1029px) {
+//     .row {
+//         flex-direction: column;
+//         align-items: center;
+//         width: 100%;
+//         margin: 0;
+//     }
+//     .circleRotator-wrapper {
+//         width: 100%;
+//     }
+// }
+
 @include respond-to("extra-small") {
     .circleRotatorContent-item {
         width: 100%;
@@ -425,7 +446,8 @@
     .circleRotatorContent,
     .circleRotatorContent-item {
         text-align: center;
-        padding: 0 10px;
+        // padding: 0 10px;
+        padding: 0;
     }
     .circleRotatorContent-item ul li:after {
         content: none;

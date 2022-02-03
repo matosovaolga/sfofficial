@@ -72,7 +72,7 @@
 
             .textarea {
                 @extend input;
-                // resize: none;
+                resize: none;
                 margin-bottom: 0;
                 height: 150px;
                 padding-right: 90px;

@@ -197,11 +197,11 @@ img {
 }
 
 .section_padding {
-    padding: 120px 0 130px;
+    padding: 170px 0 130px;
 
-    @include respond-to("medium-large") {
-        padding: 60px 0;
-    }
+    // @include respond-to("medium-large") {
+    //     padding: 60px 0;
+    // }
 }
 
 .section_padding2 {
