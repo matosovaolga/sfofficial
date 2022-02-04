@@ -7,7 +7,27 @@ import * as $ from 'jquery';
   styleUrls: ['./process.component.scss']
 })
 export class SFProcessComponent implements OnInit {
+  windowWidth: number = window.innerWidth;
+  width: boolean = false;
+
+  condition() {
+    if(this.windowWidth < 1030) {
+      this.width = true;
+    } else {
+      this.width = false;
+    }
+  }
+
+  onResize() {
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+      this.condition();
+    });
+  }
+
   ngOnInit() {
+    this.condition();
+
     const t = $('.circleRotator');
     const e = $('.circleRotator--5-items');
     t.each(function () {

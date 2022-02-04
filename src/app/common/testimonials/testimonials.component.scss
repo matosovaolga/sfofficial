@@ -73,7 +73,10 @@ owl-carousel ::ng-deep {
             color: $lightgreyBg;
             outline: none;
             margin-left: -18px;
-            @include respond-to("small") {
+            // @include respond-to("medium") {
+            //     top: 110%;
+            // }
+            @media (max-width: 991px) {
                 top: 110%;
             }
         }

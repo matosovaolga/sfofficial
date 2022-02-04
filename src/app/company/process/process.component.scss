@@ -396,6 +396,10 @@
     .circleRotatorContent {
         padding-top: 0;
         font-size: 0;
+        padding-right: 0 !important;
+    }
+    .circleRotator-container {
+        padding-right: 0;
     }
 }
 
@@ -426,17 +430,17 @@
     }
 }
 
-// @media (max-width: 1029px) {
-//     .row {
-//         flex-direction: column;
-//         align-items: center;
-//         width: 100%;
-//         margin: 0;
-//     }
-//     .circleRotator-wrapper {
-//         width: 100%;
-//     }
-// }
+@media (max-width: 1029px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    .circleRotator-wrapper {
+        padding: 0;
+    }
+}
 
 @include respond-to("extra-small") {
     .circleRotatorContent-item {
@@ -451,5 +455,8 @@
     }
     .circleRotatorContent-item ul li:after {
         content: none;
+    }
+    .circleRotator-container {
+        padding-left: 0;
     }
 }

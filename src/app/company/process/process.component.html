@@ -1,7 +1,10 @@
 <section class="circleRotator circleRotator--first">
 
         <div class="row">
-            <div class="col-lg-8 col-xs-12 circleRotator-wrapper">
+            <div
+            class=""
+            (window:resize)="onResize()"
+            [className]="width === true ? 'col-lg-12 col-xs-12 circleRotator-wrapper' : 'col-lg-8 col-xs-12 circleRotator-wrapper'">
                 <div class="circleRotator-circle">
                     <div class="circleRotator-item circleRotator-item--1 circleRotator-item--active" data-num="0">
                         <div class="circleRotator-num">1</div>
@@ -184,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4  col-xs-12 circleRotator-container">
+            <div class="" class="" (window:resize)="onResize()" [className]="width === true ? 'col-lg-12 col-xs-12 circleRotator-container' : 'col-lg-4 col-xs-12 circleRotator-container'">
                 <div class="circleRotatorContent">
                     <div class="circleRotatorContent-item circleRotatorContent-item--active" data-num="0">
                         <div class="circleRotator-title">

@@ -199,13 +199,20 @@ img {
 .section_padding {
     padding: 170px 0 130px;
 
-    // @include respond-to("medium-large") {
-    //     padding: 60px 0;
-    // }
+    @include respond-to("medium-large") {
+        padding-bottom: 60px;
+    }
 }
 
 .section_padding2 {
     padding: 130px 0;
+}
+
+.section_padding3 {
+    padding: 120px 0 130px;
+    @include respond-to("medium-large") {
+        padding: 60px 0;
+    }
 }
 
 .section_title {
