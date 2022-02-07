@@ -77,7 +77,39 @@ owl-carousel ::ng-deep {
             //     top: 110%;
             // }
             @media (max-width: 991px) {
-                top: 110%;
+                top: 112.5%;
+            }
+
+            @include respond-to("small") {
+                top: 110.5%; 
+            }
+
+            @media (max-width: 517px) {
+                top: 109.5%;
+            }
+
+            @media (max-width: 445px) {
+                top: 109%;
+            }
+
+            @media (max-width: 403px) {
+                top: 108.5%;
+            }
+
+            @media (max-width: 373px) {
+                top: 108%;
+            }
+
+            @media (max-width: 358px) {
+                top: 107.5%;
+            }
+
+            @media (max-width: 346px) {
+                top: 107%;
+            }
+
+            @media (max-width: 340px) {
+                top: 106.5%;
             }
         }
         .owl-next {

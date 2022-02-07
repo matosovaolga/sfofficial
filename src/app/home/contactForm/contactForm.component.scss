@@ -96,6 +96,7 @@
 
         .submitButton {
             padding: 0;
+            bottom: 0;
 
             @include respond-to("small") {
                 right: 10px;
@@ -116,7 +117,7 @@
             }
         }
         .notActive {
-            bottom: -10px;
+            bottom: 0;
             color: $primary-color;
             &:hover {
                 color: $primary-color;

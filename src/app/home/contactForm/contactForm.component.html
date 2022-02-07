@@ -39,7 +39,7 @@
                             class="form-control">
 
                         <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.required">Subject is required.</mat-error>
-                        <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.minlength">Subject should be .</mat-error>
+                        <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.minlength">Subject should be not less than 7 characters.</mat-error>
 
                     </mat-form-field>
 
@@ -50,8 +50,8 @@
                         <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.required">Phone is
                             required.
                         </mat-error>
-                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.minlength">Phone should be not less than 8 numbers </mat-error>
-                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.maxlength">Phone should be not more than 14 numbers </mat-error>
+                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.minlength">Phone should be not less than 8 numbers.</mat-error>
+                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.maxlength">Phone should be not more than 14 numbers.</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="form-group abinput_group msg">
@@ -61,9 +61,9 @@
                         <mat-error *ngIf="f.message.touched && f.message.invalid && f.message.errors.required">Message
                             is
                             required.</mat-error>
-                        <mat-error *ngIf="f.message.touched && f.message.invalid && f.message.errors.minlength">not less
+                        <mat-error *ngIf="f.message.touched && f.message.invalid && f.message.errors.minlength">Not less
                             then
-                            40 letters</mat-error>
+                            40 letters.</mat-error>
 
                     </mat-form-field>
 
