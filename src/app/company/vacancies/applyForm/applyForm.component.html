@@ -54,7 +54,8 @@
 
         <div>
             <input  formControlName="file" id="file" type="file" class="inputfile form-control"
-                (change)="onFileChange($event)">
+                (change)="onFileChange($event)"
+                accept=".pdf, .csv, .png, .jpg, .jpeg, .xls, .xlsx, .doc, .docx, .ods, .pptx, .txt">
             <label for="file" [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
                 class="my-drop-zone">
                 <i class="ion-ios-upload-outline"></i>Upload file (5mb)</label>

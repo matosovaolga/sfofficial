@@ -4,6 +4,56 @@
     /* CSS правила для retina */
 }
 
+@mixin drop {
+    @include transition(opacity $animation-speed linear);
+    @include respond-to("small") {
+        position: relative;
+        box-shadow: none;
+        border: 0;
+    }
+
+    opacity: 1;
+    display: block;
+    visibility: visible;
+    border: $border;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+
+    &.multi {
+        display: flex;
+        padding: 10px 20px;
+
+        ul {
+            li {
+                a {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    li {
+        display: block;
+        line-height: 30px;
+
+        a {
+            font-size: 13px;
+            line-height: 1.1;
+            padding: 12px 18px;
+            text-transform: none;
+            font-weight: 400;
+            color: $primary-color;
+            font-family: $second-font-family;
+
+            &:hover {
+                color: $hoverColor;
+            }
+        }
+    }
+}
+
 :host {
     display: block;
     position: relative;
@@ -109,6 +159,8 @@
         padding: 0;
         float: right;
         list-style: none;
+        overflow: hidden;
+        overflow-y: auto;
 
         & > li {
             @include respond-to("small") {
@@ -164,53 +216,15 @@
                 }
             }
 
-            &:hover {
-                .dropdown {
-                    @include transition(opacity $animation-speed linear);
-                    @include respond-to("small") {
-                        position: relative;
-                        box-shadow: none;
-                        border: 0;
-                    }
+            .burger {
+                @include drop();
+            }
 
-                    opacity: 1;
-                    display: block;
-                    visibility: visible;
-                    border: $border;
-                    border-radius: 4px;
-                    -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
-                    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.05);
-
-                    &.multi {
-                        display: flex;
-                        padding: 10px 20px;
-
-                        ul {
-                            li {
-                                a {
-                                    padding-left: 0;
-                                }
-                            }
-                        }
-                    }
-
-                    li {
-                        display: block;
-                        line-height: 30px;
-
-                        a {
-                            font-size: 13px;
-                            line-height: 1.1;
-                            padding: 12px 18px;
-                            text-transform: none;
-                            font-weight: 400;
-                            color: $primary-color;
-                            font-family: $second-font-family;
-
-                            &:hover {
-                                color: $hoverColor;
-                            }
-                        }
+            @media (min-width: 768px) {
+                overflow: hidden;
+                &:hover {
+                    .dropdown {
+                        @include drop();
                     }
                 }
             }

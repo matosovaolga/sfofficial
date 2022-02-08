@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 
 export class SFHeaderComponent implements OnInit {
+    // clickItem() {
+    //     const menuZordMenu = document.querySelector('.menuzord-menu');
+        
+    // }
   
     currentSection: string = '';
     currentSubSection: string = '';
@@ -54,7 +58,7 @@ export class SFHeaderComponent implements OnInit {
     constructor( router: Router, @Inject(DOCUMENT) private document: Document) {
         this.someR = router;
       
-     }
+    }
     @HostListener('window:scroll', [])
     onWindowScroll() {
         if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
@@ -72,9 +76,96 @@ export class SFHeaderComponent implements OnInit {
         window.scroll(0, 0);
     }
 
+    windowWidth = window.innerWidth;
+
+    onResize() {
+        window.addEventListener('resize', () => {
+            this.windowWidth = window.innerWidth;
+        });
+    }
+
+    dropDownBurger() {
+        let menus = document.querySelectorAll('.menuzord-item'),
+            subMenus = document.querySelectorAll('.dropdown'),
+            close = document.querySelector('.menu__btn');
+        
+        if (this.windowWidth < 768) {
+            
+            menus.forEach((menu, i) => {
+                if (menu.children.length < 2) {
+                    menu.addEventListener('click', () => {
+                        let foo = close as HTMLElement;
+                        foo.click();
+                    });
+                } else {
+                    menu.addEventListener('click', () => {
+                        if (!subMenus[i - 1].classList.contains('burger')) {
+                            subMenus.forEach(subMenu => {
+                                if (subMenu.classList.contains('burger')) {
+                                    subMenu.classList.remove('burger');
+                                }
+                            });
+            
+                            if (menu.children.length > 1) {
+                                subMenus[i - 1].classList.add('burger');
+                            }
+                        } else {
+                            let foo = close as HTMLElement;
+                            foo.click();
+                        }
+                    });
+                }
+            });
+        }
+
+        close.addEventListener('click', () => {
+            subMenus.forEach(subMenu => {
+                if (subMenu.classList.contains('burger')) {
+                    subMenu.classList.remove('burger');
+                }
+            });
+        });
+
+        window.addEventListener('orientationchange', () => {
+            window.location.reload();
+        });
+    }
+
+    // dropUpBurger() {
+    //     let menus = document.querySelectorAll('.menuzord-item'),
+    //         subMenus = document.querySelectorAll('.dropdown'),
+    //         close = document.querySelector('.menu__btn');
+        
+    //     menus.forEach((menu, i) => {
+    //         menu.addEventListener('mouseenter', () => {
+    //             if (menu.children.length > 1) {
+    //                 if (!subMenus[i - 1].classList.contains('burger')) {
+    //                     subMenus.forEach(subMenu => {
+    //                         if (subMenu.classList.contains('burger')) {
+    //                             subMenu.classList.remove('burger');
+    //                         }
+    //                     });
+        
+    //                     if (menu.children.length > 1) {
+    //                         subMenus[i - 1].classList.add('burger');
+    //                     }
+    //                 }
+    //             }
+    //         });
+    //         menu.addEventListener('mouseleave', () => {
+    //             subMenus.forEach(subMenu => {
+    //                 if (subMenu.classList.contains('burger')) {
+    //                     subMenu.classList.remove('burger');
+    //                 }
+    //             });
+    //         });
+    //     });
+    // }
+
     ngOnInit() {
-        this.menuCheckbox =   document.getElementById('menu__toggle');
-  
-     }
+        this.menuCheckbox = document.getElementById('menu__toggle');
+
+        this.dropDownBurger();
+    }
 
 }
