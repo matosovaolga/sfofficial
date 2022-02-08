@@ -3,8 +3,7 @@
 .contact_content {
     background: $lightColor;
 .form-home {
-    padding-bottom: 80px;
-
+    padding-bottom: 90px;
 }
     h3.contact_title {
         color: $darkGrey;
@@ -95,11 +94,12 @@
         }
 
         .submitButton {
+            position: absolute;
             padding: 0;
             bottom: 0;
 
             @include respond-to("small") {
-                right: 10px;
+                right: 30px;
             }
             @include transition(color $animation-speed linear);
 
@@ -109,7 +109,6 @@
             color: $btnFirstColor;
             font-size: 80px;
             height: 80px;
-            position: absolute;
             right: 50px;
 
             &:hover {
@@ -121,6 +120,9 @@
             color: $primary-color;
             &:hover {
                 color: $primary-color;
+            }
+            @include respond-to("small") {
+                right: 30px;
             }
         }
     }
