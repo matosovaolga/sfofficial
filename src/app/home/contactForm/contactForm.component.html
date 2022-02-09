@@ -40,6 +40,7 @@
 
                         <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.required">Subject is required.</mat-error>
                         <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.minlength">Subject should be not less than 7 characters.</mat-error>
+                        <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.maxlength">Subject should be not more than 30 characters.</mat-error>
 
                     </mat-form-field>
 
