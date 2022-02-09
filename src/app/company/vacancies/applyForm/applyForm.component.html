@@ -5,12 +5,12 @@
         (ngSubmit)="submit(myForm,formDirective)">
 
         <mat-form-field class="form-group abinput_group name">
-            <mat-label for="name">FullName</mat-label>
+            <mat-label for="name">Full Name</mat-label>
             <input matInput required formControlName="name" id="name" type="text" class="form-control">
             <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.required">Name is required.
             </mat-error>
-            <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.minlength">Name should be 3
-                character.</mat-error>
+            <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.minlength">Name should be not less than 3 characters.</mat-error>
+            <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.maxlength">Name should be not more than 30 characters.</mat-error>
         </mat-form-field>
 
         <mat-form-field class="form-group abinput_group email">

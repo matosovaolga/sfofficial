@@ -63,7 +63,7 @@ try {
 
                 // Content
                 ob_start();
-                include 'views/send_mail.php';
+                include 'views/send_mail_pages.php';
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
@@ -97,7 +97,7 @@ try {
 
                 // Content
                 ob_start();
-                include 'views/send_mail.php';
+                include 'views/send_mail_pages.php';
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);
@@ -124,7 +124,7 @@ try {
                 $mail->addAddress($config['email']);
 
                 ob_start();
-                include 'views/send_mail_home.php';
+                include 'views/send_mail.php';
                 $str = ob_get_clean();
 
                 $mail->isHTML(true);

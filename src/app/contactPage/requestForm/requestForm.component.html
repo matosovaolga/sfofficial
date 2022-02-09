@@ -18,8 +18,8 @@
                         <input matInput required formControlName="name" id="name" type="text" class="form-control">
                         <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.required">Name is required.
                         </mat-error>
-                        <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.minlength">Name should be 3
-                            character.</mat-error>
+                        <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.minlength">Name should be not less than 3 characters.</mat-error>
+                        <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.maxlength">Name should be not more than 30 characters.</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="form-group abinput_group email">
@@ -38,8 +38,8 @@
                         <input matInput required formControlName="company" id="company" type="text"
                             class="form-control">
                         <mat-error *ngIf="f.company.touched && f.company.invalid && f.company.errors.required">Company is required.</mat-error>
-                        <mat-error *ngIf="f.company.touched && f.company.invalid && f.company.errors.minlength">Company should be more than 4 word</mat-error>
-                        <mat-error *ngIf="f.company.touched && f.company.invalid && f.company.errors.maxlength">Company should be less than 30 word</mat-error>
+                        <mat-error *ngIf="f.company.touched && f.company.invalid && f.company.errors.minlength">Company should be more than 4 characters.</mat-error>
+                        <mat-error *ngIf="f.company.touched && f.company.invalid && f.company.errors.maxlength">Company should be less than 30 characters.</mat-error>
                     </mat-form-field>
 
                     <mat-form-field class="form-group abinput_group phone">
