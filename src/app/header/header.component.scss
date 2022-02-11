@@ -111,6 +111,16 @@
 }
 
 .menuzord {
+    display: block;
+    @include respond-to("small") {
+        display: none;
+    }
+    &-burger {
+        display: none;
+        @include respond-to("small") {
+            display: block;
+        }
+    }
     @extend %boxsizing;
 
     width: 100%;
@@ -152,7 +162,8 @@
             top: 0;
             visibility: hidden;
             padding-top: 50px;
-            height: 100%;
+            padding-bottom: 50px;
+            height: 100vh;
         }
 
         margin: 0;
@@ -242,6 +253,11 @@
         min-width: 180px;
         white-space: nowrap;
         background: $lightColor;
+
+        @include respond-to("small") {
+            visibility: visible;
+            display: none;
+        }
 
         li {
             ul.dropdown {

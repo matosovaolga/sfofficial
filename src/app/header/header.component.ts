@@ -68,7 +68,6 @@ export class SFHeaderComponent implements OnInit {
         }
     }
 
-
     click(sect, subSection) {
      
         this.currentSection = sect;
@@ -84,39 +83,37 @@ export class SFHeaderComponent implements OnInit {
         });
     }
 
-    dropDownBurger() {
-        let menus = document.querySelectorAll('.menuzord-item'),
-            subMenus = document.querySelectorAll('.dropdown'),
-            close = document.querySelector('.menu__btn');
+    burgerMenu() {
+        let mainMenu = document.querySelector('.menuzord-burger'),
+            menus = mainMenu.querySelectorAll('.menuzord-item'),
+            subMenus = mainMenu.querySelectorAll('.dropdown'),
+            close = mainMenu.querySelector('.menu__btn');
         
-        if (this.windowWidth < 768) {
-            
-            menus.forEach((menu, i) => {
-                if (menu.children.length < 2) {
-                    menu.addEventListener('click', () => {
-                        let foo = close as HTMLElement;
-                        foo.click();
-                    });
-                } else {
-                    menu.addEventListener('click', () => {
-                        if (!subMenus[i - 1].classList.contains('burger')) {
-                            subMenus.forEach(subMenu => {
-                                if (subMenu.classList.contains('burger')) {
-                                    subMenu.classList.remove('burger');
-                                }
-                            });
-            
-                            if (menu.children.length > 1) {
-                                subMenus[i - 1].classList.add('burger');
+        menus.forEach((menu, i) => {
+            if (menu.children.length < 2) {
+                menu.addEventListener('click', () => {
+                    let menuButton = close as HTMLElement;
+                    menuButton.click();
+                });
+            } else {
+                menu.addEventListener('click', () => {
+                    if (!subMenus[i - 1].classList.contains('burger')) {
+                        subMenus.forEach(subMenu => {
+                            if (subMenu.classList.contains('burger')) {
+                                subMenu.classList.remove('burger');
                             }
-                        } else {
-                            let foo = close as HTMLElement;
-                            foo.click();
+                        });
+        
+                        if (menu.children.length > 1) {
+                            subMenus[i - 1].classList.add('burger');
                         }
-                    });
-                }
-            });
-        }
+                    } else {
+                        let menuButton = close as HTMLElement;
+                        menuButton.click();
+                    }
+                });
+            }
+        });
 
         close.addEventListener('click', () => {
             subMenus.forEach(subMenu => {
@@ -125,47 +122,12 @@ export class SFHeaderComponent implements OnInit {
                 }
             });
         });
-
-        window.addEventListener('orientationchange', () => {
-            window.location.reload();
-        });
     }
-
-    // dropUpBurger() {
-    //     let menus = document.querySelectorAll('.menuzord-item'),
-    //         subMenus = document.querySelectorAll('.dropdown'),
-    //         close = document.querySelector('.menu__btn');
-        
-    //     menus.forEach((menu, i) => {
-    //         menu.addEventListener('mouseenter', () => {
-    //             if (menu.children.length > 1) {
-    //                 if (!subMenus[i - 1].classList.contains('burger')) {
-    //                     subMenus.forEach(subMenu => {
-    //                         if (subMenu.classList.contains('burger')) {
-    //                             subMenu.classList.remove('burger');
-    //                         }
-    //                     });
-        
-    //                     if (menu.children.length > 1) {
-    //                         subMenus[i - 1].classList.add('burger');
-    //                     }
-    //                 }
-    //             }
-    //         });
-    //         menu.addEventListener('mouseleave', () => {
-    //             subMenus.forEach(subMenu => {
-    //                 if (subMenu.classList.contains('burger')) {
-    //                     subMenu.classList.remove('burger');
-    //                 }
-    //             });
-    //         });
-    //     });
-    // }
 
     ngOnInit() {
         this.menuCheckbox = document.getElementById('menu__toggle');
 
-        this.dropDownBurger();
+        this.burgerMenu();
     }
 
 }

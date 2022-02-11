@@ -2,6 +2,87 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <div id="menuzord" class="menuzord menuzord-burger">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <a id="logo"  routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                        true}" (click)="click('home', '')"
+                        [className]="currentSection === 'home' ? 'active' : ''" class="logo menuzord-brand"
+                        data-dark-logo="assets/images/logo-dark.png">
+                        <img src="assets/images/logo.png" alt="Polo Logo">
+                    </a>
+
+                    <nav class="menuzord-menu">
+                        <li class="menuzord-item">
+                            <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}" (click)="click('home', '')"
+                                [className]="currentSection === 'home' ? 'active' : ''">Home</a>
+                        </li>
+
+                        <li class="menuzord-item">
+                            <a routerLink="/services" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}" [className]="currentSection === 'services' ? 'active' : ''"
+                                (click)="click('services', '')">Services</a>
+                            <ul class="dropdown">
+                                <li *ngFor="let service of services">
+                                    <a routerLink="/services/{{service.name}}" (click)="click('services',service.name)"
+                                        [className]="service.name === currentSubSection ? 'active' : ''">{{service.desc}}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menuzord-item">
+                            <a routerLink="/expertises" [routerLinkActive]="['active']"
+                                [routerLinkActiveOptions]="{exact: true}" (click)="click('expertises', '')"
+                                [className]="currentSection === 'expertises' ? 'active' : ''">Expertises</a>
+                            <ul class="dropdown multi">
+                                <li *ngFor="let expertise of expertises">
+                                    {{expertise.title}}
+                                    <ul>
+                                        <li *ngFor="let solution of expertise.subSection">
+                                            <a routerLink="/expertises/{{solution.name}}"
+                                                (click)="click('expertises',solution.name)"
+                                                [className]="solution.name === currentSubSection ? 'active' : ''">{{solution.desc}}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menuzord-item">
+                            <a routerLink="/engagement/outsourcing" (click)="click('engagement', '')"
+                                [routerLinkActive]="['active']"
+                                [className]="currentSection === 'engagement' ? 'active' : ''">
+                                Engagement Models</a>
+                            <ul class="dropdown">
+                                <li *ngFor="let model of engagementModels">
+                                    <a routerLink="/engagement/{{model.name}}" (click)="click('engagement',model.name)"
+                                        [className]="model.name === currentSubSection ? 'active' : ''">{{model.desc}}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menuzord-item">
+                            <a routerLink="/company/about" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}" (click)="click('company', '')"
+                                [className]="currentSection === 'company' ? 'active' : ''">company</a>
+                            <ul class="dropdown">
+                                <li *ngFor="let company of companySection">
+                                    <a routerLink="/company/{{company.name}}" (click)="click('company',company.name)"
+                                        [className]="company.name === currentSubSection ? 'active' : ''">{{company.desc}}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menuzord-item">
+                            <a routerLink="/contacts" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                                true}" (click)="click('contact', '')"
+                                [className]="currentSection === 'contact' ? 'active' : ''">Contact us</a>
+                        </li>
+                    </nav>
+                </div>
                 <div id="menuzord" class="menuzord">
                     <input id="menu__toggle" type="checkbox" />
                     <label class="menu__btn" for="menu__toggle">
@@ -13,7 +94,6 @@
                         data-dark-logo="assets/images/logo-dark.png">
                         <img src="assets/images/logo.png" alt="Polo Logo">
                     </a>
-                    
 
                     <nav class="menuzord-menu">
                         <li class="menuzord-item">

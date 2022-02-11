@@ -48,18 +48,20 @@ export class SFRequestComponent {
 
   constructor(private connectionService: ConnectionService, private http: HttpClient) {
 
-
   }
   get f() {
     return this.myForm.controls;
   }
 
   onFileChange(event) {
+    const regExp = new RegExp('.(pdf|csv|png|jpg|jpeg|xls|xlsx|doc|docx|ods|pptx|txt)$', 'igm');
+
     if (event.target.files.length > 0) {
       for (var i = 0; i < event.target.files.length; i++) {
-        this.myFiles.push(event.target.files[i]);
-        this.fileSizes.push(event.target.files[i].size);
-
+        if (event.target.files[i].name.match(regExp)) {
+          this.myFiles.push(event.target.files[i]);
+          this.fileSizes.push(event.target.files[i].size);
+        }
       }
     }
     event.srcElement.value = "";
@@ -71,6 +73,9 @@ export class SFRequestComponent {
   }
 
   submit(form: any, formDirective: FormGroupDirective) {
+    let loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
+    loadingScreen.style.display = 'flex';
+
     if (!form.valid) return null
 
     const formData = new FormData();
@@ -96,9 +101,10 @@ export class SFRequestComponent {
     this.http.post(this.connectionService.url, formData)
       .subscribe(
         (res: response) => {
-          console.log(res)
+          // console.log(res)
           if(res.success) {
             this.sendSuccess = true;
+            loadingScreen.style.display = 'none';
             setTimeout(() => {
               this.sendSuccess = false;
             }, 5000);
@@ -111,6 +117,8 @@ export class SFRequestComponent {
                 this.errorText = '';
                 this.isError = false;
               }, 5000);
+
+              loadingScreen.style.display = 'none';
     
               this.isError = true;
               this.errorText = res.error;
@@ -119,18 +127,18 @@ export class SFRequestComponent {
           
 
         }, (error: any) => {
-          console.log(error)
+          // console.log(error)
           setTimeout(() => {
             setTimeout(() => {
               this.errorText = '';
               this.isError = false;
             }, 5000);
 
+            loadingScreen.style.display = 'none';
+
             this.isError = true;
             this.errorText = error.statusText;
           }, 5000);
         })
   }
-
-
 }

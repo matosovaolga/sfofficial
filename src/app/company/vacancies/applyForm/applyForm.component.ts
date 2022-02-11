@@ -51,10 +51,11 @@ export class SFApplyFormComponent {
   }
 
   onFileChange(event) {
+    const regExp = new RegExp('.(pdf|csv|png|jpg|jpeg|xls|xlsx|doc|docx|ods|pptx|txt)$', 'igm');
 
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
-      if (this.file.size < 5 * 1000 * 1000) {
+      if (this.file.size < 5 * 1000 * 1000 && this.file.name.match(regExp)) {
         this.myForm.patchValue({
           fileSource: this.file
         });
@@ -77,6 +78,9 @@ export class SFApplyFormComponent {
     this.isFileUpload = false;
   }
   submit(form: any, formDirective: FormGroupDirective) {
+    let loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
+    loadingScreen.style.display = 'flex';
+
     if (!this.file) {
       this.needToploadFile = true
       setTimeout(() => {
@@ -84,7 +88,6 @@ export class SFApplyFormComponent {
         return null
       }, 5000);
     }
-
 
     if (!form.valid) return null
 
@@ -101,6 +104,7 @@ export class SFApplyFormComponent {
         (res: response) => {
           if (res.success) {
             this.sendSuccess = true;
+            loadingScreen.style.display = 'none';
             setTimeout(() => {
               this.sendSuccess = false;
             }, 5000);
@@ -114,18 +118,22 @@ export class SFApplyFormComponent {
                 this.isError = false;
               }, 5000);
 
+              loadingScreen.style.display = 'none';
+
               this.isError = true;
               this.errorText = res.error;
             }, 5000);
           }
 
         }, (error: any) => {
-          console.log(error)
+          // console.log(error)
           setTimeout(() => {
             setTimeout(() => {
               this.errorText = '';
               this.isError = false;
             }, 5000);
+
+            loadingScreen.style.display = 'none';
 
             this.isError = true;
             this.errorText = error.statusText;
@@ -133,5 +141,4 @@ export class SFApplyFormComponent {
 
         })
   }
-
 }

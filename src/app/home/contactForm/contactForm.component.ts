@@ -40,9 +40,10 @@ export class SFContactComponent {
     return this.myForm.controls;
   }
 
-
-
   submit(form:any, formDirective: FormGroupDirective) {
+    let loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
+    loadingScreen.style.display = 'flex';
+
     if (!form.valid) return null
     const formData = new FormData();
 
@@ -55,42 +56,46 @@ export class SFContactComponent {
     this.http.post(this.connectionService.url, formData)
       .subscribe(
         (res: response) => {
-console.log(res)
+// console.log(res)
           if(res.success) {
-            console.log('trueweq')
+            // console.log('trueweq')
             this.sendSuccess = true;
+            loadingScreen.style.display = 'none';
             setTimeout(() => {
               this.sendSuccess = false;
             }, 5000);
   
             formDirective.resetForm();
 
-          } 
+          }
           if(res.error) {
-            console.log(res.error)
+            // console.log(res.error)
             setTimeout(() => {
               setTimeout(() => {
                 this.errorText = '';
                 this.isError = false;
               }, 5000);
-    
+
+              loadingScreen.style.display = 'none';
+
               this.isError = true;
               this.errorText = res.error;
             }, 5000);
           }
         
       }, (error: any) => {
-        console.log(error)
+        // console.log(error)
         setTimeout(() => {
           setTimeout(() => {
             this.errorText = '';
             this.isError = false;
           }, 5000);
 
+          loadingScreen.style.display = 'none';
+
           this.isError = true;
           this.errorText = error.statusText;
         }, 5000);
       })
   }
-
 }
