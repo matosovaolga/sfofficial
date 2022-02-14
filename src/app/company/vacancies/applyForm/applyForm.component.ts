@@ -78,8 +78,12 @@ export class SFApplyFormComponent {
     this.isFileUpload = false;
   }
   submit(form: any, formDirective: FormGroupDirective) {
-    let loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
-    loadingScreen.style.display = 'flex';
+    const activeButton: HTMLButtonElement = document.querySelector('.notActive'),
+          loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
+    
+    if (!activeButton) {
+      loadingScreen.style.display = 'flex';
+    }
 
     if (!this.file) {
       this.needToploadFile = true

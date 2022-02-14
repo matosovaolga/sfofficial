@@ -41,8 +41,12 @@ export class SFContactComponent {
   }
 
   submit(form:any, formDirective: FormGroupDirective) {
-    let loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
-    loadingScreen.style.display = 'flex';
+    const activeButton: HTMLButtonElement = document.querySelector('.notActive'),
+          loadingScreen: HTMLDivElement = document.querySelector('.loading-screen');
+    
+    if (!activeButton) {
+      loadingScreen.style.display = 'flex';
+    }
 
     if (!form.valid) return null
     const formData = new FormData();
