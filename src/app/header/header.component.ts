@@ -87,13 +87,24 @@ export class SFHeaderComponent implements OnInit {
         let mainMenu = document.querySelector('.menuzord-burger'),
             menus = mainMenu.querySelectorAll('.menuzord-item'),
             subMenus = mainMenu.querySelectorAll('.dropdown'),
-            close = mainMenu.querySelector('.menu__btn');
+            close: HTMLElement = mainMenu.querySelector('.menu__btn'),
+            body: HTMLBodyElement = document.querySelector('body'),
+            toggle: HTMLInputElement = document.querySelector('#menu__toggle');
+        
+        function containClass() {
+            if (!toggle.checked) {
+                body.classList.remove('overflow');
+            } else {
+                body.classList.add('overflow');
+            }
+        }
+
+        containClass();
         
         menus.forEach((menu, i) => {
             if (menu.children.length < 2) {
                 menu.addEventListener('click', () => {
-                    let menuButton = close as HTMLElement;
-                    menuButton.click();
+                    close.click();
                 });
             } else {
                 menu.addEventListener('click', () => {
@@ -108,8 +119,7 @@ export class SFHeaderComponent implements OnInit {
                             subMenus[i - 1].classList.add('burger');
                         }
                     } else {
-                        let menuButton = close as HTMLElement;
-                        menuButton.click();
+                        close.click();
                     }
                 });
             }
@@ -121,6 +131,11 @@ export class SFHeaderComponent implements OnInit {
                     subMenu.classList.remove('burger');
                 }
             });
+        });
+
+        toggle.addEventListener('click', () => {
+            containClass();
+            window.scrollTo(0, 0);
         });
     }
 
