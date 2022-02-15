@@ -31,7 +31,7 @@ export class SFApplyFormComponent {
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(30)]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(14)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(25)]),
     message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
     file: new FormControl(''),
     fileSource: new FormControl('', [Validators.required])
@@ -144,5 +144,35 @@ export class SFApplyFormComponent {
           }, 5000);
 
         })
+  }
+
+  filterNameInput(): void {
+    const input: HTMLInputElement = document.querySelector('#name');
+
+    if (input.value.match(/[^A-Za-zА-яа-я]$/igm)) {
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+  }
+
+  filterPhoneInput(): void {
+    const input: HTMLInputElement = document.querySelector('#phone');
+
+    if (input.value.match(/[^+0-9]$/igm)) {
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+
+    if (input.value.length > 1) {
+      for (let i = 1; i < input.value.length; i++) {
+        if (input.value[i] === '+') {
+          input.value = input.value.substring(0, input.value.length - 1);
+        }
+      }
+    }
+  }
+
+  noCaps(): void {
+    const input: HTMLInputElement = document.querySelector('#email');
+
+    input.value = input.value.toLowerCase();
   }
 }

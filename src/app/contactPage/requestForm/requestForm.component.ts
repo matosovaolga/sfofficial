@@ -40,7 +40,7 @@ export class SFRequestComponent {
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(30)]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(14)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(25)]),
     company: new FormControl('', [Validators.minLength(4), Validators.maxLength(30)]),
     message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
     file: new FormControl(''),
@@ -85,8 +85,9 @@ export class SFRequestComponent {
     const formData = new FormData();
     this.totalFileSize = this.fileSizes.reduce((a, b) => a + b, 0)
     if (this.totalFileSize > 5000000) {
- 
+
       this.fileSizedOverloaded = true;
+      loadingScreen.style.display = 'none';
       setTimeout(() => {
         this.fileSizedOverloaded = false;
       }, 2000);
@@ -144,5 +145,60 @@ export class SFRequestComponent {
             this.errorText = error.statusText;
           }, 5000);
         })
+  }
+
+  filterNameInput(): void {
+    const input: HTMLInputElement = document.querySelector('#name');
+
+    if (input.value.match(/[^A-Za-zА-яа-я]$/igm)) {
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+  }
+
+  filterSubjCompanyInput(): void {
+    const input: HTMLInputElement = document.querySelector('#subject');
+
+    if (input.value.match(/[^A-Za-zА-яа-я\?\!\.,"'`\:;№@]$/igm)) {
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+  }
+
+  filterPhoneInput(): void {
+    const input: HTMLInputElement = document.querySelector('#phone');
+
+    if (input.value.match(/[^+0-9]$/igm)) {
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+
+    if (input.value.length > 1) {
+      for (let i = 1; i < input.value.length; i++) {
+        if (input.value[i] === '+') {
+          input.value = input.value.substring(0, input.value.length - 1);
+        }
+      }
+    }
+  }
+
+  filterEmailInput(): void {
+    const input: HTMLInputElement = document.querySelector('#email');
+
+    input.value = input.value.toLowerCase();
+
+    let at = 0;
+
+    if (input.value.match(/[^A-Za-z0-9\.@_-]$/igm)) {
+      input.value = input.value.substring(0, input.value.length - 1);
+    }
+    
+    for (let i = 0; i < input.value.length; i++) {
+      if (input.value[i] === '@') {
+        at = i + 1;
+        for (let i = at; i < input.value.length; i++) {
+          if (input.value.match(/[^A-Za-z0-9\._-]$/igm)) {
+            input.value = input.value.substring(0, input.value.length - 1);
+          }
+        }
+      }
+    }
   }
 }

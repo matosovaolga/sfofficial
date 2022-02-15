@@ -27,6 +27,7 @@
               id="name"
               type="text"
               class="form-control"
+              (input)="filterNameInput()"
             />
             <mat-error
               *ngIf="f.name.touched && f.name.invalid && f.name.errors.required"
@@ -55,6 +56,7 @@
               id="email"
               type="text"
               class="form-control"
+              (input)="filterEmailInput()"
             />
             <mat-error
               *ngIf="
@@ -83,6 +85,7 @@
               id="company"
               type="text"
               class="form-control"
+              (input)="filterSubjCompanyInput()"
             />
             <mat-error
               *ngIf="
@@ -119,6 +122,7 @@
               id="phone"
               type="tel"
               class="form-control"
+              (input)="filterPhoneInput()"
             />
             <mat-error
               *ngIf="
@@ -142,7 +146,7 @@
               *ngIf="
                 f.phone.touched && f.phone.invalid && f.phone.errors.maxlength
               "
-              >Phone should be not more than 14 numbers.</mat-error
+              >Phone should be not more than 25 numbers.</mat-error
             >
           </mat-form-field>
 
@@ -170,7 +174,15 @@
                 f.message.invalid &&
                 f.message.errors.minlength
               "
-              >Not less then 40 letters.</mat-error
+              >Not less then 20 letters.</mat-error
+            >
+            <mat-error
+              *ngIf="
+                f.message.touched &&
+                f.message.invalid &&
+                f.message.errors.maxlength
+              "
+              >Not more then 450 letters.</mat-error
             >
           </mat-form-field>
 
