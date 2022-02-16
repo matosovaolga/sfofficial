@@ -175,4 +175,18 @@ export class SFApplyFormComponent {
 
     input.value = input.value.toLowerCase();
   }
+  
+  noPast(): void {
+    const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.form-input');
+
+    inputs.forEach(input => {
+      input.addEventListener('paste', e => {
+        e.preventDefault();
+      });
+    });
+  }
+
+  ngOnInit() {
+    this.noPast();
+  }
 }

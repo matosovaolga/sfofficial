@@ -155,8 +155,8 @@ export class SFRequestComponent {
     }
   }
 
-  filterSubjCompanyInput(): void {
-    const input: HTMLInputElement = document.querySelector('#subject');
+  filterCompanyInput(): void {
+    const input: HTMLInputElement = document.querySelector('#company');
 
     if (input.value.match(/[^A-Za-zА-яа-я\?\!\.,"'`\:;№@]$/igm)) {
       input.value = input.value.substring(0, input.value.length - 1);
@@ -200,5 +200,19 @@ export class SFRequestComponent {
         }
       }
     }
+  }
+
+  noPast(): void {
+    const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.form-input');
+
+    inputs.forEach(input => {
+      input.addEventListener('paste', e => {
+        e.preventDefault();
+      });
+    });
+  }
+
+  ngOnInit() {
+    this.noPast();
   }
 }

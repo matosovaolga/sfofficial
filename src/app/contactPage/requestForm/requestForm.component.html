@@ -21,12 +21,13 @@
           <mat-form-field class="form-group abinput_group name">
             <mat-label for="name">Full Name</mat-label>
             <input
+              autocomplete="off"
               matInput
               required
               formControlName="name"
               id="name"
               type="text"
-              class="form-control"
+              class="form-input form-control"
               (input)="filterNameInput()"
             />
             <mat-error
@@ -50,12 +51,13 @@
           <mat-form-field class="form-group abinput_group email">
             <mat-label for="email">Email</mat-label>
             <input
+              autocomplete="off"
               matInput
               required
               formControlName="email"
               id="email"
               type="text"
-              class="form-control"
+              class="form-input form-control"
               (input)="filterEmailInput()"
             />
             <mat-error
@@ -79,13 +81,14 @@
           <mat-form-field class="form-group abinput_group subject">
             <mat-label for="company">Company</mat-label>
             <input
+              autocomplete="off"
               matInput
               required
               formControlName="company"
               id="company"
               type="text"
-              class="form-control"
-              (input)="filterSubjCompanyInput()"
+              class="form-input form-control"
+              (input)="filterCompanyInput()"
             />
             <mat-error
               *ngIf="
@@ -116,12 +119,13 @@
           <mat-form-field class="form-group abinput_group phone">
             <mat-label for="phone">Phone</mat-label>
             <input
+              autocomplete="off"
               matInput
               required
               formControlName="phone"
               id="phone"
               type="tel"
-              class="form-control"
+              class="form-input form-control"
               (input)="filterPhoneInput()"
             />
             <mat-error

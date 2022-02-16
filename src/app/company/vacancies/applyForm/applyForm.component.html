@@ -6,7 +6,7 @@
 
         <mat-form-field class="form-group abinput_group name">
             <mat-label for="name">Full Name</mat-label>
-            <input matInput required formControlName="name" id="name" type="text" class="form-control" (input)="filterNameInput()">
+            <input matInput required formControlName="name" id="name" type="text" class="form-input form-control" (input)="filterNameInput()">
             <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.required">Name is required.</mat-error>
             <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.minlength">Name should be not less than 3 characters.</mat-error>
             <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.maxlength">Name should be not more than 30 characters.</mat-error>
@@ -14,7 +14,7 @@
 
         <mat-form-field class="form-group abinput_group email">
             <mat-label for="email">Email</mat-label>
-            <input matInput required formControlName="email" id="email" type="text" class="form-control">
+            <input matInput required formControlName="email" id="email" type="text" class="form-input form-control">
             <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.required">Email is required.</mat-error>
             <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.email">Email is not correct.</mat-error>
             <mat-error *ngIf="f.email.touched && f.email.invalid && f.email.errors.minlength">Email should not be less than 3 character.</mat-error>
@@ -23,7 +23,7 @@
         <mat-form-field class="form-group abinput_group phone">
             <mat-label for="phone">Phone</mat-label>
             <!-- <span matPrefix>+ &nbsp;</span> -->
-            <input matInput required formControlName="phone" id="phone" type="tel" class="form-control" (input)="filterPhoneInput()">
+            <input matInput required formControlName="phone" id="phone" type="tel" class="form-input form-control" (input)="filterPhoneInput()">
             <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.required">Phone is required.</mat-error>
             <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.minlength">Phone should be not less than 8 numbers.</mat-error>
             <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.maxlength">Phone should be not more than 25 numbers.</mat-error>

@@ -21,7 +21,7 @@ export class SFContactComponent {
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(30)]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('[^0-9]+$'), Validators.maxLength(25)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(25)]),
     subject: new FormControl('', [Validators.minLength(7), Validators.maxLength(30)]),
     message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
 
@@ -111,7 +111,7 @@ export class SFContactComponent {
     }
   }
 
-  filterSubjCompanyInput(): void {
+  filterSubjectInput(): void {
     const input: HTMLInputElement = document.querySelector('#subject');
 
     if (input.value.match(/[^A-Za-zА-яа-я\?\!\.,"'`\:;№@]$/igm)) {
@@ -156,5 +156,19 @@ export class SFContactComponent {
         }
       }
     }
+  }
+  
+  noPast(): void {
+    const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.form-input');
+
+    inputs.forEach(input => {
+      input.addEventListener('paste', e => {
+        e.preventDefault();
+      });
+    });
+  }
+
+  ngOnInit() {
+    this.noPast();
   }
 }
