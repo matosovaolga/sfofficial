@@ -31,7 +31,7 @@ export class SFApplyFormComponent {
   myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
     email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(30)]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9]+$'), Validators.maxLength(25)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^[0-9+]+$'), Validators.maxLength(25)]),
     message: new FormControl('', [Validators.minLength(20), Validators.maxLength(450)]),
     file: new FormControl(''),
     fileSource: new FormControl('', [Validators.required])
