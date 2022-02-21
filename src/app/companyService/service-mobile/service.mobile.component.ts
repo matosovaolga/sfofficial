@@ -20,4 +20,59 @@ export class SFServiceMobileComponent {
     { id: 8, name: "Sencha Touch", text: "For added User Interface for much better user experience and enhanced overall app feel. Find expert mobile app developers and designers at Stableflow that help you render the needed quality." },
     { id: 9, name: "Xamarin", text: "Cross platform app development language used in building web apps, mobile applications for windows, iOS, Android with high community support." },
   ]
+
+  swipe(): void {
+    const menu: HTMLDivElement = document.querySelector('.mat-tab-list');
+
+    let x1 = null,
+        position = null,
+        end = null;
+    
+    function endPosition(): void {
+      if (window.innerWidth < 768 && window.innerWidth > 599) {
+        end = window.innerWidth - 767 - 737;
+      } else {
+        end = window.innerWidth - 767 + 27;
+      }
+    }
+
+    function getPositionX(): number {
+      const style = window.getComputedStyle(menu),
+            matrix = new WebKitCSSMatrix(style.transform);
+      
+      return matrix.m41;
+    }
+
+    menu.addEventListener('touchstart', e => {
+      x1 = e.touches[0].clientX;
+      position = getPositionX();
+      endPosition();
+    });
+
+    menu.addEventListener('touchmove', e => {
+      if (!x1) {
+        return false;
+      }
+
+      let x2 = e.touches[0].clientX;
+      let result;
+
+      result = x1 - x2;
+      menu.style.transform = `translateX(${position - result}px)`;
+    });
+
+    menu.addEventListener('touchend', () => {
+      x1 = null;
+      position = getPositionX();
+      if (position > 0) {
+        menu.style.transform = `translateX(${0}px)`;
+      } else if (position < end) {
+        menu.style.transform = `translateX(${end}px)`;
+      }
+    });
+  }
+
+  ngOnInit() {
+    this.swipe();
+  }
 }
