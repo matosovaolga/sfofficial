@@ -1,132 +1,138 @@
-@import "~../../app.component.scss";
-
+@import "../../app.component.scss";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 .singleTestimonial {
-    border: $border;
-    padding: 40px 25px 30px;
-    z-index: 2;
+  border: $border;
+  padding: 40px 25px 30px;
+  z-index: 2;
+  position: relative;
+  background: $lightColor;
+  height: 100%;
+
+  .authorImg {
+    height: 90px;
+    left: -45px;
+    margin-top: -45px;
+    position: absolute;
+    top: 50%;
+    width: 90px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .authorComment {
+    color: lighten($lightGrey, 10%);
+    font-size: 15px;
+    margin-bottom: 10px;
+
+    &::before {
+      color: $lightGrey;
+      content: "\f38d";
+      font-family: Ionicons;
+      top: -26px;
+      font-size: 33px;
+      right: 14px;
+      position: absolute;
+      top: 10px;
+    }
+  }
+
+  h5 {
+    color: $btnFirstColor;
+    font-size: 14px;
     position: relative;
-    background: $lightColor;
-    height: 100%;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
 
-    .authorImg {
-        height: 90px;
-        left: -45px;
-        margin-top: -45px;
-        position: absolute;
-        top: 50%;
-        width: 90px;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .authorComment {
-        color: lighten($lightGrey, 10%);
-        font-size: 15px;
-        margin-bottom: 10px;
-
-        &::before {
-            color: $lightGrey;
-            content: "\f38d";
-            font-family: Ionicons;
-            top: -26px;
-            font-size: 33px;
-            right: 14px;
-            position: absolute;
-            top: 10px;
-        }
-    }
-
-    h5 {
-        color: $btnFirstColor;
-        font-size: 14px;
-        position: relative;
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-
-    .line {
-        background: $primary-color;
-        display: inline-block;
-        height: 1px;
-        margin-left: 15px;
-        position: relative;
-        top: -4px;
-        width: 26px;
-    }
+  .line {
+    background: $primary-color;
+    display: inline-block;
+    height: 1px;
+    margin-left: 15px;
+    position: relative;
+    top: -4px;
+    width: 26px;
+  }
 }
 
 .testimonialsWrap {
-    display: flex;
+  display: flex;
 }
 
-owl-carousel ::ng-deep {
-    .owl-theme {
-        .owl-prev {
-            font-size: 24px;
-            left: 50%;
-            margin-top: -18px;
-            padding: 5px 10px;
-            position: absolute;
-            top: 50%;
-            color: $lightgreyBg;
-            outline: none;
-            margin-left: -18px;
-            @include respond-to("small") {
-                top: 110%;
-            }
-        }
-        .owl-next {
-            @extend .owl-prev;
-            margin-left: 10px;
-
-            &::before {
-                background: $lightgreyBg;
-                content: "";
-                height: 70px;
-                left: -10px;
-                position: absolute;
-                width: 1px;
-                top: -16px;
-                
-            }
-        }
+owl-carousel-o ::ng-deep {
+  .owl-theme {
+    .owl-prev {
+      font-size: 24px;
+      left: 50%;
+      margin-top: -18px;
+      padding: 0 !important;
+      background-color: transparent;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      color: $lightgreyBg;
+      outline: none;
+      margin-left: -18px;
+      @include respond-to("small") {
+        top: 110%;
+      }
     }
+    .owl-next {
+      @extend .owl-prev;
+      margin-left: 10px;
 
-    .owl-stage {
-        align-items: stretch;
-        display: flex;
+      &::before {
+        background: $lightgreyBg;
+        content: "";
+        height: 70px;
+        left: -10px;
+        position: absolute;
+        width: 1px;
+        top: -16px;
+      }
+    }
+  }
 
-        .owl-item {
-            .item {
-                height: 100%;
-            }
-        }
+  .owl-stage {
+    align-items: stretch;
+    display: flex;
+
+    &-outer {
+      z-index: 3;
     }
 
-    .leftArrow,
-    .rightArrow {
-        &::before {
-            position: relative;
-            font-size: 16px;
-            font-family: Ionicons;
-        }
+    .owl-item {
+      .item {
+        height: 100%;
+      }
     }
-    .leftArrow {
-        &::before {
-            content: "\f124";
-        }
-    }
-    .rightArrow {
-        &::before {
-            content: "\f125";
-        }
-    }
+  }
 
-    .owl-nav [class*="owl-"]:hover {
-        background: none;
-        color: $lightgreyBg;
-        outline: none;
+  .leftArrow,
+  .rightArrow {
+    &::before {
+      position: relative;
+      font-size: 16px;
+      font-family: Ionicons;
     }
+  }
+  .leftArrow {
+    &::before {
+      content: "\f124";
+    }
+  }
+  .rightArrow {
+    &::before {
+      content: "\f125";
+    }
+  }
+
+  .owl-nav [class*="owl-"]:hover {
+    background: none;
+    color: $lightgreyBg;
+    outline: none;
+  }
 }

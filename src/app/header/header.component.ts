@@ -45,7 +45,7 @@ export class SFHeaderComponent implements OnInit {
 
     companySection = [
         { name: "about", desc: "About Us" },
-        { name: "vacancies", desc: "Vacancies" },
+        // { name: "vacancies", desc: "Vacancies" },
         { name: "process", desc: "Process" }
     ];
     someR;

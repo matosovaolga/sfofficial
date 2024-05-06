@@ -11,7 +11,7 @@ import {SFServiceSoftComponent} from './service-soft/service.soft.component';
 import {SFServiceUxdesComponent} from './service-uxdes/service.uxdes.component';
 import { servicesRouting } from './services.routing';
 import { SharedComponentModule } from '../common/sharedModule';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from "@angular/material/button";
 import {MatTabsModule} from '@angular/material/tabs';
 import {SFServiceCmsComponent} from './service-cms/service.cms.component';
 @NgModule({

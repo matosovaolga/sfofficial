@@ -22,9 +22,6 @@ import {FilterPipe} from './../_pipe/filter.pipe';
         SFBannerComponent,
         FilterPipe
     ],
-      entryComponents: [
-        
-    ],
 
 })
 export class SharedComponentModule {}

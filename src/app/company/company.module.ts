@@ -15,8 +15,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FileUploadModule } from 'ng2-file-upload';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+// import { FileUploadModule } from 'ng2-file-upload';
+// import { MatButtonModule } from '@angular/material';
 @NgModule({
     imports: [
         CommonModule,
@@ -27,7 +28,7 @@ import { MatButtonModule } from '@angular/material';
         ReactiveFormsModule,
         FormsModule,
         MatInputModule,
-        FileUploadModule,
+        // FileUploadModule,
         MatButtonModule
 
     ],

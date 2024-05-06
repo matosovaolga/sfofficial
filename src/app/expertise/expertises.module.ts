@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { expertiseRouting } from './expertises.routing';
 import { SharedComponentModule } from '../common/sharedModule';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from "@angular/material/button";
 import { MatTabsModule } from '@angular/material/tabs';
 import { SFExpertisesComponent } from './expertises.component';
 import { SFSocialNetworkingComponent } from './social-networking/socialNetworking.component';

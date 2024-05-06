@@ -2,7 +2,7 @@
 import { ConnectionService } from '../../../home/contactForm/connection.service';
 import { FormGroup, FormBuilder, Validators, FormControl, FormGroupDirective } from '@angular/forms';
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
+// import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
 import { HttpClient } from '@angular/common/http';
 interface response {
   success: boolean;
@@ -55,9 +55,9 @@ export class SFApplyFormComponent {
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
       if (this.file.size < 5 * 1000 * 1000) {
-        this.myForm.patchValue({
-          fileSource: this.file
-        });
+        // this.myForm.patchValue({
+        //   fileSource: this.file
+        // });
         this.isFileUpload = true
       }
       else {
@@ -71,7 +71,7 @@ export class SFApplyFormComponent {
   }
   deleteFile() {
     this.myForm.patchValue({
-      fileSource: {}
+    //   fileSource: {}
     });
     this.file = null;
     this.isFileUpload = false;

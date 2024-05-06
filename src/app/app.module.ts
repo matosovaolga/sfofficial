@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -23,14 +23,16 @@ import { HttpClientModule } from '@angular/common/http';
 import {SFScrollToTopComponent} from './common/scrollToTop/scrollToTop.component';
 import {SFContactPageComponent} from './contactPage/contactPage.component';
 import {ServicesModule} from './companyService/services.module';
-import { FileUploadModule } from 'ng2-file-upload';
-import { MatButtonModule } from '@angular/material';
+// import { FileUploadModule } from 'ng2-file-upload';
+// import { MatButtonModule } from '@angular/material';
 import {CompanyModule} from './company/company.module';
 import {EngagementModule} from './engagement/engagement.module';
 import {SharedComponentModule} from './common/sharedModule';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import {ExpertisesModule} from './expertise/expertises.module';
 import { AnimatedDigitComponent } from './home/animated-digit/animated-digit.component';
+import { MatButtonModule } from '@angular/material/button';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -55,13 +57,14 @@ AnimatedDigitComponent
     FontAwesomeModule,
     RouterModule,
     OwlModule,
+	CarouselModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     MatButtonModule,
-    FileUploadModule,
+    // FileUploadModule,
     CompanyModule,
     SharedComponentModule,
     ServicesModule,

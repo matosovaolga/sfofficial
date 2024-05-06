@@ -27,8 +27,13 @@ export class AnimatedDigitComponent implements AfterViewInit, OnChanges {
 
     }
 
-    if (typeof this.digit === "number") {
-      this.counterFunc(this.digit, this.duration, this.animatedDigit, this.symbol);
+    if (typeof this.digit === "number" && this.animatedDigit) {
+      this.counterFunc(
+        this.digit,
+        this.duration,
+        this.animatedDigit,
+        this.symbol
+      );
     }
   }
 
@@ -48,7 +53,6 @@ export class AnimatedDigitComponent implements AfterViewInit, OnChanges {
     function step() {
       currentSinValue += sinValueIncrement;
       currentValue += valueIncrement * Math.sin(currentSinValue) ** 2 * 2;
-
 
       element.nativeElement.textContent = Math.abs(Math.floor(currentValue))+' '+symbol;
 

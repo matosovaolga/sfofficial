@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {servicesRouting} from './engagement.router';
 import { SharedComponentModule } from '../common/sharedModule';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from "@angular/material/button";
 import {MatTabsModule} from '@angular/material/tabs';
 import {SFOutsourceComponent} from './outsoursing/outsource.component';
 import {SFDedicateComponent} from './dedicate/dedicate.component';
