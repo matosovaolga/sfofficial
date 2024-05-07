@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare var $: any; 
+import  $  from "jquery"; 
 
 @Component({
   selector: 'sf-process',
