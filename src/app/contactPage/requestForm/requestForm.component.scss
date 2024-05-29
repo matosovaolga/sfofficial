@@ -1,254 +1,271 @@
 @import "./../../app.component.scss";
- 
+
 .request_content {
-    padding-top: 100px;
-.pad10 {
+  padding-top: 100px;
+
+  .location {
+    width: 100%;
+    margin-top: 30px;
+	margin-bottom: 30px;
+
+    h5 {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .pad10 {
     padding: 10px 0;
     height: 10px;
-}
-    h3.contact_title {
+  }
+  h3.contact_title {
+    color: $darkGrey;
+    font-weight: 400;
+    font-family: $second-font-family;
+    margin-bottom: 40px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+    @include respond-to("extra-small") {
+      font-size: 20px;
+      text-align: justify;
+    }
+
+    &::before {
+      background: $borderColor;
+      top: -11px;
+      content: "";
+      height: 1px;
+      left: 3px;
+      position: absolute;
+      width: 50px;
+    }
+  }
+
+  .abform_area {
+    padding-bottom: 80px;
+
+    .abinput_group {
+      margin-bottom: 40px;
+      width: 49.1%;
+      height: 50px;
+      float: left;
+      text-align: left;
+
+      .errorMessage {
+        color: $red;
+        font-size: 12px;
+      }
+
+      @include respond-to("extra-small") {
+        width: 100%;
+      }
+      &:nth-child(even) {
+        margin-left: 1.8%;
+        @include respond-to("small") {
+          margin-left: 0%;
+        }
+      }
+
+      &.message {
+        width: 100%;
+        clear: both;
+        height: 150px;
+        margin-bottom: 50px;
+      }
+
+      input {
+        padding: 10px 22px;
+        width: 100%;
+        // background: none;
         color: $darkGrey;
-        font-weight: 400;
-        font-family: $second-font-family;
-        margin-bottom: 40px;
-        -webkit-font-smoothing: antialiased;
-        font-size: 24px;
-        @include respond-to("extra-small") {
-            font-size: 20px;
-            text-align: justify;
-        }
+        // border: none !important;
+        // padding-left: 0;
+        font-family: $primary-font-family;
+        // background: $lightgreyBg;
+      }
 
-        &::before {
-            background: $borderColor;
-            top: -11px;
-            content: "";
-            height: 1px;
-            left: 3px;
-            position: absolute;
-            width: 50px;
-        }
-    }
+      .textarea {
+        @extend input;
+        resize: none;
+        margin-bottom: 0;
+        height: 150px;
+        padding-right: 90px;
+      }
 
-    .abform_area {
-        padding-bottom: 80px;
-
-        .abinput_group {
-            margin-bottom: 40px;
-            width: 49.1%;
-            height: 50px;
-            float: left;
-            text-align: left;
-
-            .errorMessage {
-                color: $red;
-                font-size: 12px;
-            }
-
-            @include respond-to("extra-small") {
-                width: 100%;
-            }
-            &:nth-child(even) {
-                margin-left: 1.8%;
-                @include respond-to("small") {
-                    margin-left: 0%;
-                }
-            }
-
-            &.message {
-                width: 100%;
-                clear: both;
-                height: 150px;
-                margin-bottom: 50px;
-            }
-
-            input {
-                padding: 10px 22px;
-                width: 100%;
-                // background: none;
-                color: $darkGrey;
-                // border: none !important;
-                // padding-left: 0;
-                font-family: $primary-font-family;
-                // background: $lightgreyBg;
-            }
-
-            .textarea {
-                @extend input;
-                resize: none;
-                margin-bottom: 0;
-                height: 150px;
-                padding-right: 90px;
-            }
-
-            label {
-                font-size: 16px;
-                color: $lightGrey;
-                font-family: $primary-font-family;
-                // top: 1.84375em;
-                transition: all 1s ease-out;
-                line-height: 16px;
-
-            }
-            .activeInput {
-                // background-color: red;
-                // font-size: 12px;
-                transform: scale(0.8);
-            }
-        }
-
-        .filesList {
-            ul {
-                display: flex;
-                button {
-                    border: none;
-                    background: none;
-                    height: 20px;
-                }
-                svg {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
-
-        .btnSubmit {
-            padding: 0;
-            @include transition(color $animation-speed linear);
-            border: none;
-            margin: 0;
-            background: transparent;
-            bottom: -15px;
-            color: $btnFirstColor;
-            font-size: 80px;
-            // height: auto;
-            position: absolute;
-            right: 20px;
-            @include respond-to("small") {
-                right: 10px;
-            }
-            &:hover {
-                color: $btnSecondColor;
-            }
-        }
-        .notActive {
-            color: $primary-color;
-            &:hover {
-                color: $primary-color;
-            }
-        }
-    }
-
-    .contact_address {
-        align-items: flex-start;
-        box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-flow: column nowrap;
-        height: 100%;
-        padding: 45px 35px;
-
-        h4 {
-            color: $darkGrey;
-            margin-bottom: 50px;
-            font-size: 25px;
-
-            &::before {
-                background: $borderColor;
-                top: -11px;
-                content: "";
-                height: 1px;
-                left: 3px;
-                position: absolute;
-                width: 50px;
-            }
-        }
-
-        p {
-            font-size: 15px;
-            line-height: 25px;
-            margin-bottom: 25px;
-            padding-left: 35px;
-            color: $primary-color;
-            font-family: $primary-font-family;
-
-            i {
-                font-size: 20px;
-                left: 0;
-                position: absolute;
-                top: 0;
-            }
-        }
-
-        .web > a {
-            color: $primary-color;
-
-            &:hover {
-                color: $btnFirstColor;
-            }
-        }
-    }
-
-    .inputfile {
-        width: 0.1px;
-        height: 0.1px;
-        opacity: 0;
-        overflow: hidden;
-        position: absolute;
-        z-index: -1;
-        & + label {
-            font-size: 1.25em;
-            font-weight: 700;
-            color: $primary-color;
-            border: $border;
-            padding: 10px;
-            display: inline-block;
-            width: 100%;
-
-            i {
-                font-size: 34px;
-                color: $btnFirstColor;
-                margin-right: 15px;
-                display: inline-block;
-            }
-        }
-    }
-
-    .inputfile + label {
-        font-weight: 500;
-        font-size: 15px;
-        justify-content: center;
-        display: flex;
-        padding: 0 10px;
-        height: 60px;
-        line-height: 60px;
-
-        &:hover {
-            border-color: $btnFirstColor;
-            cursor: pointer;
-        }
+      label {
+        font-size: 16px;
+        color: $lightGrey;
+        font-family: $primary-font-family;
+        // top: 1.84375em;
+        transition: all 1s ease-out;
+        line-height: 16px;
+      }
+      .activeInput {
+        // background-color: red;
+        // font-size: 12px;
+        transform: scale(0.8);
+      }
     }
 
     .filesList {
-        margin-top: 20px;
-        text-align: left;
-        margin-bottom: 40px;
-        width: 100%;
-
-        li {
-            display: flex;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-            justify-content: space-between;
-            border-bottom: $border;
-            padding-bottom: 5px;
-            padding-top: 5px;
-            color: inherit;
-            overflow: hidden;
-
-            p {
-                text-overflow: ellipsis;
-                overflow: hidden;
-            }
+      ul {
+        display: flex;
+        button {
+          border: none;
+          background: none;
+          height: 20px;
         }
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
+
+    .btnSubmit {
+      padding: 0;
+      @include transition(color $animation-speed linear);
+      border: none;
+      margin: 0;
+      background: transparent;
+      bottom: -45px;
+      color: $btnFirstColor;
+      font-size: 80px;
+      // height: auto;
+      position: absolute;
+      right: 20px;
+      @include respond-to("small") {
+        right: 10px;
+      }
+      &:hover {
+        color: $btnSecondColor;
+      }
+    }
+    .notActive {
+      color: $primary-color;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .contact_address {
+    align-items: flex-start;
+    box-shadow: 0 16px 42px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    padding: 45px 35px;
+    margin: 30px 0;
+
+    h4 {
+      color: $darkGrey;
+      margin-bottom: 50px;
+      font-size: 25px;
+
+      &::before {
+        background: $borderColor;
+        top: -11px;
+        content: "";
+        height: 1px;
+        left: 3px;
+        position: absolute;
+        width: 50px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 17px;
+      padding-left: 32px;
+      color: $primary-color;
+      font-family: $primary-font-family;
+
+      i {
+        font-size: 20px;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    .sales_name {
+      margin-bottom: 10px;
+    }
+
+    .web > a {
+      color: $primary-color;
+
+      &:hover {
+        color: $btnFirstColor;
+      }
+    }
+  }
+
+  .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    & + label {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: $primary-color;
+      border: $border;
+      padding: 10px;
+      display: inline-block;
+      width: 100%;
+
+      i {
+        font-size: 34px;
+        color: $btnFirstColor;
+        margin-right: 15px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .inputfile + label {
+    font-weight: 500;
+    font-size: 15px;
+    justify-content: center;
+    display: flex;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+
+    &:hover {
+      border-color: $btnFirstColor;
+      cursor: pointer;
+    }
+  }
+
+  .filesList {
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 40px;
+    width: 100%;
+
+    li {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      justify-content: space-between;
+      border-bottom: $border;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      color: inherit;
+      overflow: hidden;
+
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
 }

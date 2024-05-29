@@ -1,99 +1,209 @@
 <div class="contact_content">
-    <div class="section_title text-center">
-        <h5 class="title_20 color_88">Contact Us</h5>
-        <h2>Don’t hesitate to contact with us anytime</h2>
-        <span class="line"></span>
+  <div class="section_title text-center">
+    <h5 class="title_20 color_88">Contact Us</h5>
+    <h2>Don’t hesitate to contact with us anytime</h2>
+    <span class="line"></span>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-8 col-lg-7 form-home">
+      <h3 class="contact_title">Drop us a line</h3>
+      <div class="">
+        <form
+          class="text-center abform_area"
+          #formDirective="ngForm"
+          [formGroup]="myForm"
+          (ngSubmit)="submit(myForm, formDirective)"
+        >
+          <mat-form-field class="form-group abinput_group name">
+            <mat-label for="name">Full Name</mat-label>
+            <input
+              matInput
+              required
+              formControlName="name"
+              id="name"
+              type="text"
+              class="form-control"
+            />
+            <mat-error
+              *ngIf="f.name.touched && f.name.invalid && f.name.errors.required"
+              >Name is required.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                f.name.touched && f.name.invalid && f.name.errors.minlength
+              "
+              >Name should be 3 character.</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field class="form-group abinput_group email">
+            <mat-label for="email">Email</mat-label>
+            <input
+              matInput
+              required
+              formControlName="email"
+              id="email"
+              type="text"
+              class="form-control"
+            />
+            <mat-error
+              *ngIf="
+                f.email.touched && f.email.invalid && f.email.errors.required
+              "
+              >Email is required.</mat-error
+            >
+            <mat-error
+              *ngIf="f.email.touched && f.email.invalid && f.email.errors.email"
+              >Email is not correct.</mat-error
+            >
+            <mat-error
+              *ngIf="
+                f.email.touched && f.email.invalid && f.email.errors.minlength
+              "
+              >Email should not be less than 3 character.</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field class="form-group abinput_group subject">
+            <mat-label for="subject">Subject</mat-label>
+            <input
+              matInput
+              required
+              formControlName="subject"
+              id="subject"
+              type="text"
+              class="form-control"
+            />
+
+            <mat-error
+              *ngIf="
+                f.subject.touched &&
+                f.subject.invalid &&
+                f.subject.errors.required
+              "
+              >Subject is required.</mat-error
+            >
+            <mat-error
+              *ngIf="
+                f.subject.touched &&
+                f.subject.invalid &&
+                f.subject.errors.minlength
+              "
+              >Subject should be .</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field class="form-group abinput_group phone">
+            <mat-label for="phone">Phone</mat-label>
+            <!-- <span matPrefix>+ &nbsp;</span> -->
+            <input
+              matInput
+              required
+              formControlName="phone"
+              id="phone"
+              type="tel"
+              class="form-control"
+            />
+            <mat-error
+              *ngIf="
+                f.phone.touched && f.phone.invalid && f.phone.errors.required
+              "
+              >Phone is required.
+            </mat-error>
+            <mat-error
+              *ngIf="
+                f.phone.touched && f.phone.invalid && f.phone.errors.minlength
+              "
+              >Phone should be not less than 8 numbers
+            </mat-error>
+            <mat-error
+              *ngIf="
+                f.phone.touched && f.phone.invalid && f.phone.errors.maxlength
+              "
+              >Phone should be not more than 14 numbers
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-group abinput_group msg">
+            <mat-label for="message">Message</mat-label>
+            <textarea
+              matInput
+              required
+              formControlName="message"
+              id="message"
+              type="text"
+              class="form-control textarea"
+            ></textarea>
+            <mat-error
+              *ngIf="
+                f.message.touched &&
+                f.message.invalid &&
+                f.message.errors.required
+              "
+              >Message is required.</mat-error
+            >
+            <mat-error
+              *ngIf="
+                f.message.touched &&
+                f.message.invalid &&
+                f.message.errors.minlength
+              "
+              >not less then 40 letters</mat-error
+            >
+          </mat-form-field>
+
+          <button
+            type="submit"
+            color="info"
+            outline="true"
+            rounded="true"
+            block="true"
+            class="z-depth-0 my-4 waves-effect text-uppercase submitButton"
+            [ngClass]="{ notActive: myForm.status === 'INVALID' }"
+          >
+            <i class="ion-ios-navigate"></i>
+          </button>
+        </form>
+        <div class="successPopover" [ngClass]="{ messageActive: sendSuccess }">
+          Mesasge was sent successfully
+        </div>
+        <div class="errorPopover" [ngClass]="{ messageActive: errorText }">
+          {{ errorText }}
+        </div>
+      </div>
     </div>
 
-    <div class="row">
-        <div class="col-xl-8 col-lg-7 form-home">
-            <h3 class="contact_title  ">Drop us a line</h3>
-            <div class="">
-
-                <form class="text-center abform_area" #formDirective="ngForm" [formGroup]="myForm"
-                (ngSubmit)="submit(myForm,formDirective)">
-
-                    <mat-form-field class="form-group abinput_group name">
-                        <mat-label for="name">Full Name</mat-label>
-                        <input matInput required formControlName="name" id="name" type="text" class="form-control">
-                        <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.required">Name is required.
-                        </mat-error>
-                        <mat-error *ngIf="f.name.touched && f.name.invalid && f.name.errors.minlength">Name should be 3
-                            character.</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field class="form-group abinput_group email">
-                        <mat-label for="email">Email</mat-label>
-                        <input matInput required formControlName="email" id="email" type="text" class="form-control">
-                        <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.required">Email is
-                            required.</mat-error>
-                            <mat-error *ngIf="f.email.touched && f.email.invalid  &&  f.email.errors.email">Email is not correct.</mat-error>
-                        <mat-error *ngIf="f.email.touched && f.email.invalid && f.email.errors.minlength">Email should not be less than 3 character.</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field class="form-group abinput_group subject">
-                        <mat-label for="subject">Subject</mat-label>
-                        <input matInput required formControlName="subject" id="subject" type="text"
-                            class="form-control">
-
-                        <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.required">Subject is required.</mat-error>
-                        <mat-error *ngIf="f.subject.touched && f.subject.invalid && f.subject.errors.minlength">Subject should be .</mat-error>
-
-                    </mat-form-field>
-
-                    <mat-form-field class="form-group abinput_group phone">
-                        <mat-label for="phone">Phone</mat-label>
-                        <!-- <span matPrefix>+ &nbsp;</span> -->
-                        <input   matInput required formControlName="phone" id="phone" type="tel" class="form-control">
-                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.required">Phone is
-                            required.
-                        </mat-error>
-                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.minlength">Phone should be not less than 8 numbers </mat-error>
-                        <mat-error *ngIf="f.phone.touched && f.phone.invalid && f.phone.errors.maxlength">Phone should be not more than 14 numbers </mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field class="form-group abinput_group msg">
-                        <mat-label for="message">Message</mat-label>
-                        <textarea matInput required formControlName="message" id="message" type="text"
-                            class="form-control textarea"></textarea>
-                        <mat-error *ngIf="f.message.touched && f.message.invalid && f.message.errors.required">Message
-                            is
-                            required.</mat-error>
-                        <mat-error *ngIf="f.message.touched && f.message.invalid && f.message.errors.minlength">not less
-                            then
-                            40 letters</mat-error>
-
-                    </mat-form-field>
-
-                    <button type="submit" color="info" outline="true" rounded="true" block="true"
-                        class="z-depth-0 my-4 waves-effect text-uppercase submitButton" [ngClass]="{'notActive':  myForm.status === 'INVALID'}">
-                        <i class="ion-ios-navigate"></i>
-                    </button>
-                </form>
-                <div class="successPopover" [ngClass]="{messageActive: sendSuccess}">Mesasge was sent successfully
-                </div>
-                <div class="errorPopover" [ngClass]="{messageActive: errorText}">{{errorText}}</div>
-            </div>
-
-        </div>
-
-        <div class="col-xl-4 col-lg-5">
-            <div class="contact_address">
-                <h4 class="pos_relative">Contact Information</h4>
-                <p class="address pos_relative"><i class="ion-ios-location"></i><span
-                    class="text-uppercase">ADDRESS:</span>
-                    Kaupmehe 7-120,<br />
-                    Tallinn, Estonia<br />
-                   
-                    Nauki pr 40, Kharkiv, Ukraine</p>
-            <p class="phone pos_relative"><i class="ion-android-call"></i><span
-                    class="text-uppercase">Phone:</span> +380636361121</p>
-            <p class="email pos_relative"><i class="ion-android-mail"></i>
-                <span class="text-uppercase">Email:</span> sales&#64;stableflow.com</p>
-            </div>
-        </div>
-        <!--/col-->
+    <div class="col-xl-4 col-lg-5">
+      <div class="contact_address">
+        <h5 class="sales_name">
+          <span class="text-uppercase">Aleksandr Fesenko:</span>
+        </h5>
+        <p class="email pos_relative web">
+          <i class="ion-android-call"></i>
+          <a href="tel:+380636361121"> +38 (063) 6361121</a>
+        </p>
+        <p class="email pos_relative web">
+          <i class="ion-android-mail"></i>
+          <a href="mailto:fesenko@stableflow.com">fesenko&#64;stableflow.com</a>
+        </p>
+        <h5 class="sales_name">
+          <span class="text-uppercase">Alex Zholtkevych:</span>
+        </h5>
+        <p class="email pos_relative web">
+          <i class="ion-android-call"></i>
+          <a href="tel:+15144352410">+1 (514) 4352410</a>
+        </p>
+        <p class="email pos_relative web">
+          <i class="ion-android-mail"></i>
+          <a href="mailto:alex.zholtkevych@stableflow.com"
+            >alex.zholtkevych&#64;stableflow.com</a
+          >
+        </p>
+      </div>
     </div>
-    <!--/row-->
+    <!--/col-->
+  </div>
+  <!--/row-->
 </div>
 <!--/contact content-->
