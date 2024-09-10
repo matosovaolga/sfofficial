@@ -5,84 +5,8 @@
     <span class="line"></span>
   </div>
 
-  <div clas="row">
-    <div class="col-xl-12 col-lg-12">
-      <div class="contact_address">
-        <header>
-          <h3 class="pos_relative">Location</h3>
-        </header>
-        <div class="row location">
-          <div class="col-xl-4 col-lg-12">
-            <h5>
-              <span class="text-uppercase">Canada</span>
-            </h5>
-            <p class="address pos_relative">
-              <i class="ion-ios-location"></i>6666, Thorold Stone Road, Niagara
-              Falls
-              <br />
-              <strong>Ontario</strong>
-            </p>
-          </div>
-
-          <div class="col-xl-4 col-lg-12">
-            <h5>
-              <span class="text-uppercase">Estonia</span>
-            </h5>
-            <p class="address pos_relative">
-              <i class="ion-ios-location"></i> Kaupmehe 7-120<br />
-              <strong>Tallinn</strong>
-            </p>
-          </div>
-
-          <div class="col-xl-4 col-lg-12">
-            <h5>
-              <span class="text-uppercase"> Ukraine:</span>
-            </h5>
-            <p class="address pos_relative">
-              <i class="ion-ios-location"></i> Nauki avenue, 40<br />
-              <strong>Kharkiv</strong>
-            </p>
-          </div>
-        </div>
-        <h3>Sales:</h3>
-        <div class="row location">
-          <div class="col-xl-5 col-lg-12">
-            <h5 class="sales_name">
-              <span class="text-uppercase">Aleksandr Fesenko:</span>
-            </h5>
-            <p class="email pos_relative web">
-              <i class="ion-android-call"></i>
-              <a href="tel:+380636361121">+38 (063) 6361121</a>
-            </p>
-            <p class="email pos_relative web">
-              <i class="ion-android-mail"></i>
-              <a href="mailto:fesenko@stableflow.com"
-                >fesenko&#64;stableflow.com</a
-              >
-            </p>
-          </div>
-          <div class="col-xl-5 col-lg-12">
-            <h5 class="sales_name">
-              <span class="text-uppercase">Alex Zholtkevych:</span>
-            </h5>
-            <p class="email pos_relative web">
-              <i class="ion-android-call"></i>
-              <a href="tel:+15144352410">+1 (514) 4352410</a>
-            </p>
-            <p class="email pos_relative web">
-              <i class="ion-android-mail"></i>
-              <a href="mailto:alex.zholtkevych@stableflow.com"
-                >alex.zholtkevych&#64;stableflow.com</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row contact_address">
-    <div class="col-xl-12 col-lg-12">
+  <div class="row">
+    <div class="col-xl-8 col-lg-12 contact_address">
       <h3 class="contact_title pos_relative">
         Please submit your project details using the form below and we will get
         back to you promptly regarding your request.
@@ -305,17 +229,15 @@
             </ul>
           </div>
 
-          <button
+          <sf-btn
             type="submit"
-            color="info"
-            outline="true"
-            rounded="true"
-            block="true"
+          
             [ngClass]="{ notActive: myForm.status === 'INVALID' }"
             class="btnSubmit"
           >
-            <i class="ion-ios-navigate"></i>
-          </button>
+            Submit
+          </sf-btn>
+		
         </form>
 
         <div
@@ -338,6 +260,79 @@
           [ngClass]="{ messageActive: errorText }"
         >
           File sized overloaded Max is 5mb
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-12">
+      <div class="contact_address">
+        <header>
+          <h3 class="pos_relative">Location</h3>
+        </header>
+        <div class="row location">
+          <div class="col-xl-12 col-lg-12">
+            <h5>
+              <span class="text-uppercase">Canada</span>
+            </h5>
+            <p class="address pos_relative">
+              <i class="ion-ios-location"></i>6666, Thorold Stone Road, Niagara
+              Falls
+              <br />
+              <strong>Ontario</strong>
+            </p>
+          </div>
+
+          <div class="col-xl-12 col-lg-12">
+            <h5>
+              <span class="text-uppercase">Estonia</span>
+            </h5>
+            <p class="address pos_relative">
+              <i class="ion-ios-location"></i> Kaupmehe 7-120<br />
+              <strong>Tallinn</strong>
+            </p>
+          </div>
+
+          <div class="col-xl-12 col-lg-12">
+            <h5>
+              <span class="text-uppercase"> Ukraine:</span>
+            </h5>
+            <p class="address pos_relative">
+              <i class="ion-ios-location"></i> Nauki avenue, 40<br />
+              <strong>Kharkiv</strong>
+            </p>
+          </div>
+        </div>
+        <h3>Sales:</h3>
+        <div class="row location">
+          <div class="col-xl-12 col-lg-12">
+            <h5 class="sales_name">
+              <span class="text-uppercase">Aleksandr Fesenko:</span>
+            </h5>
+            <p class="email pos_relative web">
+              <i class="ion-android-call"></i>
+              <a href="tel:+380636361121">+38 (063) 6361121</a>
+            </p>
+            <p class="email pos_relative web">
+              <i class="ion-android-mail"></i>
+              <a href="mailto:fesenko@stableflow.com"
+                >fesenko&#64;stableflow.com</a
+              >
+            </p>
+          </div>
+          <div class="col-xl-12 col-lg-12">
+            <h5 class="sales_name">
+              <span class="text-uppercase">Alex Zholtkevych:</span>
+            </h5>
+            <p class="email pos_relative web">
+              <i class="ion-android-call"></i>
+              <a href="tel:+15144352410">+1 (514) 4352410</a>
+            </p>
+            <p class="email pos_relative web">
+              <i class="ion-android-mail"></i>
+              <a href="mailto:alex.zholtkevych@stableflow.com"
+                >alex.zholtkevych&#64;stableflow.com</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>
