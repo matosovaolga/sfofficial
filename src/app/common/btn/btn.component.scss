@@ -1,101 +1,130 @@
 @import "./../variables";
 @import "./../mixin";
 :host {
-    @include respond-to("medium") {
-        max-width: 340px;
+  display: block;
+  width: 100%;
+  @include respond-to("medium") {
+    width: 340px;
+  }
+  @include respond-to("small") {
+    width: 100%;
+  }
+}
+
+:host button {
+  @include respond-to("medium") {
+    width: 340px;
+  }
+  @include respond-to("small") {
+    width: 100%;
+  }
+  width: 100%;
+  @include transition(all $animation-speed linear);
+  border-radius: $default-border-radius;
+  color: $lightColor;
+  display: block;
+  font-size: 18px;
+  height: 54px;
+  line-height: 48px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  font-weight: 300;
+  z-index: 1;
+  position: relative;
+
+  &:hover {
+    color: $darkGrey;
+
+    &::after {
+      opacity: 1;
+      visibility: visible;
     }
-    @include respond-to("small") {
-        max-width: 100%;
+  }
+
+  &:before {
+    background: linear-gradient(
+      45deg,
+      rgb(30, 223, 196) 0%,
+      rgb(39, 133, 230) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-animation: AnimationName 4s ease infinite;
+    -moz-animation: AnimationName 4s ease infinite;
+    animation: AnimationName 4s ease infinite;
+    border-radius: 3px;
+
+    @-webkit-keyframes AnimationName {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 51%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
-    @include transition(all $animation-speed linear);
+    @-moz-keyframes AnimationName {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 51%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    @keyframes AnimationName {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 51%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $default-border-radius - 2;
+    z-index: -1;
+  }
+
+  &:after {
+    @include transform(translate(-50%, -50%));
+    opacity: 0;
+    visibility: hidden;
+    background: $lightColor;
     border-radius: $default-border-radius;
-    color: $lightColor;
-    display: block;
-    font-size: 18px;
-    height: 54px;
-    line-height: 53px;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-    font-weight: 300;
+    content: "";
+    height: 50px;
+    left: 50%;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    width: calc(100% - 3px);
+    z-index: -1;
+    border-radius: 3px;
 
-    &:hover {
-        color: $darkGrey;
-
-        &::after {
-            opacity: 1;
-            visibility: visible;
-        }
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+      content: none;
     }
+  }
+}
 
+:host {
+  &.notActive button {
+	color: grey;
+	cursor: default;
     &:before {
-        background: linear-gradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
-        background-size: 200% 200%;
-        -webkit-animation: AnimationName 4s ease infinite;
-        -moz-animation: AnimationName 4s ease infinite;
-        animation: AnimationName 4s ease infinite;
-        @-webkit-keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 51%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        @-moz-keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 51%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        @keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 51%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: $default-border-radius;
+      display: none;
     }
-
-    &:after {
-        @include transform(translate(-50%, -50%));
-        opacity: 0;
-        visibility: hidden;
-        background: $lightColor;
-        border-radius: $default-border-radius;
-        content: "";
-        height: 50px;
-        left: 50%;
-        margin-top: 0;
-        position: absolute;
-        top: 50%;
-        width: calc(100% - 4px);
-        @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-            content: none;
-        }
-    }
-
-    a {
-        z-index: 1;
-        position: relative;
-    }
+  }
 }

@@ -1,65 +1,65 @@
 :host {
-  -webkit-transition: all 0.3s linear;
+  display: block;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  :host {
+    width: 340px;
+  }
+}
+@media (max-width: 767px) {
+  :host {
+    width: 100%;
+  }
+}
+
+:host button {
+  width: 100%;
   transition: all 0.3s linear;
   border-radius: 5px;
   color: #fff;
   display: block;
   font-size: 18px;
   height: 54px;
-  line-height: 53px;
+  line-height: 48px;
   text-align: center;
   position: relative;
   cursor: pointer;
   font-weight: 300;
+  z-index: 1;
+  position: relative;
 }
-
 @media (max-width: 992px) {
-  :host {
-    max-width: 340px;
+  :host button {
+    width: 340px;
   }
 }
-
 @media (max-width: 767px) {
-  :host {
-    max-width: 100%;
+  :host button {
+    width: 100%;
   }
 }
-
-:host:hover {
+:host button:hover {
   color: #333;
 }
-
-:host:hover::after {
+:host button:hover::after {
   opacity: 1;
   visibility: visible;
 }
-
-:host:before {
-  background: linear-gradient(45deg, #1edfc4 0%, #2785e6 100%);
+:host button:before {
+  background: linear-gradient(45deg, rgb(30, 223, 196) 0%, rgb(39, 133, 230) 100%);
   background-size: 200% 200%;
-  -webkit-animation: AnimationName 4s ease infinite;
   animation: AnimationName 4s ease infinite;
+  border-radius: 3px;
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
+  z-index: -1;
 }
-
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 51%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @keyframes AnimationName {
   0% {
     background-position: 0% 50%;
@@ -71,9 +71,7 @@
     background-position: 0% 50%;
   }
 }
-
-:host:after {
-  -webkit-transform: translate(-50%, -50%);
+:host button:after {
   transform: translate(-50%, -50%);
   opacity: 0;
   visibility: hidden;
@@ -85,17 +83,20 @@
   margin-top: 0;
   position: absolute;
   top: 50%;
-  width: calc(100% - 4px);
+  width: calc(100% - 3px);
+  z-index: -1;
+  border-radius: 3px;
 }
-
 @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  :host:after {
+  :host button:after {
     content: none;
   }
 }
 
-:host a {
-  z-index: 1;
-  position: relative;
+:host.notActive button {
+  color: grey;
+  cursor: default;
 }
-/*# sourceMappingURL=btn.component.css.map */
+:host.notActive button:before {
+  display: none;
+}
